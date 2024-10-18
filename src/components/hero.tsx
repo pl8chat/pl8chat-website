@@ -1,4 +1,5 @@
 'use client'
+import { Button } from './button'
 
 export default function Hero() {
   return (
@@ -10,10 +11,8 @@ export default function Hero() {
         <p className="mt-8 max-w-lg text-xl/7 font-medium sm:text-2xl/8">
           PL8CHAT transforms parking environments into safe and connected vehicle communities
         </p>
-        <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-          <button className="text-black bg-white p-4 text-xl rounded-md">
-            Join waitlist
-          </button>
+        <div className="mt-12">
+          <Button href="#">Join Waitlist</Button>
         </div>
       </div>
     </div>
