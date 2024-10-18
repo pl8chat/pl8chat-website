@@ -14,6 +14,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const switzer = localFont({
+  src: "./fonts/Switzer-Variable.woff",
+  variable: "--font-switzer",
+  weight: "100 900",
+})
 
 export const metadata: Metadata = {
   title: "PL8CHAT",
@@ -23,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${switzer.variable} antialiased`}>
         <header>
           <Nabvar />
         </header>
