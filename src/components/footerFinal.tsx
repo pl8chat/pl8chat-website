@@ -1,3 +1,5 @@
+'use client'
+
 interface NavigationItem {
   name: string;
   href: string;
@@ -5,14 +7,31 @@ interface NavigationItem {
 }
 
 interface Navigation {
+  products: NavigationItem[];
+  solutions: NavigationItem[];
   company: NavigationItem[];
+  legal: NavigationItem[];
   social: NavigationItem[];
 }
 
 const navigation: Navigation = {
+  products: [
+    { name: 'Pricing', href: '#' },
+    { name: 'For business', href: '#' },
+    { name: 'For individuals', href: '#' },
+  ],
+  solutions: [
+    { name: 'FAQ', href: '#' },
+  ],
   company: [
-    { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '#' },
+    { name: 'About us', href: '/about' },
+    { name: 'Careers', href: '#' },
+  ],
+  legal: [
+    { name: 'Claim', href: '#' },
+    { name: 'Privacy', href: '#' },
+    { name: 'Terms', href: '#' },
   ],
   social: [
     {
@@ -77,7 +96,7 @@ const navigation: Navigation = {
       ),
     },
   ],
-};
+}
 
 export default function Example() {
   return (
@@ -85,28 +104,48 @@ export default function Example() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="flex justify-between xl:gap-8">
-          <div className="space-y-8">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div>
             <img
               alt="Company name"
               src="/assets/images/logo.png"
-              className="h-7"
+              className="size-10"
             />
-            <div>
-              <p>Every car</p>
-              <p>connected</p>
-            </div>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                  <span className="sr-only">{item.name}</span>
-                  {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
-                </a>
-              ))}
+            <div className="mt-5 text-xl font-bold">
+              <div>Every</div>
+              <div>Car</div>
+              <div>Connected</div>
             </div>
           </div>
-          <div className="mt-0 lg:pr-10">
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.products.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -119,12 +158,66 @@ export default function Example() {
                   ))}
                 </ul>
               </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.legal.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-400">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <h3 className="text-sm font-semibold leading-6 text-white">Subscribe to our newsletter</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-300">
+              The latest news, articles, and resources, sent to your inbox weekly.
+            </p>
+          </div>
+          <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
+            <label htmlFor="email-address" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="email-address"
+              name="email-address"
+              type="email"
+              required
+              placeholder="Enter your email"
+              autoComplete="email"
+              className="w-full min-w-0 appearance-none rounded-md border-0 bg-white/5 px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-56 sm:text-sm sm:leading-6"
+            />
+            <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+          <div className="flex space-x-6 md:order-2">
+            {navigation.social.map((item) => (
+              <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <span className="sr-only">{item.name}</span>
+                {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
+              </a>
+            ))}
+          </div>
+
+          <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
+            &copy; 2024 PL8CHAT, LLC. All rights reserved
+          </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
