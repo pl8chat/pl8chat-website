@@ -19,7 +19,7 @@ export default function Hero() {
         <h2 className="mt-8 max-w-lg text-xl/7 font-medium sm:text-2xl/8">
           PL8CHAT transforms parking environments into safe and connected communities
         </h2>
-        <div className="mt-12">
+        <div className="mt-9 lg:mt-11">
           <Button href="#">Join waitlist</Button>
         </div>
       </div>
