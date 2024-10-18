@@ -14,6 +14,9 @@ const config: Config = {
         'darkGreen': '#00695C',
         'lightGreen': '#D2E7E1'
       },
+      fontSize: {
+        small: '0.875rem'
+      },
     },
   },
   plugins: [],

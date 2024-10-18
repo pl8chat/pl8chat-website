@@ -77,7 +77,7 @@ export default function Navbar() {
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden sm:flex space-x-4 text-xl'>
+                <div className='hidden sm:flex space-x-4 text-small'>
                   <Link href={'/about'} className='py-2'>
                     About Us
                   </Link>
@@ -133,7 +133,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          {/* <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -142,15 +142,15 @@ export default function Navbar() {
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current ? 'bg-gray-900 text-white' : 'hover:bg-gray-700 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium text-white'
                   )}
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
             </div>
-          </Disclosure.Panel>
+          </Disclosure.Panel> */}
         </>
       )}
     </Disclosure>
