@@ -12,9 +12,6 @@ type NavigationItem = {
 }
 
 const navigation: NavigationItem[] = [
-  { name: 'Products', href: '#', current: true },
-  { name: 'Pricing', href: '#', current: false },
-  { name: 'For Individuals', href: '#', current: false },
   { name: 'About us', href: '/about', current: false },
   { name: 'Contact', href: '#', current: false },
 ]
@@ -49,14 +46,14 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <Link href={'/'}>           
                     <img
-                      alt="Your Company"
+                      alt="PL8CHAT Text Logo"
                       src="/assets/images/PL8CHAT.png"
-                      className="h-8 w-auto"
+                      className="h-12 w-auto"
                     />
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
+                  {/* <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {navigation.map((item) => {
                       const isActive = item.href === pathname; // Declare isActive here
                       return (
@@ -74,24 +71,23 @@ export default function Navbar() {
                       );
                     })}
 
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden lg:flex space-x-4'>
-                  <div className='py-2'>
-                    Call us: 1(310)PL8-CHAT
-                  </div>
-                  <button type="button" className="relative rounded-md bg-white p-1 text-darkGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    Talk to Sales
-                  </button>
-                  <button>Sign in</button>
+                <div className='hidden sm:flex space-x-4 text-xl'>
+                  <Link href={'/about'} className='py-2'>
+                    About Us
+                  </Link>
+                  <Link href={''} className='py-2'>
+                    Contact
+                  </Link>
                 </div>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="lg:hidden relative ml-3">
+                {/* <Menu as="div" className="lg:hidden relative ml-3">
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
@@ -132,7 +128,7 @@ export default function Navbar() {
                       )}
                     </Menu.Item>
                   </Menu.Items>
-                </Menu>
+                </Menu> */}
               </div>
             </div>
           </div>
