@@ -4,7 +4,7 @@ import { Link } from './link'
 
 const variants = {
   primary: clsx(
-    'inline-flex items-center justify-center px-4 py-[calc(theme(spacing.2)-1px)]',
+    'inline-flex items-center justify-center px-6 py-[calc(theme(spacing.2)-1px)]',
     'rounded-md border border-transparent bg-white shadow-md',
     'whitespace-nowrap text-base font-medium text-black',
     'data-[disabled]:opacity-40',

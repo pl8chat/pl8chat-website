@@ -8,9 +8,9 @@ export default function Hero() {
         <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
           Smart and <br /> Social Parking
         </h1>
-        <p className="mt-8 max-w-lg text-xl/7 font-medium sm:text-2xl/8">
+        <h2 className="mt-8 max-w-lg text-xl/7 font-medium sm:text-2xl/8">
           PL8CHAT transforms parking environments into safe and connected vehicle communities
-        </p>
+        </h2>
         <div className="mt-12">
           <Button href="#">Join Waitlist</Button>
         </div>
