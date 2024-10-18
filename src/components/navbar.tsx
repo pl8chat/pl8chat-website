@@ -55,8 +55,8 @@ export default function Navbar() {
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:ml-6 md:block">
-                  <div className="flex space-x-4 text-nowrap">
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {navigation.map((item) => {
                       const isActive = item.href === pathname; // Declare isActive here
                       return (
@@ -80,7 +80,7 @@ export default function Navbar() {
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden xl:flex space-x-4'>
+                <div className='hidden lg:flex space-x-4'>
                   <div className='py-2'>
                     Call us: 1(310)PL8-CHAT
                   </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="xl:hidden relative ml-3">
+                <Menu as="div" className="lg:hidden relative ml-3">
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />

@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <div className="bg-darkGreen pl-5 lg:pl-10 pt-20">
+    <div className="bg-darkGreen pl-5 lg:pl-10 pt-10 lg:pt-20">
       <div className="space-y-5 py-20 mx-auto">
         <div className="text-5xl lg:text-9xl font-bold">
           <div>
