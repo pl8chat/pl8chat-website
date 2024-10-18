@@ -2,6 +2,7 @@
 
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 type NavigationItem = {
@@ -23,9 +24,12 @@ function classNames(...classes: string[]): string {
 }
 
 export default function Navbar() {
+  const pathname = usePathname()
+
+
   return (
     <Disclosure as="nav" className="bg-darkGreen">
-      {({ open }) => ( 
+      {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -43,40 +47,44 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    alt="Your Company"
-                    src="/assets/images/PL8CHAT.png"
-                    className="h-8 w-auto"
-                  />
+                  <Link href={'/'}>           
+                    <img
+                      alt="Your Company"
+                      src="/assets/images/PL8CHAT.png"
+                      className="h-8 w-auto"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 md:block">
                   <div className="flex space-x-4 text-nowrap">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        aria-current={item.current ? 'page' : undefined}
-                        className={classNames(
-                          item.current ? 'bg-white text-darkGreen' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-3 text-xs lg:text-lg font-medium'
-                        )}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    {navigation.map((item) => {
+                      const isActive = item.href === pathname; // Declare isActive here
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          aria-current={isActive ? 'page' : undefined}
+                          className={classNames(
+                            isActive ? 'bg-white text-darkGreen' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
+                          )}
+                        >
+                          {item.name}
+                        </Link>
+                      );
+                    })}
+
                   </div>
                 </div>
               </div>
+
               {/* Right-side items are hidden on mobile */}
-              <div className="sm:flex sm:items-center sm:pr-0 space-x-4">
-                <div className='hidden xl:flex'>
-                  <div>
+              <div className="sm:flex sm:items-center sm:pr-0">
+                <div className='hidden xl:flex space-x-4'>
+                  <div className='py-2'>
                     Call us: 1(310)PL8-CHAT
                   </div>
-                  <button
-                    type="button"
-                    className="relative rounded-md bg-white p-1 text-darkGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  >
+                  <button type="button" className="relative rounded-md bg-white p-1 text-darkGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     Talk to Sales
                   </button>
                   <button>Sign in</button>
@@ -125,7 +133,6 @@ export default function Navbar() {
                     </Menu.Item>
                   </Menu.Items>
                 </Menu>
-                
               </div>
             </div>
           </div>
