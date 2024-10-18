@@ -1,10 +1,17 @@
 'use client'
+import localFont from 'next/font/local'
+
+const switzer = localFont({
+  src: "../fonts/Switzer-Variable.woff",
+  variable: "--font-Switzer",
+  weight: "100 900",
+})
 
 export default function About() {
   return (
     <div className="py-10 lg:py-20 lg:pb-80 bg-darkGreen h-full">
-      <div className="text-center text-white">
-        <div className="font-bold text-6xl">
+      <div className={`text-center text-white ${switzer.className}`}>
+        <div className={`font-bold text-6xl `}>
           About Us
         </div>
         <div className="pt-10 text-3xl max-w-3xl mx-auto space-y-10">

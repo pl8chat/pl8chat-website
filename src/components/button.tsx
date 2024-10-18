@@ -1,13 +1,20 @@
 import * as Headless from '@headlessui/react'
 import { clsx } from 'clsx'
 import { Link } from './link'
+import localFont from 'next/font/local'
+
+const barlow = localFont({
+  src: "../app/fonts/Barlow-Medium.woff",
+  variable: "--font-barlow-medium",
+  weight: "100 900",
+})
 
 const variants = {
   primary: clsx(
-    'inline-flex items-center justify-center px-6 py-[calc(theme(spacing.2)-1px)]',
+    'inline-flex items-center justify-center px-6 h-[3.25rem]',
     'rounded-md border border-transparent bg-white shadow-md',
-    'whitespace-nowrap text-base font-medium text-black',
-    'data-[disabled]:opacity-40',
+    'whitespace-nowrap text-[1rem] font-medium text-black',
+    `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   secondary: clsx(
     'relative inline-flex items-center justify-center px-4 py-[calc(theme(spacing.2)-1px)]',
