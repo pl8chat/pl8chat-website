@@ -1,7 +1,11 @@
-import Image from "next/image";
+import Hero from "../components/hero";
 
 export default function Home() {
   return (
-    <div>BODY</div>
+    <div>
+      <div className="bg-darkGreen">
+        <Hero />
+      </div>
+    </div>
   );
 }
