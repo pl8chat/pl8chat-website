@@ -53,7 +53,7 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
+                  {/* <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {navigation.map((item) => {
                       const isActive = item.href === pathname; // Declare isActive here
                       return (
@@ -71,17 +71,17 @@ export default function Navbar() {
                       );
                     })}
 
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden sm:flex space-x-4 text-small'>
-                  <Link href={'/about'} className='py-2'>
+                <div className='hidden sm:flex space-x-4 text-md lg:text-lg text-white'>
+                  <Link href={'/about'} className='py-2 hover:text-gray-300'>
                     About Us
                   </Link>
-                  <Link href={''} className='py-2'>
+                  <Link href={''} className='py-2 hover:text-gray-300'>
                     Contact
                   </Link>
                 </div>

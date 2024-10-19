@@ -11,8 +11,8 @@ const barlow = localFont({
 
 const variants = {
   primary: clsx(
-    'inline-flex items-center justify-center px-6 h-[3.25rem]',
-    'rounded-md border border-transparent bg-white shadow-md',
+    'inline-flex items-center justify-center px-8 h-[3.25rem] gap-3',
+    'rounded-md bg-white shadow-md hover:bg-gray-300',
     'whitespace-nowrap text-[1rem] font-medium text-black',
     `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
