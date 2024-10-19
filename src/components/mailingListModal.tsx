@@ -9,6 +9,9 @@ type ImageModalrProps = {
 };
 
 export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) {
+    const [email, setEmail] = useState<string>('')
+    const [emailTouched, setEmailTouched] = useState<boolean>(false);
+
     const handleClose = () => {
         if (onClose) onClose(); // This will notify the parent to update the `isOpen` state
     };
