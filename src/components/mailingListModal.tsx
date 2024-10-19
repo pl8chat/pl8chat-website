@@ -46,7 +46,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                                 <div className="absolute right-12 top-12 pr-4 pt-4 sm:block">
                                     <button
                                         type="button"
-                                        className="rounded-md text-black hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-darkGreen"
+                                        className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
                                         onClick={handleClose} // Call handleClose directly
                                     >
                                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
