@@ -21,8 +21,8 @@ export default function Hero() {
           <h1 className={`font-display text-balance font-medium tracking-tight text-white text-6xl xs: sm:text-[7.5rem] max-w-[10ch] sm:max-w-none ${barlow.className}`}>
             Sma<span className='tracking-[.3rem]'>rt</span> and <br /> social parking
           </h1>
-          <h2 className="mt-8 max-w-xl text-lg/7 font-medium sm:text-2xl/8">
-            We create safe and connected parking communities through license plate communication
+          <h2 className="mt-8 max-w-2xl text-lg/7 font-medium sm:text-3xl/8">
+            We create safe and connected parking communities through license plate communication.
           </h2>
           <div
             className="mt-9 lg:mt-11"
