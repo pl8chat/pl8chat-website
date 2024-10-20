@@ -145,10 +145,7 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium text-white'
-                  )}
+                  className={classNames('block rounded-md px-3 py-2 text-base font-medium text-white')}
                 >
                   {item.name}
                 </Disclosure.Button>
