@@ -12,21 +12,21 @@ const barlow = localFont({
 const variants = {
   primary: clsx(
     'inline-flex items-center justify-center px-8 h-[3.25rem] gap-3',
-    'rounded-md bg-white shadow-md hover:bg-gray-300',
-    'whitespace-nowrap text-[1rem] font-medium text-black',
+    'rounded-md bg-white shadow-md hover:bg-tGreen',
+    'whitespace-nowrap text-[1.1rem] font-bold text-black',
     `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   secondary: clsx(
     'relative inline-flex items-center justify-center px-4 py-[calc(theme(spacing.2)-1px)]',
     'rounded-full border border-transparent bg-white/15 shadow-md ring-1 ring-[#D15052]/15',
     'after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_2px_1px_#ffffff4d]',
-    'whitespace-nowrap text-base font-medium text-gray-950',
+    'whitespace-nowrap text-base font-bold text-gray-950',
     'data-[disabled]:bg-white/15 data-[hover]:bg-white/20 data-[disabled]:opacity-40',
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
     'rounded-lg border border-transparent shadow ring-1 ring-black/10',
-    'whitespace-nowrap text-sm font-medium text-gray-950',
+    'whitespace-nowrap text-sm font-bold text-gray-950',
     'data-[disabled]:bg-transparent data-[hover]:bg-gray-50 data-[disabled]:opacity-40',
   ),
 }

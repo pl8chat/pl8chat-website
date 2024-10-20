@@ -83,7 +83,7 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className='py-2 hover:text-gray-300'>
+                        className='py-2 hover:text-tGreen'>
                         {item.name}
                       </Link>
                     )

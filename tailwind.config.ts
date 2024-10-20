@@ -11,8 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'darkGreen': '#00695C',
-        'lightGreen': '#D2E7E1'
+        'darkGreen': '#00594B',
+        'lightGreen': '#D2E7E1',
+        'darkerGreen': '#06402B',
+        'tGreen': '#E0FEE6',
       },
       fontSize: {
         small: '0.875rem'
