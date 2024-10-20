@@ -11,7 +11,7 @@ interface Navigation {
 
 const navigation: Navigation = {
   company: [
-    { name: 'About Us', href: '/about' },
+    { name: 'About us', href: '/about' },
     { name: 'Contact', href: '#' },
   ],
   social: [

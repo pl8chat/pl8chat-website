@@ -44,7 +44,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-lelft sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href={'/'}>           
+                  <Link href={'/'}>
                     <img
                       alt="PL8CHAT Text Logo"
                       src="/assets/images/PL8CHAT.png"
@@ -78,12 +78,16 @@ export default function Navbar() {
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
                 <div className='hidden sm:flex space-x-4 text-md lg:text-lg text-white'>
-                  <Link href={'/about'} className='py-2 hover:text-gray-300'>
-                    About Us
-                  </Link>
-                  <Link href={''} className='py-2 hover:text-gray-300'>
-                    Contact
-                  </Link>
+                  {navigation.map((item) => {
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className='py-2 hover:text-gray-300'>
+                        {item.name}
+                      </Link>
+                    )
+                  })}
                 </div>
 
                 {/* Profile dropdown */}

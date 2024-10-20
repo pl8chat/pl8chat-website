@@ -9,11 +9,8 @@ type ImageModalrProps = {
 };
 
 export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) {
-    const [email, setEmail] = useState<string>('')
-    const [emailTouched, setEmailTouched] = useState<boolean>(false);
-
     const handleClose = () => {
-        if (onClose) onClose(); // This will notify the parent to update the `isOpen` state
+        if (onClose) onClose(); 
     };
 
     return (
@@ -32,7 +29,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                 </Transition.Child>
 
                 <div className="fixed inset-0 z-10 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}>
+                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}> 
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -43,7 +40,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                <div className="absolute right-12 top-12 pr-4 pt-4 sm:block">
+                                <div className="absolute right-4 top-4 pr-4 pt-4 sm:block">
                                     <button
                                         type="button"
                                         className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
@@ -53,7 +50,6 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                                     </button>
                                 </div>
                                 <div>
-                                    {/* CONTENT GOES HERE */}
                                     <MailingListSubForm />
                                 </div>
                             </Dialog.Panel>
