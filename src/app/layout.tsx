@@ -16,8 +16,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PL8CHAT - Smart & Social parking",
+  title: "PL8CHAT - Smart & social parking",
   description: "Smart & Social parking",
+  openGraph: {
+    title: "PL8CHAT - Smart & social parking",
+    images: "./assets/images/logo.png",
+    url: "https://pl8chat.com",
+    type: "website",
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
