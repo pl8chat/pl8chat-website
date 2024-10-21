@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PL8CHAT",
-  description: "DESCRIPTION GOES EHRE",
+  title: "PL8CHAT - Smart & Social parking",
+  description: "Smart & Social parking",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
