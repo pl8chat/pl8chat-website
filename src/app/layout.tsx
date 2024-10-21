@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import Nabvar from "../components/navbar";
 import Footer from "../components/footer";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         <div>
           {children}
+          <Analytics />
         </div>
         <div>
           <Footer />
