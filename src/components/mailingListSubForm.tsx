@@ -1,11 +1,19 @@
 'use client'
 import React, { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 const isValidEmail = (email: string): boolean => {
   // This regex checks for most common email patterns.
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return emailRegex.test(email);
 };
+
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
+const templateID2 = process.env.NEXT_PUBLIC_TEMPLATE_ID2
+const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+
+console.log(templateID, serviceID, publicKey)
 
 export default function MailingListSubForm() {
   const form = useRef<HTMLFormElement>(null);
@@ -14,36 +22,45 @@ export default function MailingListSubForm() {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('submitting')
 
-    setEmail(email.trim())
-    // try {
-    //   // const res = await fetch('/api/mailingList/subscribe', {
-    //   //   method: 'POST',
-    //   //   headers: {
-    //   //     'Content-Type': 'application/json'
-    //   //   },
-    //   //   body: JSON.stringify({
-    //   //     firstName,
-    //   //     lastName,
-    //   //     email,
-    //   //   })
-    //   // });
+    if (!isValidEmail(email)) {
+      setEmailTouched(true);
+      console.log("Invalid email, form not sent.");
+      return; // Prevent form submission if email is invalid
+    }
 
-    //   if (res.ok) {
-    //     console.log("Request was successful");
-    //     const data = await res.json(); // If the server returns JSON data
-    //     console.log(data);
-    //     setSuccess(true); // Assuming you want to set success to true on a successful request
-    //   } else {
-    //     console.error("Error with request:", res.status, res.statusText);
-    //     setSuccess(false); // Assuming you want to set success to false on an unsuccessful request
-    //   }
-    // } catch (error) {
-    //   console.error("There was an error with the fetch:", error);
-    //   setSuccess(false); // Assuming you want to set success to false if there's an error with the fetch
-    // }
-  }
+    if (form.current !== null) {
+      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${publicKey}`)
+        .then((result) => {
+          // Successfully sent the form
+          console.log(result.text);
+          setEmailTouched(false);
+        })
+        .catch((error) => {
+          // Handle the error here
+          console.log("Error sending the form:", error.text);
+        });
+    } else {
+      console.error("Form reference is null.");
+    }
+
+    if (form.current !== null) {
+      emailjs.sendForm(`${serviceID}`, `${templateID2}`, form.current, `${publicKey}`)
+        .then((result) => {
+          // Successfully sent the form
+          console.log(result.text);
+          setEmailTouched(false);
+        })
+        .catch((error) => {
+          // Handle the error here
+          console.log("Error sending the form:", error.text);
+        });
+    } else {
+      console.error("Form reference is null.");
+    }
+
+    setEmail(email.trim());
+  };
 
   return (
     <form ref={form} onSubmit={handleFormSubmit} className=' bg-white p-3 lg:p-10 rounded-md' noValidate>
@@ -57,19 +74,21 @@ export default function MailingListSubForm() {
             Email address
           </label>
           <input
-            id="email-address"
-            name="email-address"
+            id="email"
+            name="email"
             type="email"
             required
-            placeholder="Enter your email"
+            placeholder="john@example.com"
             autoComplete="email"
             value={email}
-            onChange={(e) => {{
-              setEmail(e.target.value)
-              if (email.length > 0) {
-                setEmailTouched(true);
+            onChange={(e) => {
+              {
+                setEmail(e.target.value)
+                if (email.length > 0) {
+                  setEmailTouched(true);
+                }
               }
-            }}}
+            }}
             onBlur={() => setEmailTouched(true)}
             className={`w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkGreen sm:w-64 sm:text-sm sm:leading-6 xl:w-full ${emailTouched && !isValidEmail(email) ? 'ring-2 ring-red-500 focus:ring-red-500' : ''}`}
           />
@@ -91,6 +110,6 @@ export default function MailingListSubForm() {
         By clicking subscribe you agree to receive marketing emails from PL8CHAT
       </div>
     </form>
-    
+
   )
 }
