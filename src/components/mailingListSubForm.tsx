@@ -43,19 +43,19 @@ export default function MailingListSubForm() {
     }
 
     // Sends email to the person who subscribed
-    if (form.current !== null) {
-      emailjs.sendForm(`${serviceID}`, `${templateID2}`, form.current, `${publicKey}`)
-        .then((result) => {
-          console.log(result.text);
-          setEmailTouched(false);
-          setIsSubmitted(true);  // Update submission status to true on success
-        })
-        .catch((error) => {
-          console.log("Error sending the form:", error.text);
-        });
-    } else {
-      console.error("Form reference is null.");
-    }
+    // if (form.current !== null) {
+    //   emailjs.sendForm(`${serviceID}`, `${templateID2}`, form.current, `${publicKey}`)
+    //     .then((result) => {
+    //       console.log(result.text);
+    //       setEmailTouched(false);
+    //       setIsSubmitted(true);  // Update submission status to true on success
+    //     })
+    //     .catch((error) => {
+    //       console.log("Error sending the form:", error.text);
+    //     });
+    // } else {
+    //   console.error("Form reference is null.");
+    // }
 
     setEmail(email.trim());
   };
