@@ -48,7 +48,7 @@ export default function Navbar() {
                     <img
                       alt="PL8CHAT Text Logo"
                       src="/assets/images/PL8CHAT.png"
-                      className="h-12 w-auto"
+                      className="h-8 lg:h-12 w-auto"
                     />
                   </Link>
                 </div>
