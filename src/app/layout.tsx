@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Smart & Social parking",
   openGraph: {
     title: "PL8CHAT - Smart & social parking",
-    images: "./assets/images/logo.png",
+    images: "./assets/images/logoGreen.jpg",
     url: "https://pl8chat.com",
     type: "website",
   }
