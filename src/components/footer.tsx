@@ -84,7 +84,7 @@ const navigation: Navigation = {
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
     <footer aria-labelledby="footer-heading" className="bg-gray-900">
       <h2 id="footer-heading" className="sr-only">
@@ -92,15 +92,16 @@ export default function Example() {
       </h2>
       <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="flex justify-between xl:gap-8">
-          <div className="space-y-8">
+          <div className="">
             <img
-              alt="Company name"
-              src="/assets/images/PL8CHAT.png"
-              className="h-12"
+              alt="Pl8CHAT logo"
+              src="/assets/images/logo.png"
+              className="h-10 lg:h-12"
             />
-            <div>
-              <p>Every car</p>
-              <p>connected</p>
+            <div className="font-semibold text-lg pb-6 pl-1">
+              <p>Every</p>
+              <p>Car</p>
+              <p>Connected</p>
             </div>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -127,7 +128,7 @@ export default function Example() {
           </div>
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-300">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
+          <p className="text-xs leading-5 text-gray-400">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
         </div>
       </div>
     </footer>

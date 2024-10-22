@@ -17,12 +17,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PL8CHAT - Smart & social parking",
-  description: "Smart & Social parking",
+  title: "PL8CHAT - Smart & Social Parking",
+  description: "We unite parking communities through license plate chat and connectivity",
   openGraph: {
-    title: "PL8CHAT - Smart & social parking",
+    title: "PL8CHAT",
+    description: "We unite parking communities through license plate chat and connectivity",
     images: "./assets/images/logoGreen.jpg",
-    url: "https://pl8chat.com",
+    url: "PL8CHAT",
     type: "website",
   }
 };
