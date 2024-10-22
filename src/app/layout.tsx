@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: "We unite parking communities through license plate chat and connectivity",
   openGraph: {
     title: "PL8CHAT",
-    description: "We unite parking communities through license plate chat and connectivity",
+    description: "Smart & Social Parking",
     images: "./assets/images/logoGreen.jpg",
     url: "PL8CHAT",
     type: "website",
