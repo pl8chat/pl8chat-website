@@ -21,7 +21,7 @@ export default function Hero() {
           <h1 className={`font-display text-balance font-medium tracking-tight text-tGreen text-6xl xs: sm:text-[7.5rem] max-w-[10ch] sm:max-w-none ${barlow.className}`}>
             Sma<span className='tracking-[.2rem]'>rt</span> and <br /> Social Parking
           </h1>
-          <h2 className="mt-8 max-w-2xl text-lg/7 font-medium sm:text-3xl/8">
+          <h2 className="mt-8 max-w-[37ch] text-lg/7 font-medium sm:text-3xl/8">
             PL8CHAT unites parking communities through the
             license plate.
           </h2>
