@@ -84,9 +84,9 @@ export default function MailingListSubForm() {
           </p>
         </div>
       ) : (
-        <form ref={form} onSubmit={handleFormSubmit} className='bg-white p-5 py-7 lg:p-12 rounded-md' noValidate>
-          <div className=" xl:mt-0 relative">
-            <h3 className="text-lg font-semibold leading-6 text-black">Join our mailing list</h3>
+        <form ref={form} onSubmit={handleFormSubmit} className='bg-white p-5 py-6 lg:p-5 lg:pb-8 rounded-md' noValidate>
+          <div className="xl:mt-0 relative">
+            <h3 className="text-xl font-semibold leading-6 text-black py-1">Join our mailing list</h3>
             <p className="mt-2 text-lg leading-6 text-gray-600">
               Stay up to date on our product launch and other important news
             </p>
@@ -124,7 +124,7 @@ export default function MailingListSubForm() {
               <span className="text-red-500 text-xs mt-1 absolute">Invalid email</span>
             )}
           </div>
-          <div className='absolute bottom-5 left-8 lg:left-16 lg:bottom-8 text-gray-600 pt-5 mt-7 text-[8.5px] md:text-[11px] w-full'>
+          <div className='absolute bottom-5 left-8 lg:left-11 lg:bottom-8 text-gray-600 pt-5 mt-7 text-[8.5px] md:text-[11px] w-full'>
             By clicking subscribe you agree to receive marketing emails from PL8CHAT
           </div>
         </form>
