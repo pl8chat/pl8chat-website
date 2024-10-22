@@ -84,7 +84,7 @@ export default function MailingListSubForm() {
           </p>
         </div>
       ) : (
-        <form ref={form} onSubmit={handleFormSubmit} className='bg-white p-5 py-6 lg:p-5 lg:pb-8 rounded-md' noValidate>
+        <form ref={form} onSubmit={handleFormSubmit} className='bg-white p-5 py-6 lg:p-5 lg:pb-14 rounded-md' noValidate>
           <div className="xl:mt-0 relative">
             <h3 className="text-xl font-semibold leading-6 text-black py-1">Join our mailing list</h3>
             <p className="mt-2 text-lg leading-6 text-gray-600">
