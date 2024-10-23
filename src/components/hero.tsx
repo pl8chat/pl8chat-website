@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <div>
-      <div className={`bg-darkGreen pb-[4.5rem] pl-5 pt-10 lg:pt-28 lg:pl-10 lg:pb-0`}>
+      <div className={`bg-darkGreen pb-[5rem] pl-5 pt-10 lg:pt-28 lg:pl-10 lg:pb-0`}>
         <div className="pb-24 pt-32 sm:pb-32 sm:pt-24 md:pb-48 md:pt-36 text-tGreen">
           <h1 className={`font-display text-balance font-medium tracking-tight text-tGreen text-6xl xs: sm:text-[7.5rem] max-w-[10ch] sm:max-w-none ${barlow.className}`}>
             Sma<span className='tracking-[.2rem]'>rt</span> and <br /> Social Parking
