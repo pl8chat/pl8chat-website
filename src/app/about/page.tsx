@@ -14,7 +14,7 @@ export default function About() {
         <div className={`font-bold text-6xl pt-32 pb-2`}>
           About us
         </div>
-        <div className="pt-10 px-4 pb-28 lg:px-0 text-lg/7 md:text-3xl max-w-[44ch] mx-auto space-y-10 text-start">
+        <div className="pt-10 px-4 pb-28 lg:px-0 text-lg/7 md:text-3xl max-w-[44ch] mx-auto space-y-10 text-start test">
           <div>
             PL8CHAT is a technology company transforming license
             plates into the universal line of vehicle communication.
