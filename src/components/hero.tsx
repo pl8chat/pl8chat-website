@@ -19,11 +19,11 @@ export default function Hero() {
       <div className={`bg-darkGreen pb-[5rem] pl-5 pt-10 lg:pt-28 lg:pl-10 lg:pb-0`}>
         <div className="pb-24 pt-32 sm:pb-32 sm:pt-24 md:pb-48 md:pt-36 text-tGreen">
           <h1 className={`font-display text-balance font-medium tracking-tight text-tGreen text-6xl xs: sm:text-[7.5rem] max-w-[10ch] sm:max-w-none ${barlow.className}`}>
-            Sma<span className='tracking-[.2rem]'>rt</span> and <br /> Social Parking
+            Sma<span className='tracking-[.15rem]'>rt</span> and <br /> Social Parking
           </h1>
           <h2 className="mt-8 max-w-[37ch] text-lg/7 font-medium sm:text-3xl/8">
-            PL8CHAT unites parking communities through the
-            license plate.
+            PL8CHAT is a new line of communication
+            uniting vehicles & parking communities.
           </h2>
           <div
             className="mt-9 lg:mt-11"
