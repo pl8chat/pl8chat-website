@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import Nabvar from "../components/navbar";
 import Footer from "../components/footer";
+import NavbarFinal from "../components/navbarFinal";
 import FooterFinal from "../components/footerFinal";
 import "./globals.css";
 
@@ -34,7 +35,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <header>
-          <Nabvar />
+          {/* <Nabvar /> */}
+          <NavbarFinal />
         </header>
         <div>
           {children}

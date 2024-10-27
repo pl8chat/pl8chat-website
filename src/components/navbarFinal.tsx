@@ -1,15 +1,19 @@
 'use client'
 
-import { Disclosure, Menu } from '@headlessui/react'
+import { Disclosure, Menu, Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
+import Flydown from './flydown'
 import Link from 'next/link'
+import { useState } from 'react'
+import { DivideIcon } from '@heroicons/react/20/solid'
 
 type NavigationItem = {
   name: string;
   href: string;
   current: boolean;
 }
+type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItem[] = [
   { name: 'Products', href: '#', current: true },
@@ -19,16 +23,39 @@ const navigation: NavigationItem[] = [
   { name: 'Contact', href: '#', current: false },
 ]
 
+function ChevronDownIcon(props: SVGProps) {
+  return (
+    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
+      <path
+        d="M1.75 1.75 4 4.25l2.25-2.5"
+        fill="none"
+        stroke='white'
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export default function NavbarFinal() {
   const pathname = usePathname()
+  const [isFlydownOpen, setFlydownOpen] = useState(false)
 
+  const toggleFlydown = () => {
+    setFlydownOpen(!isFlydownOpen)
+  }
+
+  const closeFlydown = () => {
+    setFlydownOpen(false)
+  }
 
   return (
-    <Disclosure as="nav" className="bg-darkGreen">
+    <Disclosure as="nav" className="bg-darkGreen relative">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -47,33 +74,42 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href={'/'}>           
+                  <Link href={'/'}>
                     <img
                       alt="Your Company"
                       src="/assets/images/PL8CHAT.png"
-                      className="h-8 w-auto"
+                      className="h-10 lg:h-12 w-auto"
                     />
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {navigation.map((item) => {
-                      const isActive = item.href === pathname; // Declare isActive here
+                      const isActive = item.href === pathname;
                       return (
-                        <Link
+                        <button
                           key={item.name}
-                          href={item.href}
+                          onClick={item.name === 'Products' ? toggleFlydown : closeFlydown}
                           aria-current={isActive ? 'page' : undefined}
                           className={classNames(
-                            isActive ? 'bg-white text-darkGreen' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            isActive ? 'text-lightGreen' : 'text-gray-300 hover:text-white',
                             'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
                           )}
                         >
-                          {item.name}
-                        </Link>
+                          {item.name === 'Products' ? (
+                            <div>
+                              {item.name}
+                              <ChevronDownIcon
+                                className={`ml-2 h-4 w-4 inline-block transition ${isFlydownOpen ? 'rotate-180' : ''}`}
+                              />
+                            </div>
+                          ) : (
+                            <span>{item.name}</span> // Default rendering for other items
+                          )}
+
+                        </button>
                       );
                     })}
-
                   </div>
                 </div>
               </div>
@@ -136,6 +172,9 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+
+          {/* Flydown Component */}
+          {isFlydownOpen && <Flydown isOpen={isFlydownOpen} onClose={() => setFlydownOpen(false)} />}
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
