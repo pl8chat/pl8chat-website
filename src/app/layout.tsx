@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import Nabvar from "../components/navbar";
 import Footer from "../components/footer";
+import FooterFinal from "../components/footerFinal";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -40,7 +41,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Analytics />
         </div>
         <div>
-          <Footer />
+          {/* <Footer /> */}
+          <FooterFinal />
         </div>
       </body>
     </html>
