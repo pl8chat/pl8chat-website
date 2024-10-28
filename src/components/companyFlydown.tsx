@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 type FlydownProps = {
-  isOpen: boolean
-  onClose: () => void
-}
+  isOpen: boolean;
+  onClose: () => void;
+};
 
 interface Solution {
-  name: string
-  description: string
-  href: string
-  icon: string
+  name: string;
+  description: string;
+  href: string;
+  icon: string;
 }
 
 interface CallToAction {
-  name: string
-  href: string
-  icon: string
+  name: string;
+  href: string;
+  icon: string;
 }
 
 const solutions: Solution[] = [
@@ -36,7 +36,7 @@ const solutions: Solution[] = [
     name: 'Security2',
     description: "Your customers' data will be safe and secure",
     href: '#',
-    icon: '/assets/images/logoGreen.jpg'
+    icon: '/assets/images/logoGreen.jpg',
   },
   {
     name: 'Integrations2',
@@ -44,36 +44,16 @@ const solutions: Solution[] = [
     href: '#',
     icon: '/assets/images/logoGreen.jpg',
   },
-]
+];
 
 const callsToAction: CallToAction[] = [
   { name: 'Watch demo', href: '#', icon: '/assets/images/logoGreen.jpg' },
   { name: 'Contact sales', href: '#', icon: '/assets/images/logoGreen.jpg' },
   { name: 'View all products', href: '#', icon: '/assets/images/logoGreen.jpg' },
-]
+];
 
 export default function CompanyFlydown({ isOpen, onClose }: FlydownProps) {
-  const flydownRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (flydownRef.current && !flydownRef.current.contains(event.target as Node)) {
-  //       onClose(); // Close the flydown if clicked outside
-  //     }
-  //   };
-
-  //   // Add event listener when the flydown is open
-  //   if (isOpen) {
-  //     document.addEventListener('mousedown', handleClickOutside);
-  //   } else {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   }
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-  // }, [isOpen, onClose]);
+  const flydownRef = useRef<HTMLDivElement>(null)
 
   return (
     <div
@@ -120,6 +100,3 @@ export default function CompanyFlydown({ isOpen, onClose }: FlydownProps) {
     </div>
   );
 }
-
-
-

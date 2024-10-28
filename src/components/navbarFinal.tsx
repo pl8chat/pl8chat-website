@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import ProductsFlydown from './productsFlydown'
 import CompanyFlydown from './companyFlydown'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 type NavigationItem = {
@@ -44,44 +44,65 @@ function classNames(...classes: string[]): string {
 }
 
 export default function NavbarFinal() {
-  const pathname = usePathname()
-  const [isProductFlydownOpen, setProductFlydownOpen] = useState(false)
-  const [isCompanyFlydownOpen, setCompanyFlydownOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname();
+  const [isProductFlydownOpen, setProductFlydownOpen] = useState(false);
+  const [isCompanyFlydownOpen, setCompanyFlydownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen
+  const productFlydownRef = useRef<HTMLDivElement>(null);
+  const companyFlydownRef = useRef<HTMLDivElement>(null);
+
+  const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen;
 
   const toggleProductFlydown = () => {
-    setProductFlydownOpen(!isProductFlydownOpen)
-    setCompanyFlydownOpen(false)
-  }
+    setProductFlydownOpen(!isProductFlydownOpen);
+    setCompanyFlydownOpen(false); // Close the company flydown when toggling the product flydown
+  };
 
   const toggleCompanyFlydown = () => {
-    setCompanyFlydownOpen(!isCompanyFlydownOpen)
-    setProductFlydownOpen(false)
-  }
+    setCompanyFlydownOpen(!isCompanyFlydownOpen);
+    setProductFlydownOpen(false); // Close the product flydown when toggling the company flydown
+  };
 
-  const closeProductFlydown = () => {
-    setProductFlydownOpen(false)
-  }
-
-  const closeCompanyFlydown = () => {
-    setCompanyFlydownOpen(false)
-  }
+  const closeFlydowns = () => {
+    setProductFlydownOpen(false);
+    setCompanyFlydownOpen(false);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+    function handleClickOutside(event: MouseEvent) {
+      // Check if click is outside both flydowns
+      if (
+        isFlydownOpen &&
+        productFlydownRef.current &&
+        !productFlydownRef.current.contains(event.target as Node) &&
+        companyFlydownRef.current &&
+        !companyFlydownRef.current.contains(event.target as Node)
+      ) {
+        closeFlydowns();
+      }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    // Use 'click' instead of 'mousedown' to avoid conflicts with button click events
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isFlydownOpen]);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 0);
     }
-  }, [])
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full duration-150 border-none shadow-none ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 border-none shadow-none ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -126,8 +147,7 @@ export default function NavbarFinal() {
                             } else if (item.name === 'Company') {
                               toggleCompanyFlydown();
                             } else {
-                              closeProductFlydown();
-                              closeCompanyFlydown();
+                              closeFlydowns()
                             }
                           }}
                           aria-current={isActive ? 'page' : undefined}
@@ -175,9 +195,13 @@ export default function NavbarFinal() {
             </div>
           </div>
 
-          {/* Flydown Component */}
-          <ProductsFlydown isOpen={isProductFlydownOpen} onClose={() => setProductFlydownOpen(false)} />
-          <CompanyFlydown isOpen={isCompanyFlydownOpen} onClose={() => setCompanyFlydownOpen(false)} />
+          {/* Flydown Components with refs */}
+          <div ref={productFlydownRef}>
+            <ProductsFlydown isOpen={isProductFlydownOpen} onClose={closeFlydowns} />
+          </div>
+          <div ref={companyFlydownRef}>
+            <CompanyFlydown isOpen={isCompanyFlydownOpen} onClose={closeFlydowns} />
+          </div>
 
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
@@ -201,5 +225,5 @@ export default function NavbarFinal() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
