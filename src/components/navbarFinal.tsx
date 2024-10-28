@@ -3,7 +3,8 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
-import Flydown from './flydown'
+import ProductsFlydown from './productsFlydown'
+import CompanyFlydown from './companyFlydown'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -44,18 +45,30 @@ function classNames(...classes: string[]): string {
 
 export default function NavbarFinal() {
   const pathname = usePathname()
-  const [isFlydownOpen, setFlydownOpen] = useState(false)
+  const [isProductFlydownOpen, setProductFlydownOpen] = useState(false)
+  const [isCompanyFlydownOpen, setCompanyFlydownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const toggleFlydown = () => {
-    setFlydownOpen(!isFlydownOpen)
+  const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen
+
+  const toggleProductFlydown = () => {
+    setProductFlydownOpen(!isProductFlydownOpen)
+    setCompanyFlydownOpen(false)
   }
 
-  const closeFlydown = () => {
-    setFlydownOpen(false)
+  const toggleCompanyFlydown = () => {
+    setCompanyFlydownOpen(!isCompanyFlydownOpen)
+    setProductFlydownOpen(false)
   }
 
-  // Add scroll event listener
+  const closeProductFlydown = () => {
+    setProductFlydownOpen(false)
+  }
+
+  const closeCompanyFlydown = () => {
+    setCompanyFlydownOpen(false)
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0)
@@ -68,7 +81,7 @@ export default function NavbarFinal() {
   }, [])
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-250 ${isScrolled ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-250 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -93,7 +106,7 @@ export default function NavbarFinal() {
                       src="/assets/images/PL8CHAT.png"
                       className="h-10 lg:h-12 w-auto transition duration-250"
                       style={{
-                        filter: isScrolled ? 'brightness(0) invert(0)' : 'none',
+                        filter: isScrolled || isFlydownOpen ? 'brightness(0) invert(0)' : 'none',
                       }}
                       width={120}
                       height={40}
@@ -107,22 +120,33 @@ export default function NavbarFinal() {
                       return (
                         <button
                           key={item.name}
-                          onClick={item.name === 'Products' || item.name === 'Company' ? toggleFlydown : closeFlydown}
+                          onClick={() => {
+                            if (item.name === 'Products') {
+                              toggleProductFlydown();
+                            } else if (item.name === 'Company') {
+                              toggleCompanyFlydown();
+                            } else {
+                              closeProductFlydown();
+                              closeCompanyFlydown();
+                            }
+                          }}
                           aria-current={isActive ? 'page' : undefined}
                           className={classNames(
-                            isActive ? (isScrolled ? 'text-black hover:text-darkGreen' : 'text-lightGreen') : (isScrolled ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
+                            isActive ? (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-lightGreen') : (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
                             'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
                           )}
                         >
-                          {item.name === 'Products' || item.name ==='Company' ? (
+                          {item.name === 'Products' || item.name === 'Company' ? (
                             <div>
                               {item.name}
                               <ChevronDownIcon
-                                className={`ml-2 h-4 w-4 inline-block transition ${isFlydownOpen ? 'rotate-180' : ''}`}
+                                className={`ml-2 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
+                                  isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''
+                                }`}
                               />
                             </div>
                           ) : (
-                            <span>{item.name}</span> // Default rendering for other items
+                            <span>{item.name}</span>
                           )}
                         </button>
                       );
@@ -133,17 +157,17 @@ export default function NavbarFinal() {
 
               {/* Right-side items (shown on larger screens) */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className={`hidden lg:flex space-x-4 ${isScrolled ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
+                <div className={`hidden lg:flex space-x-4 ${isScrolled || isFlydownOpen ? 'text-black' : 'text-white'}`}>
                   <div className='py-2'>
                     Call us: 1(310)PL8-CHAT
                   </div>
                   <button
                     type="button"
-                    className={`relative rounded-md p-1 ${isScrolled ? 'text-white bg-darkGreen' : 'text-black bg-white'}`}
+                    className={`relative rounded-md p-1 ${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen' : 'text-black bg-white'}`}
                   >
                     Talk to Sales
                   </button>
-                  <button className={`${isScrolled ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
+                  <button className={`${isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
                     Sign in
                   </button>
                 </div>
@@ -152,8 +176,10 @@ export default function NavbarFinal() {
           </div>
 
           {/* Flydown Component */}
-          <Flydown isOpen={isFlydownOpen} onClose={() => setFlydownOpen(false)} />
+          <ProductsFlydown isOpen={isProductFlydownOpen} onClose={() => setProductFlydownOpen(false)} />
+          <CompanyFlydown isOpen={isCompanyFlydownOpen} onClose={() => setCompanyFlydownOpen(false)} />
 
+          {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (

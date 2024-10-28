@@ -20,25 +20,25 @@ interface CallToAction {
 
 const solutions: Solution[] = [
   {
-    name: 'Analytics',
+    name: 'Analytics2',
     description: 'Get a better understanding of where your traffic is coming from',
     href: '#',
     icon: '/assets/images/logoGreen.jpg',
   },
   {
-    name: 'Engagement',
+    name: 'Engagement2',
     description: 'Speak directly to your customers with our engagement tool',
     href: '#',
     icon: '/assets/images/logoGreen.jpg',
   },
   {
-    name: 'Security',
+    name: 'Security2',
     description: "Your customers' data will be safe and secure",
     href: '#',
     icon: '/assets/images/logoGreen.jpg'
   },
   {
-    name: 'Integrations',
+    name: 'Integrations2',
     description: "Connect with third-party tools that you're already using",
     href: '#',
     icon: '/assets/images/logoGreen.jpg',
@@ -51,7 +51,7 @@ const callsToAction: CallToAction[] = [
   { name: 'View all products', href: '#', icon: '/assets/images/logoGreen.jpg' },
 ]
 
-export default function Flydown({ isOpen, onClose }: FlydownProps) {
+export default function CompanyFlydown({ isOpen, onClose }: FlydownProps) {
   const handleClose = () => {
     if (onClose) onClose();
   };
