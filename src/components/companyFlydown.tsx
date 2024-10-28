@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 type FlydownProps = {
@@ -52,12 +53,31 @@ const callsToAction: CallToAction[] = [
 ]
 
 export default function CompanyFlydown({ isOpen, onClose }: FlydownProps) {
-  const handleClose = () => {
-    if (onClose) onClose();
-  };
+  const flydownRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (flydownRef.current && !flydownRef.current.contains(event.target as Node)) {
+  //       onClose(); // Close the flydown if clicked outside
+  //     }
+  //   };
+
+  //   // Add event listener when the flydown is open
+  //   if (isOpen) {
+  //     document.addEventListener('mousedown', handleClickOutside);
+  //   } else {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   }
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, [isOpen, onClose]);
 
   return (
     <div
+      ref={flydownRef}
       className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'
         }`}
     >

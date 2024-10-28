@@ -132,12 +132,12 @@ export default function NavbarFinal() {
                           }}
                           aria-current={isActive ? 'page' : undefined}
                           className={classNames(
-                            isActive ? (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-lightGreen') : (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
+                            isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-darkGreen' : 'text-lightGreen') : (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
                             'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
                           )}
                         >
                           {item.name === 'Products' || item.name === 'Company' ? (
-                            <div>
+                            <div className={`${isProductFlydownOpen && item.name === 'Products' ? 'text-darkGreen' : ''} ${isCompanyFlydownOpen && item.name === 'Company' ? 'text-darkGreen' : ''}`}>
                               {item.name}
                               <ChevronDownIcon
                                 className={`ml-2 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
@@ -159,7 +159,7 @@ export default function NavbarFinal() {
               <div className="sm:flex sm:items-center sm:pr-0">
                 <div className={`hidden lg:flex space-x-4 ${isScrolled || isFlydownOpen ? 'text-black' : 'text-white'}`}>
                   <div className='py-2'>
-                    Call us: 1(310)PL8-CHAT
+                    Call us: 1 (310) PL8-CHAT
                   </div>
                   <button
                     type="button"
