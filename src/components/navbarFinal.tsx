@@ -1,26 +1,26 @@
 'use client'
 
-import { Disclosure, Menu, Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, Menu } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 import Flydown from './flydown'
 import Link from 'next/link'
-import { useState } from 'react'
-import { DivideIcon } from '@heroicons/react/20/solid'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 type NavigationItem = {
   name: string;
   href: string;
   current: boolean;
 }
+
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItem[] = [
   { name: 'Products', href: '#', current: true },
   { name: 'Pricing', href: '#', current: false },
   { name: 'For Individuals', href: '#', current: false },
-  { name: 'About us', href: '/about', current: false },
-  { name: 'Contact', href: '#', current: false },
+  { name: 'Company', href: '#', current: false },
 ]
 
 function ChevronDownIcon(props: SVGProps) {
@@ -29,7 +29,7 @@ function ChevronDownIcon(props: SVGProps) {
       <path
         d="M1.75 1.75 4 4.25l2.25-2.5"
         fill="none"
-        stroke='white'
+        stroke='currentColor'
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -45,6 +45,7 @@ function classNames(...classes: string[]): string {
 export default function NavbarFinal() {
   const pathname = usePathname()
   const [isFlydownOpen, setFlydownOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleFlydown = () => {
     setFlydownOpen(!isFlydownOpen)
@@ -54,8 +55,20 @@ export default function NavbarFinal() {
     setFlydownOpen(false)
   }
 
+  // Add scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <Disclosure as="nav" className="bg-darkGreen fixed w-full">
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-250 ${isScrolled ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -74,11 +87,16 @@ export default function NavbarFinal() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href={'/'}>
-                    <img
+                  <Link href="/" passHref>
+                    <Image
                       alt="Your Company"
                       src="/assets/images/PL8CHAT.png"
-                      className="h-10 lg:h-12 w-auto"
+                      className="h-10 lg:h-12 w-auto transition duration-250"
+                      style={{
+                        filter: isScrolled ? 'brightness(0) invert(0)' : 'none',
+                      }}
+                      width={120}
+                      height={40}
                     />
                   </Link>
                 </div>
@@ -89,14 +107,14 @@ export default function NavbarFinal() {
                       return (
                         <button
                           key={item.name}
-                          onClick={item.name === 'Products' ? toggleFlydown : closeFlydown}
+                          onClick={item.name === 'Products' || item.name === 'Company' ? toggleFlydown : closeFlydown}
                           aria-current={isActive ? 'page' : undefined}
                           className={classNames(
-                            isActive ? 'text-lightGreen' : 'text-gray-300 hover:text-white',
+                            isActive ? (isScrolled ? 'text-black hover:text-darkGreen' : 'text-lightGreen') : (isScrolled ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
                             'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
                           )}
                         >
-                          {item.name === 'Products' ? (
+                          {item.name === 'Products' || item.name ==='Company' ? (
                             <div>
                               {item.name}
                               <ChevronDownIcon
@@ -106,7 +124,6 @@ export default function NavbarFinal() {
                           ) : (
                             <span>{item.name}</span> // Default rendering for other items
                           )}
-
                         </button>
                       );
                     })}
@@ -114,61 +131,22 @@ export default function NavbarFinal() {
                 </div>
               </div>
 
-              {/* Right-side items are hidden on mobile */}
+              {/* Right-side items (shown on larger screens) */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden lg:flex space-x-4'>
+                <div className={`hidden lg:flex space-x-4 ${isScrolled ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
                   <div className='py-2'>
                     Call us: 1(310)PL8-CHAT
                   </div>
-                  <button type="button" className="relative rounded-md bg-white p-1 text-darkGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                  <button
+                    type="button"
+                    className={`relative rounded-md p-1 ${isScrolled ? 'text-white bg-darkGreen' : 'text-black bg-white'}`}
+                  >
                     Talk to Sales
                   </button>
-                  <button>Sign in</button>
+                  <button className={`${isScrolled ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
+                    Sign in
+                  </button>
                 </div>
-
-                {/* Profile dropdown */}
-                <Menu as="div" className="lg:hidden relative ml-3">
-                  <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        alt=""
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        className="h-8 w-8 rounded-full"
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <div className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')} >
-                          <div>Call us: 1(310)PL8-CHAT</div>
-                        </div>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Talk to Sales
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Sign in
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </Menu>
               </div>
             </div>
           </div>

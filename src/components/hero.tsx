@@ -29,7 +29,7 @@ export default function Hero() {
             className="mt-9 lg:mt-11"
             onClick={() => setModalOpen(true)}
           >
-            <Button href="#">Join waitlist</Button>
+            <Button href="#">Talk to Sales</Button>
           </div>
         </div>
       </div>
