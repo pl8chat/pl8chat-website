@@ -55,11 +55,11 @@ const callsToAction: CallToAction[] = [
 export default function ProductsFlydown({ isOpen, onClose, className }: FlydownProps) {
   return (
     <div
-      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'
-        } ${className || ''}`} // Apply the className prop here
+      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'
+        } ${className || ''}`}
     >
       <div className='accordionInner'>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-5 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8 accordionInner">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-5 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8">
           {solutions.map((item) => (
             <div
               key={item.name}

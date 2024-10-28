@@ -81,7 +81,7 @@ export default function NavbarFinal() {
   }, [])
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-250 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed w-full duration-150 border-none shadow-none ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -137,7 +137,7 @@ export default function NavbarFinal() {
                           )}
                         >
                           {item.name === 'Products' || item.name === 'Company' ? (
-                            <div className={`${isProductFlydownOpen && item.name === 'Products' ? 'text-darkGreen' : ''} ${isCompanyFlydownOpen && item.name === 'Company' ? 'text-darkGreen' : ''}`}>
+                            <div>
                               {item.name}
                               <ChevronDownIcon
                                 className={`ml-2 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
