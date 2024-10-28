@@ -55,7 +55,7 @@ export default function NavbarFinal() {
   }
 
   return (
-    <Disclosure as="nav" className="bg-darkGreen relative">
+    <Disclosure as="nav" className="bg-darkGreen fixed w-full">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -174,7 +174,7 @@ export default function NavbarFinal() {
           </div>
 
           {/* Flydown Component */}
-          {isFlydownOpen && <Flydown isOpen={isFlydownOpen} onClose={() => setFlydownOpen(false)} />}
+          <Flydown isOpen={isFlydownOpen} onClose={() => setFlydownOpen(false)} />
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
