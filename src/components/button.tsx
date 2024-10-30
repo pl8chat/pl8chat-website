@@ -17,15 +17,15 @@ const interSemiBold = localFont({
 
 const variants = {
   primary: clsx(
-    'inline-flex items-center justify-center px-8 h-[3.25rem] gap-3',
+    'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
     'rounded-md bg-white shadow-md hover:bg-tGreen',
     'whitespace-nowrap text-[1.1rem] font-bold text-black',
     `data-[disabled]:opacity-40 ${interSemiBold.className}`,
   ),
   secondary: clsx(
-    'inline-flex items-center justify-center py-1 px-3 gap-3',
+    'inline-flex items-center justify-center py-1 px-6 gap-3',
     `rounded-md shadow-md ${interSemiBold.className}`,
-    'whitespace-nowrap text-md',
+    'whitespace-nowrap text-[1.1rem]',
     `data-[disabled]:opacity-40 `,
   ),
   outline: clsx(
