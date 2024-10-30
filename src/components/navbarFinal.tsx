@@ -188,7 +188,7 @@ export default function NavbarFinal() {
                   </div>
                   <Button 
                     variant='secondary' 
-                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen' : 'text-offBlack bg-white'}`}
+                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'}`}
                     href="#"
                   >
                       Talk to sales
