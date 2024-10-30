@@ -127,7 +127,7 @@ export default function NavbarFinal() {
                       alt="Your Company"
                       src={`${isFlydownOpen ? '/assets/images/PL8CHATBlack.png' : '/assets/images/PL8CHATWhite.png'}`}
                       className="h-10 lg:h-11 w-auto transition duration-250"
-                      width={120}
+                      width={240}
                       height={40}
                     />
                   </Link>
