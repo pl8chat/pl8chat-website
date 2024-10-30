@@ -9,6 +9,7 @@ import { Button } from './button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import localFont from 'next/font/local'
 
 type NavigationItem = {
   name: string;
@@ -24,6 +25,12 @@ const navigation: NavigationItem[] = [
   { name: 'For Individuals', href: '#', current: false },
   { name: 'Company', href: '#', current: false },
 ]
+
+const Montserrat = localFont({
+  src: '../app/fonts/Inter-Regular.woff',
+  variable: '--font-montserrat-regular',
+  weight: '400',
+})
 
 function ChevronDownIcon(props: SVGProps) {
   return (
@@ -103,7 +110,7 @@ export default function NavbarFinal() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'} ${Montserrat.className}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
