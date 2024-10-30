@@ -29,7 +29,7 @@ export default function Hero() {
             className="mt-9 lg:mt-11 inline-block"
             onClick={() => setModalOpen(true)}
           >
-            <Button href="#">Talk to Sales</Button>
+            <Button href="#">Talk to sales</Button>
           </div>
         </div>
       </div>

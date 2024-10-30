@@ -22,7 +22,7 @@ type SVGProps = React.SVGAttributes<SVGSVGElement>;
 const navigation: NavigationItem[] = [
   { name: 'Products', href: '#', current: true },
   { name: 'Pricing', href: '#', current: false },
-  { name: 'For Individuals', href: '#', current: false },
+  { name: 'For individuals', href: '#', current: false },
   { name: 'Company', href: '#', current: false },
 ]
 
@@ -185,7 +185,7 @@ export default function NavbarFinal() {
                 <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
                   <div className="py-2">Call us: 1(310)PL8-CHAT</div>
                   <Button
-                    
+                    variant='secondary'
                     className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'} py-2 scale-[.85]`}
                     href="#"
                   >
