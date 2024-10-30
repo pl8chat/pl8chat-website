@@ -23,7 +23,7 @@ const variants = {
     `data-[disabled]:opacity-40 ${interSemiBold.className}`,
   ),
   secondary: clsx(
-    'inline-flex items-center justify-center py-1 px-6 gap-3',
+    'inline-flex items-center justify-center py-1 px-5 gap-3',
     `rounded-md shadow-md ${interSemiBold.className}`,
     'whitespace-nowrap text-[1.1rem]',
     `data-[disabled]:opacity-40 `,
