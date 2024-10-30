@@ -15,6 +15,7 @@ const config: Config = {
         'lightGreen': '#D2E7E1',
         'darkerGreen': '#06402B',
         'tGreen': '#E0FEE6',
+        'offBlack': '#363636'
       },
       fontSize: {
         small: '0.875rem'

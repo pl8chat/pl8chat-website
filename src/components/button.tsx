@@ -17,11 +17,10 @@ const variants = {
     `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   secondary: clsx(
-    'relative inline-flex items-center justify-center px-4 py-[calc(theme(spacing.2)-1px)]',
-    'rounded-full border border-transparent bg-white/15 shadow-md ring-1 ring-[#D15052]/15',
-    'after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_2px_1px_#ffffff4d]',
-    'whitespace-nowrap text-base font-bold text-gray-950',
-    'data-[disabled]:bg-white/15 data-[hover]:bg-white/20 data-[disabled]:opacity-40',
+    'inline-flex items-center justify-center p-1 gap-3',
+    'rounded-md shadow-md hover:bg-tGreen',
+    'whitespace-nowrap text-[1.1rem] font-bold text-black',
+    `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
@@ -34,9 +33,9 @@ const variants = {
 type ButtonProps = {
   variant?: keyof typeof variants
 } & (
-  | React.ComponentPropsWithoutRef<typeof Link>
-  | (Headless.ButtonProps & { href?: undefined })
-)
+    | React.ComponentPropsWithoutRef<typeof Link>
+    | (Headless.ButtonProps & { href?: undefined })
+  )
 
 export function Button({ variant = 'primary', className, ...props }: ButtonProps) {
   className = clsx(className, variants[variant])

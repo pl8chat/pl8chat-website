@@ -22,8 +22,8 @@ export default function Hero() {
             Sma<span className='tracking-[.1rem]'>rt</span> and <br /> Social Parking
           </h1>
           <h2 className="mt-8 max-w-[37ch] text-lg/7 font-medium sm:text-3xl/8">
-            PL8CHAT is a new line of communication
-            uniting vehicles & parking communities.
+            PL8CHAT is a new line of communication connecting
+            vehicles and parking communities via license plates.
           </h2>
           <div
             className="mt-9 lg:mt-11"

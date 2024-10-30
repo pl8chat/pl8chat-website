@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 import ProductsFlydown from './productsFlydown'
 import CompanyFlydown from './companyFlydown'
+import { Button } from './button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
@@ -31,7 +32,7 @@ function ChevronDownIcon(props: SVGProps) {
         d="M1.75 1.75 4 4.25l2.25-2.5"
         fill="none"
         stroke='currentColor'
-        strokeWidth="1.5"
+        strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -102,7 +103,7 @@ export default function NavbarFinal() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 border-none shadow-none ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -124,11 +125,8 @@ export default function NavbarFinal() {
                   <Link href="/" passHref>
                     <Image
                       alt="Your Company"
-                      src="/assets/images/PL8CHAT.png"
-                      className="h-10 lg:h-12 w-auto transition duration-250"
-                      style={{
-                        filter: isScrolled || isFlydownOpen ? 'brightness(0) invert(0)' : 'none',
-                      }}
+                      src={`${isFlydownOpen ? '/assets/images/PL8CHATBlack.png' : '/assets/images/PL8CHATWhite.png'}`}
+                      className="h-10 lg:h-11 w-auto transition duration-250"
                       width={120}
                       height={40}
                     />
@@ -152,7 +150,7 @@ export default function NavbarFinal() {
                           }}
                           aria-current={isActive ? 'page' : undefined}
                           className={classNames(
-                            isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-darkGreen' : 'text-lightGreen') : (isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-gray-300 hover:text-white'),
+                            isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-lightGreen' : 'text-tGreen') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'),
                             'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
                           )}
                         >
@@ -160,7 +158,7 @@ export default function NavbarFinal() {
                             <div>
                               {item.name}
                               <ChevronDownIcon
-                                className={`ml-2 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
+                                className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
                                   isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''
                                 }`}
                               />
@@ -176,18 +174,19 @@ export default function NavbarFinal() {
               </div>
 
               {/* Right-side items (shown on larger screens) */}
-              <div className="sm:flex sm:items-center sm:pr-0">
-                <div className={`hidden lg:flex space-x-4 ${isScrolled || isFlydownOpen ? 'text-black' : 'text-white'}`}>
+              <div className="sm:flex sm:items-center sm:pr-2">
+                <div className={`hidden lg:flex space-x-4 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
                   <div className='py-2'>
-                    Call us: 1 (310) PL8-CHAT
+                    Call us: 1(310)PL8-CHAT
                   </div>
-                  <button
-                    type="button"
-                    className={`relative rounded-md p-1 ${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen' : 'text-black bg-white'}`}
+                  <Button 
+                    variant='secondary' 
+                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen' : 'text-offBlack bg-white'}`}
+                    href="#"
                   >
-                    Talk to Sales
-                  </button>
-                  <button className={`${isScrolled || isFlydownOpen ? 'text-black hover:text-darkGreen' : 'text-white'}`}>
+                      Talk to sales
+                  </Button>
+                  <button className={`${isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'}`}>
                     Sign in
                   </button>
                 </div>

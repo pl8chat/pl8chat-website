@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 interface NavigationItem {
   name: string;
@@ -106,12 +107,16 @@ export default function FooterFinal() {
       </h2>
       <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div>
-            <img
-              alt="Company name"
-              src="/assets/images/logo.png"
-              className="h-10 lg:h-12"
-            />
+          <div className=''>
+            <div className=''>
+              <Image
+                alt="PL8CHAT Logo"
+                src="/assets/images/logo.png"
+                width={40}
+                height={40}
+                className='lg:h-12 w-auto'
+              />
+            </div>
             <div className="font-semibold text-lg pb-6 pl-1 mt-5">
               <div>Every</div>
               <div>Car</div>
