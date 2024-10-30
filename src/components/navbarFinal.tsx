@@ -27,9 +27,9 @@ const navigation: NavigationItem[] = [
 ]
 
 const inter = localFont({
-  src: '../app/fonts/Inter-Regular.woff',
-  variable: '--font-montserrat-regular',
-  weight: '400',
+  src: "../app/fonts/InterVariable.woff",
+  variable: "--font-barlow-medium",
+  weight: "100 200 300 400 500 600 700 800 900",
 })
 
 function ChevronDownIcon(props: SVGProps) {
@@ -166,8 +166,7 @@ export default function NavbarFinal() {
                               {item.name}
                               <ChevronDownIcon
                                 className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
-                                  isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''
-                                  }`}
+                                  isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''} ${inter.className}`}
                               />
                             </div>
                           ) : (
