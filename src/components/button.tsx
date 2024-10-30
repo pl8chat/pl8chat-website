@@ -9,6 +9,12 @@ const barlow = localFont({
   weight: "100 900",
 })
 
+const inter = localFont({
+  src: '../app/fonts/Inter-Regular.woff',
+  variable: '--font-montserrat-regular',
+  weight: '400',
+})
+
 const variants = {
   primary: clsx(
     'inline-flex items-center justify-center px-8 h-[3.25rem] gap-3',
@@ -20,7 +26,7 @@ const variants = {
     'inline-flex items-center justify-center py-1 px-3 gap-3',
     'rounded-md shadow-md hover:bg-tGreen',
     'whitespace-nowrap text-md font-bold text-black',
-    `data-[disabled]:opacity-40 ${barlow.className}`,
+    `data-[disabled]:opacity-40 ${inter.className}`,
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
