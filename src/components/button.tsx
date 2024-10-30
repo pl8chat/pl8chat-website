@@ -17,9 +17,9 @@ const variants = {
     `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   secondary: clsx(
-    'inline-flex items-center justify-center p-1 gap-3',
+    'inline-flex items-center justify-center py-1 px-3 gap-3',
     'rounded-md shadow-md hover:bg-tGreen',
-    'whitespace-nowrap text-[1.1rem] font-bold text-black',
+    'whitespace-nowrap text-md font-bold text-black',
     `data-[disabled]:opacity-40 ${barlow.className}`,
   ),
   outline: clsx(
