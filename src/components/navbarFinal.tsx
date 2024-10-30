@@ -26,7 +26,7 @@ const navigation: NavigationItem[] = [
   { name: 'Company', href: '#', current: false },
 ]
 
-const Inter = localFont({
+const inter = localFont({
   src: '../app/fonts/Inter-Regular.woff',
   variable: '--font-montserrat-regular',
   weight: '400',
@@ -110,7 +110,7 @@ export default function NavbarFinal() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'} ${Inter.className}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'} ${inter.className}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
