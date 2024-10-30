@@ -1,11 +1,18 @@
-import Image from 'next/image'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
+import { PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
 import { ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import localFont from 'next/font/local'
+
+const inter = localFont({
+  src: "../app/fonts/InterVariable.woff",
+  variable: "--font-barlow-medium",
+  weight: "100 200 300 400 500 600 700 800 900",
+})
+
 
 type FlydownProps = {
   isOpen: boolean
   onClose: () => void
-  className?: string // Optional className prop
 }
 
 interface Solution {
@@ -54,11 +61,10 @@ const callsToAction: CallToAction[] = [
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
 ]
 
-export default function ProductsFlydown({ isOpen, onClose, className }: FlydownProps) {
+export default function ProductsFlydown({ isOpen, onClose }: FlydownProps) {
   return (
     <div
-      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'
-        } ${className || ''}`}
+      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion' } ${inter.className}`}
     >
       <div className='accordionInner'>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-5 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8">

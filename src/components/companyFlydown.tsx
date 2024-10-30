@@ -1,7 +1,14 @@
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
+import { PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
 import { ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import { useRef } from 'react';
+import Image from 'next/image';
+import localFont from 'next/font/local';
+
+const inter = localFont({
+  src: "../app/fonts/InterVariable.woff",
+  variable: "--font-barlow-medium",
+  weight: "100 200 300 400 500 600 700 800 900",
+})
 
 type FlydownProps = {
   isOpen: boolean;
