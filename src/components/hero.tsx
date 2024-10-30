@@ -26,7 +26,7 @@ export default function Hero() {
             vehicles and parking communities.
           </h2>
           <div
-            className="mt-9 lg:mt-11"
+            className="mt-9 lg:mt-11 inline-block"
             onClick={() => setModalOpen(true)}
           >
             <Button href="#">Talk to Sales</Button>
