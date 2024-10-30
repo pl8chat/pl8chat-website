@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
           <h2 className="mt-8 max-w-[37ch] text-lg/7 font-medium sm:text-3xl/8">
             PL8CHAT is a new line of communication connecting
-            vehicles and parking communities via license plates.
+            vehicles and parking communities.
           </h2>
           <div
             className="mt-9 lg:mt-11"
