@@ -24,9 +24,9 @@ const variants = {
   ),
   secondary: clsx(
     'inline-flex items-center justify-center py-1 px-3 gap-3',
-    'rounded-md shadow-md',
+    `rounded-md shadow-md ${inter.className}`,
     'whitespace-nowrap text-md font-bold text-black',
-    `data-[disabled]:opacity-40 ${inter.className}`,
+    `data-[disabled]:opacity-40 `,
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',

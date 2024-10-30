@@ -165,9 +165,9 @@ export default function NavbarFinal() {
                             <div>
                               {item.name}
                               <ChevronDownIcon
-                                className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' : 
+                                className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
                                   isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''
-                                }`}
+                                  }`}
                               />
                             </div>
                           ) : (
@@ -181,23 +181,22 @@ export default function NavbarFinal() {
               </div>
 
               {/* Right-side items (shown on larger screens) */}
-              <div className="sm:flex sm:items-center sm:pr-2">
-                <div className={`hidden lg:flex space-x-4 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
-                  <div className='py-2'>
-                    Call us: 1(310)PL8-CHAT
-                  </div>
-                  <Button 
-                    variant='secondary' 
-                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'}`}
+              <div className="sm:flex sm:items-center sm:pr-2 text-md">
+                <div className={`hidden lg:flex space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
+                  <div className="py-2">Call us: 1(310)PL8-CHAT</div>
+                  <Button
+                    variant="secondary"
+                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'} py-2`}
                     href="#"
                   >
-                      Talk to sales
+                    Talk to sales
                   </Button>
-                  <button className={`${isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'}`}>
+                  <button className={`${isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'} py-2`}>
                     Sign in
                   </button>
                 </div>
               </div>
+
             </div>
           </div>
 
