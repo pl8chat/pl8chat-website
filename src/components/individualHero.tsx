@@ -17,7 +17,7 @@ export default function IndividualHero() {
           <div
             className="mt-9 lg:mt-11 inline-block"
           >
-            <div className='flex space-x-2 items-center'>
+            <div className='flex space-x-2 items-center scale-[.9] -translate-x-5'>
               <Link href="#">
                 <Image
                   src='/assets/images/AppleAppStoreButton.svg'
