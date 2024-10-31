@@ -22,7 +22,7 @@ type SVGProps = React.SVGAttributes<SVGSVGElement>;
 const navigation: NavigationItem[] = [
   { name: 'Products', href: '#', current: true },
   { name: 'Pricing', href: '#', current: false },
-  { name: 'For individuals', href: '#', current: false },
+  { name: 'For individuals', href: '/individuals', current: false },
   { name: 'Company', href: '#', current: false },
 ]
 
@@ -144,35 +144,37 @@ export default function NavbarFinal() {
                     {navigation.map((item) => {
                       const isActive = item.href === pathname;
                       return (
-                        <button
-                          key={item.name}
-                          onClick={() => {
-                            if (item.name === 'Products') {
-                              toggleProductFlydown();
-                            } else if (item.name === 'Company') {
-                              toggleCompanyFlydown();
-                            } else {
-                              closeFlydowns()
-                            }
-                          }}
-                          aria-current={isActive ? 'page' : undefined}
-                          className={classNames(
-                            isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-lightGreen' : 'text-tGreen') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'),
-                            'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
-                          )}
-                        >
-                          {item.name === 'Products' || item.name === 'Company' ? (
-                            <div>
-                              {item.name}
-                              <ChevronDownIcon
-                                className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
-                                  isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''} ${inter.className}`}
-                              />
-                            </div>
-                          ) : (
-                            <span>{item.name}</span>
-                          )}
-                        </button>
+                        <Link href={item.href}>
+                          <button
+                            key={item.name}
+                            onClick={() => {
+                              if (item.name === 'Products') {
+                                toggleProductFlydown();
+                              } else if (item.name === 'Company') {
+                                toggleCompanyFlydown();
+                              } else {
+                                closeFlydowns()
+                              }
+                            }}
+                            aria-current={isActive ? 'page' : undefined}
+                            className={classNames(
+                              isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-lightGreen' : 'text-tGreen') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'),
+                              `rounded-md px-3 py-3 text-md lg:text-lg font-medium`
+                            )}
+                          >
+                            {item.name === 'Products' || item.name === 'Company' ? (
+                              <div>
+                                {item.name}
+                                <ChevronDownIcon
+                                  className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
+                                    isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''} ${inter.className}`}
+                                />
+                              </div>
+                            ) : (
+                              <span>{item.name}</span>
+                            )}
+                          </button>
+                        </Link>
                       );
                     })}
                   </div>

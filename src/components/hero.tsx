@@ -10,8 +10,7 @@ const barlow = localFont({
   weight: "100 900",
 })
 
-
-export default function Hero() {
+export default function Hero({}) {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   return (

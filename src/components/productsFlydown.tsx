@@ -81,7 +81,7 @@ export default function ProductsFlydown({ isOpen, onClose }: FlydownProps) {
                 )}
               </div>
               <div>
-                <a href={item.href} className="font-semibold text-gray-900">
+                <a href={item.href} className="font-semibold text-gray-900 tracking-wide">
                   {item.name}
                   <span className="absolute inset-0" />
                 </a>
@@ -97,7 +97,7 @@ export default function ProductsFlydown({ isOpen, onClose }: FlydownProps) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-x-2.5 p-3 px-6 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100 sm:justify-center sm:px-0"
+                  className="flex items-center gap-x-2.5 p-3 px-6 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100 sm:justify-center sm:px-0 tracking-wide"
                 >
                   <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
                   {item.name}
