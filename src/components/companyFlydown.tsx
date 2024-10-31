@@ -4,12 +4,6 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import localFont from 'next/font/local';
 
-const inter = localFont({
-  src: "../app/fonts/InterVariable.woff",
-  variable: "--font-barlow-medium",
-  weight: "100 200 300 400 500 600 700 800 900",
-})
-
 type FlydownProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -67,7 +61,7 @@ export default function CompanyFlydown({ isOpen, onClose }: FlydownProps) {
   return (
     <div
       ref={flydownRef}
-      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'} ${inter.className}`}
+      className={`absolute inset-x-0 top-full z-50 bg-white shadow-lg transition-all duration-300 ease-out ${isOpen ? 'accordionOpen accordion' : 'accordion'}`}
     >
       <div className='accordionInner'>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-5 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8">
