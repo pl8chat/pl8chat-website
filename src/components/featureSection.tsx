@@ -37,7 +37,7 @@ const FeatureSection: FC = () => {
     <div className="bg-white flex items-center justify-center py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900">
             (Vehicle) communication is key
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">

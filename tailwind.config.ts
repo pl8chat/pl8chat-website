@@ -12,7 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         'darkGreen': '#00594B',
-        'lightGreen': '#D2E7E1',
+        'lightGreen': '#E0FEE6',
         'darkerGreen': '#06402B',
         'tGreen': '#E0FEE6',
         'offBlack': '#363636'
