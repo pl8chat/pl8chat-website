@@ -1,4 +1,6 @@
 'use client'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function IndividualHero() {
   return (
@@ -15,7 +17,24 @@ export default function IndividualHero() {
           <div
             className="mt-9 lg:mt-11 inline-block"
           >
-            BUTTON
+            <div className='flex space-x-12'>
+              <Link href="#" className='size-1'>
+                <Image
+                  src='/assets/images/AppleAppStoreButton.svg'
+                  height={50}
+                  width={200}
+                  alt='App Store Button'
+                />
+              </Link>
+              <Link href="#" className='size-1'>
+                <Image
+                  src='/assets/images/GooglePlayButton.png'
+                  height={50}
+                  width={200}
+                  alt='Google Play Button'
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ export default function NavbarFinal() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'} ${inter.className}`}>
+    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
