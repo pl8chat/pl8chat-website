@@ -10,7 +10,7 @@ const switzer = localFont({
 export default function About() {
   return (
     <div className="py-10 pb-[4.75rem] lg:py-20 lg:pb-[24.5rem] bg-darkGreen h-full">
-      <div className={`text-center text-white ${switzer.className}`}>
+      <div className={`text-center text-white`}>
         <div className={`font-bold text-6xl pt-32 pb-2`}>
           About us
         </div>
