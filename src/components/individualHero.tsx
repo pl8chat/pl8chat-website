@@ -17,16 +17,17 @@ export default function IndividualHero() {
           <div
             className="mt-9 lg:mt-11 inline-block"
           >
-            <div className='flex space-x-12'>
-              <Link href="#" className='size-1'>
+            <div className='flex space-x-2 items-center'>
+              <Link href="#">
                 <Image
                   src='/assets/images/AppleAppStoreButton.svg'
                   height={50}
                   width={200}
                   alt='App Store Button'
+                  className='scale-[.9]'
                 />
               </Link>
-              <Link href="#" className='size-1'>
+              <Link href="#">
                 <Image
                   src='/assets/images/GooglePlayButton.png'
                   height={50}
