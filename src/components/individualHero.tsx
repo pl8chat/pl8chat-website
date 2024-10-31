@@ -10,9 +10,9 @@ export default function IndividualHero() {
           <h1 className={`font-display text-balance font-medium tracking-tight text-6xl sm:text-[7.5rem] max-w-[10ch] sm:max-w-none`}>
             Your car has a username. Use it.
           </h1>
-          <h2 className="mt-8 max-w-[37ch] text-lg/7 font-medium sm:text-3xl/8">
-            PL8CHAT is a new line of communication connecting
-            vehicles and parking communities.
+          <h2 className="mt-8 max-w-[40ch] text-lg/7 font-medium sm:text-3xl/8">
+            Send and receive helpful messages, vehicle alerts
+            and stay connected through your license plate.
           </h2>
           <div
             className="mt-9 lg:mt-11 inline-block"

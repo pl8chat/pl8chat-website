@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function individualFeature() {
   return (
-    <div className="bg-gray-50 py-11">
+    <div className="bg-white py-11">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950">
           Everything you need to deploy your app
