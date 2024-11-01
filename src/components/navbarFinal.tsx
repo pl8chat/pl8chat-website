@@ -70,6 +70,14 @@ const logoSrc: Record<string, string> = {
   default: '/assets/images/PL8CHATWhite.png',
 }
 
+const navBarButtonColors: Record<string, string> = {
+  '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
+  '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
+  '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
+  '/about': 'bg-white hover:bg-tGreen',
+  default: 'bg-white hover:bg-tGreen',
+}
+
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
@@ -105,12 +113,17 @@ export default function NavbarFinal() {
     return navbarColors[pathname] || navbarColors.default;
   };
 
+  const getNavbarButtonColor = () => {
+    if (isFlydownOpen || isScrolled) return 'bg-darkGreen hover:bg-darkerGreen text-white';
+    return navBarButtonColors[pathname] || navbarColors.default;
+  }
+
   const getTextColor = (isButton: boolean = false): string => {
     if (isScrolled || isFlydownOpen) {
       return isButton ? 'text-white hover:text-darkGreenTest' : 'text-offBlack hover:text-darkGreenTest';
     }
     return isButton
-      ? 'text-offBlack hover:text-tGreen'
+      ? 'text-white hover:text-tGreen'
       : textColors[pathname] || textColors.default;
   };
 
@@ -227,8 +240,8 @@ export default function NavbarFinal() {
                   <Button
                     variant="secondary"
                     className={classNames(
-                      getTextColor(true), // Set `isButton` to true for the Button
-                      `${isScrolled || isFlydownOpen ? 'bg-darkGreenTest hover:bg-darkerGreen' : 'bg-white hover:bg-tGreen'} py-2 scale-[.85]`
+                      getNavbarButtonColor(),
+                      `py-2 scale-[.85]`
                     )}
                     href="#"
                   >

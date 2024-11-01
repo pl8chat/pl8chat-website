@@ -18,7 +18,7 @@ const interSemiBold = localFont({
 const variants = {
   primary: clsx(
     'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
-    'rounded-md bg-white hover:bg-tGreen',
+    'rounded-md',
     'whitespace-nowrap text-[1.1rem] font-bold text-black',
     `data-[disabled]:opacity-40 `,
   ),
