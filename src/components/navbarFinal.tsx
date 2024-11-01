@@ -59,7 +59,7 @@ const textColors: Record<string, string> = {
   '/': 'text-white hover:text-tGreen',
   '/pricing': 'text-offBlack hover:text-darkGreen',
   '/individuals': 'text-offBlack hover:text-darkGreen',
-  default: 'text-gray-700 hover:text-gray-900',
+  default: 'text-white hover:text-tGreen',
 };
 
 const logoSrc: Record<string, string> = {
@@ -75,7 +75,7 @@ const navBarButtonColors: Record<string, string> = {
   '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/about': 'bg-white hover:bg-tGreen',
-  default: 'bg-white hover:bg-tGreen',
+  default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
 }
 
 function classNames(...classes: string[]): string {
@@ -90,7 +90,6 @@ export default function NavbarFinal() {
 
   const productFlydownRef = useRef<HTMLDivElement>(null);
   const companyFlydownRef = useRef<HTMLDivElement>(null);
-
   const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen;
 
   const toggleProductFlydown = () => {
@@ -153,6 +152,7 @@ export default function NavbarFinal() {
     };
   }, [isFlydownOpen]);
 
+  // Checks to see if the user has scrolled
   useEffect(() => {
     function handleScroll() {
       setIsScrolled(window.scrollY > 0);
@@ -219,7 +219,7 @@ export default function NavbarFinal() {
                                 {item.name}
                                 <ChevronDownIcon
                                   className={`ml-0.5 h-4 w-4 inline-block transition duration-150 ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
-                                    isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''} ${inter.className}`}
+                                    isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''}`}
                                 />
                               </div>
                             ) : (
