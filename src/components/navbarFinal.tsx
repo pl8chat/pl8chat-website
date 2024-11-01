@@ -55,6 +55,21 @@ const navbarColors: Record<string, string> = {
   default: 'bg-darkGreenTest',
 };
 
+const textColors: Record<string, string> = {
+  '/': 'text-white hover:text-tGreen',
+  '/pricing': 'text-offBlack hover:text-darkGreen',
+  '/individuals': 'text-darkGreen hover:text-blue-800',
+  default: 'text-gray-700 hover:text-gray-900',
+};
+
+const logoSrc: Record<string, string> = {
+  '/': '/assets/images/PL8CHATWhite.png',
+  '/pricing': '/assets/images/PL8CHATBlack.png',
+  '/individuals': '/assets/images/PL8CHATBlack.png',
+  '/about': '/assets/images/PL8CHATBlack.png',
+  default: '/assets/images/PL8CHATWhite.png',
+}
+
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
@@ -90,6 +105,17 @@ export default function NavbarFinal() {
     return navbarColors[pathname] || navbarColors.default;
   };
 
+  const getTextColor = (): string => {
+    if (isScrolled || isFlydownOpen) {
+      return 'text-offBlack hover:text-darkGreenTest';
+    }
+    return textColors[pathname] || textColors.default;
+  };
+
+  const getLogoSrc = () => {
+    if (isFlydownOpen || isScrolled) return '/assets/images/PL8CHATBlack.png';
+    return logoSrc[pathname] || logoSrc.default;
+  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -171,10 +197,7 @@ export default function NavbarFinal() {
                               }
                             }}
                             aria-current={isActive ? 'page' : undefined}
-                            className={classNames(
-                              isActive ? (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreenTest' : '') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreenTest' : 'text-white hover:text-tGreen'),
-                              `rounded-md px-3 py-3 text-md lg:text-lg font-semibold`
-                            )}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-semibold')}
                           >
                             {item.name === 'Products' || item.name === 'Company' ? (
                               <div>
@@ -198,15 +221,24 @@ export default function NavbarFinal() {
               {/* Right-side items (shown on larger screens) */}
               <div className="sm:flex sm:items-center sm:pr-2 text-md font-semibold">
                 <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
-                  <div className="py-2">Call us: 1(310)PL8-CHAT</div>
+                  <div className={classNames(getTextColor())}>Call us: 1(310)PL8-CHAT</div>
                   <Button
                     variant='secondary'
-                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreenTest hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'} py-2 scale-[.85]`}
+                    className={classNames(
+                      getTextColor(),
+                      `${isScrolled || isFlydownOpen ? 'bg-darkGreenTest hover:bg-darkerGreen text-white' : 'bg-white hover:bg-tGreen'} py-2 scale-[.85]`
+                    )}
                     href="#"
                   >
                     Talk to sales
                   </Button>
-                  <button className={`${isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'} py-2`}>
+
+                  <button
+                    className={classNames(
+                      getTextColor(),
+                      'py-2'
+                    )}
+                  >
                     Sign in
                   </button>
                 </div>
@@ -232,10 +264,7 @@ export default function NavbarFinal() {
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
+                  className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-semibold')}
                 >
                   {item.name}
                 </Disclosure.Button>
