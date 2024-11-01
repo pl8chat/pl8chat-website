@@ -110,7 +110,7 @@ export default function NavbarFinal() {
   }, []);
 
   return (
-    <Disclosure as="nav" className={`fixed w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreen'}`}>
+    <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreenTestTest'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -187,7 +187,7 @@ export default function NavbarFinal() {
                   <div className="py-2">Call us: 1(310)PL8-CHAT</div>
                   <Button
                     variant='secondary'
-                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreen hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'} py-2 scale-[.85]`}
+                    className={`${isScrolled || isFlydownOpen ? 'text-white bg-darkGreenTest hover:bg-darkerGreen' : 'text-offBlack bg-white hover:bg-tGreen'} py-2 scale-[.85]`}
                     href="#"
                   >
                     Talk to sales
