@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function IndividualHero() {
   return (
     <div className={`bg-tGreen pl-5 pt-10 lg:pt-0 lg:pl-10`}>
-      <div className="pb-16 pt-32 sm:pb-32 sm:pt-24 md:pb-[1.9rem] md:pt-[136px] text-darkGreenTest">
+      <div className="pb-16 pt-32 sm:pb-32 sm:pt-24 md:pb-[1.65rem] md:pt-[136px] text-darkGreenTest">
         <h1 className={`font-display text-balance font-medium tracking-tight text-6xl sm:text-[7.5rem] max-w-[10ch]`}>
           Your car has a username. Use it.
         </h1>
@@ -16,7 +16,7 @@ export default function IndividualHero() {
         <div
           className="mt-9 lg:mt-11 inline-block"
         >
-          <div className='flex space-x-2 items-center scale-[.9] -translate-x-5'>
+          <div className='flex space-x-2 items-center scale-[.9] -translate-x-5 -translate-y-2'>
             <Link href="#">
               <Image
                 src='/assets/images/AppleAppStoreButton.svg'
