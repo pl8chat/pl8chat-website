@@ -58,7 +58,7 @@ const navbarColors: Record<string, string> = {
 const textColors: Record<string, string> = {
   '/': 'text-white hover:text-tGreen',
   '/pricing': 'text-offBlack hover:text-darkGreen',
-  '/individuals': 'text-darkGreen hover:text-blue-800',
+  '/individuals': 'text-offBlack hover:text-darkGreen',
   default: 'text-gray-700 hover:text-gray-900',
 };
 
@@ -105,11 +105,13 @@ export default function NavbarFinal() {
     return navbarColors[pathname] || navbarColors.default;
   };
 
-  const getTextColor = (): string => {
+  const getTextColor = (isButton: boolean = false): string => {
     if (isScrolled || isFlydownOpen) {
-      return 'text-offBlack hover:text-darkGreenTest';
+      return isButton ? 'text-white hover:text-darkGreenTest' : 'text-offBlack hover:text-darkGreenTest';
     }
-    return textColors[pathname] || textColors.default;
+    return isButton
+      ? 'text-offBlack hover:text-tGreen'
+      : textColors[pathname] || textColors.default;
   };
 
   const getLogoSrc = () => {
@@ -223,16 +225,15 @@ export default function NavbarFinal() {
                 <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
                   <div className={classNames(getTextColor())}>Call us: 1(310)PL8-CHAT</div>
                   <Button
-                    variant='secondary'
+                    variant="secondary"
                     className={classNames(
-                      getTextColor(),
-                      `${isScrolled || isFlydownOpen ? 'bg-darkGreenTest hover:bg-darkerGreen text-white' : 'bg-white hover:bg-tGreen'} py-2 scale-[.85]`
+                      getTextColor(true), // Set `isButton` to true for the Button
+                      `${isScrolled || isFlydownOpen ? 'bg-darkGreenTest hover:bg-darkerGreen' : 'bg-white hover:bg-tGreen'} py-2 scale-[.85]`
                     )}
                     href="#"
                   >
                     Talk to sales
                   </Button>
-
                   <button
                     className={classNames(
                       getTextColor(),
