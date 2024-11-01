@@ -109,6 +109,8 @@ export default function NavbarFinal() {
     };
   }, []);
 
+  const navbarPaddingClass = pathname === '/individuals' ? 'pb-2' : 'pb-6';
+
   return (
     <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreenTestTest'}`}>
       {({ open }) => (
@@ -133,7 +135,7 @@ export default function NavbarFinal() {
                     <Image
                       alt="Your Company"
                       src={`${isFlydownOpen || isScrolled ? '/assets/images/PL8CHATBlack.png' : '/assets/images/PL8CHATWhite.png'}`}
-                      className="h-10 lg:h-11 w-auto transition duration-250"
+                      className="h-10 lg:h-11 w-auto transition duration-150"
                       width={240}
                       height={40}
                     />
@@ -158,7 +160,7 @@ export default function NavbarFinal() {
                             }}
                             aria-current={isActive ? 'page' : undefined}
                             className={classNames(
-                              isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-lightGreen' : 'text-tGreen') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'),
+                              isActive ? (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreenTest' : '') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreenTest' : 'text-white hover:text-tGreen'),
                               `rounded-md px-3 py-3 text-md lg:text-lg font-semibold`
                             )}
                           >
@@ -166,7 +168,7 @@ export default function NavbarFinal() {
                               <div>
                                 {item.name}
                                 <ChevronDownIcon
-                                  className={`ml-0.5 h-4 w-4 inline-block transition ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
+                                  className={`ml-0.5 h-4 w-4 inline-block transition duration-150 ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
                                     isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''} ${inter.className}`}
                                 />
                               </div>

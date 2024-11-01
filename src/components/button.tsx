@@ -20,12 +20,12 @@ const variants = {
     'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
     'rounded-md bg-white hover:bg-tGreen',
     'whitespace-nowrap text-[1.1rem] font-bold text-black',
-    `data-[disabled]:opacity-40 ${interSemiBold.className}`,
+    `data-[disabled]:opacity-40 `,
   ),
   secondary: clsx(
     'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
     'whitespace-nowrap text-[1.1rem] font-bold text-black rounded-md',
-    `data-[disabled]:opacity-40 ${interSemiBold.className}`
+    `data-[disabled]:opacity-40 `
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
