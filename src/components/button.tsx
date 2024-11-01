@@ -13,8 +13,8 @@ const variants = {
   primary: clsx(
     'inline-flex items-center justify-center px-8 h-[3.25rem] gap-3',
     'rounded-md bg-white shadow-md hover:bg-tGreen',
-    'whitespace-nowrap text-[1.1rem] font-bold text-black',
-    `data-[disabled]:opacity-40 ${barlow.className}`,
+    'whitespace-nowrap text-[1.1rem] font-semibold text-black',
+    `data-[disabled]:opacity-40`,
   ),
   secondary: clsx(
     'relative inline-flex items-center justify-center px-4 py-[calc(theme(spacing.2)-1px)]',
