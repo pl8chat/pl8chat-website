@@ -199,7 +199,7 @@ export default function NavbarFinal() {
                               }
                             }}
                             aria-current={isActive ? 'page' : undefined}
-                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-semibold')}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
                           >
                             {item.name === 'Products' || item.name === 'Company' ? (
                               <div>
@@ -221,7 +221,7 @@ export default function NavbarFinal() {
               </div>
 
               {/* Right-side items (shown on larger screens) */}
-              <div className="sm:flex sm:items-center sm:pr-2 text-md font-semibold">
+              <div className="sm:flex sm:items-center sm:pr-2 text-md font-[550]">
                 <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
                   <div className={classNames(getTextColor())}>Call us: 1(310)PL8-CHAT</div>
                   <Button
@@ -265,7 +265,7 @@ export default function NavbarFinal() {
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-semibold')}
+                  className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
                 >
                   {item.name}
                 </Disclosure.Button>
