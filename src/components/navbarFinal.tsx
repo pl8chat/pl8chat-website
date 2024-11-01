@@ -159,7 +159,7 @@ export default function NavbarFinal() {
                             aria-current={isActive ? 'page' : undefined}
                             className={classNames(
                               isActive ? (isScrolled || isFlydownOpen ? 'text-darkGreen hover:text-lightGreen' : 'text-tGreen') : (isScrolled || isFlydownOpen ? 'text-offBlack hover:text-darkGreen' : 'text-white hover:text-tGreen'),
-                              `rounded-md px-3 py-3 text-md lg:text-lg font-medium`
+                              `rounded-md px-3 py-3 text-md lg:text-lg font-semibold`
                             )}
                           >
                             {item.name === 'Products' || item.name === 'Company' ? (
@@ -182,7 +182,7 @@ export default function NavbarFinal() {
               </div>
 
               {/* Right-side items (shown on larger screens) */}
-              <div className="sm:flex sm:items-center sm:pr-2 text-md">
+              <div className="sm:flex sm:items-center sm:pr-2 text-md font-semibold">
                 <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
                   <div className="py-2">Call us: 1(310)PL8-CHAT</div>
                   <Button
