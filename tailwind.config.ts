@@ -16,7 +16,8 @@ const config: Config = {
         'darkGreenTest': '#004C3D',
         'darkerGreen': '#06402B',
         'tGreen': '#E0FEE6',
-        'offBlack': '#363636'
+        'offBlack': '#363636',
+        'lightGrey': '#F3F4F2',
       },
       fontSize: {
         small: '0.875rem'

@@ -21,7 +21,7 @@ type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItem[] = [
   { name: 'Products', href: '#', current: true },
-  { name: 'Pricing', href: '#', current: false },
+  { name: 'Pricing', href: '/pricing', current: false },
   { name: 'For individuals', href: '/individuals', current: false },
   { name: 'Company', href: '#', current: false },
 ]
@@ -46,6 +46,14 @@ function ChevronDownIcon(props: SVGProps) {
     </svg>
   )
 }
+
+const navbarColors: Record<string, string> = {
+  '/': 'bg-darkGreenTest',
+  '/pricing': 'bg-lightGrey',
+  '/individuals': 'bg-tGreen',
+  '/about': '',
+  default: 'bg-darkGreenTest',
+};
 
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
@@ -76,6 +84,12 @@ export default function NavbarFinal() {
     setProductFlydownOpen(false);
     setCompanyFlydownOpen(false);
   };
+
+  const getNavbarBackgroundColor = () => {
+    if (isFlydownOpen || isScrolled) return 'bg-white';
+    return navbarColors[pathname] || navbarColors.default;
+  };
+
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -109,10 +123,8 @@ export default function NavbarFinal() {
     };
   }, []);
 
-  const navbarPaddingClass = pathname === '/individuals' ? 'pb-2' : 'pb-6';
-
   return (
-    <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : 'bg-darkGreenTestTest'}`}>
+    <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : `${getNavbarBackgroundColor()}`}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
