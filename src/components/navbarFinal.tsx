@@ -172,7 +172,7 @@ export default function NavbarFinal() {
                   <Link href="/" passHref>
                     <Image
                       alt="Your Company"
-                      src={`${isFlydownOpen || isScrolled ? '/assets/images/PL8CHATBlack.png' : '/assets/images/PL8CHATWhite.png'}`}
+                      src={`${getLogoSrc()}`}
                       className="h-10 lg:h-11 w-auto transition duration-150"
                       width={240}
                       height={40}
