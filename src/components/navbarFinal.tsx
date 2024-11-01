@@ -212,7 +212,7 @@ export default function NavbarFinal() {
                               }
                             }}
                             aria-current={isActive ? 'page' : undefined}
-                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-[550] tracking-wide')}
                           >
                             {item.name === 'Products' || item.name === 'Company' ? (
                               <div>
