@@ -57,8 +57,8 @@ const navbarColors: Record<string, string> = {
 
 const textColors: Record<string, string> = {
   '/': 'text-white hover:text-tGreen',
-  '/pricing': 'text-offBlack hover:text-darkGreen',
-  '/individuals': 'text-offBlack hover:text-darkGreen',
+  '/pricing': 'text-offBlack hover:text-darkGreenTest',
+  '/individuals': 'text-offBlack hover:text-darkGreenTest',
   default: 'text-white hover:text-tGreen',
 };
 
@@ -72,8 +72,8 @@ const logoSrc: Record<string, string> = {
 
 const navBarButtonColors: Record<string, string> = {
   '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
-  '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
-  '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
+  '/pricing': 'bg-darkGreenTest hover:bg-darkerGreen text-white',
+  '/individuals': 'bg-darkGreenTest hover:bg-darkerGreen text-white',
   '/about': 'bg-white hover:bg-tGreen',
   default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
 }
@@ -113,7 +113,7 @@ export default function NavbarFinal() {
   };
 
   const getNavbarButtonColor = () => {
-    if (isFlydownOpen || isScrolled) return 'bg-darkGreen hover:bg-darkerGreen text-white';
+    if (isFlydownOpen || isScrolled) return 'bg-darkGreenTest hover:bg-darkerGreen text-white';
     return navBarButtonColors[pathname] || navbarColors.default;
   }
 

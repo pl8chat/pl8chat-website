@@ -70,7 +70,7 @@ export default function ProductsFlydown({ isOpen, onClose }: FlydownProps) {
                 {typeof item.icon === 'string' ? (
                   <Image src={item.icon} alt="placeholder" width={44} height={44} className="rounded-lg" />
                 ) : (
-                  <item.icon className="h-6 w-6 text-gray-700 group-hover:text-darkGreen" aria-hidden="true" />
+                  <item.icon className="h-6 w-6 text-gray-700 group-hover:text-darkGreenTest" aria-hidden="true" />
                 )}
               </div>
               <div>
