@@ -98,7 +98,7 @@ export default function PricingComponent() {
                 <Radio
                   key={option.value}
                   value={option}
-                  className="cursor-pointer rounded-full px-2.5 py-1 text-gray-500 data-[checked]:bg-darkGreenTest data-[checked]:text-white"
+                  className="cursor-pointer rounded-full px-2.5 py-1 text-gray-500 data-[checked]:bg-darkGreen data-[checked]:text-white"
                 >
                   {option.label}
                 </Radio>
@@ -111,7 +111,7 @@ export default function PricingComponent() {
             <div
               key={tier.id}
               className={classNames(
-                tier.mostPopular ? 'ring-2 ring-darkGreenTest' : 'ring-1 ring-gray-200',
+                tier.mostPopular ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200',
                 'rounded-3xl p-8 xl:p-10',
               )}
             >
@@ -119,14 +119,14 @@ export default function PricingComponent() {
                 <h3
                   id={tier.id}
                   className={classNames(
-                    tier.mostPopular ? 'text-darkGreenTest' : 'text-gray-900',
+                    tier.mostPopular ? 'text-darkGreen' : 'text-gray-900',
                     'text-lg/8 font-semibold',
                   )}
                 >
                   {tier.name}
                 </h3>
                 {tier.mostPopular ? (
-                  <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs/5 font-semibold text-darkGreenTest">
+                  <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs/5 font-semibold text-darkGreen">
                     Most popular
                   </p>
                 ) : null}
@@ -143,9 +143,9 @@ export default function PricingComponent() {
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.mostPopular
-                    ? 'bg-darkGreenTest text-white shadow-sm hover:bg-darkerGreen'
+                    ? 'bg-darkGreen text-white shadow-sm hover:bg-darkerGreen'
                     : 'text-darkerGreen ring-1 ring-inset ring-indigo-200 hover:ring-darkGreen',
-                  'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreenTest',
+                  'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen',
                 )}
               >
                 Buy plan
@@ -153,7 +153,7 @@ export default function PricingComponent() {
               <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex gap-x-3">
-                    <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreenTest" />
+                    <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
                     {feature}
                   </li>
                 ))}

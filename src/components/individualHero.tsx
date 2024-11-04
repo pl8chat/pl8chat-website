@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function IndividualHero() {
   return (
     <div className={`bg-tGreen pl-5 pt-10 lg:pt-0 lg:pl-10`}>
-      <div className="pb-16 pt-32 sm:pb-32 sm:pt-24 md:pb-[1.65rem] md:pt-[136px] text-darkGreenTest">
+      <div className="pb-16 pt-32 sm:pb-32 sm:pt-24 md:pb-[1.65rem] md:pt-[136px] text-darkGreen">
         <h1 className={`font-display text-balance font-medium tracking-tight text-6xl sm:text-[7.5rem] max-w-[10ch]`}>
           Your car has a username. Use it.
         </h1>

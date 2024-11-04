@@ -48,17 +48,17 @@ function ChevronDownIcon(props: SVGProps) {
 }
 
 const navbarColors: Record<string, string> = {
-  '/': 'bg-darkGreenTest',
+  '/': 'bg-darkGreen',
   '/pricing': 'bg-lightGrey',
   '/individuals': 'bg-tGreen',
   '/about': '',
-  default: 'bg-darkGreenTest',
+  default: 'bg-darkGreen',
 };
 
 const textColors: Record<string, string> = {
   '/': 'text-white hover:text-tGreen',
-  '/pricing': 'text-offBlack hover:text-darkGreenTest',
-  '/individuals': 'text-offBlack hover:text-darkGreenTest',
+  '/pricing': 'text-offBlack hover:text-darkGreen',
+  '/individuals': 'text-offBlack hover:text-darkGreen',
   default: 'text-white hover:text-tGreen',
 };
 
@@ -66,14 +66,14 @@ const logoSrc: Record<string, string> = {
   '/': '/assets/images/PL8CHATWhite.png',
   '/pricing': '/assets/images/PL8CHATBlack.png',
   '/individuals': '/assets/images/PL8CHATBlack.png',
-  '/about': '/assets/images/PL8CHATBlack.png',
+  '/about': '/assets/images/PL8CHATWhite.png',
   default: '/assets/images/PL8CHATWhite.png',
 }
 
 const navBarButtonColors: Record<string, string> = {
   '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
-  '/pricing': 'bg-darkGreenTest hover:bg-darkerGreen text-white',
-  '/individuals': 'bg-darkGreenTest hover:bg-darkerGreen text-white',
+  '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
+  '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/about': 'bg-white hover:bg-tGreen',
   default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
 }
@@ -113,13 +113,13 @@ export default function NavbarFinal() {
   };
 
   const getNavbarButtonColor = () => {
-    if (isFlydownOpen || isScrolled) return 'bg-darkGreenTest hover:bg-darkerGreen text-white';
+    if (isFlydownOpen || isScrolled) return 'bg-darkGreen hover:bg-darkerGreen text-white';
     return navBarButtonColors[pathname] || navbarColors.default;
   }
 
   const getTextColor = (isButton: boolean = false): string => {
     if (isScrolled || isFlydownOpen) {
-      return isButton ? 'text-white hover:text-darkGreenTest' : 'text-offBlack hover:text-darkGreenTest';
+      return isButton ? 'text-white hover:text-darkGreen' : 'text-offBlack hover:text-darkGreen';
     }
     return isButton
       ? 'text-white hover:text-tGreen'
