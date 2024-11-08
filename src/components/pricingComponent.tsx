@@ -49,7 +49,7 @@ const tiers: Tier[] = [
     name: 'Enterprise',
     id: 'tier-enterprise',
     href: '#',
-    price: '$599',
+    price: ' ',
     description: 'Dedicated support and infrastructure for your company.',
     features: [
       'Unlimited products',
@@ -98,7 +98,7 @@ export default function PricingComponent() {
                 <h3
                   id={tier.id}
                   className={classNames(
-                    tier.mostPopular ? 'text-darkGreen' : 'text-gray-900',
+                    selectedTierId === tier.id ? 'text-darkGreen' : 'text-gray-900',
                     'text-lg/8 font-semibold',
                   )}
                 >
@@ -115,20 +115,22 @@ export default function PricingComponent() {
                 <span className="text-4xl font-semibold tracking-tight text-gray-900">
                   {tier.price}
                 </span>
-                {tier.price == 'Free' ? 
-                <div className=''>
-                  <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
-                  <span className='text-sm/6 font-normal text-gray-600 absolute left-0 -bottom-4'>$50/year</span>
-                </div>
-                  :
+                {tier.price === 'Free' ? (
+                  <div>
+                    <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
+                    <span className='text-sm/6 font-normal text-gray-600 absolute left-0 -bottom-4'>$50/year</span>
+                  </div>
+                ) : tier.price !== ' ' ? (
                   <span className="text-sm/6 font-semibold text-gray-600">/year</span>
-              }
+                ) : 
+                  <span className='pt-10'></span>
+                }
               </p>
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
                 className={classNames(
-                  tier.mostPopular
+                  selectedTierId === tier.id
                     ? 'bg-darkGreen text-white shadow-sm hover:bg-darkerGreen'
                     : 'text-darkerGreen ring-1 ring-inset ring-indigo-200 hover:ring-darkGreen',
                   'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen',
