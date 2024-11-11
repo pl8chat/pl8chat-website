@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "5GDJLT6CVH.com.pl8chat.mobile.dev",
+        "paths": [ "/resetPassword/*"]
+      }
+    ]
+  }
+}
