@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pl8chat.mobile",
+      "sha256_cert_fingerprints":
+      ["9B:95:97:BE:BA:ED:A4:BC:31:29:EF:9D:0C:54:85:67:9D:72:C6:10:50:38:74:38:A6:DA:98:C4:7A:86:0B:5C"]
+    }
+  }]
