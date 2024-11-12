@@ -1,14 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Radio, RadioGroup } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/20/solid'
-
-type Frequency = {
-  value: 'monthly' | 'annually'
-  label: string
-  priceSuffix: string
-}
+import Link from 'next/link'
 
 type Tier = {
   name: string
@@ -137,13 +131,9 @@ export default function PricingComponent() {
                 )}
               >
                 {tier.name == 'Enterprise' ?
-                  <div>
-                    Contact Sales
-                  </div>
+                  <Link href='#'>Contact Sales</Link>
                   :
-                  <div>
-                    Buy plan
-                  </div>
+                  <Link href='/freeplan'>Buy Plan</Link>
                 }
               </a>
               <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">

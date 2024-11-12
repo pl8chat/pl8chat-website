@@ -38,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {/* <Nabvar /> */}
           <NavbarFinal />
         </header>
-        <div>
+        <div className="pt-16">
           {children}
           <Analytics />
         </div>
