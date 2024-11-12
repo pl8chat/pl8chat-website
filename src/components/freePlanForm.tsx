@@ -104,63 +104,69 @@ export default function FreePlanForm() {
       )}
 
       {step === 3 && (
-        <div className="flex w-full h-screen">
-          {/* Left Column */}
-          <div className="flex-1 p-8 flex flex-col items-center justify-center bg-white">
-            <div className="flex text-3xl font-semibold text-offBlack pb-4">
-              Tell us about yourself
+        <div>
+          <div className="flex w-full h-screen">
+            {/* Left Column */}
+            <div className="flex-1 p-8 flex flex-col items-center justify-center bg-white">
+              <div className="flex text-3xl font-semibold text-offBlack pb-4">
+                Tell us about yourself
+              </div>
+
+              <div className="grid grid-cols-6 gap-y-4 gap-x-4 w-full max-w-md">
+                <div className="col-span-3">
+                  <Input
+                    variant="default"
+                    label="First Name"
+                    id="first-name"
+                    name="first-name"
+                    type="text"
+                    autoComplete="given-name"
+                  />
+                </div>
+
+                <div className="col-span-3">
+                  <Input
+                    variant="second"
+                    label="Last Name"
+                    id="last-name"
+                    name="last-name"
+                    type="text"
+                  />
+                </div>
+
+                <div className='col-span-6'>
+                  PLACEHOLDER
+                </div>
+
+                <div className='col-span-6'>
+                  <Input
+                    variant="default"
+                    label="Phone number"
+                    id="first-name"
+                    name="first-name"
+                    type="text"
+                    autoComplete="given-name"
+                    placeholder='+1 (555) 987-6543'
+                  />
+                </div>
+
+                <Button variant='signUp' className='col-span-6' onClick={handleNext} >Next</Button>
+              </div>
+              <ProgressBar progress={33} />
             </div>
 
-            <div className="grid grid-cols-6 gap-y-4 gap-x-4 w-full max-w-md">
-              <div className="col-span-3">
-                <Input
-                  variant="default"
-                  label="First Name"
-                  id="first-name"
-                  name="first-name"
-                  type="text"
-                  autoComplete="given-name"
-                />
-              </div>
-
-              <div className="col-span-3">
-                <Input
-                  variant="second"
-                  label="Last Name"
-                  id="last-name"
-                  name="last-name"
-                  type="text"
-                />
-              </div>
-
-              <div className='col-span-6'>
-                PLACEHOLDER
-              </div>
-
-              <div className='col-span-6'>
-                <Input
-                  variant="default"
-                  label="Phone number"
-                  id="first-name"
-                  name="first-name"
-                  type="text"
-                  autoComplete="given-name"
-                  placeholder='+1 (555) 987-6543'
-                />
-              </div>
-
-              <Button variant='signUp' className='col-span-6' onClick={handleNext} >Next</Button>
+            {/* Right Column */}
+            <div className="flex-1 bg-pl8Green p-8 flex items-center justify-center">
+              <Image
+                src={'/assets/images/PL8CHAT.png'}
+                alt="PL8CHAT Logo"
+                width={303}
+                height={200}
+              />
             </div>
           </div>
-
-          {/* Right Column */}
-          <div className="flex-1 bg-pl8Green p-8 flex items-center justify-center">
-            <Image
-              src={'/assets/images/PL8CHAT.png'}
-              alt="PL8CHAT Logo"
-              width={303}
-              height={200}
-            />
+          <div>
+            <ProgressBar progress={33} />
           </div>
         </div>
       )}
