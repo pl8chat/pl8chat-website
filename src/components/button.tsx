@@ -33,6 +33,9 @@ const variants = {
     'whitespace-nowrap text-sm font-bold text-gray-950',
     'data-[disabled]:bg-transparent data-[hover]:bg-gray-50 data-[disabled]:opacity-40',
   ),
+  signUp: clsx(
+    'rounded-md bg-pl8Green px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen w-full'
+  )
 }
 
 type ButtonProps = {

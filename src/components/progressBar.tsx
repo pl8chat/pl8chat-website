@@ -1,82 +1,30 @@
-import { CheckIcon } from '@heroicons/react/20/solid'
+import React from 'react';
 
-type Step = {
-  name: string
-  href: string
-  status: 'complete' | 'current' | 'upcoming'
+interface ProgressBarProps {
+  progress: number; // Progress value between 0 and 100
 }
 
-const steps: Step[] = [
-  { name: 'Step 1', href: '#', status: 'current' },
-  { name: 'Step 2', href: '#', status: 'complete' },
-  { name: 'Step 3', href: '#', status: 'complete' },
-  { name: 'Step 4', href: '#', status: 'upcoming' },
-  { name: 'Step 5', href: '#', status: 'upcoming' },
-]
+const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
+  // Ensure progress is within bounds (0 to 100)
+  const validProgress = Math.max(0, Math.min(100, progress));
 
-function classNames(...classes: (string | boolean)[]): string {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function ProgressBar() {
   return (
-    <nav aria-label="Progress">
-      <ol role="list" className="flex items-center">
-        {steps.map((step, stepIdx) => (
-          <li
-            key={step.name}
-            className={classNames(
-              stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-20' : '',
-              'relative'
-            )}
-          >
-            {step.status === 'complete' ? (
-              <>
-                <div aria-hidden="true" className="absolute inset-0 flex items-center">
-                  <div className="h-0.5 w-full bg-indigo-600" />
-                </div>
-                <a
-                  href={step.href}
-                  className="relative flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-900"
-                >
-                  <CheckIcon aria-hidden="true" className="h-5 w-5 text-white" />
-                  <span className="sr-only">{step.name}</span>
-                </a>
-              </>
-            ) : step.status === 'current' ? (
-              <>
-                <div aria-hidden="true" className="absolute inset-0 flex items-center">
-                  <div className="h-0.5 w-full bg-gray-200" />
-                </div>
-                <a
-                  href={step.href}
-                  aria-current="step"
-                  className="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"
-                >
-                  <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-indigo-600" />
-                  <span className="sr-only">{step.name}</span>
-                </a>
-              </>
-            ) : (
-              <>
-                <div aria-hidden="true" className="absolute inset-0 flex items-center">
-                  <div className="h-0.5 w-full bg-gray-200" />
-                </div>
-                <a
-                  href={step.href}
-                  className="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white hover:border-gray-400"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-gray-300"
-                  />
-                  <span className="sr-only">{step.name}</span>
-                </a>
-              </>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
-}
+    <div>
+      <h4 className="sr-only">Status</h4>
+      <p className="text-sm font-medium text-gray-900">Migrating MySQL database...</p>
+      <div aria-hidden="true" className="mt-6">
+        <div className="overflow-hidden rounded-full bg-gray-200">
+          <div style={{ width: `${validProgress}%` }} className="h-2 rounded-full bg-indigo-600" />
+        </div>
+        <div className="mt-6 hidden grid-cols-4 text-sm font-medium text-gray-600 sm:grid">
+          <div className={validProgress >= 25 ? 'text-indigo-600' : ''}>Copying files</div>
+          <div className={`text-center ${validProgress >= 50 ? 'text-indigo-600' : ''}`}>Migrating database</div>
+          <div className={`text-center ${validProgress >= 75 ? 'text-indigo-600' : ''}`}>Compiling assets</div>
+          <div className={`text-right ${validProgress === 100 ? 'text-indigo-600' : ''}`}>Deployed</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProgressBar;
