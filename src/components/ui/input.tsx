@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 // Define input styles and variants with cva
 const inputVariants = cva(
-  "self-stretch h-[42px] px-[13px] py-[9px] bg-white rounded-md border-2 border-[#00695c] justify-start items-center inline-flex",
+  "self-stretch h-[42px] px-[13px] py-[9px] bg-white rounded-md border-2 border-gray-300 focus:border-[#00695c] justify-start items-center inline-flex",
   {
     variants: {
       variant: {
