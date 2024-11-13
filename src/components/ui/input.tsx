@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 // Define input styles and variants with cva
 const inputVariants = cva(
-  "block w-full rounded-md border-0 py-1.5 text-offBlack shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkGreen sm:text-sm/6",
+  "self-stretch h-[42px] px-[13px] py-[9px] bg-white rounded-md border-2 border-[#00695c] justify-start items-center inline-flex",
   {
     variants: {
       variant: {
@@ -23,14 +23,16 @@ const inputVariants = cva(
 // Define prop types with VariantProps
 type InputProps = React.ComponentProps<"input"> &
   VariantProps<typeof inputVariants> & {
-    label?: string; // Add the label prop
+    label: string;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, ...props }, ref) => {
     return (
-      <div>
-        {label && <label className="block text-sm font-medium text-gray-700 mb-1 mt-2">{label}</label>}
+      <div className="self-stretch h-[66px] flex-col justify-start items-start gap-1 flex">
+        <label className="text-gray-700 text-sm font-medium leading-tight">
+          {label}
+        </label>
         <input
           className={cn(inputVariants({ variant }), className)}
           ref={ref}

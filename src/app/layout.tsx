@@ -17,6 +17,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const poppins = localFont({
+  src: "./fonts/Poppins-Regular.ttf",
+  variable: "--font-poppins",
+  weight: "100 200 300 400 500 600 700 800 900",
+})
 
 export const metadata: Metadata = {
   title: "PL8CHAT - Smart & Social Parking",
@@ -33,7 +38,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${poppins.className} antialiased`}>
         <header>
           {/* <Nabvar /> */}
           <NavbarFinal />

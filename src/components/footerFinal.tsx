@@ -117,7 +117,7 @@ export default function FooterFinal() {
                 className='lg:h-12 w-auto absolute -top-16 lg:-top-6'
               />
             </div>
-            <div className="font-semibold text-lg pb-6 pl-1 mt-12">
+            <div className="font-semibold text-lg pb-6 pl-1 mt-12 text-white">
               <div>Every</div>
               <div>Car</div>
               <div>Connected</div>

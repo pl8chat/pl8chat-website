@@ -1,6 +1,6 @@
 'use client'
 import { Input } from '@/components/ui/input'
-import { EyeIcon } from '@heroicons/react/20/solid'
+import { EyeIcon, ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
 import { Button } from './button'
 import ProgressBar from './progressBar';
@@ -34,34 +34,32 @@ export default function FreePlanForm() {
   return (
     <div className={step >= 3 ? 'w-full h-screen' : ''}>
       {step === 1 && (
-        <div>
-          <div>
-            <div className="flex flex-col gap-1 items-start pb-4">
-              <div className="text-3xl font-semibold text-offBlack" >
-                Sign up for a free plan
-              </div>
-              <div className="text-accentGrey text-sm">
-                Create an account or <span className="text-pl8Green underline underline-offset-3">Sign in</span>
+        <div className='flex flex-col'>
+          <div className="w-96 h-16 flex-col justify-start items-start gap-3 inline-flex">
+            <div className="flex-col justify-start items-start gap-2 flex">
+              <div className="text-center text-gray-900 text-3xl leading-9">Sign up for a free plan</div>
+              <div className="justify-start items-center gap-1 inline-flex">
+                <div className="text-gray-600 text-sm font-normal leading-tight">Create an account or</div>
+                <div className="justify-start items-center flex">
+                  <div className="text-[#00695c] text-sm font-medium underline leading-tight">Sign in</div>
+                </div>
               </div>
             </div>
           </div>
-          <div className='grid grid-cols-6 max-w-sm gap-y-4'>
-            <div className="col-span-6">
-              <Input variant='default' label='Business email' id="business-email" name="business-email" type="text" autoComplete="given-name" />
-            </div>
+          <div className="w-96 h-[266px] flex-col justify-start items-start gap-6 inline-flex">
+            <Input variant='default' label='Email' type='email' />
+            <Input variant='default' label='Password' type='password' />
 
-            <div className="col-span-6 relative">
-              <Input variant='second' label='Password' id="password" name="password" type="text" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 top-8 flex items-center pr-3">
-                <EyeIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+            <div className="self-stretch justify-between items-center inline-flex">
+              <div className="justify-start items-center gap-2 flex">
+                <div className="w-4 h-4 relative bg-white rounded border border-gray-300"></div>
+                <div className="text-gray-900 text-sm font-normal leading-tight">Remember me</div>
+              </div>
+              <div className="justify-start items-center flex">
+                <div className="text-right text-[#00695c] text-sm font-medium leading-tight">Forgot your password?</div>
               </div>
             </div>
-          </div>
-          <div className='text-sm mt-6 max-w-sm'>
-            By creating an account, you agree to our <Link href="#" className='underline underline-offset-2 text-pl8Green'>Terms of Service</Link> and <Link href="#" className='underline underline-offset-2 text-pl8Green'>Privacy Policy</Link>
-          </div>
-          <div className='mt-6'>
-            <Button variant='signUp' onClick={handleNext} >Sign up</Button>
+            <Button variant='signUp' onClick={handleNext}>Continue</Button>
           </div>
         </div>
       )}

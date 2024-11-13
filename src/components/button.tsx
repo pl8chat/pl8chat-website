@@ -34,7 +34,7 @@ const variants = {
     'data-[disabled]:bg-transparent data-[hover]:bg-gray-50 data-[disabled]:opacity-40',
   ),
   signUp: clsx(
-    'rounded-md bg-pl8Green px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen w-full'
+    'self-stretch h-[42px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
   )
 }
 
