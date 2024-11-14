@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
-import Nabvar from "../components/navbar";
-import Footer from "../components/footer";
-import NavbarFinal from "../components/navbarFinal";
-import FooterFinal from "../components/footerFinal";
-import "./globals.css";
+import NavbarFinal from "../../components/navbarFinal";
+import FooterFinal from "../../components/footerFinal";
+import "../globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 const poppins = localFont({
-  src: "./fonts/Poppins-Regular.ttf",
+  src: "../fonts/Poppins-Regular.ttf",
   variable: "--font-poppins",
   weight: "100 200 300 400 500 600 700 800 900",
 })
@@ -40,7 +28,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <header>
-          {/* <Nabvar /> */}
           <NavbarFinal />
         </header>
         <div className="pt-16">
@@ -48,7 +35,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Analytics />
         </div>
         <div>
-          {/* <Footer /> */}
           <FooterFinal />
         </div>
       </body>
