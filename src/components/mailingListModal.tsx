@@ -40,7 +40,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                <div className="absolute right-9 top-9 sm:block z-20">
+                                <div className="absolute right-9 top-[34px] sm:block z-20">
                                     <button
                                         type="button"
                                         className="rounded-md p-2 text-black focus:outline-none"
