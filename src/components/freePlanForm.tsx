@@ -106,7 +106,7 @@ export default function FreePlanForm() {
         <div className=''>
           <div className="flex w-full h-screen">
             {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-white relative">
+            <div className="flex-1 gap-8 flex flex-col items-center justify-center relative">
               <div className="w-[460px] h-9 flex-col justify-start items-start gap-3 inline-flex">
                 <div className="flex-col justify-start items-start gap-2 flex">
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
@@ -165,7 +165,7 @@ export default function FreePlanForm() {
         <div className=''>
           <div className="flex w-full h-screen">
             {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-white relative">
+            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
               <div className="w-[460px] h-9 flex-col justify-start items-start gap-3 inline-flex">
                 <div className="flex-col justify-start items-start gap-2 flex">
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about your business</div>
@@ -247,7 +247,7 @@ export default function FreePlanForm() {
         <div className=''>
           <div className="flex w-full h-screen">
             {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-white relative">
+            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
               <div className="h-16 flex-col justify-start items-start gap-2 inline-flex">
                 <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What’s your business address?</div>
                 <div onClick={handleNext} className="w-[460px] cursor-pointer"><span className="text-gray-600 text-sm font-normal leading-tight">Don’t have a physical address? </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Skip this step</span></div>
