@@ -1,11 +1,11 @@
-// RootLayout.tsx
-
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
+import Nabvar from "../components/navbar";
+import Footer from "../components/footer";
+import NavbarFinal from "../components/navbarFinal";
 import FooterFinal from "../components/footerFinal";
 import "./globals.css";
-import NavbarFinal from "../components/navbarFinal";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +21,7 @@ const poppins = localFont({
   src: "./fonts/Poppins-Regular.ttf",
   variable: "--font-poppins",
   weight: "100 200 300 400 500 600 700 800 900",
-});
+})
 
 export const metadata: Metadata = {
   title: "PL8CHAT - Smart & Social Parking",
@@ -32,20 +32,23 @@ export const metadata: Metadata = {
     images: "./assets/images/logoGreen.jpg",
     url: "PL8CHAT",
     type: "website",
-  },
+  }
 };
 
-// Adjust the prop type to include `hideNavbar`
-export default function RootLayout({ children, hideNavbar }: { children: React.ReactNode; hideNavbar?: boolean }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <header>{!hideNavbar && <NavbarFinal />}</header>
+        <header>
+          {/* <Nabvar /> */}
+          <NavbarFinal />
+        </header>
         <div className="pt-16">
           {children}
           <Analytics />
         </div>
         <div>
+          {/* <Footer /> */}
           <FooterFinal />
         </div>
       </body>

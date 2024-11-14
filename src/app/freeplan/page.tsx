@@ -3,17 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function FreePlan() {
- return (
-    <div className="fixed z-50 h-screen w-full bg-white flex flex-col justify-center items-center">
+  return (
+    <div className="relative h-screen w-screen bg-white flex flex-col justify-center items-center overflow-hidden">
       <div className="absolute top-[11.88px] left-[11.88px] w-20 h-20 z-50">
-        <Link href='/'>
+        <a href="/">
           <Image
-            src='/assets/images/logoGreen.png'
+            src="/assets/images/logoGreen.png"
             fill
-            alt='logoGreen'
-            className=""
+            alt="logoGreen"
           />
-        </Link>
+        </a>
       </div>
       <FreePlanForm />
     </div>
