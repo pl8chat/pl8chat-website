@@ -263,7 +263,7 @@ export default function FreePlanForm() {
                     name='firstName'
                     type='text'
                     className='flex-1' />
-                  <div className='flex-1'>
+                  <div className='flex-1 w-1/2'>
                     <Select>
                       <SelectTrigger label='State'>
                         <SelectValue placeholder="Select one" />
