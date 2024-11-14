@@ -1,11 +1,4 @@
 'use client'
-import localFont from 'next/font/local'
-
-const switzer = localFont({
-  src: "../fonts/Switzer-Variable.woff",
-  variable: "--font-Switzer",
-  weight: "100 900",
-})
 
 export default function About() {
   return (
