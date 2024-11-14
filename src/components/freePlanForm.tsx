@@ -131,7 +131,7 @@ export default function FreePlanForm() {
                   </div>
                   <div className="w-[460px] text-gray-600 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
-                
+
                 <Input label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
                 <Button variant='signUp' onClick={handleNext}>Next</Button>
               </div>
@@ -255,15 +255,15 @@ export default function FreePlanForm() {
               <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
                 <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
                 <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
-                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                <div className="self-stretch gap-2 grid grid-cols-2">
                   <Input
                     variant='default'
                     label='City'
                     id='firstName'
                     name='firstName'
                     type='text'
-                    className='flex-1' />
-                  <div className='flex-1 w-1/2'>
+                    className='col-span-1' />
+                  <div className='col-span-1'>
                     <Select>
                       <SelectTrigger label='State'>
                         <SelectValue placeholder="Select one" />
@@ -323,15 +323,15 @@ export default function FreePlanForm() {
                     </Select>
                   </div>
                 </div>
-                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                <div className="self-stretchgap-2 grid grid-cols-2 gap-2">
                   <Input
                     variant="default"
                     label="Zip/Postal code"
                     id="zip"
                     name="zip"
                     type="text"
-                    className="flex-1" />
-                  <div className="flex-1">
+                    className="col-span-1" />
+                  <div className="col-span-1">
                     <Select>
                       <SelectTrigger label="Country">
                         <SelectValue placeholder="Select one" />
