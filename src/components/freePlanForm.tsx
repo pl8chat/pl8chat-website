@@ -28,7 +28,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(1); // Track the current step
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -131,17 +131,8 @@ export default function FreePlanForm() {
                   </div>
                   <div className="w-[460px] text-gray-600 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
-                <div className="self-stretch h-[66px] flex-col justify-start items-start gap-1 flex">
-                  <div className="text-gray-700 text-sm font-medium leading-tight">Phone number</div>
-                  <div className="self-stretch h-[42px] bg-white rounded-md shadow border border-gray-300 justify-start items-center inline-flex">
-                    <div className="pl-[21px] pr-[13px] py-[13px] rounded-md justify-start items-center gap-1 flex">
-                      <div className="text-gray-500 text-base font-normal leading-normal">+ 1</div>
-                    </div>
-                    <div className="grow shrink basis-0 h-[50px] pr-[17px] py-[13px] justify-start items-center flex">
-                      <div className="text-gray-500 text-base font-normal leading-normal">(555) 987-6543</div>
-                    </div>
-                  </div>
-                </div>
+                
+                <Input label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
                 <Button variant='signUp' onClick={handleNext}>Next</Button>
               </div>
               <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
