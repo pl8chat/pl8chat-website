@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Button } from './button'
 import MailingListModal from './mailingListModal'
 
-
 export default function Hero() {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
@@ -15,7 +14,9 @@ export default function Hero() {
             Sma<span className='tracking-[.3rem]'>rt</span> and <br /> social parking
           </h1>
           <h2 className="mt-8 max-w-2xl text-lg/7 font-medium sm:text-3xl/8">
-            Creating safe & connected parking communities through license plate communication.
+            PL8CHAT is a new line of communication
+            connecting people, vehicles and parking
+            communities through license plates.
           </h2>
           <div
             className="mt-9 lg:mt-11"

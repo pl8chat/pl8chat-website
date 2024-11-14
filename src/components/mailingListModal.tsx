@@ -10,7 +10,7 @@ type ImageModalrProps = {
 
 export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) {
     const handleClose = () => {
-        if (onClose) onClose(); 
+        if (onClose) onClose();
     };
 
     return (
@@ -29,7 +29,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                 </Transition.Child>
 
                 <div className="fixed inset-0 z-10 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}> 
+                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -40,13 +40,13 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                <div className="absolute right-4 top-4 pr-4 pt-4 sm:block">
+                                <div className="absolute right-9 top-9 sm:block z-20">
                                     <button
                                         type="button"
-                                        className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
-                                        onClick={handleClose} // Call handleClose directly
+                                        className="rounded-md p-2 text-black focus:outline-none"
+                                        onClick={handleClose}
                                     >
-                                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                        <XMarkIcon className="h-5 w-5" aria-hidden="true" />
                                     </button>
                                 </div>
                                 <div>
