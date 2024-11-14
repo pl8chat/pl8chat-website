@@ -11,8 +11,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
 
   return (
     <div className='w-11/12'>
-      <h4 className="sr-only">Status</h4>
-      
       <div aria-hidden="true" className="mt-6">
         <div className="overflow-hidden rounded-full bg-gray-200">
           <div style={{ width: `${validProgress}%` }} className="h-2 rounded-full bg-pl8Green" />
