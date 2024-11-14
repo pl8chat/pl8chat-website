@@ -212,7 +212,7 @@ export default function NavbarFinal() {
                               }
                             }}
                             aria-current={isActive ? 'page' : undefined}
-                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-semibold')}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-semibold')}
                           >
                             {item.name === 'Products' || item.name === 'Company' ? (
                               <div>
@@ -241,7 +241,7 @@ export default function NavbarFinal() {
                     variant="secondary"
                     className={classNames(
                       getNavbarButtonColor(),
-                      `py-2 scale-[.85]`
+                      `py-2 scale-[.8]`
                     )}
                     href="#"
                   >
