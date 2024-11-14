@@ -235,13 +235,15 @@ export default function NavbarFinal() {
 
               {/* Right-side items (shown on larger screens) */}
               <div className="sm:flex sm:items-center sm:pr-2 text-md font-semibold">
-                <div className={`hidden lg:flex lg:items-center space-x-3 ${isScrolled || isFlydownOpen ? 'text-offBlack' : 'text-white'}`}>
-                  <div className={classNames(getTextColor())}>Call us: 1(310)PL8-CHAT</div>
+                <div className="hidden lg:flex lg:items-center space-x-3">
+                  <div className={getTextColor().replace(/hover:\S+/g, '')}>
+                    Call us: 1(310)PL8-CHAT
+                  </div>
                   <Button
-                    variant="secondary"
+                    variant="hero"
                     className={classNames(
                       getNavbarButtonColor(),
-                      `py-2 scale-[.8]`
+                      `py-2 scale-[.85]`
                     )}
                     href="#"
                   >

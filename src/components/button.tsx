@@ -4,21 +4,18 @@ import { Link } from './link'
 
 const variants = {
   primary: clsx(
-    'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
+    'inline-flex items-center justify-center px-3.5 py-2.5',
     'rounded-md bg-white hover:bg-tGreen',
     'whitespace-nowrap text-[1.1rem] font-bold text-black',
     `data-[disabled]:opacity-40 `,
   ),
   secondary: clsx(
-    'inline-flex items-center justify-center px-6 h-[3.25rem] gap-3',
+    'inline-flex items-center justify-center px-6 py-2.5',
     'whitespace-nowrap text-[1.1rem] font-bold text-black rounded-md',
     `data-[disabled]:opacity-40 `
   ),
-  outline: clsx(
-    'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
-    'rounded-lg border border-transparent shadow ring-1 ring-black/10',
-    'whitespace-nowrap text-sm font-bold text-gray-950',
-    'data-[disabled]:bg-transparent data-[hover]:bg-gray-50 data-[disabled]:opacity-40',
+  hero: clsx(
+    'rounded-md bg-white px-3.5 py-2.5 text-md font-semibold text-darkGreen shadow-sm hover:bg-indigo-50', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
   ),
   signUp: clsx(
     'self-stretch h-[42px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
