@@ -1,19 +1,6 @@
 import * as Headless from '@headlessui/react'
 import { clsx } from 'clsx'
 import { Link } from './link'
-import localFont from 'next/font/local'
-
-const barlow = localFont({
-  src: "../app/fonts/Barlow-Medium.woff",
-  variable: "--font-barlow-medium",
-  weight: "100 900",
-})
-
-const interSemiBold = localFont({
-  src: '../app/fonts/Inter-SemiBold.woff',
-  variable: '--font-montserrat-regular',
-  weight: '400',
-})
 
 const variants = {
   primary: clsx(

@@ -186,7 +186,7 @@ export default function NavbarFinal() {
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/" passHref>
                     <Image
-                      alt="Your Company"
+                      alt="PL8CHAT Logo"
                       src={`${getLogoSrc()}`}
                       className="h-10 lg:h-11 w-auto transition duration-150"
                       width={240}
