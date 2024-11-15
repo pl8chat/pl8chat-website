@@ -31,7 +31,7 @@ export default function Contact() {
       <div className="text-center text-[#353535] text-[56px] font-semibold leading-9 pb-[56px]">Contact Us</div>
       <div className="flex">
         <ContactForm />
-        <div className="h-[882px] pr-36 pb-12 pt-16 bg-white flex-col justify-start items-center gap-2.5 flex-1 inline-flex">
+        <div className="h-[882px] pr-24 pl-10 pb-12 pt-16 bg-white flex-col justify-start items-center gap-2.5 flex-1 inline-flex">
           <div className="h-[492px] flex-col justify-start items-center gap-8 flex">
             <div className="self-stretch h-[84px] flex-col justify-start items-start gap-3 flex">
               <div className="self-stretch h-[84px] flex-col justify-start items-start gap-2 flex">

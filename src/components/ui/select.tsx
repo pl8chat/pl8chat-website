@@ -9,13 +9,14 @@ import { cva, VariantProps } from "class-variance-authority";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
-  "flex h-[42px] w-full items-center justify-between rounded-md border border-2 border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+  "flex h-[42px] w-full items-center justify-between rounded-md border-2 border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
   {
     variants: {
       variant: {
         default: "",
         error: "border-red-500 text-red-700",
         accent: "border-[#00695c] text-[#00695c]",
+        contact: "",
       },
     },
     defaultVariants: {
@@ -35,8 +36,8 @@ const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 
 const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Trigger>, SelectProps>(({ className, variant, label, children, ...props }, ref) => (
-  <div className="flex flex-col">
-    {label && <label className="text-gray-700 text-sm font-medium pb-0.5">{label}</label>}
+  <div className="flex flex-col gap-1">
+    {label && <label className={`text-gray-700 text-sm h-6 ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>{label}</label>}
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(selectVariants({ variant }), className)}

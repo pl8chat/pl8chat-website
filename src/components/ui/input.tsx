@@ -3,13 +3,15 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full h-[42px] px-[13px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#00695c] text-base font-normal leading-normal",
+  "w-full h-[42px] px-[13px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#00695c] text-base font-normal leading-normal border-2",
   {
     variants: {
       variant: {
-        default: "border-2 border-gray-300 rounded-md",
+        default: "border-gray-300 rounded-md",
         phone: "pl-[50px] border-2 border-gray-300 rounded-md",
-        error: "border-2 border-red-500 text-red-700 rounded-md",
+        error: "border-red-500 text-red-700 rounded-md",
+        contact: 'border-gray-300 rounded-md',
+        message: 'text-sm',
       },
     },
     defaultVariants: {
@@ -27,7 +29,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, ...props }, ref) => {
     return (
       <div className="w-full flex flex-col gap-1">
-        <label htmlFor={props.id} className="text-gray-700 text-sm font-medium leading-tight">
+        <label htmlFor={props.id} className={`text-gray-700 text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
         </label>
         <div className="relative">
