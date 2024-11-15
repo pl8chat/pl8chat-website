@@ -35,7 +35,7 @@ export default function Hero({ }) {
           </div>
         </div>
       </div>
-      <Modal isOpen={isModalOpen} component={<Contact/>} onClose={() => setModalOpen(false)} />
+      <Modal isOpen={isModalOpen} component={<Contact isModal={true} />} onClose={() => setModalOpen(false)} />
     </div>
   )
 } 

@@ -289,7 +289,7 @@ export default function NavbarFinal() {
           </>
         )}
       </Disclosure>
-      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} component={<Contact />} />
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} component={<Contact isModal={true} />} />
     </div>
   );
 }

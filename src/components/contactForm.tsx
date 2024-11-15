@@ -11,12 +11,16 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export default function ContactForm() {
+type ContactFormProps = {
+  isModal?: boolean
+}
+
+export default function ContactForm({ isModal }: ContactFormProps) {
   const form = useRef<HTMLFormElement>(null);
   const [emailTouched, setEmailTouched] = useState<boolean>(false);
 
   return (
-    <div className="h-[882px] pl-24 pr-10 pb-12 pt-16 bg-white flex-col justify-start items-center gap-8 flex-1 inline-flex">
+    <div className={`${isModal ? 'pb-0 px-10' : 'pl-24 pr-10 pb-12'} h-[882px] pt-16 bg-white flex-col justify-start items-center gap-8 flex-1 inline-flex`}>
       <div className="h-[630px] flex-col justify-start items-center gap-8 flex max-w-1/2">
         <div className="self-stretch h-[84px] flex-col justify-start items-start gap-3 flex">
           <div className="self-stretch h-[84px] flex-col justify-start items-start gap-2 flex">
