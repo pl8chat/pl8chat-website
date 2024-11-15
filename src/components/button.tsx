@@ -15,7 +15,7 @@ const variants = {
     `data-[disabled]:opacity-40 `
   ),
   hero: clsx(
-    'rounded-md px-3.5 py-2.5 text-md font-semibold shadow-sm hover:bg-indigo-50', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
+    'rounded-md px-3.5 py-2.5 text-md font-semibold shadow-sm', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
   ),
   signUp: clsx(
     'self-stretch h-[42px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
