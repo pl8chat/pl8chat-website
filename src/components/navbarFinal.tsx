@@ -26,12 +26,6 @@ const navigation: NavigationItem[] = [
   { name: 'Company', href: '#', current: false },
 ]
 
-const inter = localFont({
-  src: "../app/fonts/InterVariable.woff",
-  variable: "--font-barlow-medium",
-  weight: "100 200 300 400 500 600 700 800 900",
-})
-
 function ChevronDownIcon(props: SVGProps) {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
@@ -71,11 +65,11 @@ const logoSrc: Record<string, string> = {
 }
 
 const navBarButtonColors: Record<string, string> = {
-  '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
+  '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-pl8Green',
   '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/about': 'bg-white hover:bg-tGreen',
-  default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
+  default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-pl8Green',
 }
 
 function classNames(...classes: string[]): string {

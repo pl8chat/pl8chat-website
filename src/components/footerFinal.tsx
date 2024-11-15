@@ -17,15 +17,15 @@ interface Navigation {
 
 const navigation: Navigation = {
   products: [
-    { name: 'Pricing', href: '#' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'For business', href: '#' },
-    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '/individuals' },
   ],
   solutions: [
     { name: 'FAQ', href: '#' },
   ],
   company: [
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contact' },
     { name: 'About us', href: '/about' },
     { name: 'Careers', href: '#' },
   ],
