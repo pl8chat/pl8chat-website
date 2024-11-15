@@ -15,7 +15,7 @@ export default function Modal({ isOpen, onClose, component }: ImageModalProps) {
 
     return (
         <Transition.Root show={isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-[90]" onClose={handleClose}>
+            <Dialog as="div" className="relative z-[40] overflow-visible" onClose={handleClose}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
