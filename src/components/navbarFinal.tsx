@@ -243,6 +243,7 @@ export default function NavbarFinal() {
                         getNavbarButtonColor(),
                         `py-2 scale-[.85]`
                       )}
+                      onClick={() => setModalOpen(true)}
                       href="#"
                     >
                       Talk to sales
