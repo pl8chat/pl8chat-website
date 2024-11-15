@@ -43,8 +43,12 @@ export default function ContactForm() {
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="owner">Owner</SelectItem>
-                      <SelectItem value="admin">Admin / manager</SelectItem>
+                      <SelectItem value="hoa">Residential - HOA</SelectItem>
+                      <SelectItem value="apartment">Residential - Apartment</SelectItem>
+                      <SelectItem value="hospitality">Hospitality</SelectItem>
+                      <SelectItem value="educational">Educational</SelectItem>
+                      <SelectItem value="public">Public lot/garage</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -54,8 +58,9 @@ export default function ContactForm() {
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="owner">Owner</SelectItem>
-                      <SelectItem value="admin">Admin / manager</SelectItem>
+                      <SelectItem value="small">Small (1-25 spaces)</SelectItem>
+                      <SelectItem value="medium">Medium ( 25-100)</SelectItem>
+                      <SelectItem value="large">Large (over 100)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

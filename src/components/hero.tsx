@@ -2,7 +2,9 @@
 import { useState } from 'react'
 import { Button } from './button'
 import localFont from 'next/font/local'
-import MailingListModal from './mailingListModal'
+import Modal from './modal'
+import MailingListSubForm from './mailingListSubForm'
+import Contact from './contactForm'
 
 const barlow = localFont({
   src: "../app/fonts/Barlow-Medium.woff",
@@ -33,7 +35,7 @@ export default function Hero({ }) {
           </div>
         </div>
       </div>
-      <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <Modal isOpen={isModalOpen} component={<Contact/>} onClose={() => setModalOpen(false)} />
     </div>
   )
 } 

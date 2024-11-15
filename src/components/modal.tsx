@@ -1,16 +1,16 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import MailingListSubForm from './mailingListSubForm';
+import { Fragment, useState, ReactNode } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-type ImageModalrProps = {
+type ImageModalProps = {
     isOpen: boolean;
     onClose: () => void;
+    component: ReactNode; // Accepts any ReactNode as a prop
 };
 
-export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) {
+export default function Modal({ isOpen, onClose, component }: ImageModalProps) {
     const handleClose = () => {
-        if (onClose) onClose(); 
+        if (onClose) onClose();
     };
 
     return (
@@ -29,7 +29,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                 </Transition.Child>
 
                 <div className="fixed inset-0 z-10 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}> 
+                    <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0" onClick={() => handleClose()}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -44,13 +44,13 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                                     <button
                                         type="button"
                                         className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
-                                        onClick={handleClose} // Call handleClose directly
+                                        onClick={handleClose}
                                     >
                                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                                     </button>
                                 </div>
                                 <div>
-                                    <MailingListSubForm />
+                                    {component}
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>
