@@ -27,8 +27,8 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <div className="pt-[108px] ">
-      <div className="text-center text-[#353535] text-[56px] font-semibold leading-9 pb-[56px]">Contact Us</div>
+    <div className="pt-32">
+      <div className="text-center text-[#353535] text-[56px] font-semibold leading-9 pb-[56px] mt-2">Contact Us</div>
       <div className="flex">
         <ContactForm />
         <div className="h-[882px] pr-24 pl-10 pb-12 pt-16 bg-white flex-col justify-start items-center gap-2.5 flex-1 inline-flex">
