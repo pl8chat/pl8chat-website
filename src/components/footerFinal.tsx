@@ -32,7 +32,7 @@ const navigation: Navigation = {
   legal: [
     { name: 'Claim', href: '#' },
     { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Terms', href: '/terms' },
   ],
   social: [
     {

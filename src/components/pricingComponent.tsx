@@ -112,7 +112,7 @@ export default function PricingComponent() {
                 {tier.price === 'Free' ? (
                   <div>
                     <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
-                    <span className='text-sm/6 font-normal text-gray-600 absolute left-0 -bottom-4'>$50/year</span>
+                    {/* <span className='text-sm/6 font-normal text-gray-600 absolute left-0 -bottom-4'>$50/year</span> */}
                   </div>
                 ) : tier.price !== ' ' ? (
                   <span className="text-sm/6 font-semibold text-gray-600">/year</span>
@@ -133,7 +133,7 @@ export default function PricingComponent() {
                 {tier.name == 'Enterprise' ?
                   <Link href='#'>Contact Sales</Link>
                   :
-                  <Link href='/freeplan'>Buy Plan</Link>
+                  <Link href='/freeplan'>Sign Up</Link>
                 }
               </a>
               <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">

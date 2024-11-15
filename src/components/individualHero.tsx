@@ -10,8 +10,9 @@ export default function IndividualHero() {
           Your car has a username. Use it.
         </h1>
         <h2 className="mt-7 max-w-[40ch] text-lg/7 font-medium sm:text-3xl/8">
-          Now you can send & receive helpful messages
-          and vehicle alerts through your license plate.
+          Send and receive helpful vehicle messages
+          and alerts all through your license plate.
+
         </h2>
         <div
           className="mt-9 lg:mt-11 inline-block"
