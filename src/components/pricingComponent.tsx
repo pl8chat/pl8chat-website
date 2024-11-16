@@ -116,7 +116,7 @@ export default function PricingComponent() {
                   </div>
                 ) : tier.price !== ' ' ? (
                   <span className="text-sm/6 font-semibold text-gray-600">/year</span>
-                ) : 
+                ) :
                   <span className='pt-10'></span>
                 }
               </p>
@@ -130,12 +130,17 @@ export default function PricingComponent() {
                   'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen',
                 )}
               >
-                {tier.name == 'Enterprise' ?
-                  <Link href='#'>Contact Sales</Link>
-                  :
-                  <Link href='/freeplan'>Sign Up</Link>
-                }
+                {tier.name === 'Enterprise' ? (
+                  <Link href="#">Contact Sales</Link>
+                ) : (
+                  tier.name === 'Premium' ? (
+                    <Link href="/premium">Sign Up</Link>
+                  ) : (
+                    <Link href="/free">Sign Up</Link>
+                  )
+                )}
               </a>
+
               <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex gap-x-3">
