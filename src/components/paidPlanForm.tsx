@@ -45,7 +45,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -519,7 +519,7 @@ export default function PaidPlanForm() {
                       </div>
                     </div>
                     <div className="self-stretch h-px bg-gray-200"></div>
-                    
+
                     <div className="self-stretch h-[246px] flex-col justify-start items-start gap-8 flex">
                       <div className="h-[172px] flex-col justify-start items-start gap-6 flex">
                         <div className="self-stretch justify-end items-start inline-flex">
@@ -553,16 +553,30 @@ export default function PaidPlanForm() {
 
       {step === 7 && (
         <div className='flex w-full h-screen justify-center items-center'>
-          <div className='flex flex-col gap-8'>
-            <div className="w-96 h-[84px] flex-col justify-start items-start gap-3 inline-flex">
-              <div className="self-stretch h-[84px] flex-col justify-start items-start gap-2 flex">
-                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">You’re ready to go!</div>
-                <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                  <div className="grow shrink basis-0 text-gray-600 text-sm font-normal leading-tight">Your account was successfully created. Click below to start managing your parking community.</div>
-                </div>
+          <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
+            <div className="self-stretch h-[206px] flex-col justify-start items-start gap-6 flex">
+              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Payment successful</div>
+              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                <div className="grow shrink basis-0"><span className="text-gray-600 text-sm font-normal leading-tight">Your account was successfully created and a receipt has been emailed to </span><span className="text-gray-600 text-sm font-bold] leading-tight">michael@pl8chat.com. <br /></span><span className="text-gray-600 text-sm font-normal leading-tight"><br />Click below to start managing your parking community</span></div>
               </div>
+              <Button variant='signUp' onClick={handleNext}>Sign in</Button>
             </div>
-            <Button variant='signUp' onClick={handlePrevious}>Sign In</Button>
+          </div>
+        </div>
+      )}
+
+      {step === 8 && (
+        <div className='flex w-full h-screen justify-center items-center'>
+          <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
+            <div className="self-stretch h-[206px] flex-col justify-start items-start gap-6 flex">
+              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Account updated </div>
+              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                <div className="grow shrink basis-0"><span className="text-gray-600 text-sm font-normal leading-tight">Your account was successfully updated and a receipt has been emailed to </span><span className="text-gray-600 text-sm font-bold leading-tight">michael@pl8chat.com. <br /></span><span className="text-gray-600 text-sm font-normal leading-tight"><br />Click below to start managing your parking community</span></div>
+              </div>
+              <Link href='/' className='w-full'>
+                <Button variant='signUp' className={`w-full`}>Sign in</Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
