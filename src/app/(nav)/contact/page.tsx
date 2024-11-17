@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
 import ContactForm from '@/components/contactForm'
 
 const contactInfo = [

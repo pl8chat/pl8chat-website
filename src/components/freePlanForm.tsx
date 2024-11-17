@@ -1,7 +1,7 @@
 'use client'
 import { EyeIcon, ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
-import { Button } from './button'
+import { Button } from './ui/button'
 import { Input } from '@/components/ui/input'
 import {
   Select,

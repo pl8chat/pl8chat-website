@@ -12,6 +12,8 @@ const inputVariants = cva(
         error: "border-red-500 text-red-700 rounded-md",
         contact: 'border-gray-300 rounded-md',
         message: 'text-sm',
+        checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
+        promoCode: 'border-gray-300 rounded-md placeholder:text-gray-500 placeholder:text-sm',
       },
     },
     defaultVariants: {
@@ -22,16 +24,16 @@ const inputVariants = cva(
 
 type InputProps = React.ComponentProps<"input"> &
   VariantProps<typeof inputVariants> & {
-    label: string;
+    label?: string;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, ...props }, ref) => {
     return (
       <div className="w-full flex flex-col gap-1">
-        <label htmlFor={props.id} className={`text-gray-700 text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
+        {label && <label htmlFor={props.id} className={`text-gray-700 text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
-        </label>
+        </label>}
         <div className="relative">
           {variant === "phone" ? (
             // Render specific structure for the phone variant
