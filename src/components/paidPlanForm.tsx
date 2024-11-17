@@ -559,7 +559,9 @@ export default function PaidPlanForm() {
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
                 <div className="grow shrink basis-0"><span className="text-gray-600 text-sm font-normal leading-tight">Your account was successfully created and a receipt has been emailed to </span><span className="text-gray-600 text-sm font-bold] leading-tight">michael@pl8chat.com. <br /></span><span className="text-gray-600 text-sm font-normal leading-tight"><br />Click below to start managing your parking community</span></div>
               </div>
-              <Button variant='signUp' onClick={handleNext}>Sign in</Button>
+              <Link href='/' className='w-full'>
+                <Button variant='checkout' className={`w-full`}>Sign in</Button>
+              </Link>
             </div>
           </div>
         </div>

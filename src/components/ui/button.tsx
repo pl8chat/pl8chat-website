@@ -19,7 +19,10 @@ const variants = {
   ),
   signUp: clsx(
     'self-stretch h-[42px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
-  )
+  ),
+  checkout: clsx(
+    'self-stretch h-[35px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
+  ),
 }
 
 type ButtonProps = {
