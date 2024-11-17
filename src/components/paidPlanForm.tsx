@@ -45,7 +45,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -395,7 +395,7 @@ export default function PaidPlanForm() {
               <div className="h-[956px] pr-8 flex-col justify-start items-end gap-6 inline-flex">
                 <div className="w-[621px] h-[124px] px-[125px] pb-[57px]"></div>
                 <div className="w-[512px] justify-start items-center gap-8 inline-flex">
-                  <div className="justify-start items-center gap-2 flex">
+                  <div className="justify-start items-center gap-2 flex" onClick={handlePrevious}>
                     <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
                     <div className="text-right text-gray-700 text-sm font-medium leading-tight">Back</div>
                   </div>
