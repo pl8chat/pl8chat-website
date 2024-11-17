@@ -45,7 +45,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -469,16 +469,7 @@ export default function PaidPlanForm() {
                 </div>
                 <div className="w-[512px]"></div>
               </div>
-              <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <div className='flex justify-between w-11/12'>
-                  <button onClick={handlePrevious} className='flex'>
-                    <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-                    <p className="text-sm font-medium text-gray-900">Back</p>
-                  </button>
-                  <p className="text-sm font-medium text-gray-900">4/4</p>
-                </div>
-                <ProgressBar progress={100} />
-              </div>
+
             </div>
 
             {/* Right Column */}
@@ -547,7 +538,16 @@ export default function PaidPlanForm() {
               </div>
             </div>
           </div>
-          <ProgressBar progress={33} />
+          <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
+            <div className='flex justify-between w-11/12'>
+              <button onClick={handlePrevious} className='flex'>
+                <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+                <p className="text-sm font-medium text-gray-900">Back</p>
+              </button>
+              <p className="text-sm font-medium text-gray-900">4/4</p>
+            </div>
+            <ProgressBar progress={100} />
+          </div>
         </div>
       )}
 
