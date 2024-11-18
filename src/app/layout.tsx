@@ -16,8 +16,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PL8CHAT - Smart & social parking",
-  description: "Smart & Social parking",
+
+  title: "PL8CHAT - Smart & Social Parking",
+  description: "We're a new line of communication connecting people, vehicles and parking communities through license plates.",
   openGraph: {
     title: "PL8CHAT - Smart & social parking",
     images: "./assets/images/logoGreen.jpg",

@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
+  async headers() {
 	return [
 	  {
 		source: '/.well-known/:path*',
-		destination: '/public/.well-known/:path*', // Matched parameters can be used in the destination
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/json',
+          },
+        ],
 	  },
 	];
   },
