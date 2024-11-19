@@ -10,6 +10,7 @@ import {
   SelectItem,
   SelectValue,
 } from '@/components/ui/select';
+import BackArrow from './backArrow'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
@@ -28,7 +29,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(4);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -42,9 +43,9 @@ export default function FreePlanForm() {
     <div className={step >= 3 ? 'w-full h-screen' : ''}>
       {step === 1 && (
         <div className='flex flex-col gap-8'>
-          <div className="w-96 h-16 flex-col justify-start items-start gap-3 inline-flex">
+          <div className="w-[460px] h-16 flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-gray-900 text-3xl leading-9">Sign up for a free plan</div>
+              <div className="text-center text-gray-900 text-3xl leading-9 font-semibold">Sign up for a free plan</div>
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-600 text-sm font-normal leading-tight">Create an account or</div>
                 <div className="justify-start items-center flex">
@@ -53,13 +54,15 @@ export default function FreePlanForm() {
               </div>
             </div>
           </div>
-          <div className="w-96 h-[282px] flex-col justify-start items-start gap-6 inline-flex">
+          <div className="w-[460px] h-[282px] flex-col justify-start items-start gap-8 inline-flex">
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
             <Input variant='default' label='Password' id='password' name='password' type='password' />
             <div className="self-stretch justify-start items-center gap-1 inline-flex">
               <div className="grow shrink basis-0"><span className="text-gray-600 text-sm font-normal leading-tight">By creating an account, you agree to our </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Terms</span><span className="text-gray-600 text-sm font-normal leading-tight">, and have read and acknowledged our </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Privacy Statement</span><span className="text-gray-600 text-sm font-normal leading-tight">. </span></div>
             </div>
-            <Button variant='signUp' onClick={handleNext}>Sign up</Button>
+            <div className='h-[42px] w-full'>
+              <Button variant='signUp' onClick={handleNext} className={`w-full`}>Sign up</Button>
+            </div>
           </div>
         </div>
       )}
@@ -74,7 +77,7 @@ export default function FreePlanForm() {
               </div>
             </div>
           </div>
-          <div className="w-96 h-[141px] flex-col justify-start items-start gap-6 inline-flex">
+          <div className="w-96 h-[141px] flex-col justify-start items-start gap-8 inline-flex">
             <div className='self-stretch justify-start items-start gap-1 inline-flex'>
               {emails.map((item, index) => (
                 <div key={index} onClick={handleNext} className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex">
@@ -112,7 +115,7 @@ export default function FreePlanForm() {
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
                 <div className="self-stretch justify-start items-start gap-2 inline-flex">
                   <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                   <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
@@ -131,24 +134,18 @@ export default function FreePlanForm() {
                   </div>
                   <div className="w-[460px] text-gray-600 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
-
                 <Input label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
-                <Button variant='signUp' onClick={handleNext}>Next</Button>
+                <div className='h-10 w-full'>
+                  <Button variant='signUp' onClick={handleNext} className={`w-full`}>Next</Button>
+                </div>
               </div>
               <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <div className='flex justify-between w-11/12'>
-                  <button onClick={handlePrevious} className='flex'>
-                    <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-                    <p className="text-sm font-medium text-gray-900">Back</p>
-                  </button>
-                  <p className="text-sm font-medium text-gray-900">1/3</p>
-                </div>
-                <ProgressBar progress={33} />
+                <ProgressBar progress={33} onBack={handlePrevious} number='1/3' />
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="flex-1 bg-pl8Green p-8 flex items-center justify-center">
+            <div className="flex-1 bg-pl8Green flex items-center justify-center">
               <Image
                 src={'/assets/images/PL8CHAT.png'}
                 alt="PL8CHAT Logo"
@@ -157,7 +154,6 @@ export default function FreePlanForm() {
               />
             </div>
           </div>
-          <ProgressBar progress={33} />
         </div>
       )}
 
@@ -171,15 +167,15 @@ export default function FreePlanForm() {
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about your business</div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
                 <div>
-                  <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
-                  <div className="w-[460px] text-gray-600 text-sm font-normal leading-tight">You can change this later in settings</div>
+                  <Input variant='default' label='Business name' id='firstName' name='firstName' type='text' />
+                  <div className="w-[460px] text-gray-600 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
                 <div className='w-full'>
                   <Select>
                     <SelectTrigger label='Industry'>
-                      <SelectValue placeholder="Select one" />
+                      <SelectValue placeholder="Select one" className='' />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="apartment">Residential - Apartment</SelectItem>
@@ -215,22 +211,17 @@ export default function FreePlanForm() {
                     </Select>
                   </div>
                 </div>
-                <Button variant='signUp' onClick={handleNext}>Next</Button>
+                <div className='h-10 w-full'>
+                  <Button variant='signUp' onClick={handleNext} className={`w-full`}>Next</Button>
+                </div>
               </div>
               <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <div className='flex justify-between w-11/12'>
-                  <button onClick={handlePrevious} className='flex'>
-                    <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-                    <p className="text-sm font-medium text-gray-900">Back</p>
-                  </button>
-                  <p className="text-sm font-medium text-gray-900">2/3</p>
-                </div>
-                <ProgressBar progress={66} />
+                <ProgressBar progress={66} onBack={handlePrevious} number='2/3' />
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="flex-1 bg-pl8Green p-8 flex items-center justify-center">
+            <div className="flex-1 bg-pl8Green flex items-center justify-center">
               <Image
                 src={'/assets/images/PL8CHAT.png'}
                 alt="PL8CHAT Logo"
@@ -239,7 +230,6 @@ export default function FreePlanForm() {
               />
             </div>
           </div>
-          <ProgressBar progress={33} />
         </div>
       )}
 
@@ -252,7 +242,7 @@ export default function FreePlanForm() {
                 <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What’s your business address?</div>
                 <div onClick={handleNext} className="w-[460px] cursor-pointer"><span className="text-gray-600 text-sm font-normal leading-tight">Don’t have a physical address? </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Skip this step</span></div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
                 <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
                 <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
                 <div className="self-stretch gap-2 grid grid-cols-2">
@@ -343,23 +333,17 @@ export default function FreePlanForm() {
                     </Select>
                   </div>
                 </div>
-
-                <Button variant='signUp' onClick={handleNext}>Next</Button>
+                <div className='h-10 w-full'>
+                  <Button variant='signUp' onClick={handleNext} className={`w-full`}>Next</Button>
+                </div>
               </div>
               <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <div className='flex justify-between w-11/12'>
-                  <button onClick={handlePrevious} className='flex'>
-                    <ArrowLeftIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-                    <p className="text-sm font-medium text-gray-900">Back</p>
-                  </button>
-                  <p className="text-sm font-medium text-gray-900">3/3</p>
-                </div>
-                <ProgressBar progress={100} />
+                <ProgressBar progress={100} onBack={handlePrevious} number='3/3' />
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="flex-1 bg-pl8Green p-8 flex items-center justify-center">
+            <div className="flex-1 bg-pl8Green flex items-center justify-center">
               <Image
                 src={'/assets/images/PL8CHAT.png'}
                 alt="PL8CHAT Logo"
@@ -368,7 +352,6 @@ export default function FreePlanForm() {
               />
             </div>
           </div>
-          <ProgressBar progress={33} />
         </div>
       )}
 

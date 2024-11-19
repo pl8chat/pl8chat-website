@@ -11,6 +11,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Logo from './logoSVG'
 
 type NavigationItem = {
   name: string;
@@ -167,7 +168,7 @@ export default function NavbarFinal() {
         {({ open }) => (
           <>
             <div className="mx-auto px-2 sm:px-6 lg:px-8">
-              <div className="relative flex h-16 items-center justify-between">
+              <div className="relative flex h-[82px] items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -183,13 +184,14 @@ export default function NavbarFinal() {
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
                     <Link href="/" passHref>
-                      <Image
+                      {/* <Image
                         alt="PL8CHAT Logo"
                         src={`${getLogoSrc()}`}
-                        className="h-10 lg:h-11 w-auto transition duration-150"
-                        width={240}
-                        height={40}
-                      />
+                        className="transition duration-150"
+                        width={147}
+                        height={32}
+                      /> */}
+                      <Logo />
                     </Link>
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
@@ -210,7 +212,7 @@ export default function NavbarFinal() {
                                 }
                               }}
                               aria-current={isActive ? 'page' : undefined}
-                              className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-semibold')}
+                              className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-medium')}
                             >
                               {item.name === 'Products' || item.name === 'Company' ? (
                                 <div>
@@ -232,16 +234,15 @@ export default function NavbarFinal() {
                 </div>
 
                 {/* Right-side items (shown on larger screens) */}
-                <div className="sm:flex sm:items-center sm:pr-2 text-md font-semibold">
-                  <div className="hidden lg:flex lg:items-center space-x-3">
+                <div className="sm:flex sm:items-center sm:pr-2 text-md font-normal">
+                  <div className="hidden lg:flex lg:items-center space-x-3 gap-4">
                     <div className={getTextColor().replace(/hover:\S+/g, '')}>
                       Call us: 1(310)PL8-CHAT
                     </div>
                     <Button
                       variant="hero"
                       className={classNames(
-                        getNavbarButtonColor(),
-                        `py-2 scale-[.85]`
+                        getNavbarButtonColor()
                       )}
                       onClick={() => setModalOpen(true)}
                       href="#"
