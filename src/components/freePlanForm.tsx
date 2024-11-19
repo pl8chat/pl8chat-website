@@ -29,7 +29,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -54,7 +54,7 @@ export default function FreePlanForm() {
               </div>
             </div>
           </div>
-          <div className="w-[460px] h-[282px] flex-col justify-start items-start gap-8 inline-flex">
+          <div className="w-[460px] h-[282px] flex-col justify-start items-start gap-6 inline-flex">
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
             <Input variant='default' label='Password' id='password' name='password' type='password' />
             <div className="self-stretch justify-start items-center gap-1 inline-flex">
@@ -115,7 +115,7 @@ export default function FreePlanForm() {
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
                 <div className="self-stretch justify-start items-start gap-2 inline-flex">
                   <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                   <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
@@ -167,7 +167,7 @@ export default function FreePlanForm() {
                   <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about your business</div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
                 <div>
                   <Input variant='default' label='Business name' id='firstName' name='firstName' type='text' />
                   <div className="w-[460px] text-gray-600 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
@@ -242,7 +242,7 @@ export default function FreePlanForm() {
                 <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What’s your business address?</div>
                 <div onClick={handleNext} className="w-[460px] cursor-pointer"><span className="text-gray-600 text-sm font-normal leading-tight">Don’t have a physical address? </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Skip this step</span></div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-8 inline-flex">
+              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
                 <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
                 <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
                 <div className="self-stretch gap-2 grid grid-cols-2">
