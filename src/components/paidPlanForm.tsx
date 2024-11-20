@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
@@ -523,12 +523,12 @@ export default function PaidPlanForm() {
                 <div className="flex-col justify-center items-start flex">
                   <div className="w-[375px] pt-4 pb-6 justify-start items-center gap-3 inline-flex">
                     <div className="flex-col justify-start items-start gap-2 inline-flex">
-                      <div className="text-gray-900 text-sm font-bold leading-tight">Premium plan</div>
+                      <div className="text-gray-900 text-sm font-medium leading-tight">Premium plan</div>
                       <div className="text-gray-900 text-sm font-normal leading-tight">A single license for business use</div>
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-normal leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
@@ -536,12 +536,12 @@ export default function PaidPlanForm() {
                   <div className="w-[375px] justify-start items-center inline-flex">
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-start items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-bold leading-tight">Subtotal</div>
+                        <div className="text-gray-900 text-sm font-medium leading-tight">Subtotal</div>
                       </div>
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-medium leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
@@ -556,12 +556,12 @@ export default function PaidPlanForm() {
                       <div className="self-stretch justify-end items-start inline-flex w-[375px]">
                         <div className="grow shrink basis-0 h-[52px] py-4 justify-start items-center gap-3 flex">
                           <div className="flex-col justify-start items-start inline-flex">
-                            <div className="text-gray-900 text-sm font-bold leading-tight">Total due today</div>
+                            <div className="text-gray-900 text-sm font-medium leading-tight">Total due today</div>
                           </div>
                         </div>
                         <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                           <div className="flex-col justify-start items-start inline-flex">
-                            <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
+                            <div className="text-gray-900 text-sm font-medium leading-tight">$120.00</div>
                           </div>
                         </div>
                       </div>
