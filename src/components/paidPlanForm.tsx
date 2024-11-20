@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
@@ -469,7 +469,7 @@ export default function PaidPlanForm() {
                       />
                     </div>
                     <div className="grow shrink basis-0 h-5 justify-start items-center flex">
-                      <div className="grow shrink basis-0 text-gray-700 text-sm font-medium leading-tight">
+                      <div className="grow shrink basis-0 text-gray-900 text-sm font-medium leading-tight">
                         My billing address is the same as my contact address
                       </div>
                     </div>
