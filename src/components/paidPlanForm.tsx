@@ -466,7 +466,6 @@ export default function PaidPlanForm() {
                       <Checkbox
                         defaultChecked
                         onCheckedChange={(checked) => setIsChecked(checked === true)}
-
                       />
                     </div>
                     <div className="grow shrink basis-0 h-5 justify-start items-center flex">
@@ -570,11 +569,11 @@ export default function PaidPlanForm() {
                         <div className="grow shrink basis-0 flex-col justify-start items-start inline-flex">
                           <div className="self-stretch"><span className="text-gray-500 text-sm font-normal leading-normal">By clicking subscribe, you agree to all of this and that anlk jlkjlkjlkj  ljlk jlklkjllkjlkjld this and and thats blah blah  blah blah and our </span>
                             <Link href={`/terms`}>
-                              <span className="text-gray-500 text-sm font-normal underline leading-normal">Terms of service</span>
+                              <span className="text-pl8Green text-sm font-normal underline leading-normal">Terms of service</span>
                             </Link>
                             <span className="text-gray-500 text-sm font-normal leading-normal"> and our </span>
                             <Link href={`/privacy`}>
-                              <span className="text-gray-500 text-sm font-normal underline leading-normal">Privacy policy</span>
+                              <span className="text-pl8Green text-sm font-normal underline leading-normal">Privacy policy</span>
                             </Link>
                             <span className="text-gray-500 text-sm font-normal leading-normal"> </span></div>
                         </div>
