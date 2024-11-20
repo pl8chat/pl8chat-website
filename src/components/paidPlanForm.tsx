@@ -475,7 +475,21 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                {isChecked && (
+                <div className={`${isChecked ? 'hidden' : ''} flex flex-col gap-5`}>
+                  <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
+                  <div className='grid grid-cols-9 gap-4'>
+                    <div className='col-span-3'>
+                      <Input variant='checkout' label='City' id='city' name='city' type='text' />
+                    </div>
+                    <div className='col-span-3'>
+                      <Input variant='checkout' label='State/Province' id='state' name='state' type='text' />
+                    </div>
+                    <div className='col-span-3'>
+                      <Input variant='checkout' label='Postal code' id='postalCode' name='postalCode' type='text' />
+                    </div>
+                  </div>
+                </div>
+                {/* {isChecked && (
                   <>
                     <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
                     <div className='grid grid-cols-9 gap-4'>
@@ -490,7 +504,7 @@ export default function PaidPlanForm() {
                       </div>
                     </div>
                   </>
-                )}
+                )} */}
 
               </div>
               <div className="w-[512px]"></div>
@@ -532,8 +546,8 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                   <div className="h-[66px] px-2.5 pb-6 flex-col justify-start items-start gap-2.5 flex">
-                    <div className="flex-col justify-start items-start gap-1 flex w-[141px]">
-                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' />
+                    <div className="flex-col justify-start items-start gap-1 w-[141px]">
+                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' className='min-w-[150px]' />
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
