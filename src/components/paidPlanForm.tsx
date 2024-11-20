@@ -17,6 +17,9 @@ import Image from 'next/image'
 import { Check } from 'lucide-react'
 import BackArrow from './backArrow'
 
+type SelectKeys = "role" | "department";
+
+
 const emails = [
   {
     src: '/assets/images/gmailLogo.png',
@@ -46,7 +49,19 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
+  const [isChecked, setIsChecked] = useState(true);
+  const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
+    role: undefined,
+    department: undefined,
+  });
+
+  const handleValueChange = (key: SelectKeys, value: string) => {
+    setValues((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -55,6 +70,8 @@ export default function PaidPlanForm() {
   const handlePrevious = () => {
     setStep((prevStep) => prevStep - 1);
   };
+
+  const getTextColor = (key: SelectKeys) => (values[key] ? "text-black" : "text-gray-400");
 
   return (
     <div className={step >= 3 ? 'w-full h-screen' : ''}>
@@ -137,8 +154,11 @@ export default function PaidPlanForm() {
                 </div>
                 <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='Your role/position'>
+                    <Select
+                      value={values.role || ""}
+                      onValueChange={(value) => handleValueChange("role", value)}
+                    >
+                      <SelectTrigger label='Your role/position' className='text-gray-400'>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -372,11 +392,11 @@ export default function PaidPlanForm() {
       {step === 6 && (
         <div className="flex w-full h-screen">
           {/* Left Column */}
-          <div className="flex-1 gap-8 flex flex-col items-end justify-center bg-[#F6F6F4] relative pt-12">
-            <div className="h-[956px] pr-8 flex-col justify-start items-end gap-6 inline-flex">
-              <div className="w-[371px] h-[67px] px-[125px] pb-[57px]"></div>
+          <div className="flex-1 w-[850px] h-[1044px] pl-[104px] pt-12 pb-10 bg-[#f6f6f4] justify-center items-start gap-[164px] inline-flex">
+            <div className="self-stretch grow shrink basis-0 pr-8 flex flex-col justify-start items-end gap-6">
+              <div className="w-[621px] h-[124px] px-[125px] pb-[57px]"></div>
               <div className="w-[512px] justify-start items-center gap-8 inline-flex">
-                <div className="justify-start items-center gap-2 flex" onClick={handlePrevious}>
+                <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
                   <div className="text-right text-gray-700 text-sm font-medium leading-tight">Back</div>
                 </div>
@@ -424,7 +444,10 @@ export default function PaidPlanForm() {
                 <div className="w-[512px] flex-col justify-start items-start gap-1 inline-flex">
                   <div className="self-stretch justify-start items-start gap-3 inline-flex">
                     <div className="w-4 h-5 justify-center items-center flex">
-                      <Checkbox />
+                      <Checkbox
+                        defaultChecked
+                        onCheckedChange={(checked) => setIsChecked(!checked)}
+                      />
                     </div>
                     <div className="grow shrink basis-0 h-5 justify-start items-center flex">
                       <div className="grow shrink basis-0 text-gray-700 text-sm font-medium leading-tight">
@@ -433,29 +456,36 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
-                <div className='grid grid-cols-9 gap-4'>
-                  <div className='col-span-3'>
-                    <Input variant='checkout' label='City' id='city' name='city' type='text' />
-                  </div>
-                  <div className='col-span-3'>
-                    <Input variant='checkout' label='State/Province' id='state' name='state' type='text' />
-                  </div>
-                  <div className='col-span-3'>
-                    <Input variant='checkout' label='Postal code' id='postalCode' name='postalCode' type='text' />
-                  </div>
-                </div>
+                {isChecked && (
+                  <>
+                    <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
+                    <div className='grid grid-cols-9 gap-4'>
+                      <div className='col-span-3'>
+                        <Input variant='checkout' label='City' id='city' name='city' type='text' />
+                      </div>
+                      <div className='col-span-3'>
+                        <Input variant='checkout' label='State/Province' id='state' name='state' type='text' />
+                      </div>
+                      <div className='col-span-3'>
+                        <Input variant='checkout' label='Postal code' id='postalCode' name='postalCode' type='text' />
+                      </div>
+                    </div>
+                  </>
+                )}
+
               </div>
               <div className="w-[512px]"></div>
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="flex-1 flex items-center justify-start">
-            <div className="w-[658px] h-[1004px] pl-8 pr-[155px] pt-[191px] pb-[196px] flex-col justify-start items-center inline-flex">
-              <div className="self-stretch p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex">
-                <div className="w-[375px] justify-center items-center gap-12 inline-flex">
-                  <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
+          <div className="flex-1 w-[850px] h-[1044px] pr-24 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
+            <div className="px-14 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
+              <div className="p-12 bg-[#f6f6f4] rounded-xl border w-[521px] border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex">
+                <div className='flex w-full'>
+                  <div className="w-[374px] justify-center items-center gap-12 inline-flex">
+                    <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
+                  </div>
                 </div>
                 <div className="flex-col justify-center items-start flex">
                   <div className="w-[375px] pt-4 pb-6 justify-start items-center gap-3 inline-flex">
@@ -483,12 +513,11 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                   <div className="h-[66px] px-2.5 pb-6 flex-col justify-start items-start gap-2.5 flex">
-                    <div className="flex-col justify-start items-start gap-1 flex">
-                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' />
+                    <div className="flex-col justify-start items-start gap-1 flex w-[137px]">
+                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' />
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
-
                   <div className="self-stretch h-[246px] flex-col justify-start items-start gap-8 flex">
                     <div className="h-[172px] flex-col justify-start items-start gap-6 flex">
                       <div className="self-stretch justify-end items-start inline-flex">
@@ -505,7 +534,15 @@ export default function PaidPlanForm() {
                       </div>
                       <div className="self-stretch justify-start items-start gap-3 inline-flex">
                         <div className="grow shrink basis-0 flex-col justify-start items-start inline-flex">
-                          <div className="self-stretch"><span className="text-gray-500 text-sm font-normal leading-normal">By clicking subscribe, you agree to all of this and that anlk jlkjlkjlkj  ljlk jlklkjllkjlkjld this and and thats blah blah  blah blah and our </span><span className="text-gray-500 text-sm font-normal underline leading-normal">Terms of service</span><span className="text-gray-500 text-sm font-normal leading-normal"> and our </span><span className="text-gray-500 text-sm font-normal underline leading-normal">Privacy policy</span><span className="text-gray-500 text-sm font-normal leading-normal"> </span></div>
+                          <div className="self-stretch"><span className="text-gray-500 text-sm font-normal leading-normal">By clicking subscribe, you agree to all of this and that anlk jlkjlkjlkj  ljlk jlklkjllkjlkjld this and and thats blah blah  blah blah and our </span>
+                            <Link href={`/terms`}>
+                              <span className="text-gray-500 text-sm font-normal underline leading-normal">Terms of service</span>
+                            </Link>
+                            <span className="text-gray-500 text-sm font-normal leading-normal"> and our </span>
+                            <Link href={`/privacy`}>
+                              <span className="text-gray-500 text-sm font-normal underline leading-normal">Privacy policy</span>
+                            </Link>
+                            <span className="text-gray-500 text-sm font-normal leading-normal"> </span></div>
                         </div>
                       </div>
                     </div>
