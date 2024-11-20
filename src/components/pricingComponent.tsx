@@ -11,6 +11,7 @@ type Tier = {
   price: string
   description: string
   features: string[]
+  buttonText: string,
   mostPopular: boolean
 }
 
@@ -18,16 +19,17 @@ const tiers: Tier[] = [
   {
     name: 'Standard',
     id: 'tier-freelancer',
-    href: '#',
+    href: '/free',
     price: 'Free',
     description: 'The essentials to provide your best work for clients.',
     features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
+    buttonText: 'Sign Up',
     mostPopular: true,
   },
   {
     name: 'Premium',
     id: 'tier-startup',
-    href: '#',
+    href: '/premium',
     price: '$299',
     description: 'A plan that scales with your rapidly growing business.',
     features: [
@@ -37,6 +39,7 @@ const tiers: Tier[] = [
       '24-hour support response time',
       'Marketing automations',
     ],
+    buttonText: 'Sign Up',
     mostPopular: false,
   },
   {
@@ -53,6 +56,7 @@ const tiers: Tier[] = [
       'Marketing automations',
       'Custom reporting tools',
     ],
+    buttonText: 'Contact Sales',
     mostPopular: false,
   },
 ]
@@ -120,7 +124,7 @@ export default function PricingComponent() {
                   <span className='pt-10'></span>
                 }
               </p>
-              <a
+              <Link
                 href={tier.href}
                 aria-describedby={tier.id}
                 className={classNames(
@@ -130,16 +134,8 @@ export default function PricingComponent() {
                   'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen',
                 )}
               >
-                {tier.name === 'Enterprise' ? (
-                  <Link href="#">Contact Sales</Link>
-                ) : (
-                  tier.name === 'Premium' ? (
-                    <Link href="/premium">Sign Up</Link>
-                  ) : (
-                    <Link href="/free">Sign Up</Link>
-                  )
-                )}
-              </a>
+                {tier.buttonText}
+              </Link>
 
               <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">
                 {tier.features.map((feature) => (
