@@ -417,14 +417,14 @@ export default function PaidPlanForm() {
               <div className="w-[512px] justify-start items-center gap-8 inline-flex">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
-                  <div className="text-right text-gray-700 text-sm font-medium leading-tight">Back</div>
+                  <div className="text-right text-gray-900 text-sm font-medium leading-tight">Back</div>
                 </div>
               </div>
               <div className="w-[512px] justify-center items-center gap-12 inline-flex">
                 <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Payment details</div>
               </div>
               <div className="w-[512px] justify-start items-center gap-5 inline-flex flex-col">
-                <Input variant='default' label='Email' id='email' name='emailPayment' type='text' />
+                <Input variant='checkout' label='Email' id='email' name='emailPayment' type='text' />
                 <Input variant='checkout' label='Name on card' id='name' name='name' placeholder='Full name on card' type='text' />
                 <div className='relative w-full'>
                   <Input variant='checkout' label='Card number' id='cardNumber' name='cardNumber' placeholder='1234 1234 1234 1234' type='text' />
