@@ -465,7 +465,8 @@ export default function PaidPlanForm() {
                     <div className="w-4 h-5 justify-center items-center flex">
                       <Checkbox
                         defaultChecked
-                        onCheckedChange={(checked) => setIsChecked(!checked)}
+                        onCheckedChange={(checked) => setIsChecked(checked === true)}
+
                       />
                     </div>
                     <div className="grow shrink basis-0 h-5 justify-start items-center flex">
@@ -547,7 +548,7 @@ export default function PaidPlanForm() {
                   </div>
                   <div className="h-[66px] px-2.5 pb-6 flex-col justify-start items-start gap-2.5 flex">
                     <div className="flex-col justify-start items-start gap-1 w-[141px]">
-                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' className='min-w-[150px]' />
+                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' className='w-[150px]' />
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
