@@ -15,6 +15,8 @@ import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
 
+type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
+
 const emails = [
   {
     src: '/assets/images/gmailLogo.png',
@@ -29,7 +31,22 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(5);
+  const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
+    role: undefined,
+    industry: undefined,
+    parkingSize: undefined,
+    evCharging: undefined,
+    state: undefined,
+    country: undefined,
+  });
+
+  const handleValueChange = (key: SelectKeys, value: string) => {
+    setValues((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -38,6 +55,8 @@ export default function FreePlanForm() {
   const handlePrevious = () => {
     setStep((prevStep) => prevStep - 1);
   };
+
+  const getTextColor = (key: SelectKeys) => (values[key] ? "text-black" : "text-gray-400");
 
   return (
     <div className={step >= 3 ? 'w-full h-screen' : ''}>
@@ -122,8 +141,11 @@ export default function FreePlanForm() {
                 </div>
                 <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='Your role/position'>
+                    <Select
+                      value={values.role || ""}
+                      onValueChange={(value) => handleValueChange("role", value)}
+                    >
+                      <SelectTrigger label="Your role/position" className={getTextColor("role")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -173,8 +195,11 @@ export default function FreePlanForm() {
                   <div className="w-[460px] text-gray-600 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
                 <div className='w-full'>
-                  <Select>
-                    <SelectTrigger label='Industry'>
+                  <Select
+                    value={values.industry || ""}
+                    onValueChange={(value) => handleValueChange("industry", value)}
+                  >
+                    <SelectTrigger label='Industry' className={getTextColor("industry")}>
                       <SelectValue placeholder="Select one" className='' />
                     </SelectTrigger>
                     <SelectContent>
@@ -187,8 +212,11 @@ export default function FreePlanForm() {
                 </div>
                 <div className="self-stretch justify-start items-start gap-2 inline-flex">
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='Parking size'>
+                    <Select
+                      value={values.parkingSize || ""}
+                      onValueChange={(value) => handleValueChange("parkingSize", value)}
+                    >
+                      <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -199,8 +227,11 @@ export default function FreePlanForm() {
                     </Select>
                   </div>
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='EV charging'>
+                    <Select
+                      value={values.evCharging || ""}
+                      onValueChange={(value) => handleValueChange("evCharging", value)}
+                    >
+                      <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -254,8 +285,11 @@ export default function FreePlanForm() {
                     type='text'
                     className='col-span-1' />
                   <div className='col-span-1'>
-                    <Select>
-                      <SelectTrigger label='State'>
+                    <Select
+                      value={values.state || ""}
+                      onValueChange={(value) => handleValueChange("state", value)}
+                    >
+                      <SelectTrigger label='State' className={getTextColor("state")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -322,8 +356,11 @@ export default function FreePlanForm() {
                     type="text"
                     className="col-span-1" />
                   <div className="col-span-1">
-                    <Select>
-                      <SelectTrigger label="Country">
+                    <Select
+                      value={values.country || ""}
+                      onValueChange={(value) => handleValueChange("country", value)}
+                    >
+                      <SelectTrigger label="Country" className={getTextColor("country")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>

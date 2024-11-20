@@ -17,7 +17,7 @@ import Image from 'next/image'
 import { Check } from 'lucide-react'
 import BackArrow from './backArrow'
 
-type SelectKeys = "role" | "department";
+type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
 
 const emails = [
@@ -49,11 +49,15 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(5);
   const [isChecked, setIsChecked] = useState(true);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
-    department: undefined,
+    industry: undefined,
+    parkingSize: undefined,
+    evCharging: undefined,
+    state: undefined,
+    country: undefined,
   });
 
   const handleValueChange = (key: SelectKeys, value: string) => {
@@ -158,7 +162,8 @@ export default function PaidPlanForm() {
                       value={values.role || ""}
                       onValueChange={(value) => handleValueChange("role", value)}
                     >
-                      <SelectTrigger label='Your role/position' className='text-gray-400'>
+                      <SelectTrigger label="Your role/position"
+                        className={getTextColor("role")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -208,8 +213,11 @@ export default function PaidPlanForm() {
                   <div className="w-[460px] text-gray-600 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
                 <div className='w-full'>
-                  <Select>
-                    <SelectTrigger label='Industry'>
+                  <Select
+                    value={values.industry || ""}
+                    onValueChange={(value) => handleValueChange("industry", value)}
+                  >
+                    <SelectTrigger label='Industry' className={getTextColor("industry")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                     <SelectContent>
@@ -222,8 +230,11 @@ export default function PaidPlanForm() {
                 </div>
                 <div className="self-stretch justify-start items-start gap-2 inline-flex">
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='Parking size'>
+                    <Select
+                      value={values.parkingSize || ""}
+                      onValueChange={(value) => handleValueChange("parkingSize", value)}
+                    >
+                      <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -234,8 +245,11 @@ export default function PaidPlanForm() {
                     </Select>
                   </div>
                   <div className='w-full'>
-                    <Select>
-                      <SelectTrigger label='EV charging'>
+                    <Select
+                      value={values.evCharging || ""}
+                      onValueChange={(value) => handleValueChange("evCharging", value)}
+                    >
+                      <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -289,8 +303,11 @@ export default function PaidPlanForm() {
                     type='text'
                     className='col-span-1' />
                   <div className='col-span-1'>
-                    <Select>
-                      <SelectTrigger label='State'>
+                    <Select
+                      value={values.state || ""}
+                      onValueChange={(value) => handleValueChange("state", value)}
+                    >
+                      <SelectTrigger label='State' className={getTextColor("state")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -357,8 +374,11 @@ export default function PaidPlanForm() {
                     type="text"
                     className="col-span-1" />
                   <div className="col-span-1">
-                    <Select>
-                      <SelectTrigger label="Country">
+                    <Select
+                      value={values.country || ""}
+                      onValueChange={(value) => handleValueChange("country", value)}
+                    >
+                      <SelectTrigger label="Country" className={getTextColor("country")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
