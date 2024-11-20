@@ -31,7 +31,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(1);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
     industry: undefined,

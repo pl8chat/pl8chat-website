@@ -13,7 +13,7 @@ const inputVariants = cva(
         contact: 'border-gray-300 rounded-md',
         message: 'text-sm',
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
-        promoCode: 'border-gray-300 rounded-md placeholder:text-gray-500 placeholder:text-sm',
+        promoCode: 'border-gray-300 rounded-md placeholder:text-gray-500 text-sm',
       },
     },
     defaultVariants: {

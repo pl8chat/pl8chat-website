@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
@@ -162,8 +162,7 @@ export default function PaidPlanForm() {
                       value={values.role || ""}
                       onValueChange={(value) => handleValueChange("role", value)}
                     >
-                      <SelectTrigger label="Your role/position"
-                        className={getTextColor("role")}>
+                      <SelectTrigger label="Your role/position" className={getTextColor("role")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
                       <SelectContent>
@@ -533,14 +532,14 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                   <div className="h-[66px] px-2.5 pb-6 flex-col justify-start items-start gap-2.5 flex">
-                    <div className="flex-col justify-start items-start gap-1 flex w-[137px]">
-                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' />
+                    <div className="flex-col justify-start items-start gap-1 flex w-[141px]">
+                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' />
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
                   <div className="self-stretch h-[246px] flex-col justify-start items-start gap-8 flex">
                     <div className="h-[172px] flex-col justify-start items-start gap-6 flex">
-                      <div className="self-stretch justify-end items-start inline-flex">
+                      <div className="self-stretch justify-end items-start inline-flex w-[375px]">
                         <div className="grow shrink basis-0 h-[52px] py-4 justify-start items-center gap-3 flex">
                           <div className="flex-col justify-start items-start inline-flex">
                             <div className="text-gray-900 text-sm font-bold leading-tight">Total due today</div>
