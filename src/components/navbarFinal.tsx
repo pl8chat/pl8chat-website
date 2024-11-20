@@ -192,8 +192,7 @@ export default function NavbarFinal() {
                         width={147}
                         height={32}
                       /> */}
-                      <Logo />
-                      {/* <LogoBlack /> */}
+                      {isScrolled || isFlydownOpen || pathname === '/pricing' || pathname === '/individuals' ? <LogoBlack /> : <Logo />}
                     </Link>
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
