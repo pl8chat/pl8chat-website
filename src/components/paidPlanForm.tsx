@@ -500,7 +500,7 @@ export default function PaidPlanForm() {
           {/* Right Column */}
           <div className="flex-1 w-[850px] h-[1044px] pr-24 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
             <div className="px-14 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
-              <div className="p-12 bg-[#f6f6f4] rounded-xl border w-[521px] border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex">
+              <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px]">
                 <div className='flex w-full'>
                   <div className="w-[374px] justify-center items-center gap-12 inline-flex">
                     <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
