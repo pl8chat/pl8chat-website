@@ -410,8 +410,8 @@ export default function PaidPlanForm() {
 
       {step === 6 && (
         <div className="flex w-full h-screen">
-          {/* Left Column */}
-          <div className="flex-1 w-[850px] h-[1044px] pl-[104px] pt-12 pb-10 bg-[#f6f6f4] justify-center items-start gap-[164px] inline-flex">
+          {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
+          <div className="basis-1/2 pt-12 pb-10 bg-[#f6f6f4] justify-center items-start gap-[164px] inline-flex">
             <div className="self-stretch grow shrink basis-0 pr-8 flex flex-col justify-start items-end gap-6">
               <div className="w-[621px] h-[124px] px-[125px] pb-[57px]"></div>
               <div className="w-[512px] justify-start items-center gap-8 inline-flex">
@@ -511,8 +511,8 @@ export default function PaidPlanForm() {
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="flex-1 w-[850px] h-[1044px] pr-24 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
+          {/* Right Column - max-w-[850px] h-[1044px] */}
+          <div className="basis-1/2 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
             <div className="px-14 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
               <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px]">
                 <div className='flex w-full'>

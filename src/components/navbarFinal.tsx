@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Logo from './logoSVG'
+import LogoBlack from './logoBlack'
 
 type NavigationItem = {
   name: string;
@@ -192,6 +193,7 @@ export default function NavbarFinal() {
                         height={32}
                       /> */}
                       <Logo />
+                      {/* <LogoBlack /> */}
                     </Link>
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
