@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(5);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -228,7 +228,7 @@ export default function PaidPlanForm() {
       {step === 4 && (
         <div className="flex w-full h-screen">
           {/* Left Column */}
-          <div className="flex-1 w-[414px] gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
+          <div className="basis-1/2 w-[414px] gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
             <div className="w-96 h-9 flex-col justify-start items-start inline-flex">
               <div className="self-stretch h-9 flex-col justify-start items-start gap-2 flex">
                 <div className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
@@ -312,126 +312,132 @@ export default function PaidPlanForm() {
       )}
 
       {step === 5 && (
-        <div className=''>
-          <div className="flex w-full h-screen">
-            {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
-              <div className="h-16 flex-col justify-start items-start gap-2 inline-flex">
-                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What’s your business address?</div>
-                <div onClick={handleNext} className="w-[460px] cursor-pointer"><span className="text-gray-600 text-sm font-normal leading-tight">Don’t have a physical address? </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Skip this step</span></div>
-              </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
-                <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
-                <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
-                <div className="self-stretch gap-2 grid grid-cols-2">
-                  <Input
-                    variant='default'
-                    label='City'
-                    id='firstName'
-                    name='firstName'
-                    type='text'
-                    className='col-span-1' />
-                  <div className='col-span-1'>
-                    <Select
-                      value={values.state || ""}
-                      onValueChange={(value) => handleValueChange("state", value)}
-                    >
-                      <SelectTrigger label='State' className={getTextColor("state")}>
-                        <SelectValue placeholder="Select one" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="AL">Alabama</SelectItem>
-                        <SelectItem value="AK">Alaska</SelectItem>
-                        <SelectItem value="AZ">Arizona</SelectItem>
-                        <SelectItem value="AR">Arkansas</SelectItem>
-                        <SelectItem value="CA">California</SelectItem>
-                        <SelectItem value="CO">Colorado</SelectItem>
-                        <SelectItem value="CT">Connecticut</SelectItem>
-                        <SelectItem value="DE">Delaware</SelectItem>
-                        <SelectItem value="FL">Florida</SelectItem>
-                        <SelectItem value="GA">Georgia</SelectItem>
-                        <SelectItem value="HI">Hawaii</SelectItem>
-                        <SelectItem value="ID">Idaho</SelectItem>
-                        <SelectItem value="IL">Illinois</SelectItem>
-                        <SelectItem value="IN">Indiana</SelectItem>
-                        <SelectItem value="IA">Iowa</SelectItem>
-                        <SelectItem value="KS">Kansas</SelectItem>
-                        <SelectItem value="KY">Kentucky</SelectItem>
-                        <SelectItem value="LA">Louisiana</SelectItem>
-                        <SelectItem value="ME">Maine</SelectItem>
-                        <SelectItem value="MD">Maryland</SelectItem>
-                        <SelectItem value="MA">Massachusetts</SelectItem>
-                        <SelectItem value="MI">Michigan</SelectItem>
-                        <SelectItem value="MN">Minnesota</SelectItem>
-                        <SelectItem value="MS">Mississippi</SelectItem>
-                        <SelectItem value="MO">Missouri</SelectItem>
-                        <SelectItem value="MT">Montana</SelectItem>
-                        <SelectItem value="NE">Nebraska</SelectItem>
-                        <SelectItem value="NV">Nevada</SelectItem>
-                        <SelectItem value="NH">New Hampshire</SelectItem>
-                        <SelectItem value="NJ">New Jersey</SelectItem>
-                        <SelectItem value="NM">New Mexico</SelectItem>
-                        <SelectItem value="NY">New York</SelectItem>
-                        <SelectItem value="NC">North Carolina</SelectItem>
-                        <SelectItem value="ND">North Dakota</SelectItem>
-                        <SelectItem value="OH">Ohio</SelectItem>
-                        <SelectItem value="OK">Oklahoma</SelectItem>
-                        <SelectItem value="OR">Oregon</SelectItem>
-                        <SelectItem value="PA">Pennsylvania</SelectItem>
-                        <SelectItem value="RI">Rhode Island</SelectItem>
-                        <SelectItem value="SC">South Carolina</SelectItem>
-                        <SelectItem value="SD">South Dakota</SelectItem>
-                        <SelectItem value="TN">Tennessee</SelectItem>
-                        <SelectItem value="TX">Texas</SelectItem>
-                        <SelectItem value="UT">Utah</SelectItem>
-                        <SelectItem value="VT">Vermont</SelectItem>
-                        <SelectItem value="VA">Virginia</SelectItem>
-                        <SelectItem value="WA">Washington</SelectItem>
-                        <SelectItem value="WV">West Virginia</SelectItem>
-                        <SelectItem value="WI">Wisconsin</SelectItem>
-                        <SelectItem value="WY">Wyoming</SelectItem>
-                      </SelectContent>
-                    </Select>
+        <div className="flex w-full h-screen">
+          {/* Left Column */}
+          <div className="basis-1/2 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
+            <div className="h-[72px] flex-col justify-start items-start gap-2 inline-flex">
+              <div className="self-stretch h-[72px] flex-col justify-start items-start gap-4 flex">
+                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What is your business address?</div>
+                <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                  <div className="text-gray-900 text-sm font-normal leading-tight">Don’t have a physical address? </div>
+                  <div className="justify-start items-center flex">
+                    <div className="text-[#004c3d] text-sm font-normal underline leading-tight">Skip this step</div>
                   </div>
                 </div>
-                <div className="self-stretchgap-2 grid grid-cols-2 gap-2">
-                  <Input
-                    variant="default"
-                    label="Zip/Postal code"
-                    id="zip"
-                    name="zip"
-                    type="text"
-                    className="col-span-1" />
-                  <div className="col-span-1">
-                    <Select
-                      value={values.country || ""}
-                      onValueChange={(value) => handleValueChange("country", value)}
-                    >
-                      <SelectTrigger label="Country" className={getTextColor("country")}>
-                        <SelectValue placeholder="Select one" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="USA">United States of America</SelectItem>
-                        <SelectItem value="CAN">Canada</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <Button variant='signUp' onClick={handleNext}>Next</Button>
-              </div>
-              <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <ProgressBar progress={100} onBack={handlePrevious} number='3/3' />
               </div>
             </div>
+            <div className="w-[384px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
+              <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
+              <div className="self-stretch gap-2 grid grid-cols-2">
+                <Input
+                  variant='default'
+                  label='City'
+                  id='firstName'
+                  name='firstName'
+                  type='text'
+                  className='col-span-1' />
+                <div className='col-span-1'>
+                  <Select
+                    value={values.state || ""}
+                    onValueChange={(value) => handleValueChange("state", value)}
+                  >
+                    <SelectTrigger label='State' className={getTextColor("state")}>
+                      <SelectValue placeholder="Select one" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="AL">Alabama</SelectItem>
+                      <SelectItem value="AK">Alaska</SelectItem>
+                      <SelectItem value="AZ">Arizona</SelectItem>
+                      <SelectItem value="AR">Arkansas</SelectItem>
+                      <SelectItem value="CA">California</SelectItem>
+                      <SelectItem value="CO">Colorado</SelectItem>
+                      <SelectItem value="CT">Connecticut</SelectItem>
+                      <SelectItem value="DE">Delaware</SelectItem>
+                      <SelectItem value="FL">Florida</SelectItem>
+                      <SelectItem value="GA">Georgia</SelectItem>
+                      <SelectItem value="HI">Hawaii</SelectItem>
+                      <SelectItem value="ID">Idaho</SelectItem>
+                      <SelectItem value="IL">Illinois</SelectItem>
+                      <SelectItem value="IN">Indiana</SelectItem>
+                      <SelectItem value="IA">Iowa</SelectItem>
+                      <SelectItem value="KS">Kansas</SelectItem>
+                      <SelectItem value="KY">Kentucky</SelectItem>
+                      <SelectItem value="LA">Louisiana</SelectItem>
+                      <SelectItem value="ME">Maine</SelectItem>
+                      <SelectItem value="MD">Maryland</SelectItem>
+                      <SelectItem value="MA">Massachusetts</SelectItem>
+                      <SelectItem value="MI">Michigan</SelectItem>
+                      <SelectItem value="MN">Minnesota</SelectItem>
+                      <SelectItem value="MS">Mississippi</SelectItem>
+                      <SelectItem value="MO">Missouri</SelectItem>
+                      <SelectItem value="MT">Montana</SelectItem>
+                      <SelectItem value="NE">Nebraska</SelectItem>
+                      <SelectItem value="NV">Nevada</SelectItem>
+                      <SelectItem value="NH">New Hampshire</SelectItem>
+                      <SelectItem value="NJ">New Jersey</SelectItem>
+                      <SelectItem value="NM">New Mexico</SelectItem>
+                      <SelectItem value="NY">New York</SelectItem>
+                      <SelectItem value="NC">North Carolina</SelectItem>
+                      <SelectItem value="ND">North Dakota</SelectItem>
+                      <SelectItem value="OH">Ohio</SelectItem>
+                      <SelectItem value="OK">Oklahoma</SelectItem>
+                      <SelectItem value="OR">Oregon</SelectItem>
+                      <SelectItem value="PA">Pennsylvania</SelectItem>
+                      <SelectItem value="RI">Rhode Island</SelectItem>
+                      <SelectItem value="SC">South Carolina</SelectItem>
+                      <SelectItem value="SD">South Dakota</SelectItem>
+                      <SelectItem value="TN">Tennessee</SelectItem>
+                      <SelectItem value="TX">Texas</SelectItem>
+                      <SelectItem value="UT">Utah</SelectItem>
+                      <SelectItem value="VT">Vermont</SelectItem>
+                      <SelectItem value="VA">Virginia</SelectItem>
+                      <SelectItem value="WA">Washington</SelectItem>
+                      <SelectItem value="WV">West Virginia</SelectItem>
+                      <SelectItem value="WI">Wisconsin</SelectItem>
+                      <SelectItem value="WY">Wyoming</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div className="self-stretchgap-2 grid grid-cols-2 gap-2">
+                <Input
+                  variant="default"
+                  label="Zip/Postal code"
+                  id="zip"
+                  name="zip"
+                  type="text"
+                  className="col-span-1" />
+                <div className="col-span-1">
+                  <Select
+                    value={values.country || ""}
+                    onValueChange={(value) => handleValueChange("country", value)}
+                  >
+                    <SelectTrigger label="Country" className={getTextColor("country")}>
+                      <SelectValue placeholder="Select one" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="USA">United States of America</SelectItem>
+                      <SelectItem value="CAN">Canada</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
 
-            {/* Right Column */}
-            <div className="flex-1 bg-pl8Green flex items-center justify-center">
+              <Button variant='signUp' onClick={handleNext}>Next</Button>
+            </div>
+            <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
+              <ProgressBar progress={100} onBack={handlePrevious} number='3/3' />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="basis-1/2 bg-pl8Green flex items-center justify-center">
+            <div className='w-full h-full relative'>
               <Image
-                src={'/assets/images/PL8CHAT.png'}
+                src={'/assets/images/signUpPic.jpg'}
                 alt="PL8CHAT Logo"
-                width={304}
-                height={97}
+                fill
               />
             </div>
           </div>
