@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import Chevron from "../chevronDown";
 import Check from "../check";
+import GreenCheck from "../checkGreen";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
@@ -113,7 +114,7 @@ const SelectLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-    className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
+    className={cn("py-1.5 pl-8 pr-2 text-sm text-pl8Green font-semibold", className)}
     {...props}
   />
 ));
@@ -126,14 +127,14 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:opacity-50",
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=checked]:text-pl8Green data-[disabled]:opacity-50 text-gray-900",
       className
     )}
     {...props}
   >
     <span className="absolute right-[16px] flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check />
+        <GreenCheck />
       </SelectPrimitive.ItemIndicator>
     </span>
 
@@ -141,6 +142,7 @@ const SelectItem = React.forwardRef<
   </SelectPrimitive.Item>
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
+
 
 
 const SelectSeparator = React.forwardRef<

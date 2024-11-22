@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(4);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -190,7 +190,7 @@ export default function PaidPlanForm() {
                       <SelectTrigger label="Your role/position" className={getTextColor("role")}>
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className=''>
                         <SelectItem value="owner">Owner</SelectItem>
                         <SelectItem value="admin">Admin / manager</SelectItem>
                       </SelectContent>
@@ -226,84 +226,85 @@ export default function PaidPlanForm() {
       )}
 
       {step === 4 && (
-        <div className=''>
-          <div className="flex w-full h-screen">
-            {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
-              <div className="w-[460px] h-9 flex-col justify-start items-start gap-3 inline-flex">
-                <div className="flex-col justify-start items-start gap-2 flex">
-                  <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about your business</div>
+        <div className="flex w-full h-screen">
+          {/* Left Column */}
+          <div className="flex-1 w-[414px] gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
+            <div className="w-96 h-9 flex-col justify-start items-start inline-flex">
+              <div className="self-stretch h-9 flex-col justify-start items-start gap-2 flex">
+                <div className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
+                  <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Tell us about your business</div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
-                <div>
-                  <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
-                  <div className="w-[460px] text-gray-600 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
-                </div>
+            </div>
+            <div className="w-[384px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <div>
+                <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
+                <div className="w-[384px] text-gray-500 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
+              </div>
+              <div className='w-full'>
+                <Select
+                  value={values.industry || ""}
+                  onValueChange={(value) => handleValueChange("industry", value)}
+                >
+                  <SelectTrigger label='Industry' className={getTextColor("industry")}>
+                    <SelectValue placeholder="Select one" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="apartment">Residential - Apartment</SelectItem>
+                    <SelectItem value="hoa">Residential - HOA</SelectItem>
+                    <SelectItem value="hospitality">Hospitality</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <div className='w-full'>
                   <Select
-                    value={values.industry || ""}
-                    onValueChange={(value) => handleValueChange("industry", value)}
+                    value={values.parkingSize || ""}
+                    onValueChange={(value) => handleValueChange("parkingSize", value)}
                   >
-                    <SelectTrigger label='Industry' className={getTextColor("industry")}>
+                    <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="apartment">Residential - Apartment</SelectItem>
-                      <SelectItem value="hoa">Residential - HOA</SelectItem>
-                      <SelectItem value="hospitality">Hospitality</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="<25">Under 25 spaces</SelectItem>
+                      <SelectItem value="25-100">25 - 100</SelectItem>
+                      <SelectItem value="100+">100+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                  <div className='w-full'>
-                    <Select
-                      value={values.parkingSize || ""}
-                      onValueChange={(value) => handleValueChange("parkingSize", value)}
-                    >
-                      <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
-                        <SelectValue placeholder="Select one" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="<25">Under 25 spaces</SelectItem>
-                        <SelectItem value="25-100">25 - 100</SelectItem>
-                        <SelectItem value="100+">100+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className='w-full'>
-                    <Select
-                      value={values.evCharging || ""}
-                      onValueChange={(value) => handleValueChange("evCharging", value)}
-                    >
-                      <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
-                        <SelectValue placeholder="Select one" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="own">Yes - we own</SelectItem>
-                        <SelectItem value="thirdParty">Yes - third party</SelectItem>
-                        <SelectItem value="no">No</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-                <div className='h-10 w-full'>
-                  <Button variant='signUp' onClick={handleNext} className={`w-full`}>Next</Button>
+                <div className='w-full'>
+                  <Select
+                    value={values.evCharging || ""}
+                    onValueChange={(value) => handleValueChange("evCharging", value)}
+                  >
+                    <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
+                      <SelectValue placeholder="Select one" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="own">Yes - we own</SelectItem>
+                      <SelectItem value="thirdParty">Yes - third party</SelectItem>
+                      <SelectItem value="no">No</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
-              <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <ProgressBar progress={66} onBack={handlePrevious} number='2/3' />
+              <div className='h-10 w-full'>
+                <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
               </div>
             </div>
+            <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
+              <ProgressBar progress={66} onBack={handlePrevious} number='2/3' />
+            </div>
+          </div>
 
-            {/* Right Column */}
-            <div className="flex-1 bg-pl8Green flex items-center justify-center">
+          {/* Right Column */}
+          <div className="basis-1/2 bg-pl8Green flex items-center justify-center">
+            <div className='w-full h-full relative'>
               <Image
-                src={'/assets/images/PL8CHAT.png'}
+                src={'/assets/images/signUpPic.jpg'}
                 alt="PL8CHAT Logo"
-                width={304}
-                height={97}
+                fill
               />
             </div>
           </div>

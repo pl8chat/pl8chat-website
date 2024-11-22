@@ -12,7 +12,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onBack, number }) =
   const validProgress = Math.max(0, Math.min(100, progress));
 
   return (
-    <div className='w-full flex flex-col gap-6 px-10'>
+    <div className='w-full flex flex-col gap-6'>
       <div className='flex justify-between'>
         <button onClick={onBack} className='flex justify-center items-center gap-2'>
           <BackArrow />
