@@ -3,12 +3,12 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full h-[42px] px-[13px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#00695c] text-base font-normal leading-normal border-2",
+  "w-full h-[42px] px-[13px] py-[9px] bg-white rounded-md focus:ring-0 focus:outline-none focus:border-[#004c3d] text-base font-normal leading-normal shadow border",
   {
     variants: {
       variant: {
         default: "border-gray-300 rounded-md",
-        phone: "pl-[50px] border-2 border-gray-300 rounded-md",
+        phone: "pl-[50px] border-gray-300 rounded-md",
         error: "border-red-500 text-red-700 rounded-md",
         contact: 'border-gray-300 rounded-md',
         message: 'text-sm',
@@ -30,25 +30,19 @@ type InputProps = React.ComponentProps<"input"> &
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, ...props }, ref) => {
     return (
-      <div className="w-full flex flex-col gap-1">
-        {label && <label htmlFor={props.id} className={`text-gray-700 ${variant === 'checkout' ? 'text-gray-900' : 'text-gray-700'
-        } text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
+      <div className="w-full flex flex-col gap-2">
+        {label && <label htmlFor={props.id} className={`text-gray-900 text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
         </label>}
         <div className="relative">
           {variant === "phone" ? (
             // Render specific structure for the phone variant
-            <div className="flex items-center">
-              <span className="absolute left-[20px] text-gray-500 tracking-[.2rem]">+1</span>
               <input
                 className={cn(inputVariants({ variant }), "pl-[50px]", className)}
                 ref={ref}
                 {...props}
-                placeholder="(555) 987-6543"
               />
-            </div>
           ) : (
-            // Render the default structure for other variants
             <input
               className={cn(inputVariants({ variant }), className)}
               ref={ref}

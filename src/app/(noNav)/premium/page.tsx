@@ -1,19 +1,15 @@
 import PaidPlanForm from "@/components/paidPlanForm"
 import Link from 'next/link'
 import Image from 'next/image'
+import GreenLogo from '@/components/logoGreen'
 
 export default function FreePlan() {
   return (
     <div className="fixed h-screen w-full bg-[#F6F6F4] flex flex-col justify-center items-center overflow-hidden">
-      <div className="absolute top-1.5 left-7 z-50">
-        <a href="/">
-          <Image
-            src="/assets/images/PL8CHATBlack.png"
-            width={155}
-            height={40}
-            alt="logoGreen"
-          />
-        </a>
+      <div className="absolute top-0 left-0 z-50 px-8 py-2 ">
+        <Link href="/">
+          <GreenLogo />
+        </Link>
       </div>
       <PaidPlanForm />
     </div>

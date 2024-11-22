@@ -1,19 +1,20 @@
-// Select.tsx
 "use client";
 
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
+import Chevron from "../chevronDown";
+import Check from "../check";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
-  "flex h-[42px] w-full items-center justify-between rounded-md border-2 border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+  "flex h-[42px] w-full items-center justify-between rounded-md shadow border border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
   {
     variants: {
       variant: {
-        default: "",
+        default: "border-gray-300",
         error: "border-red-500 text-red-700",
         accent: "border-[#00695c] text-[#00695c]",
         contact: "",
@@ -37,7 +38,7 @@ const SelectValue = SelectPrimitive.Value;
 
 const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Trigger>, SelectProps>(({ className, variant, label, children, ...props }, ref) => (
   <div className="flex flex-col gap-0.5">
-    {label && <label className={`text-gray-700 text-sm ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>{label}</label>}
+    {label && <label className={`text-gray-900 text-sm ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>{label}</label>}
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(selectVariants({ variant }), className, 'h-[42px]')}
@@ -45,7 +46,7 @@ const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.T
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDown className="h-4 w-4 opacity-50" />
+        <Chevron />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   </div>
@@ -88,7 +89,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 w-full min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md",
+        "relative z-50 max-h-96 w-[384px] min-w-[8rem] overflow-hidden rounded-md border bg-white text-popover-foreground shadow-md",
         position === "popper" &&
         "data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1",
         className
@@ -130,12 +131,12 @@ const SelectItem = React.forwardRef<
     )}
     {...props}
   >
-    {/* <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="absolute right-[16px] flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check />
       </SelectPrimitive.ItemIndicator>
-    </span> */}
-    
+    </span>
+
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ));

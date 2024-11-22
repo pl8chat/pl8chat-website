@@ -21,10 +21,10 @@ const variants = {
     'rounded-md px-4 py-[13px] text-lg font-medium shadow-sm', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
   ),
   signUp: clsx(
-    'self-stretch h-[42px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
+    'self-stretch h-[42px] px-[17px] py-[9px] bg-pl8Green rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
   ),
   checkout: clsx(
-    'self-stretch h-[35px] px-[17px] py-[9px] bg-[#00695c] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
+    'self-stretch h-[35px] px-[17px] py-[9px] bg-pl8Green rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
   ),
 }
 

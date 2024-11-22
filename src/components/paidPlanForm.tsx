@@ -49,8 +49,9 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const [isChecked, setIsChecked] = useState(true);
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
     industry: undefined,
@@ -61,6 +62,7 @@ export default function PaidPlanForm() {
   });
 
   const handleValueChange = (key: SelectKeys, value: string) => {
+
     setValues((prev) => ({
       ...prev,
       [key]: value,
@@ -75,28 +77,44 @@ export default function PaidPlanForm() {
     setStep((prevStep) => prevStep - 1);
   };
 
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneNumber(e.target.value);
+  };
+
   const getTextColor = (key: SelectKeys) => (values[key] ? "text-black" : "text-gray-400");
 
   return (
     <div className={step >= 3 ? 'w-full h-screen' : ''}>
       {step === 1 && (
-        <div className='flex flex-col gap-8'>
-          <div className="w-[460px] h-16 flex-col justify-start items-start gap-3 inline-flex">
+        <div className='flex flex-col gap-6'>
+          <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Sign up for a premium plan</div>
+              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Sign up</div>
               <div className="justify-start items-center gap-1 inline-flex">
-                <div className="text-gray-600 text-sm font-normal leading-tight">Create an account or</div>
-                <div className="justify-start items-center flex">
-                  <div className="text-[#00695c] texFt-sm font-medium underline leading-tight">Sign in</div>
+                <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
+                <div className="h-5 justify-start items-center inline-flex">
+                  <div className="text-[#004c3d] text-sm font-normal underline leading-tight">Sign in</div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-[460px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
+          <div className="w-[384px] h-[298px] flex-col justify-start items-start gap-4 inline-flex">
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
-            <Input variant='default' label='Password' id='password' name='password' type='password' />
-            <div><span className="text-gray-600 text-sm font-normal leading-tight">By creating an account, you agree to our </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Terms</span><span className="text-gray-600 text-sm font-normal leading-tight">, and have read and acknowledged our </span><span className="text-[#00695c] text-sm font-normal underline leading-tight">Privacy Policy</span><span className="text-gray-600 text-sm font-normal leading-tight">. </span></div>
-            <div className='h-10 w-full'>
+            <div className='relative w-full'>
+              <Input variant='default' label='Password' id='password' name='password' type='password' className='w-full' />
+              <Image
+                src={`/assets/images/eyeOff.png`}
+                alt='Eye Icon'
+                width={20}
+                height={20}
+                className='absolute right-[13px] top-9'
+              />
+            </div>
+            <div className="h-[60px] justify-start items-center gap-2 inline-flex">
+              <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By creating an account, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
+              </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and have read and acknowledge our </span><Link href={`/privacy`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
+            </div>
+            <div className='w-full mt-4'>
               <Button variant='signUp' onClick={handleNext} className={`w-full`}>Sign up</Button>
             </div>
           </div>
@@ -105,36 +123,41 @@ export default function PaidPlanForm() {
 
       {step === 2 && (
         <div className='max-w-sm flex flex-col gap-8'>
-          <div className="w-96 h-[84px] flex-col justify-start items-start gap-3 inline-flex">
-            <div className="self-stretch h-[84px] flex-col justify-start items-start gap-2 flex">
+          <div className="w-96 h-[84px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="h-[92px] flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Check your email</div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0"><span className="text-gray-600 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-600 text-sm font-bold leading-tight">michael@pl8chat.com</span><span className="text-gray-600 text-sm font-normal leading-tight"> with a link to activate your account.</span></div>
+                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account, </span></div>
               </div>
             </div>
           </div>
-          <div className="w-96 h-[141px] flex-col justify-start items-start gap-6 inline-flex">
-            <div className='self-stretch justify-start items-start gap-1 inline-flex'>
-              {emails.map((item, index) => (
-                <div key={index} onClick={handleNext} className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex">
-                  <div className='w-12 h-12 py-1.5 justify-center items-center flex'>
-                    <Image
-                      src={item.src}
-                      alt={item.altText}
-                      width={48}
-                      height={48}
-                      className="relative"
-                    />
-                  </div>
-                  <Link href='#' className="text-[#00695c] text-sm font-medium underline leading-tight">Open {item.text}</Link>
+          <div className="w-[460px] h-12 justify-start items-start gap-1 inline-flex">
+            {emails.map((item) => (
+              <div className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex">
+                <div className="w-12 h-12 py-1.5 justify-center items-center flex">
+                  <Image
+                    src={item.src}
+                    alt={item.altText}
+                    width={48}
+                    height={48}
+                    className="relative"
+                  />
                 </div>
-              ))}
+                <div onClick={handleNext} className="text-[#004c3d] text-sm font-normal underline leading-tight">Open Gmail</div>
+              </div>
+            ))}
+          </div>
+          <div className="h-[70px] flex-col justify-start items-start gap-2 inline-flex">
+            <div className="self-stretch h-5 flex-col justify-start items-start gap-4 flex">
+              <div className="self-stretch justify-between items-center inline-flex">
+                <div className="grow shrink basis-0 h-5 justify-start items-center gap-2 flex">
+                  <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Didn’t get an email? Check your spam folder! </div>
+                </div>
+              </div>
             </div>
-            <div className="self-stretch justify-center items-center gap-2 inline-flex"></div>
-            <div className="self-stretch h-11 flex-col justify-center items-start gap-1 flex">
-              <div className="self-stretch text-gray-600 text-sm font-normal leading-tight">Didn’t get an email? Check your spam folder!</div>
-              <div className="justify-start items-center inline-flex">
-                <div onClick={handlePrevious} className="text-[#00695c] text-sm font-medium underline leading-tight cursor-pointer">Re-enter your email and try again</div>
+            <div className="self-stretch h-[42px] flex-col justify-start items-start gap-2 flex">
+              <div className="self-stretch h-[42px] py-[9px] rounded-md justify-start items-center inline-flex">
+                <div onClick={handlePrevious} className="cursor-pointer text-[#004c3d] text-sm font-normal underline leading-tight">Re-enter your email and try again</div>
               </div>
             </div>
           </div>
@@ -145,13 +168,15 @@ export default function PaidPlanForm() {
         <div className=''>
           <div className="flex w-full h-screen">
             {/* Left Column */}
-            <div className="flex-1 gap-8 flex flex-col items-center justify-center relative">
-              <div className="w-[460px] h-9 flex-col justify-start items-start gap-3 inline-flex">
-                <div className="flex-col justify-start items-start gap-2 flex">
-                  <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
+            <div className="basis-1/2 gap-6 flex flex-col items-center justify-center relative">
+              <div className="w-96 h-9 flex-col justify-start items-start inline-flex">
+                <div className="self-stretch h-9 flex-col justify-start items-start gap-2 flex">
+                  <div className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
+                    <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
+                  </div>
                 </div>
               </div>
-              <div className="w-[460px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="w-[384px] h-[286] flex-col justify-start items-start gap-6 inline-flex">
                 <div className="self-stretch justify-start items-start gap-2 inline-flex">
                   <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                   <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
@@ -171,12 +196,15 @@ export default function PaidPlanForm() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="w-[460px] text-gray-600 text-sm font-normal leading-tight">You can change this later in settings</div>
+                  <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
-                <Input label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
-                <div className='h-10 w-full'>
-                  <Button variant='signUp' onClick={handleNext} className={`w-full`}>Next</Button>
+                <div className='w-full relative'>
+                  <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-pl8Green' : 'text-gray-400'}`}>+ 1</span>
+                  <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
                 </div>
+              </div>
+              <div className='h-10 w-[384px]'>
+                <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
               </div>
               <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
                 <ProgressBar progress={33} onBack={handlePrevious} number='1/3' />
@@ -184,13 +212,14 @@ export default function PaidPlanForm() {
             </div>
 
             {/* Right Column */}
-            <div className="flex-1 bg-pl8Green flex items-center justify-center">
-              <Image
-                src={'/assets/images/PL8CHAT.png'}
-                alt="PL8CHAT Logo"
-                width={304}
-                height={97}
-              />
+            <div className="basis-1/2 bg-pl8Green flex items-center justify-center">
+              <div className='w-full h-full relative'>
+                <Image
+                  src={'/assets/images/signUpPic.jpg'}
+                  alt="PL8CHAT Logo"
+                  fill
+                />
+              </div>
             </div>
           </div>
         </div>
