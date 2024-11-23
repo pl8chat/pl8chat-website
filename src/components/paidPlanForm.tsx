@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -421,7 +421,7 @@ export default function PaidPlanForm() {
                   </Select>
                 </div>
               </div>
-              
+
             </div>
             <div className='w-[384px]'>
               <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
@@ -447,10 +447,9 @@ export default function PaidPlanForm() {
       {step === 6 && (
         <div className="flex w-full h-screen">
           {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
-          <div className="basis-1/2 pt-12 pb-10 bg-[#f6f6f4] justify-center items-start gap-[164px] inline-flex">
-            <div className="self-stretch grow shrink basis-0 pr-8 flex flex-col justify-start items-end gap-6">
-              <div className="w-[621px] h-[124px] px-[125px] pb-[57px]"></div>
-              <div className="w-[512px] justify-start items-center gap-8 inline-flex">
+          <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex">
+            <div className="pr-6 pt-[190px] flex-col justify-start items-end gap-6 inline-flex">
+              <div className="w-[512px] justify-start items-center gap-8 inline-flex h-6">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
                   <div className="text-right text-gray-900 text-sm font-medium leading-tight">Back</div>
@@ -459,7 +458,7 @@ export default function PaidPlanForm() {
               <div className="w-[512px] justify-center items-center gap-12 inline-flex">
                 <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Payment details</div>
               </div>
-              <div className="w-[512px] justify-start items-center gap-5 inline-flex flex-col">
+              <div className="w-[512px] h-[569px] justify-start items-center gap-6 inline-flex flex-col">
                 <Input variant='checkout' label='Email' id='email' name='emailPayment' type='text' />
                 <Input variant='checkout' label='Name on card' id='name' name='name' placeholder='Full name on card' type='text' />
                 <div className='relative w-full'>
@@ -511,7 +510,7 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                <div className={`${isChecked ? 'hidden' : ''} flex flex-col gap-5`}>
+                <div className={`${isChecked ? 'hidden' : ''} flex flex-col gap-6`}>
                   <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
                   <div className='grid grid-cols-9 gap-4'>
                     <div className='col-span-3'>
@@ -525,51 +524,31 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                {/* {isChecked && (
-                  <>
-                    <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
-                    <div className='grid grid-cols-9 gap-4'>
-                      <div className='col-span-3'>
-                        <Input variant='checkout' label='City' id='city' name='city' type='text' />
-                      </div>
-                      <div className='col-span-3'>
-                        <Input variant='checkout' label='State/Province' id='state' name='state' type='text' />
-                      </div>
-                      <div className='col-span-3'>
-                        <Input variant='checkout' label='Postal code' id='postalCode' name='postalCode' type='text' />
-                      </div>
-                    </div>
-                  </>
-                )} */}
-
               </div>
-              <div className="w-[512px]"></div>
             </div>
           </div>
 
           {/* Right Column - max-w-[850px] h-[1044px] */}
           <div className="basis-1/2 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
-            <div className="px-14 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
-              <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px]">
-                <div className='flex w-full'>
-                  <div className="w-[374px] justify-center items-center gap-12 inline-flex">
-                    <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
-                  </div>
+            <div className="pl-6 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
+              <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px] h-[617px]">
+                <div className="w-[374px] justify-center items-center gap-12 inline-flex">
+                  <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
                 </div>
                 <div className="flex-col justify-center items-start flex">
-                  <div className="w-[375px] pt-4 pb-6 justify-start items-center gap-3 inline-flex">
+                  <div className="w-[375px] h-[92px] pt-4 pb-6 justify-start items-center gap-3 inline-flex">
                     <div className="flex-col justify-start items-start gap-2 inline-flex">
                       <div className="text-gray-900 text-sm font-medium leading-tight">Premium plan</div>
                       <div className="text-gray-900 text-sm font-normal leading-tight">A single license for business use</div>
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-normal leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
-                  <div className="w-[375px] justify-start items-center inline-flex">
+                  <div className="w-[375px] h-[52px] justify-start items-center inline-flex">
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-start items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
                         <div className="text-gray-900 text-sm font-medium leading-tight">Subtotal</div>
@@ -577,45 +556,54 @@ export default function PaidPlanForm() {
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-medium leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
                   <div className="h-[66px] px-2.5 pb-6 flex-col justify-start items-start gap-2.5 flex">
                     <div className="flex-col justify-start items-start gap-1 w-[141px]">
-                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' className='w-[150px]' />
+                      <Input variant='promoCode' id='promoCode' name='promoCode' type='text' placeholder='Add promo code' className='w-[242.75px]' />
                     </div>
                   </div>
                   <div className="self-stretch h-px bg-gray-200"></div>
-                  <div className="self-stretch h-[246px] flex-col justify-start items-start gap-8 flex">
+                  <div className="self-stretch flex-col justify-start items-start gap-8 flex">
                     <div className="h-[172px] flex-col justify-start items-start gap-6 flex">
                       <div className="self-stretch justify-end items-start inline-flex w-[375px]">
-                        <div className="grow shrink basis-0 h-[52px] py-4 justify-start items-center gap-3 flex">
+                        <div className="h-[52px] py-4 justify-start items-center gap-3 inline-flex">
                           <div className="flex-col justify-start items-start inline-flex">
                             <div className="text-gray-900 text-sm font-medium leading-tight">Total due today</div>
                           </div>
                         </div>
                         <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                           <div className="flex-col justify-start items-start inline-flex">
-                            <div className="text-gray-900 text-sm font-medium leading-tight">$120.00</div>
+                            <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
                           </div>
                         </div>
                       </div>
-                      <div className="self-stretch justify-start items-start gap-3 inline-flex">
+                      <div className=" justify-start items-start gap-3 inline-flex">
                         <div className="grow shrink basis-0 flex-col justify-start items-start inline-flex">
-                          <div className="self-stretch"><span className="text-gray-500 text-sm font-normal leading-normal">By clicking subscribe, you agree to all of this and that anlk jlkjlkjlkj  ljlk jlklkjllkjlkjld this and and thats blah blah  blah blah and our </span>
+                          <div className="self-stretch">
+                            <span className="text-gray-900 text-sm font-normal leading-tight"> By clicking subscribe, I authorize PL8CHAT to charge my payment method and I agree to the </span>
                             <Link href={`/terms`}>
                               <span className="text-pl8Green text-sm font-normal underline leading-normal">Terms of service</span>
                             </Link>
-                            <span className="text-gray-500 text-sm font-normal leading-normal"> and our </span>
+                            <span className="text-gray-900 text-sm font-normal leading-tight"> and the </span>
                             <Link href={`/privacy`}>
                               <span className="text-pl8Green text-sm font-normal underline leading-normal">Privacy policy</span>
                             </Link>
-                            <span className="text-gray-500 text-sm font-normal leading-normal"> </span></div>
+                            <span className="text-gray-900 text-sm font-normal leading-tight">. </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <Button variant='signUp' onClick={handleNext}>Subscribe</Button>
+                  </div>
+                  <div className="h-[92px] mt-2 w-full flex-col justify-start items-start gap-2 inline-flex">
+                    <Button variant='signUp' onClick={handleNext}>Submit</Button>
+                    <div className="self-stretch h-[42px] px-[17px] py-[9px] rounded-md justify-center items-center inline-flex">
+                      <div className="text-[#034b48] cursor-pointer text-sm font-normal underline leading-tight">
+                        Cancel transaction
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
