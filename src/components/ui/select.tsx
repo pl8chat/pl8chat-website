@@ -5,9 +5,9 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import Chevron from "../chevronDown";
-import Check from "../check";
-import GreenCheck from "../checkGreen";
+import Chevron from "../svgs/chevronDown";
+import Check from "../svgs/check";
+import GreenCheck from "../svgs/checkGreen";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
@@ -77,20 +77,27 @@ const SelectScrollDownButton = React.forwardRef<
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronDown className="h-4 w-4" />
+    <Chevron />
+    {/* <ChevronDown className="h-4 w-4" /> */}
   </SelectPrimitive.ScrollDownButton>
 ));
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
 
+interface SelectContentProps
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> {
+  short?: boolean;
+}
+
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = "popper", ...props }, ref) => (
+  SelectContentProps
+>(({ className, children, position = "popper", short, ...props }, ref) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 w-[384px] min-w-[8rem] overflow-hidden rounded-md border bg-white text-popover-foreground shadow-md",
+        "relative z-50 max-h-[165px] overflow-hidden rounded-md border bg-white text-popover-foreground shadow-md",
+        short ? "w-[188px]" : "w-[384px]",
         position === "popper" &&
         "data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1",
         className

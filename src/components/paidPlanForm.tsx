@@ -15,7 +15,7 @@ import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
 import { Check } from 'lucide-react'
-import BackArrow from './backArrow'
+import BackArrow from './svgs/backArrow'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
@@ -314,15 +314,13 @@ export default function PaidPlanForm() {
       {step === 5 && (
         <div className="flex w-full h-screen">
           {/* Left Column */}
-          <div className="basis-1/2 gap-8 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
-            <div className="h-[72px] flex-col justify-start items-start gap-2 inline-flex">
-              <div className="self-stretch h-[72px] flex-col justify-start items-start gap-4 flex">
-                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What is your business address?</div>
-                <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                  <div className="text-gray-900 text-sm font-normal leading-tight">Don’t have a physical address? </div>
-                  <div className="justify-start items-center flex">
-                    <div className="text-[#004c3d] text-sm font-normal underline leading-tight">Skip this step</div>
-                  </div>
+          <div className="basis-1/2 gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
+            <div className="w-[384px] text-nowrap h-[72px] flex-col justify-start items-start gap-4 flex">
+              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What is your business address?</div>
+              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                <div className="text-gray-900 text-sm font-normal leading-tight">Don’t have a physical address? </div>
+                <div className="justify-start items-center flex">
+                  <div onClick={handleNext} className="text-[#034b48] text-sm font-normal underline leading-tight cursor-pointer">Skip this step</div>
                 </div>
               </div>
             </div>
@@ -345,7 +343,7 @@ export default function PaidPlanForm() {
                     <SelectTrigger label='State' className={getTextColor("state")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent short={true}>
                       <SelectItem value="AL">Alabama</SelectItem>
                       <SelectItem value="AK">Alaska</SelectItem>
                       <SelectItem value="AZ">Arizona</SelectItem>
@@ -416,15 +414,17 @@ export default function PaidPlanForm() {
                     <SelectTrigger label="Country" className={getTextColor("country")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="USA">United States of America</SelectItem>
+                    <SelectContent short={true}>
+                      <SelectItem value="USA">USA</SelectItem>
                       <SelectItem value="CAN">Canada</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
-
-              <Button variant='signUp' onClick={handleNext}>Next</Button>
+              
+            </div>
+            <div className='w-[384px]'>
+              <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
             </div>
             <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
               <ProgressBar progress={100} onBack={handlePrevious} number='3/3' />

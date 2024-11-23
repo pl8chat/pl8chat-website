@@ -11,8 +11,8 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import Logo from './logoSVG'
-import LogoBlack from './logoBlack'
+import Logo from './svgs/logoSVG'
+import LogoBlack from './svgs/logoBlack'
 
 type NavigationItem = {
   name: string;
