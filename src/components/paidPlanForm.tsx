@@ -14,7 +14,7 @@ import {
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
-import { Check } from 'lucide-react'
+import GreenCheck from './svgs/checkGreen'
 import BackArrow from './svgs/backArrow'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(7);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -479,7 +479,7 @@ export default function PaidPlanForm() {
               <div className="w-[512px] justify-center items-center gap-12 inline-flex">
                 <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Payment details</div>
               </div>
-              <div className="w-[512px] h-[569px] justify-start items-center gap-6 inline-flex flex-col">
+              <div className="w-[512px] justify-start items-center gap-6 inline-flex flex-col">
                 <Input variant='checkout' label='Email' id='email' name='emailPayment' type='text' />
                 <Input variant='checkout' label='Name on card' id='name' name='name' placeholder='Full name on card' type='text' />
                 <div className='relative w-full'>
@@ -635,7 +635,36 @@ export default function PaidPlanForm() {
 
       {step === 7 && (
         <div className='flex w-full h-screen justify-center items-center'>
-          <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
+          <div className="h-[369px] p-10 rounded-xl border border-gray-300 flex-col justify-end items-center gap-0.5 inline-flex">
+            <div className="flex-col justify-start items-start gap-6 flex">
+              <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
+                <GreenCheck />
+              </div>
+              <div className="flex-col justify-start items-start gap-2 flex">
+                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Thanks for your payment</div>
+                <div className="justify-start items-center gap-1 inline-flex">
+                  <div className="text-gray-900 text-xs font-normal leading-tight">Your account has been successfully created.</div>
+                </div>
+              </div>
+              <div className="self-stretch h-px bg-gray-300"></div>
+              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                <div className="grow shrink basis-0 h-[104px] flex-col justify-start items-start gap-6 inline-flex">
+                  <div className="self-stretch grow shrink basis-0 flex-col justify-start items-start gap-2 flex">
+                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                      <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order number:</div>
+                      <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">1001</div>
+                    </div>
+                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                      <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order date:</div>
+                      <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">October 27, 2023 </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch"><span className="text-gray-900 text-sm font-normal leading-tight">A receipt has been emailed to</span><span className="text-gray-900 text-base font-normal leading-normal"> </span><span className="text-gray-900 text-sm font-semibold leading-normal">michael@pl8chat.com</span><span className="text-gray-900 text-base font-normal leading-normal">.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
             <div className="self-stretch h-[206px] flex-col justify-start items-start gap-6 flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Payment successful</div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
@@ -645,7 +674,7 @@ export default function PaidPlanForm() {
                 <Button variant='checkout' className={`w-full`}>Sign in</Button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
 
