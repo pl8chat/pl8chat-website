@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(1);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -89,7 +89,7 @@ export default function PaidPlanForm() {
         <div className='flex flex-col gap-6'>
           <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Sign up</div>
+              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a premium account</div>
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
                 <div className="h-5 justify-start items-center inline-flex">
@@ -98,10 +98,20 @@ export default function PaidPlanForm() {
               </div>
             </div>
           </div>
-          <div className="w-[384px] h-[298px] flex-col justify-start items-start gap-4 inline-flex">
+          <div className="w-[384px]  flex-col justify-start items-start gap-4 inline-flex">
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
             <div className='relative w-full'>
               <Input variant='default' label='Password' id='password' name='password' type='password' className='w-full' />
+              <Image
+                src={`/assets/images/eyeOff.png`}
+                alt='Eye Icon'
+                width={20}
+                height={20}
+                className='absolute right-[13px] top-9'
+              />
+            </div>
+            <div className='relative w-full'>
+              <Input variant='default' label='Confirm password' id='currentPassword' name='currentPassword' type='password' className='w-full' />
               <Image
                 src={`/assets/images/eyeOff.png`}
                 alt='Eye Icon'
@@ -114,9 +124,9 @@ export default function PaidPlanForm() {
               <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By creating an account, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
               </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and have read and acknowledge our </span><Link href={`/privacy`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
             </div>
-            <div className='w-full mt-4'>
-              <Button variant='signUp' onClick={handleNext} className={`w-full`}>Sign up</Button>
-            </div>
+          </div>
+          <div className='w-full'>
+            <Button variant='signUp' onClick={handleNext} className={`w-full`}>Sign up</Button>
           </div>
         </div>
       )}

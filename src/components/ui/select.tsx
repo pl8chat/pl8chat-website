@@ -11,7 +11,7 @@ import GreenCheck from "../svgs/checkGreen";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
-  "flex h-[42px] w-full items-center justify-between rounded-md shadow border border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+  "flex h-[42px] w-full items-center justify-between rounded-md border border-gray-300 focus:border-[#00695c] focus:border-[#00695c] bg-white px-[13px] py-[9px] text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
   {
     variants: {
       variant: {
