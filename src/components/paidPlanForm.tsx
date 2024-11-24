@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(7);
+  const [step, setStep] = useState(1);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
