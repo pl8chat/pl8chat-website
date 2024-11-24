@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(4);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -80,9 +80,9 @@ export default function PaidPlanForm() {
   const formatPhoneNumber = (value: string): string => {
     // Remove all non-digit characters
     const digits = value.replace(/\D/g, '');
-  
+
     if (digits === '') return ''; // Allow clearing the input
-  
+
     // Format the digits as (xxx) xxx-xxxx
     if (digits.length <= 3) return `(${digits}`;
     if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
@@ -188,61 +188,59 @@ export default function PaidPlanForm() {
       )}
 
       {step === 3 && (
-        <div className=''>
-          <div className="flex w-full h-screen">
-            {/* Left Column */}
-            <div className="basis-1/2 gap-6 flex flex-col items-center justify-center relative">
-              <div className="w-96 h-9 flex-col justify-start items-start inline-flex">
-                <div className="self-stretch h-9 flex-col justify-start items-start gap-2 flex">
-                  <div className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
-                    <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
-                  </div>
+        <div className="flex w-full h-screen">
+          {/* Left Column */}
+          <div className="basis-1/2 gap-6 flex flex-col items-center justify-center relative">
+            <div className="w-96 h-9 flex-col justify-start items-start inline-flex">
+              <div className="self-stretch h-9 flex-col justify-start items-start gap-2 flex">
+                <div className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
+                  <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Tell us about yourself</div>
                 </div>
-              </div>
-              <div className="w-[384px] h-[286] flex-col justify-start items-start gap-6 inline-flex">
-                <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                  <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
-                  <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
-                </div>
-                <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
-                  <div className='w-full'>
-                    <Select
-                      value={values.role || ""}
-                      onValueChange={(value) => handleValueChange("role", value)}
-                    >
-                      <SelectTrigger label="Your role/position" className={getTextColor("role")}>
-                        <SelectValue placeholder="Select one" />
-                      </SelectTrigger>
-                      <SelectContent className=''>
-                        <SelectItem value="owner">Owner</SelectItem>
-                        <SelectItem value="admin">Admin / manager</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
-                </div>
-                <div className='w-full relative'>
-                  <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
-                  <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='text' maxLength={14}/>
-                </div>
-              </div>
-              <div className='h-10 w-[384px]'>
-                <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
-              </div>
-              <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
-                <ProgressBar progress={33} onBack={handlePrevious} number='1/3' />
               </div>
             </div>
-
-            {/* Right Column */}
-            <div className="basis-1/2 bg-pl8Green flex items-center justify-center">
-              <div className='w-full h-full relative'>
-                <Image
-                  src={'/assets/images/signUpPic.jpg'}
-                  alt="PL8CHAT Logo"
-                  fill
-                />
+            <div className="w-[384px] h-[286] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
+                <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
               </div>
+              <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
+                <div className='w-full'>
+                  <Select
+                    value={values.role || ""}
+                    onValueChange={(value) => handleValueChange("role", value)}
+                  >
+                    <SelectTrigger label="Your role/position" className={getTextColor("role")}>
+                      <SelectValue placeholder="Select one" />
+                    </SelectTrigger>
+                    <SelectContent className=''>
+                      <SelectItem value="owner">Owner</SelectItem>
+                      <SelectItem value="admin">Admin / manager</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
+              </div>
+              <div className='w-full relative'>
+                <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
+                <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='text' maxLength={14} />
+              </div>
+            </div>
+            <div className='h-10 w-[384px]'>
+              <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
+            </div>
+            <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
+              <ProgressBar progress={33} onBack={handlePrevious} number='1/3' />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="basis-1/2 bg-pl8Green flex items-center justify-center">
+            <div className='w-full h-full relative'>
+              <Image
+                src={'/assets/images/signUpPic.jpg'}
+                alt="PL8CHAT Logo"
+                fill
+              />
             </div>
           </div>
         </div>
@@ -259,7 +257,7 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
                 <div className="w-[384px] text-gray-500 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
@@ -312,9 +310,9 @@ export default function PaidPlanForm() {
                   </Select>
                 </div>
               </div>
-              <div className='h-10 w-full'>
-                <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
-              </div>
+            </div>
+            <div className='h-10 w-[384px]'>
+              <Button variant='signUp' onClick={handleNext} className={`w-full`}>Continue</Button>
             </div>
             <div className='flex flex-col justify-center w-full items-center absolute bottom-0 px-6 pb-6 pt-4'>
               <ProgressBar progress={66} onBack={handlePrevious} number='2/3' />
@@ -347,7 +345,7 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[336px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
               <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
               <div className="self-stretch gap-2 grid grid-cols-2">

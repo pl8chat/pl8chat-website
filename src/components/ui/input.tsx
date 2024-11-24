@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full h-[42px] px-[13px] py-[9px] bg-white rounded-md focus:ring-0 focus:outline-none focus:border-[#004c3d] text-base font-normal leading-normal border text-gray-900",
+  "w-full h-[42px] px-[13px] py-[9px] bg-white rounded-md focus:ring-0 focus:outline-none focus:border-pl8Green text-base font-normal leading-normal border text-gray-900",
   {
     variants: {
       variant: {
@@ -30,7 +30,7 @@ type InputProps = React.ComponentProps<"input"> &
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, ...props }, ref) => {
     return (
-      <div className="w-full flex flex-col gap-2 h-[70px]">
+      <div className={`w-full flex flex-col gap-2 ${label ? 'h-[70px]' : ''}`}>
         {label && <label htmlFor={props.id} className={`text-gray-900 text-sm leading-tight ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
         </label>}
