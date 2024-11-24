@@ -58,8 +58,21 @@ export default function FreePlanForm() {
     setStep((prevStep) => prevStep - 1);
   };
 
-  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNumber(e.target.value);
+  const formatPhoneNumber = (value: string): string => {
+    // Remove all non-digit characters
+    const digits = value.replace(/\D/g, '');
+
+    if (digits === '') return ''; // Allow clearing the input
+
+    // Format the digits as (xxx) xxx-xxxx
+    if (digits.length <= 3) return `(${digits}`;
+    if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+  };
+
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const formatted = formatPhoneNumber(e.target.value);
+    setPhoneNumber(formatted);
   };
 
   const getTextColor = (key: SelectKeys) => (values[key] ? "text-black" : "text-gray-400");
@@ -70,7 +83,7 @@ export default function FreePlanForm() {
         <div className='flex flex-col gap-6'>
           <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-            <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a  free account</div>
+              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a  free account</div>
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
                 <div className="h-5 justify-start items-center inline-flex">
@@ -190,8 +203,8 @@ export default function FreePlanForm() {
                   <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
                 </div>
                 <div className='w-full relative'>
-                  <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-pl8Green' : 'text-gray-400'}`}>+ 1</span>
-                  <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='number' />
+                  <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
+                  <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='text' maxLength={14} />
                 </div>
               </div>
               <div className='h-10 w-[384px]'>
