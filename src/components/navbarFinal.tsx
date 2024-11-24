@@ -200,9 +200,8 @@ export default function NavbarFinal() {
                       {navigation.map((item) => {
                         const isActive = item.href === pathname;
                         return (
-                          <Link href={item.href}>
+                          <Link href={item.href} key={item.name}>
                             <button
-                              key={item.name}
                               onClick={() => {
                                 if (item.name === 'Products') {
                                   toggleProductFlydown();
