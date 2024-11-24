@@ -83,7 +83,7 @@ export default function FreePlanForm() {
         <div className='flex flex-col gap-6'>
           <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a premium account</div>
+              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a free account</div>
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
                 <div className="h-5 justify-start items-center inline-flex">
