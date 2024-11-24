@@ -156,7 +156,7 @@ export default function PaidPlanForm() {
           </div>
           <div className="w-[460px] h-12 justify-start items-start gap-1 inline-flex">
             {emails.map((item) => (
-              <div className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex">
+              <div className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex cursor-pointer">
                 <div className="w-12 h-12 py-1.5 justify-center items-center flex">
                   <Image
                     src={item.src}
@@ -198,7 +198,7 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                 <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
@@ -257,10 +257,10 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
-                <div className="w-[384px] text-gray-500 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
+                <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
               </div>
               <div className='w-full'>
                 <Select
@@ -635,33 +635,40 @@ export default function PaidPlanForm() {
 
       {step === 7 && (
         <div className='flex w-full h-screen justify-center items-center'>
-          <div className="h-[369px] p-10 rounded-xl border border-gray-300 flex-col justify-end items-center gap-0.5 inline-flex">
-            <div className="flex-col justify-start items-start gap-6 flex">
-              <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
-                <GreenCheck />
-              </div>
-              <div className="flex-col justify-start items-start gap-2 flex">
-                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Thanks for your payment</div>
-                <div className="justify-start items-center gap-1 inline-flex">
-                  <div className="text-gray-900 text-xs font-normal leading-tight">Your account has been successfully created.</div>
+          <div className='flex flex-col gap-6'>
+            <div className="h-[369px] p-10 rounded-xl border border-gray-300 flex-col justify-end items-center gap-0.5 inline-flex">
+              <div className="flex-col justify-start items-start gap-6 flex">
+                <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
+                  <GreenCheck />
                 </div>
-              </div>
-              <div className="self-stretch h-px bg-gray-300"></div>
-              <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0 h-[104px] flex-col justify-start items-start gap-6 inline-flex">
-                  <div className="self-stretch grow shrink basis-0 flex-col justify-start items-start gap-2 flex">
-                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order number:</div>
-                      <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">1001</div>
-                    </div>
-                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order date:</div>
-                      <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">October 27, 2023 </div>
-                    </div>
+                <div className="flex-col justify-start items-start gap-2 flex">
+                  <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Thanks for your payment</div>
+                  <div className="justify-start items-center gap-1 inline-flex">
+                    <div className="text-gray-900 text-xs font-normal leading-tight">Your account has been successfully created.</div>
                   </div>
-                  <div className="self-stretch"><span className="text-gray-900 text-sm font-normal leading-tight">A receipt has been emailed to</span><span className="text-gray-900 text-base font-normal leading-normal"> </span><span className="text-gray-900 text-sm font-semibold leading-normal">michael@pl8chat.com</span><span className="text-gray-900 text-base font-normal leading-normal">.</span></div>
+                </div>
+                <div className="self-stretch h-px bg-gray-300"></div>
+                <div className="self-stretch justify-start items-center gap-1 inline-flex">
+                  <div className="grow shrink basis-0 h-[104px] flex-col justify-start items-start gap-6 inline-flex">
+                    <div className="self-stretch grow shrink basis-0 flex-col justify-start items-start gap-2 flex">
+                      <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                        <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order number:</div>
+                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">1001</div>
+                      </div>
+                      <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                        <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order date:</div>
+                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">October 27, 2023 </div>
+                      </div>
+                    </div>
+                    <div className="self-stretch"><span className="text-gray-900 text-sm font-normal leading-tight">A receipt has been emailed to</span><span className="text-gray-900 text-base font-normal leading-normal"> </span><span className="text-gray-900 text-sm font-semibold leading-normal">michael@pl8chat.com</span><span className="text-gray-900 text-base font-normal leading-normal">.</span></div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div className='w-[384px] mx-auto'>
+              <Link href='/'>
+                <Button variant='signUp' onClick={handleNext} className={`w-full`}>Sign in</Button>
+              </Link>
             </div>
           </div>
           {/* <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
@@ -678,7 +685,7 @@ export default function PaidPlanForm() {
         </div>
       )}
 
-      {step === 8 && (
+      {/* {step === 8 && (
         <div className='flex w-full h-screen justify-center items-center'>
           <div className="w-96 h-[206px] flex-col justify-start items-start gap-0.5 inline-flex">
             <div className="self-stretch h-[206px] flex-col justify-start items-start gap-6 flex">
@@ -692,7 +699,7 @@ export default function PaidPlanForm() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

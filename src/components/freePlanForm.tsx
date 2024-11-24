@@ -137,7 +137,7 @@ export default function FreePlanForm() {
           </div>
           <div className="w-[460px] h-12 justify-start items-start gap-1 inline-flex">
             {emails.map((item) => (
-              <div className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex">
+              <div className="grow shrink basis-0 h-12 justify-start items-center gap-3 flex cursor-pointer">
                 <div className="w-12 h-12 py-1.5 justify-center items-center flex">
                   <Image
                     src={item.src}
@@ -179,7 +179,7 @@ export default function FreePlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                 <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
@@ -238,10 +238,10 @@ export default function FreePlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
-                <div className="w-[384px] text-gray-500 pt-1 text-sm font-normal leading-tight">You can change this later in settings</div>
+                <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
               </div>
               <div className='w-full'>
                 <Select
