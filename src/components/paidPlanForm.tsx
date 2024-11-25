@@ -16,6 +16,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import GreenCheck from './svgs/checkGreen'
 import BackArrow from './svgs/backArrow'
+import Card from './svgs/cards'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
@@ -49,7 +50,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -485,7 +486,19 @@ export default function PaidPlanForm() {
                 <div className='relative w-full'>
                   <Input variant='checkout' label='Card number' id='cardNumber' name='cardNumber' placeholder='1234 1234 1234 1234' type='text' />
                   <div className="w-[120px] self-stretch pr-2 py-2.5 justify-start items-center inline-flex absolute right-0 bottom-1">
-                    {acceptedCreditCards.map((card, index) => (
+                    <div className="flex-col justify-start items-start inline-flex">
+                      <div className="self-stretch pr-1 justify-start items-center inline-flex">
+                        <div className="h-4 flex-col justify-start items-start inline-flex">
+                          <div className="w-6 h-4 flex-col justify-center items-center flex relative">
+                            <div className="w-6 h-4 absolute left-0 bottom-2.5">
+                              <Card />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* {acceptedCreditCards.map((card, index) => (
                       <div className="flex-col justify-start items-start inline-flex">
                         <div className="self-stretch pr-1 justify-start items-center inline-flex">
                           <div className="h-4 flex-col justify-start items-start inline-flex">
@@ -505,7 +518,7 @@ export default function PaidPlanForm() {
                           </div>
                         </div>
                       </div>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
                 <div className='grid grid-cols-7 gap-4'>
