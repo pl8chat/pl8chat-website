@@ -6,6 +6,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import Chevron from "../svgs/chevronDown";
+import UpChevron from "../svgs/chevronUp";
 import Check from "../svgs/check";
 import GreenCheck from "../svgs/checkGreen";
 
@@ -63,7 +64,9 @@ const SelectScrollUpButton = React.forwardRef<
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronUp className="h-4 w-4" />
+    <div className="py-1">
+      <UpChevron />
+    </div>
   </SelectPrimitive.ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
