@@ -418,7 +418,6 @@ export default function FreePlanForm() {
                     </SelectTrigger>
                     <SelectContent short={true}>
                       <SelectItem value="USA">USA</SelectItem>
-                      <SelectItem value="CAN">Canada</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
