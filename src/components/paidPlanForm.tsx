@@ -11,6 +11,8 @@ import {
   SelectItem,
   SelectValue,
 } from '@/components/ui/select';
+import Modal from './modal'
+import CancelPurchase from './cancelPurchase'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
@@ -50,9 +52,10 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(1);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
     industry: undefined,
@@ -497,28 +500,6 @@ export default function PaidPlanForm() {
                         </div>
                       </div>
                     </div>
-
-                    {/* {acceptedCreditCards.map((card, index) => (
-                      <div className="flex-col justify-start items-start inline-flex">
-                        <div className="self-stretch pr-1 justify-start items-center inline-flex">
-                          <div className="h-4 flex-col justify-start items-start inline-flex">
-                            <div className="w-6 h-4 flex-col justify-center items-center flex">
-                              <div className="w-6 h-4 relative">
-                                <Image
-                                  src={card.src}
-                                  alt="Credit Card"
-                                  width={24}
-                                  height={24}
-                                  className="relative"
-                                />
-                                <div className="w-[23.50px] h-[15.50px] left-[0.25px] top-[0.25px] absolute">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))} */}
                   </div>
                 </div>
                 <div className='grid grid-cols-7 gap-4'>
@@ -634,7 +615,7 @@ export default function PaidPlanForm() {
                   <div className="h-[92px] mt-2 w-full flex-col justify-start items-start gap-2 inline-flex">
                     <Button variant='signUp' onClick={handleNext}>Subscribe</Button>
                     <div className="self-stretch h-[42px] px-[17px] py-[9px] rounded-md justify-center items-center inline-flex">
-                      <div className="text-[#034b48] cursor-pointer text-sm font-normal underline leading-tight">
+                      <div onClick={() => setModalOpen(true)} className="text-[#034b48] cursor-pointer text-sm font-normal underline leading-tight">
                         Cancel
                       </div>
                     </div>
@@ -643,6 +624,7 @@ export default function PaidPlanForm() {
               </div>
             </div>
           </div>
+          <Modal isOpen={isModalOpen} component={<CancelPurchase />} onClose={() => setModalOpen(false)} noX={true} />
         </div>
       )}
 

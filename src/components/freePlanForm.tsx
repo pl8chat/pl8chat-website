@@ -453,15 +453,15 @@ export default function FreePlanForm() {
               <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
                 <GreenCheck />
               </div>
-              <div className="h-[84px] flex-col justify-start items-start gap-2 flex">
-                <div className="text-center text-gray-900 texFt-3xl font-semibold leading-9">You’re ready to go!</div>
+              <div className="w-96 h-[84px] flex-col justify-start items-start gap-2 inline-flex">
+                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">You’re ready to go!</div>
                 <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                  <div className='max-w-[37ch] h-10'><span className="text-gray-900 text-xs font-normal leading-tight ">Your account was successfully created and a confirmation email has been sent to</span><span className="text-gray-900 text-sm font-normal leading-tight"> </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com. </span></div>
+                  <div className="grow shrink basis-0"><span className="text-gray-900 text-xs font-normal leading-tight">Your account was successfully created and a confirmation email has been sent to</span><span className="text-gray-900 text-sm font-normal leading-tight"> </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com. </span></div>
                 </div>
               </div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-6 inline-flex">
-                  <div className="self-stretch max-w-[40ch] text-gray-900 text-sm font-normal leading-tight">Click below to start managing your parking community!</div>
+                <div className="text-gray-900 text-sm font-normal leading-tight">Click below to start managing your parking community!</div>
                 </div>
               </div>
               <div className='w-[384px]'>

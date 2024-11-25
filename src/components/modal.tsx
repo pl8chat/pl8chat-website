@@ -6,9 +6,10 @@ type ImageModalProps = {
     isOpen: boolean;
     onClose: () => void;
     component: ReactNode; // Accepts any ReactNode as a prop
+    noX?: boolean;
 };
 
-export default function Modal({ isOpen, onClose, component }: ImageModalProps) {
+export default function Modal({ isOpen, onClose, component, noX }: ImageModalProps) {
     const handleClose = () => {
         if (onClose) onClose();
     };
@@ -40,15 +41,17 @@ export default function Modal({ isOpen, onClose, component }: ImageModalProps) {
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                <div className="absolute right-4 top-4 pr-4 pt-4 sm:block">
-                                    <button
-                                        type="button"
-                                        className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
-                                        onClick={handleClose}
-                                    >
-                                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                                    </button>
-                                </div>
+                                {!noX && (
+                                    <div className="absolute right-4 top-4 pr-4 pt-4 sm:block">
+                                        <button
+                                            type="button"
+                                            className="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-darkGreen"
+                                            onClick={handleClose}
+                                        >
+                                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                        </button>
+                                    </div>
+                                )}
                                 <div>
                                     {component}
                                 </div>
