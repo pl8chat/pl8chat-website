@@ -340,14 +340,14 @@ export default function PaidPlanForm() {
         <div className="flex w-full h-screen">
           {/* Left Column */}
           <div className="basis-1/2 gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
-            <div className="w-[384px] text-nowrap h-[72px] flex-col justify-start items-start gap-4 flex">
+            <div className="w-[384px] text-nowrap h-[36px] flex-col justify-start items-start gap-4 flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What is your business address?</div>
-              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+              {/* <div className="self-stretch justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Don’t have a physical address? </div>
                 <div className="justify-start items-center flex">
                   <div onClick={handleNext} className="text-[#034b48] text-sm font-normal underline leading-tight cursor-pointer">Skip this step</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
@@ -471,8 +471,9 @@ export default function PaidPlanForm() {
       {step === 6 && (
         <div className="flex w-full">
           {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
-          <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex flex-grow overflow-y-auto">
-            <div className="pr-6 pt-[190px] flex-col justify-start items-end gap-6 inline-flex">
+          <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex">
+          {/* max-h-[800px] overflow-y-scroll overflow-x-hidden */}
+            <div className="pr-6 pt-[150px]  flex-col justify-start items-end gap-6 inline-flex">
               <div className="w-[512px] justify-start items-center gap-8 inline-flex h-6">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
@@ -524,7 +525,7 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                <div className={`${isChecked ? 'hidden' : ''} flex flex-col gap-6`}>
+                <div className={`${isChecked ? 'invisible' : ''} flex flex-col gap-6`}>
                   <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
                   <div className='grid grid-cols-9 gap-4'>
                     <div className='col-span-3'>
@@ -544,7 +545,7 @@ export default function PaidPlanForm() {
 
           {/* Right Column - max-w-[850px] h-[1044px] */}
           <div className="basis-1/2 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
-            <div className="pl-6 pt-[190px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
+            <div className="pl-6 pt-[150px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
               <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px] h-[617px]">
                 <div className="w-[374px] justify-center items-center gap-12 inline-flex">
                   <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
