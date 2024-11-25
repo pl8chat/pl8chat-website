@@ -49,7 +49,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
@@ -198,12 +198,12 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                 <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
               </div>
-              <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
+              <div className="self-stretch h-[98px] flex-col justify-start items-start gap-2 flex">
                 <div className='w-full'>
                   <Select
                     value={values.role || ""}
@@ -257,8 +257,8 @@ export default function PaidPlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
-              <div>
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className='flex flex-col gap-2'>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
                 <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
               </div>
@@ -559,12 +559,12 @@ export default function PaidPlanForm() {
                 <div className="flex-col justify-center items-start flex">
                   <div className="w-[375px] h-[92px] pt-4 pb-6 justify-start items-center gap-3 inline-flex">
                     <div className="flex-col justify-start items-start gap-2 inline-flex">
-                      <div className="text-gray-900 text-sm font-medium leading-tight">Premium plan</div>
+                      <div className="text-gray-900 text-sm font-bold leading-tight">Premium plan</div>
                       <div className="text-gray-900 text-sm font-normal leading-tight">A single license for business use</div>
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
@@ -577,7 +577,7 @@ export default function PaidPlanForm() {
                     </div>
                     <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                       <div className="flex-col justify-start items-start inline-flex">
-                        <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
+                        <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
                       </div>
                     </div>
                   </div>
@@ -597,7 +597,7 @@ export default function PaidPlanForm() {
                         </div>
                         <div className="grow shrink basis-0 h-[52px] py-4 justify-end items-center gap-3 flex">
                           <div className="flex-col justify-start items-start inline-flex">
-                            <div className="text-gray-900 text-sm font-semibold leading-tight">$120.00</div>
+                            <div className="text-gray-900 text-sm font-bold leading-tight">$120.00</div>
                           </div>
                         </div>
                       </div>
@@ -619,10 +619,10 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                   <div className="h-[92px] mt-2 w-full flex-col justify-start items-start gap-2 inline-flex">
-                    <Button variant='signUp' onClick={handleNext}>Submit</Button>
+                    <Button variant='signUp' onClick={handleNext}>Subscribe</Button>
                     <div className="self-stretch h-[42px] px-[17px] py-[9px] rounded-md justify-center items-center inline-flex">
                       <div className="text-[#034b48] cursor-pointer text-sm font-normal underline leading-tight">
-                        Cancel transaction
+                        Cancel
                       </div>
                     </div>
                   </div>
@@ -653,14 +653,14 @@ export default function PaidPlanForm() {
                     <div className="self-stretch grow shrink basis-0 flex-col justify-start items-start gap-2 flex">
                       <div className="self-stretch justify-start items-start gap-2 inline-flex">
                         <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order number:</div>
-                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">1001</div>
+                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-bold leading-normal">1001</div>
                       </div>
                       <div className="self-stretch justify-start items-start gap-2 inline-flex">
                         <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Order date:</div>
-                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-semibold leading-normal">October 27, 2023 </div>
+                        <div className="grow shrink basis-0 text-right text-gray-900 text-sm font-bold leading-normal">October 27, 2023 </div>
                       </div>
                     </div>
-                    <div className="self-stretch"><span className="text-gray-900 text-sm font-normal leading-tight">A receipt has been emailed to</span><span className="text-gray-900 text-base font-normal leading-normal"> </span><span className="text-gray-900 text-sm font-semibold leading-normal">michael@pl8chat.com</span><span className="text-gray-900 text-base font-normal leading-normal">.</span></div>
+                    <div className="self-stretch"><span className="text-gray-900 text-sm font-normal leading-tight">A receipt has been emailed to</span><span className="text-gray-900 text-base font-normal leading-normal"> </span><span className="text-gray-900 text-sm font-bold leading-normal">michael@pl8chat.com</span><span className="text-gray-900 text-base font-normal leading-normal">.</span></div>
                   </div>
                 </div>
               </div>
