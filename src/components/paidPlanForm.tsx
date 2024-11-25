@@ -52,7 +52,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -471,8 +471,8 @@ export default function PaidPlanForm() {
       {step === 6 && (
         <div className="flex w-full h-screen">
           {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
-          <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex">
-            <div className="pr-6 pt-[190px] flex-col justify-start items-end gap-6 inline-flex">
+          <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex overflow-y-auto max-h-screen">
+            <div className="pr-6 pt-[190px] min-h-[800px] overflow-hidden flex-col justify-start items-end gap-6 inline-flex">
               <div className="w-[512px] justify-start items-center gap-8 inline-flex h-6">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
