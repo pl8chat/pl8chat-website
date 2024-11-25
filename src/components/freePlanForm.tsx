@@ -179,12 +179,12 @@ export default function FreePlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                 <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
               </div>
-              <div className="self-stretch h-[90px] flex-col justify-start items-start gap-1 flex">
+              <div className="self-stretch h-[98px] flex-col justify-start items-start gap-2 flex">
                 <div className='w-full'>
                   <Select
                     value={values.role || ""}
@@ -238,8 +238,8 @@ export default function FreePlanForm() {
                 </div>
               </div>
             </div>
-            <div className="w-[384px] h-[286px] flex-col justify-start items-start gap-6 inline-flex">
-              <div>
+            <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className='flex flex-col gap-2'>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
                 <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
               </div>
