@@ -524,7 +524,7 @@ export default function PaidPlanForm() {
                     </div>
                   </div>
                 </div>
-                <div className={`${isChecked ? 'hidden' : ''} flex flex-col gap-6`}>
+                <div className={`${isChecked ? 'invisible' : ''} flex flex-col gap-6`}>
                   <Input variant='checkout' label='Billing address' id='billingAddress' name='billingAddress' type='text' />
                   <div className='grid grid-cols-9 gap-4'>
                     <div className='col-span-3'>
