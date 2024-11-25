@@ -32,7 +32,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
