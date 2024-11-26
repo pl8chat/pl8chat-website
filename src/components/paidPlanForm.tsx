@@ -473,7 +473,7 @@ export default function PaidPlanForm() {
           {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
           <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex">
           {/* max-h-[800px] overflow-y-scroll overflow-x-hidden */}
-            <div className="pr-6 pt-[150px]  flex-col justify-start items-end gap-6 inline-flex">
+            <div className="pr-6 pt-[100px]  flex-col justify-start items-end gap-6 inline-flex">
               <div className="w-[512px] justify-start items-center gap-8 inline-flex h-6">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>
                   <BackArrow />
@@ -545,7 +545,7 @@ export default function PaidPlanForm() {
 
           {/* Right Column - max-w-[850px] h-[1044px] */}
           <div className="basis-1/2 bg-[#f6f6f4] flex-col justify-start items-start gap-8 inline-flex">
-            <div className="pl-6 pt-[150px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
+            <div className="pl-6 pt-[100px] pb-[197px] justify-start items-center gap-2.5 inline-flex">
               <div className="p-12 bg-[#f6f6f4] rounded-xl border border-[#b9b9b9] flex-col justify-center items-center gap-3 inline-flex w-[471px] h-[617px]">
                 <div className="w-[374px] justify-center items-center gap-12 inline-flex">
                   <div className="grow shrink basis-0 text-gray-900 text-3xl font-semibold leading-9">Purchase summary</div>
