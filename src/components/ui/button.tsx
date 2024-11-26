@@ -11,7 +11,7 @@ const variants = {
     `data-[disabled]:opacity-40`,
   ),
   secondary: clsx(
-    'w-[158px] px-[21px] py-[13px] bg-[#58ff89] rounded-md border border-[#58ff89] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
+    'w-[158px] px-[21px] py-[13px] bg-pl8Green rounded-md border border-pl8Green justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
   ),
   outline: clsx(
     'inline-flex items-center justify-center px-2 py-[calc(theme(spacing.[1.5])-1px)]',
