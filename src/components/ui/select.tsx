@@ -39,11 +39,11 @@ const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 
 const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Trigger>, SelectProps>(({ className, variant, label, children, ...props }, ref) => (
-  <div className={`w-full flex flex-col gap-1.5 ${label ? 'h-[70px]' : ''}`}>
+  <div className={`w-full flex flex-col gap-2 ${label ? 'h-[70px]' : ''}`}>
     {label && <label className={`text-gray-900 text-sm ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>{label}</label>}
     <SelectPrimitive.Trigger
       ref={ref}
-      className={cn(selectVariants({ variant }), className, 'h-[42px]')}
+      className={cn(selectVariants({ variant }), className)}
       {...props}
     >
       {children}
