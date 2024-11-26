@@ -135,12 +135,15 @@ export default function Footer() {
         <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex">
           <div className="self-stretch flex justify-start text-white text-sm font-semibold leading-tight tracking-wide">Company</div>
           <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-            <div className="justify-start items-center inline-flex">
-              <div className="text-[#d1d5dc] text-base font-normal leading-normal">About us</div>
-            </div>
-            <div className="justify-start items-center inline-flex">
-              <div className="text-[#d1d5dc] text-base font-normal leading-normal">Contact us</div>
-            </div>
+            <ul role="list" className="flex flex-col gap-4">
+              {navigation.company.map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-base leading-6 text-gray-300 hover:text-white">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
