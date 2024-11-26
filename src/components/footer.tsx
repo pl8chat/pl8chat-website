@@ -86,104 +86,104 @@ const navigation: Navigation = {
 
 export default function Footer() {
   return (
-    // <footer className="h-[487px] px-8 pt-[82px] flex-col justify-start items-start gap-[104px] inline-flex bg-gray-900 w-full">
-    //   <div className="h-[220px] relative">
-    //     <div className="w-[524px] h-[220px] left-0 top-0 absolute flex-col justify-start items-start gap-8 inline-flex">
-    //       <div className="w-[40.15px] h-[39.60px] relative">
-    //         <img className="w-[40.15px] h-[39.60px] left-0 top-0 absolute" src="https://via.placeholder.com/40x40" />
-    //       </div>
-    //       <div className="w-[168px] text-white text-2xl font-medium font-['Poppins'] leading-loose">Every <br />Car Connected</div>
-    //     </div>
-    //     <div className="left-[556px] top-0 absolute justify-end items-center inline-flex">
-    //       <div className="self-stretch justify-between items-center inline-flex">
-    //         <div className="h-[220px] pl-[892px] pb-[120px] justify-end items-center flex">
-    //           <div className="self-stretch justify-between items-center inline-flex">
-    //             <div className="w-[251px] self-stretch flex-col justify-start items-start gap-4 inline-flex">
-    //               <div className="self-stretch text-white text-sm font-semibold font-['Poppins'] leading-tight tracking-wide">Company</div>
-    //               <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-    //                 <div className="justify-start items-center inline-flex">
-    //                   <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">About us</div>
-    //                 </div>
-    //                 <div className="justify-start items-center inline-flex">
-    //                   <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">Contact us</div>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div className="left-0 top-[208px] absolute justify-start items-center gap-6 inline-flex">
-    //       <div className="justify-start items-center flex">
-    //         <div className="w-6 h-6 relative"></div>
-    //       </div>
-    //       <div className="justify-start items-center flex">
-    //         <div className="w-6 h-6 relative"></div>
-    //       </div>
-    //       <div className="justify-start items-center flex">
-    //         <div className="w-6 h-6 relative"></div>
-    //       </div>
-    //       <div className="justify-start items-center flex">
-    //         <div className="w-6 h-6 relative"></div>
-    //       </div>
-    //       <div className="justify-start items-center flex">
-    //         <div className="w-6 h-6 relative"></div>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div className="self-stretch h-[81px] flex-col justify-start items-start gap-8 flex">
-    //     <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
-    //       <div className="self-stretch h-px bg-[#29303d]"></div>
-    //       <div className="self-stretch pt-8 justify-between items-start inline-flex">
-    //         <div className="w-[1632px] text-gray-500 text-base font-normal font-['Inter'] leading-normal">© 2024 PL8CHAT, LLC. All rights reserved<br /></div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </footer>
-    <footer aria-labelledby="footer-heading" className="bg-gray-900">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="flex justify-between xl:gap-8">
-          <div className="space-y-8">
-            <img
-              alt="Company name"
-              src="/assets/images/PL8CHAT.png"
-              className="h-12"
-            />
-            <div>
-              <p>Every car</p>
-              <p>connected</p>
-            </div>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                  <span className="sr-only">{item.name}</span>
-                  {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
-                </a>
-              ))}
-            </div>
+    <footer className="h-[487px] px-8 pt-[82px] flex-col justify-start items-start gap-[104px] inline-flex bg-gray-900 w-full">
+      <div className="h-[220px] relative w-full flex justify-center">
+        <div className="w-[524px] h-[220px] left-0 top-0 absolute flex-col justify-start items-start gap-8 inline-flex">
+          <div className="w-[40.15px] h-[39.60px] relative">
+            <img className="w-[40.15px] h-[39.60px] left-0 top-0 absolute" src="https://via.placeholder.com/40x40" />
           </div>
-          <div className="mt-0 lg:pr-10">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+          <div className="w-[168px] text-white text-2xl font-medium leading-loose">Every <br />Car<br /> Connected</div>
+        </div>
+        <div className="justify-end items-center inline-flex">
+          <div className="self-stretch justify-between items-center inline-flex">
+            <div className="h-[220px] pl-[892px] pb-[120px] justify-end items-center flex">
+              <div className="self-stretch justify-between items-center inline-flex">
+                <div className="w-[251px] self-stretch flex-col justify-start items-start gap-4 inline-flex">
+                  <div className="self-stretch text-white text-sm font-semibold font-['Poppins'] leading-tight tracking-wide">Company</div>
+                  <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
+                    <div className="justify-start items-center inline-flex">
+                      <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">About us</div>
+                    </div>
+                    <div className="justify-start items-center inline-flex">
+                      <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">Contact us</div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-300">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
+        {/* <div className="left-0 top-[208px] absolute justify-start items-center gap-6 inline-flex">
+          <div className="justify-start items-center flex">
+            <div className="w-6 h-6 relative"></div>
+          </div>
+          <div className="justify-start items-center flex">
+            <div className="w-6 h-6 relative"></div>
+          </div>
+          <div className="justify-start items-center flex">
+            <div className="w-6 h-6 relative"></div>
+          </div>
+          <div className="justify-start items-center flex">
+            <div className="w-6 h-6 relative"></div>
+          </div>
+          <div className="justify-start items-center flex">
+            <div className="w-6 h-6 relative"></div>
+          </div>
+        </div> */}
+      </div>
+      <div className="self-stretch h-[81px] flex-col justify-start items-start gap-8 flex">
+        <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
+          <div className="self-stretch h-px bg-[#29303d]"></div>
+          <div className="self-stretch pt-8 justify-between items-start inline-flex">
+            <div className="w-[1632px] text-gray-500 text-base font-normal leading-normal">© 2024 PL8CHAT, LLC. All rights reserved<br /></div>
+          </div>
         </div>
       </div>
     </footer>
+    // <footer aria-labelledby="footer-heading" className="bg-gray-900">
+    //   <h2 id="footer-heading" className="sr-only">
+    //     Footer
+    //   </h2>
+    //   <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    //     <div className="flex justify-between xl:gap-8">
+    //       <div className="space-y-8">
+    //         <img
+    //           alt="Company name"
+    //           src="/assets/images/PL8CHAT.png"
+    //           className="h-12"
+    //         />
+    //         <div>
+    //           <p>Every car</p>
+    //           <p>connected</p>
+    //         </div>
+    //         <div className="flex space-x-6">
+    //           {navigation.social.map((item) => (
+    //             <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+    //               <span className="sr-only">{item.name}</span>
+    //               {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
+    //             </a>
+    //           ))}
+    //         </div>
+    //       </div>
+    //       <div className="mt-0 lg:pr-10">
+    //           <div>
+    //             <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+    //             <ul role="list" className="mt-6 space-y-4">
+    //               {navigation.company.map((item) => (
+    //                 <li key={item.name}>
+    //                   <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+    //                     {item.name}
+    //                   </a>
+    //                 </li>
+    //               ))}
+    //             </ul>
+    //           </div>
+    //       </div>
+    //     </div>
+    //     <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+    //       <p className="text-xs leading-5 text-gray-300">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
+    //     </div>
+    //   </div>
+    // </footer>
   );
 }
