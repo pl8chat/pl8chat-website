@@ -13,7 +13,7 @@ const config: Config = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			lightGreen: '#E0FEE6',
-				pl8Green: '#004C3D',
+				pl8Green: '#58ff89',
   			darkGreen: '#004C3D',
   			darkerGreen: '#06402B',
   			tGreen: '#E0FEE6',
