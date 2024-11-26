@@ -25,7 +25,7 @@ export default function Navbar() {
 
 
   return (
-    <Disclosure as="nav" className="bg-darkGreen fixed w-full">
+    <Disclosure as="nav" className="bg-[#034b48] fixed w-full">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -77,13 +77,13 @@ export default function Navbar() {
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
-                <div className='hidden sm:flex space-x-4 text-md lg:text-lg text-white'>
+                <div className='hidden sm:flex space-x-4 text-sm text-white'>
                   {navigation.map((item) => {
                     return (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className='py-2 hover:text-tGreen font-semibold'>
+                        className='py-2 hover:text-[#58ff89] font-semibold'>
                         {item.name}
                       </Link>
                     )

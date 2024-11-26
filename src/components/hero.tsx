@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Button } from './button'
+import { Button } from './ui/button'
 import MailingListModal from './mailingListModal'
 
 export default function Hero() {
@@ -8,23 +8,10 @@ export default function Hero() {
 
   return (
     <div>
-      <div className={`bg-darkGreen pl-5 lg:pl-10 pt-10 lg:pt-28`}>
-        <div className="pb-24 pt-32 sm:pb-32 sm:pt-24 md:pb-48 md:pt-36 text-tGreen">
-          <h1 className={`font-display text-balance font-medium tracking-tight text-tGreen text-6xl xs: sm:text-[7.5rem] max-w-[10ch] sm:max-w-none`}>
-            Sma<span className='tracking-[.3rem]'>rt</span> and <br /> social parking
-          </h1>
-          <h2 className="mt-8 max-w-2xl text-lg/7 font-medium sm:text-3xl/8">
-            PL8CHAT is a new line of communication
-            connecting people, vehicles and parking
-            communities through license plates.
-          </h2>
-          <div
-            className="mt-9 lg:mt-11"
-            onClick={() => setModalOpen(true)}
-          >
-            <Button href="#" className='font-semibold'>Learn more</Button>
-          </div>
-        </div>
+      <div className="h-[683px] w-full px-8 pt-32 pb-[120px] bg-[#034b48] flex-col justify-start items-start gap-10 inline-flex">
+        <div className="w-[738px] text-white text-[100px] font-medium leading-[100px]">Smart and Social Parking </div>
+        <div className="w-[768px] text-white text-3xl font-normal leading-[35px]">We’re a new line of communication connecting<br />people, cars and parking communities through <br />license plates.  </div>
+        <Button variant="secondary" onClick={() => setModalOpen(true)}>Learn more</Button>
       </div>
       <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
