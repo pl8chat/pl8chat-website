@@ -124,7 +124,7 @@ const SelectLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-    className={cn("py-1.5 pl-8 pr-2 text-sm text-pl8Green font-semibold", className)}
+    className={cn("py-1.5 pl-8 pr-2 text-sm text-[#034b48] font-semibold", className)}
     {...props}
   />
 ));
@@ -137,7 +137,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=checked]:text-pl8Green data-[disabled]:opacity-50 text-gray-900",
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=checked]:text-[#034b48] data-[disabled]:opacity-50 text-gray-900",
       className
     )}
     {...props}
