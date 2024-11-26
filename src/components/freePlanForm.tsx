@@ -226,7 +226,7 @@ export default function FreePlanForm() {
           </div>
         </div>
       )}
-
+      
       {step === 4 && (
         <div className="flex w-full h-screen">
           {/* Left Column */}
@@ -268,7 +268,7 @@ export default function FreePlanForm() {
                     <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent short={true}>
                       <SelectItem value="<25">Under 25 spaces</SelectItem>
                       <SelectItem value="25-100">25 - 100</SelectItem>
                       <SelectItem value="100+">100+</SelectItem>
@@ -283,7 +283,7 @@ export default function FreePlanForm() {
                     <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent short={true}>
                       <SelectItem value="own">Yes - we own</SelectItem>
                       <SelectItem value="thirdParty">Yes - third party</SelectItem>
                       <SelectItem value="no">No</SelectItem>
@@ -317,14 +317,14 @@ export default function FreePlanForm() {
         <div className="flex w-full h-screen">
           {/* Left Column */}
           <div className="basis-1/2 gap-6 flex flex-col items-center justify-center bg-[#F6F6F4] relative">
-            <div className="w-[384px] text-nowrap h-[72px] flex-col justify-start items-start gap-4 flex">
+            <div className="w-[384px] text-nowrap h-[36px] flex-col justify-start items-start gap-4 flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">What is your business address?</div>
-              <div className="self-stretch justify-start items-center gap-1 inline-flex">
+              {/* <div className="self-stretch justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Don’t have a physical address? </div>
                 <div className="justify-start items-center flex">
                   <div onClick={handleNext} className="text-[#034b48] text-sm font-normal underline leading-tight cursor-pointer">Skip this step</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
               <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />

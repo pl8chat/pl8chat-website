@@ -52,7 +52,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(4);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -291,7 +291,7 @@ export default function PaidPlanForm() {
                     <SelectTrigger label='Parking size' className={getTextColor("parkingSize")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent short={true}>
                       <SelectItem value="<25">Under 25 spaces</SelectItem>
                       <SelectItem value="25-100">25 - 100</SelectItem>
                       <SelectItem value="100+">100+</SelectItem>
@@ -306,7 +306,7 @@ export default function PaidPlanForm() {
                     <SelectTrigger label='EV charging' className={getTextColor("evCharging")}>
                       <SelectValue placeholder="Select one" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent short={true}>
                       <SelectItem value="own">Yes - we own</SelectItem>
                       <SelectItem value="thirdParty">Yes - third party</SelectItem>
                       <SelectItem value="no">No</SelectItem>
