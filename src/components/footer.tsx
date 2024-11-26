@@ -84,52 +84,73 @@ const navigation: Navigation = {
   ],
 };
 
+const LogoSVG = () => {
+  return (
+    <svg
+      width="41"
+      height="40"
+      viewBox="0 0 41 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M40.1494 19.8C40.1494 30.7352 31.1617 39.6 20.0747 39.6L13.9408 39.6V28.6L20.0747 28.6C25.0022 28.6 28.9968 24.6601 28.9968 19.8C28.9968 14.9399 25.0022 11 20.0747 11C15.1472 11 11.1526 14.9399 11.1526 19.8V39.6L0 39.6V19.8C0 8.86476 8.98775 0 20.0747 0C31.1617 0 40.1494 8.86476 40.1494 19.8Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+
 export default function Footer() {
   return (
     <footer className="h-[487px] px-8 pt-[82px] flex-col justify-start items-start gap-[104px] inline-flex bg-gray-900 w-full">
-      <div className="h-[220px] relative w-full flex justify-center">
-        <div className="w-[524px] h-[220px] left-0 top-0 absolute flex-col justify-start items-start gap-8 inline-flex">
+      <div className="h-[220px] relative w-full flex justify-between">
+        <div className="w-[524px] h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex">
           <div className="w-[40.15px] h-[39.60px] relative">
-            <img className="w-[40.15px] h-[39.60px] left-0 top-0 absolute" src="https://via.placeholder.com/40x40" />
+            <LogoSVG />
           </div>
-          <div className="w-[168px] text-white text-2xl font-medium leading-loose">Every <br />Car<br /> Connected</div>
+          <div className="w-[168px] text-white text-2xl font-medium leading-8">Every <br />Car Connected</div>
         </div>
-        <div className="justify-end items-center inline-flex">
+        {/* <div className="justify-end items-center inline-flex">
           <div className="self-stretch justify-between items-center inline-flex">
             <div className="h-[220px] pl-[892px] pb-[120px] justify-end items-center flex">
               <div className="self-stretch justify-between items-center inline-flex">
                 <div className="w-[251px] self-stretch flex-col justify-start items-start gap-4 inline-flex">
-                  <div className="self-stretch text-white text-sm font-semibold font-['Poppins'] leading-tight tracking-wide">Company</div>
+                  <div className="self-stretch text-white text-sm font-semibold leading-tight tracking-wide">Company</div>
                   <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
                     <div className="justify-start items-center inline-flex">
-                      <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">About us</div>
+                      <div className="text-[#d1d5dc] text-base font-normal leading-normal">About us</div>
                     </div>
                     <div className="justify-start items-center inline-flex">
-                      <div className="text-[#d1d5dc] text-base font-normal font-['Poppins'] leading-normal">Contact us</div>
+                      <div className="text-[#d1d5dc] text-base font-normal leading-normal">Contact us</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* <div className="left-0 top-[208px] absolute justify-start items-center gap-6 inline-flex">
-          <div className="justify-start items-center flex">
-            <div className="w-6 h-6 relative"></div>
-          </div>
-          <div className="justify-start items-center flex">
-            <div className="w-6 h-6 relative"></div>
-          </div>
-          <div className="justify-start items-center flex">
-            <div className="w-6 h-6 relative"></div>
-          </div>
-          <div className="justify-start items-center flex">
-            <div className="w-6 h-6 relative"></div>
-          </div>
-          <div className="justify-start items-center flex">
-            <div className="w-6 h-6 relative"></div>
-          </div>
         </div> */}
+        <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex">
+          <div className="self-stretch flex justify-start text-white text-sm font-semibold leading-tight tracking-wide">Company</div>
+          <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
+            <div className="justify-start items-center inline-flex">
+              <div className="text-[#d1d5dc] text-base font-normal leading-normal">About us</div>
+            </div>
+            <div className="justify-start items-center inline-flex">
+              <div className="text-[#d1d5dc] text-base font-normal leading-normal">Contact us</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-x-6 absolute -bottom-10">
+        {navigation.social.map((item) => (
+          <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+            <span className="sr-only">{item.name}</span>
+            {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
+          </a>
+        ))}
       </div>
       <div className="self-stretch h-[81px] flex-col justify-start items-start gap-8 flex">
         <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
