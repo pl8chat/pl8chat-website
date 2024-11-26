@@ -45,11 +45,11 @@ function ChevronDownIcon(props: SVGProps) {
 }
 
 const navbarColors: Record<string, string> = {
-  '/': 'bg-darkGreen',
+  '/': 'bg-[#034b48]',
   '/pricing': 'bg-lightGrey',
   '/individuals': 'bg-tGreen',
   '/about': '',
-  default: 'bg-darkGreen',
+  default: 'bg-[#034b48]',
 };
 
 const textColors: Record<string, string> = {

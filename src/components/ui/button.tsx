@@ -18,7 +18,10 @@ const variants = {
     'rounded-md px-4 py-[13px] text-md font-medium shadow-sm', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
   ),
   homeHero: clsx(
-    'rounded-md px-4 py-[13px] text-lg font-medium shadow-sm', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
+    'w-[158px] h-[60px] px-[21px] py-[13px] bg-[#58ff89] rounded-md border border-[#083937] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
+  ),
+  navBar: clsx(
+    'w-[122px] h-[42px] px-4 py-[13px] bg-[#58ff89] rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'
   ),
   signUp: clsx(
     'self-stretch h-[42px] px-[17px] py-[9px] bg-[#034b48] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
