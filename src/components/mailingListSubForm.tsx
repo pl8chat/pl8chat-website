@@ -172,7 +172,7 @@ export default function MailingListSubForm() {
                     <div className="mt-4 sm:mt-0 sm:flex-shrink-0">
                       <button
                         type="submit"
-                        className="flex w-full items-center justify-center rounded-md bg-pl8Green px-[17px] py-[9px] text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                        className="flex w-full items-center justify-center rounded-md bg-pl8Green px-[17px] py-[9px] text-sm text-[#034b48] shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                       >
                         Subscribe
                       </button>
