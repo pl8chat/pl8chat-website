@@ -202,7 +202,7 @@ export default function FreePlanForm() {
                 <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
               </div>
               <div className='w-full relative'>
-                <span className={`absolute left-[21px] top-[35px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
+                <span className={`absolute left-[21px] top-[38px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
                 <Input value={phoneNumber} onChange={handlePhoneNumberChange} label="Phone Number" variant="phone" id="phone" name="phone" type='text' maxLength={14} />
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function FreePlanForm() {
           </div>
         </div>
       )}
-      
+
       {step === 4 && (
         <div className="flex w-full h-screen">
           {/* Left Column */}
