@@ -68,12 +68,12 @@ const logoSrc: Record<string, string> = {
 }
 
 const navBarButtonColors: Record<string, string> = {
-  '/': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-pl8Green',
+  '/': 'bg-pl8Green hover:bg-tGreen text-034b48',
   '/pricing': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/individuals': 'bg-darkGreen hover:bg-darkerGreen text-white',
   '/about': 'bg-white hover:bg-tGreen',
   '/contact': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
-  default: 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-pl8Green',
+  default: 'bg-pl8Green hover:bg-tGreen text-034b48',
 }
 
 function classNames(...classes: string[]): string {

@@ -36,23 +36,8 @@ const emails = [
   }
 ]
 
-const acceptedCreditCards = [
-  {
-    src: '/assets/images/visa.jpg',
-  },
-  {
-    src: '/assets/images/mastercard.jpg',
-  },
-  {
-    src: '/assets/images/amex.jpg',
-  },
-  {
-    src: '/assets/images/jcb.jpg',
-  },
-]
-
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -600,13 +585,13 @@ export default function PaidPlanForm() {
                           <div className="self-stretch">
                             <span className="text-gray-900 text-sm font-normal leading-tight"> By clicking subscribe, I authorize PL8CHAT to charge my payment method and I agree to the </span>
                             <Link href={`/terms`}>
-                              <span className="text-pl8Green text-sm font-normal underline leading-normal">Terms of service</span>
+                              <span className="text-[#004c3d] text-sm font-normal underline leading-normal">Terms of service</span>
                             </Link>
                             <span className="text-gray-900 text-sm font-normal leading-tight"> and the </span>
                             <Link href={`/privacy`}>
-                              <span className="text-pl8Green text-sm font-normal underline leading-normal">Privacy policy</span>
+                              <span className="text-[#004c3d] text-sm font-normal underline leading-normal">Privacy policy</span>
                             </Link>
-                            <span className="text-gray-900 text-sm font-normal leading-tight">. </span>
+                            <span className="text-gray-900 text-sm font-normal leading-tight">.</span>
                           </div>
                         </div>
                       </div>

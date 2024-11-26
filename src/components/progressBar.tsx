@@ -24,7 +24,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onBack, number }) =
         <div className="overflow-hidden rounded-full bg-gray-200">
           <div
             style={{ width: `${validProgress}%` }}
-            className="h-2 rounded-full bg-pl8Green"
+            className="h-2 rounded-full bg-[#034b48]"
           />
         </div>
       </div>
