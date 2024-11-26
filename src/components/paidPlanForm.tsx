@@ -52,7 +52,7 @@ const acceptedCreditCards = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
