@@ -99,25 +99,34 @@ const navigation: Navigation = {
   ],
 }
 
+const FooterLogo = () => {
+  return (
+    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M40.1494 19.8C40.1494 30.7352 31.1617 39.6 20.0747 39.6L13.9408 39.6L13.9408 28.6L20.0747 28.6C25.0022 28.6 28.9968 24.6601 28.9968 19.8C28.9968 14.9399 25.0022 11 20.0747 11C15.1472 11 11.1526 14.9399 11.1526 19.8V39.6L0 39.6V19.8C0 8.86476 8.98775 0 20.0747 0C31.1617 0 40.1494 8.86476 40.1494 19.8Z" fill="white" />
+    </svg>
+  )
+}
+
 export default function FooterFinal() {
   return (
     <footer aria-labelledby="footer-heading" className="bg-gray-900">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:pt-32">
+      <div className="mx-auto px-8 pb-8 pt-16 sm:pt-24 lg:pt-[82px]">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className=''>
+          <div className='flex flex-col gap-8'>
             <div className='relative'>
-              <Image
+              {/* <Image
                 alt="PL8CHAT Logo"
                 src="/assets/images/logo.png"
                 width={40}
                 height={40}
-                className='lg:h-12 w-auto absolute -top-16 lg:-top-6'
-              />
+                className=''
+              /> */}
+              <FooterLogo />
             </div>
-            <div className="font-semibold text-lg pb-6 pl-1 mt-12 text-white">
+            <div className="font-semibold text-lg text-white">
               <div>Every</div>
               <div>Car</div>
               <div>Connected</div>
