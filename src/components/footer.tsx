@@ -105,13 +105,23 @@ const LogoSVG = () => {
 
 export default function Footer() {
   return (
-    <footer className="h-[487px] px-8 pt-[82px] flex-col justify-start items-start gap-[104px] inline-flex bg-gray-900 w-full">
+    <footer className="h-[447px] px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
       <div className="h-[220px] relative w-full flex justify-between">
         <div className="w-[524px] h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex">
           <div className="w-[40.15px] h-[39.60px] relative">
             <LogoSVG />
           </div>
-          <div className="w-[168px] text-white text-2xl font-medium leading-8">Every <br />Car Connected</div>
+          <div className="flex flex-col gap-6">
+            <div className="w-[168px] text-white text-2xl font-medium leading-8">Every <br />Car Connected</div>
+            <div className="flex gap-x-6 absolute -bottom-0">
+              {navigation.social.map((item) => (
+                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                  <span className="sr-only">{item.name}</span>
+                  {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
         {/* <div className="justify-end items-center inline-flex">
           <div className="self-stretch justify-between items-center inline-flex">
@@ -146,14 +156,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="flex gap-x-6 absolute -bottom-10">
-        {navigation.social.map((item) => (
-          <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-            <span className="sr-only">{item.name}</span>
-            {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
-          </a>
-        ))}
       </div>
       <div className="self-stretch h-[81px] flex-col justify-start items-start gap-8 flex">
         <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
