@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div>
           {children}
         </div>
-        <div>
+        <div className="w-screen">
           <Footer />
         </div>
       </body>

@@ -175,9 +175,9 @@ export default function MailingListSubForm() {
                         }
                       }}
                       onBlur={() => setEmailTouched(true)}
-                      className={`h-[38px] w-full px-[13px] py-[9px] text-sm text-gray-500 bg-white rounded-md shadow border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00695c] focus:border-[#00695c] ${emailTouched && !isValidEmail(email)
-                        ? 'ring-2 ring-red-500 focus:ring-red-500'
-                        : ''
+                      className={`h-[38px] w-full px-[13px] py-[9px] text-sm text-gray-500 bg-white rounded-md border  focus:outline-none focus:ring-0 focus:border-[#00695c] ${emailTouched && !isValidEmail(email)
+                        ? 'border-red-500'
+                        : 'border-gray-300'
                         }`}
                     />
                     <div className="mt-4 sm:mt-0 sm:flex-shrink-0">

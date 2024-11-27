@@ -42,10 +42,10 @@ export default function Navbar() {
 
 
   return (
-    <Disclosure as="nav" className="bg-[#034b48] fixed w-full">
+    <Disclosure as="nav" className="bg-[#034b48] fixed w-screen px-8">
       {({ open }) => (
         <>
-          <div className="mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -62,11 +62,6 @@ export default function Navbar() {
               <div className="flex flex-1 items-center justify-lelft sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href={'/'}>
-                    {/* <img
-                      alt="PL8CHAT Text Logo"
-                      src="/assets/images/PL8CHAT.png"
-                      className="h-10 lg:h-12 w-auto"
-                    /> */}
                     <Logo />
                   </Link>
                 </div>

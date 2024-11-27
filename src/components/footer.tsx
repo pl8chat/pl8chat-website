@@ -107,14 +107,12 @@ export default function Footer() {
   return (
     <footer className="h-[447px] px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
       <div className="h-[220px] relative w-full flex justify-between">
-        <div className="w-[524px] h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex">
-          <div className="w-[40.15px] h-[39.60px] relative">
-            <LogoSVG />
-          </div>
-          <div className="flex flex-col gap-6">
-            <div className="font-semibold text-lg text-white">
-              <div className="flex justify-between w-screen pr-20">
-                <div className="flex flex-col">
+        <div className="h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex w-full">
+          <LogoSVG />
+          <div className="flex flex-col gap-6 w-full">
+            <div className=" text-lg text-white">
+              <div className="flex justify-between w-full">
+                <div className="flex flex-col font-semibold">
                   <div>Every</div>
                   <div>Car</div>
                   <div>Connected</div>
