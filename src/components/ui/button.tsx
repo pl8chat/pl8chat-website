@@ -21,7 +21,7 @@ const variants = {
     'w-[158px] h-[60px] px-[21px] py-[13px] bg-pl8Green rounded-md border border-[#083937] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
   ),
   navBar: clsx(
-    'h-[42px] px-4 py-[13px] bg-pl8Green rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'
+    'h-[42px] px-4 py-[13px] rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'
   ),
   signUp: clsx(
     'self-stretch h-[42px] px-[17px] py-[9px] bg-[#034b48] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
