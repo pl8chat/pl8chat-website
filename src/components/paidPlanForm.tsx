@@ -335,8 +335,8 @@ export default function PaidPlanForm() {
               </div> */}
             </div>
             <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
-              <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
-              <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
+              <Input variant='default' label='Street Address' id='address1' name='address1' type='text' />
+              <Input variant='default' label='Address line 2 (Optional)' id='address2' name='address2' type='text' />
               <div className="self-stretch gap-2 grid grid-cols-2">
                 <Input
                   variant='default'
