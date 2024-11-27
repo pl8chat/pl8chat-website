@@ -18,7 +18,7 @@ const isValidEmail = (email: string): boolean => {
 const ShapeIconGreen = () => {
   return (
     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5365 11.172C22.5365 17.3421 17.4915 22.344 11.2683 22.344H0V11.172C0 5.00187 5.04497 0 11.2683 0C17.4915 0 22.5365 5.00187 22.5365 11.172ZM16.2764 11.172C16.2764 13.9143 14.0342 16.1373 11.2682 16.1373H7.82517V22.344H6.26014V11.172C6.26014 8.42972 8.50235 6.20667 11.2682 6.20667C14.0342 6.20667 16.2764 8.42972 16.2764 11.172Z" fill="#034B48" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M22.5365 11.172C22.5365 17.3421 17.4915 22.344 11.2683 22.344H0V11.172C0 5.00187 5.04497 0 11.2683 0C17.4915 0 22.5365 5.00187 22.5365 11.172ZM16.2764 11.172C16.2764 13.9143 14.0342 16.1373 11.2682 16.1373H7.82517V22.344H6.26014V11.172C6.26014 8.42972 8.50235 6.20667 11.2682 6.20667C14.0342 6.20667 16.2764 8.42972 16.2764 11.172Z" fill="#034B48" />
     </svg>
 
   )
@@ -49,8 +49,8 @@ export default function MailingListSubForm() {
       emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${publicKey}`)
         .then((result) => {
           console.log(result.text);
+          setIsSubmitted(true);
           setEmailTouched(false);
-          setIsSubmitted(true);  // Update submission status to true on success
         })
         .catch((error) => {
           console.log("Error sending the form:", error.text);
@@ -98,12 +98,6 @@ export default function MailingListSubForm() {
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
-                {/* <Image
-                  src="/assets/images/logoGreen.png"
-                  width={23}
-                  height={22}
-                  alt="Pl8chat Logo"
-                /> */}
                 <ShapeIconGreen />
               </div>
               <div className="text-center text-gray-900 text-sm font-semibold leading-tight">
@@ -129,7 +123,7 @@ export default function MailingListSubForm() {
           </div>
         </div>
       ) : (
-        <form ref={form} onSubmit={handleFormSubmit} className={`w-[457px] h-[261.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex`} noValidate>
+        <form ref={form} onSubmit={handleFormSubmit} action="/submit" className={`w-[457px] h-[261.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex`} noValidate>
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
@@ -170,7 +164,7 @@ export default function MailingListSubForm() {
                         : 'border-gray-300'
                         }`}
                     />
-                    <div className="mt-4 sm:mt-0 sm:flex-shrink-0">
+                    <div className="mt-4 sm:mt-0 sm:flex-shrink-0" >
                       <button
                         type="submit"
                         className="flex w-full items-center justify-center rounded-md bg-[#034b48] px-[17px] py-[9px] text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"

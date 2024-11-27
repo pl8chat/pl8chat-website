@@ -2,7 +2,7 @@
 
 export default function About() {
   return (
-    <div className="py-10 lg:py-20 lg:pb-80 bg-darkGreen h-full">
+    <div className="py-10 lg:py-20 lg:pb-80 bg-[#034b48] h-full">
       <div className={`text-center text-white`}>
         <div className={`font-bold text-6xl pt-24`}>
           About us
