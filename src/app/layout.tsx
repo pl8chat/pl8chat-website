@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header>
           <Nabvar />
         </header>
-        <div>
+        <div className="pt-[58px]">
           {children}
         </div>
         <div className="w-screen">
