@@ -162,7 +162,7 @@ export default function Footer() {
         <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
           <div className="self-stretch h-px bg-[#29303d]"></div>
           <div className="self-stretch pt-8 justify-between items-start inline-flex">
-            <div className="w-[1632px] text-gray-500 text-base font-normal leading-normal">© 2024 PL8CHAT, LLC. All rights reserved<br /></div>
+            <div className="w-[1632px] text-gray-500 text-xs font-normal leading-normal">© 2024 PL8CHAT, LLC. All rights reserved<br /></div>
           </div>
         </div>
       </div>

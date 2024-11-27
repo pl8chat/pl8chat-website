@@ -133,12 +133,6 @@ export default function MailingListSubForm() {
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
-                {/* <Image
-                  src="/assets/images/logoGreen.png"
-                  width={23}
-                  height={22}
-                  alt="Pl8chat Logo"
-                /> */}
                 <ShapeIconGreen />
               </div>
               <div className="text-center text-gray-900 text-sm font-semibold leading-tight">
@@ -170,11 +164,7 @@ export default function MailingListSubForm() {
                       value={email}
                       onChange={(e) => {
                         setEmail(e.target.value);
-                        if (email.length > 0) {
-                          setEmailTouched(true);
-                        }
                       }}
-                      onBlur={() => setEmailTouched(true)}
                       className={`h-[38px] w-full px-[13px] py-[9px] text-sm text-gray-500 bg-white rounded-md border  focus:outline-none focus:ring-0 focus:border-[#00695c] ${emailTouched && !isValidEmail(email)
                         ? 'border-red-500'
                         : 'border-gray-300'
