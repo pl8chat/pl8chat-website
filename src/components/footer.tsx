@@ -112,8 +112,30 @@ export default function Footer() {
             <LogoSVG />
           </div>
           <div className="flex flex-col gap-6">
-            <div className="w-[168px] text-white text-2xl font-medium leading-8">Every <br />Car Connected</div>
-            <div className="flex gap-x-6 absolute -bottom-0">
+            <div className="font-semibold text-lg text-white">
+              <div className="flex justify-between w-screen pr-20">
+                <div className="flex flex-col">
+                  <div>Every</div>
+                  <div>Car</div>
+                  <div>Connected</div>
+                </div>
+                <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
+                  <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
+                  <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
+                    <ul role="list" className="flex flex-col gap-4">
+                      {navigation.company.map((item) => (
+                        <li key={item.name}>
+                          <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-x-6">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
                   <span className="sr-only">{item.name}</span>
@@ -123,26 +145,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        {/* <div className="justify-end items-center inline-flex">
-          <div className="self-stretch justify-between items-center inline-flex">
-            <div className="h-[220px] pl-[892px] pb-[120px] justify-end items-center flex">
-              <div className="self-stretch justify-between items-center inline-flex">
-                <div className="w-[251px] self-stretch flex-col justify-start items-start gap-4 inline-flex">
-                  <div className="self-stretch text-white text-sm font-semibold leading-tight tracking-wide">Company</div>
-                  <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-                    <div className="justify-start items-center inline-flex">
-                      <div className="text-[#d1d5dc] text-base font-normal leading-normal">About us</div>
-                    </div>
-                    <div className="justify-start items-center inline-flex">
-                      <div className="text-[#d1d5dc] text-base font-normal leading-normal">Contact us</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex">
+        {/* <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-[]">
           <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
           <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
             <ul role="list" className="flex flex-col gap-4">
@@ -155,7 +158,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="self-stretch h-[81px] flex-col justify-start items-start gap-8 flex">
         <div className="self-stretch h-[81px] flex-col justify-start items-start flex">
