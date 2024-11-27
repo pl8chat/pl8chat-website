@@ -168,8 +168,8 @@ export default function NavbarFinal() {
       <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : `${getNavbarBackgroundColor()}`}`}>
         {({ open }) => (
           <>
-            <div className="mx-auto px-2 sm:px-6 lg:px-8 py-2  h-[58px]">
-              <div className="relative flex items-center justify-between">
+            <div className="mx-auto px-2 sm:px-6 lg:px-8 py-2 h-[58px] flex items-center">
+
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -253,7 +253,7 @@ export default function NavbarFinal() {
                   </div>
                 </div>
 
-              </div>
+           
             </div>
 
             {/* Flydown Components with refs */}
