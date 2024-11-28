@@ -42,7 +42,7 @@ export default function Navbar() {
 
 
   return (
-    <Disclosure as="nav" className="bg-[#034b48] fixed w-screen px-8">
+    <Disclosure as="nav" className="bg-[#034b48] fixed w-full px-8">
       {({ open }) => (
         <>
           <div className="mx-auto">
