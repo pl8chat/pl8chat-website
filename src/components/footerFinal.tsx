@@ -117,13 +117,6 @@ export default function FooterFinal() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className='flex flex-col gap-8'>
             <div className='relative'>
-              {/* <Image
-                alt="PL8CHAT Logo"
-                src="/assets/images/logo.png"
-                width={40}
-                height={40}
-                className=''
-              /> */}
               <FooterLogo />
             </div>
             <div className="font-semibold text-lg text-white">
@@ -135,8 +128,8 @@ export default function FooterFinal() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 pb-10">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Solutions</h3>
+                <ul role="list" className="mt-4 space-y-4">
                   {navigation.products.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
@@ -148,7 +141,7 @@ export default function FooterFinal() {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
@@ -161,8 +154,8 @@ export default function FooterFinal() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Company</h3>
+                <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
@@ -173,8 +166,8 @@ export default function FooterFinal() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Legal</h3>
+                <ul role="list" className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
