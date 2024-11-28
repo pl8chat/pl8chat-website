@@ -227,7 +227,7 @@ export default function NavbarFinal() {
                 </div>
 
                 {/* Right-side items (shown on larger screens) */}
-                <div className="sm:flex sm:items-center sm:pr-2 text-sm font-normal">
+                <div className="sm:flex sm:items-center text-sm font-normal">
                   <div className="hidden lg:flex lg:items-center gap-4">
                     <div className={getTextColor().replace(/hover:\S+/g, '')}>
                       Call us: 1(310)PL8-CHAT
