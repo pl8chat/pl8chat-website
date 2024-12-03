@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import EyeOff from './svgs/eyeOff'
 import EyeOn from './svgs/eyeOn'
+import { Divide } from 'lucide-react'
 
 const emails = [
   {
@@ -24,13 +25,29 @@ const emails = [
 
 export default function ResetPasswordForm() {
   const [step, setStep] = useState(1);
+  const [email, setEmail] = useState('');
+  const [emailEntered, setEmailEntered] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+
 
   const handleNext = () => {
+    if (step === 1 && !isEmailValid) {
+      setEmailEntered(true);
+      return;
+    };
     setStep((prevStep) => prevStep + 1);
   };
 
   const handlePrevious = () => {
     setStep((prevStep) => prevStep - 1);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsEmailValid(emailRegex.test(value));
   };
 
   return (
@@ -45,7 +62,33 @@ export default function ResetPasswordForm() {
               </div>
             </div>
           </div>
-          <Input variant='default' label='Email' id='email' name='email' type='email' />
+          {!emailEntered ? (
+            <Input
+              variant='default'
+              label='Email'
+              id='email'
+              name='email'
+              type='email'
+              value={email}
+              onChange={handleEmailChange}
+            />
+          ) : (
+            <div className=''>
+              <Input
+                variant='error'
+                label='Email'
+                id='email'
+                name='email'
+                type='email'
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <div className='text-[#f44e38] text-xs font-normal leading-tight 1bottom-1 pt-2'>
+                Invalid email
+              </div>
+            </div>
+          )}
+
           <div className='w-full'>
             <div className='pb-2'>
               <Button variant='signUp' onClick={handleNext} className={`w-full`}>Submit</Button>

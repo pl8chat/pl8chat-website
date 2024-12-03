@@ -9,7 +9,7 @@ const inputVariants = cva(
       variant: {
         default: "border-gray-300 rounded-md",
         phone: "pl-[50px] border-gray-300 rounded-md",
-        error: "border-red-500 text-red-700 rounded-md",
+        error: "border-[#f44e38] text-red-700 rounded-md",
         contact: 'border-gray-300 rounded-md',
         message: 'text-sm',
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
