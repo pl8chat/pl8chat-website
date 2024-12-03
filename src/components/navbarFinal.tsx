@@ -242,14 +242,16 @@ export default function NavbarFinal() {
                     >
                       Talk to sales
                     </Button>
-                    <button
-                      className={classNames(
-                        getTextColor(),
-                        'py-2'
-                      )}
-                    >
-                      Sign in
-                    </button>
+                    <Link href={`/signIn`}>
+                      <button
+                        className={classNames(
+                          getTextColor(),
+                          'py-2'
+                        )}
+                      >
+                        Sign in
+                      </button>
+                    </Link>
                   </div>
                 </div>
 
