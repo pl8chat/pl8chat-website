@@ -1,29 +1,15 @@
 'use client'
-import { EyeIcon, ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
 import { Button } from './ui/button'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from '@/components/ui/select';
-import BackArrow from './svgs/backArrow'
-import GreenCheck from './svgs/checkGreen'
-import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
 import EyeOff from './svgs/eyeOff'
-import { Check } from 'lucide-react'
-
-type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
 export default function SignInForm() {
   return (
-    <div className="flex w-full h-screen">
+    <form className="flex w-full h-screen">
       {/* Left Column */}
       <div className="basis-1/2 gap-6 flex flex-col items-center justify-center relative">
         <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
@@ -51,7 +37,7 @@ export default function SignInForm() {
               <div className="text-gray-900 text-sm font-normal leading-tight">Remember me</div>
             </div>
             <div className="justify-start items-center flex">
-              <Link href={`/resetPassword`} className="text-right text-[#004c3d] text-sm font-normal underline leading-tight">Forgot your password?</Link>
+              <Link href={`/resetpassword`} className="text-right text-[#004c3d] text-sm font-normal underline leading-tight">Forgot your password?</Link>
             </div>
           </div>
           <div className='w-full pt-2'>
@@ -70,6 +56,6 @@ export default function SignInForm() {
           />
         </div>
       </div>
-    </div>
+    </form>
   );
 }

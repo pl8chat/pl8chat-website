@@ -170,92 +170,89 @@ export default function NavbarFinal() {
           <>
             <div className="mx-auto px-2 sm:px-6 lg:px-8 py-2 h-[58px] flex items-center">
 
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  {/* Mobile menu button */}
-                  <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span className="absolute -inset-0.5" />
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
-                    ) : (
-                      <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button */}
+                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
+                  ) : (
+                    <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-start">
+                <div className="flex items-center">
+                  <Link href="/" passHref>
+                    {isScrolled || isFlydownOpen || pathname === '/pricing' || pathname === '/individuals' ? <LogoBlack /> : <Logo />}
+                  </Link>
+                </div>
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
+                    {navigation.map((item) => {
+                      const isActive = item.href === pathname;
+                      return (
+                        <Link href={item.href} key={item.name}>
+                          <button
+                            onClick={() => {
+                              if (item.name === 'Products') {
+                                toggleProductFlydown();
+                              } else if (item.name === 'Company') {
+                                toggleCompanyFlydown();
+                              } else {
+                                closeFlydowns()
+                              }
+                            }}
+                            aria-current={isActive ? 'page' : undefined}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-medium')}
+                          >
+                            {item.name === 'Products' || item.name === 'Company' ? (
+                              <div>
+                                {item.name}
+                                <ChevronDownIcon
+                                  className={`ml-0.5 h-4 w-4 inline-block transition duration-150 ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
+                                    isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''}`}
+                                />
+                              </div>
+                            ) : (
+                              <span>{item.name}</span>
+                            )}
+                          </button>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right-side items (shown on larger screens) */}
+              <div className="sm:flex sm:items-center text-sm font-normal">
+                <div className="hidden lg:flex lg:items-center gap-4">
+                  <div className={getTextColor().replace(/hover:\S+/g, '')}>
+                    Call us: 1(310)PL8-CHAT
+                  </div>
+                  <Button
+                    variant="navBar"
+                    className={classNames(
+                      getNavbarButtonColor()
                     )}
-                  </Disclosure.Button>
+                    onClick={() => setModalOpen(true)}
+                    href="#"
+                  >
+                    Talk to sales
+                  </Button>
+                  <Link href={`/signin`}
+                    className={classNames(
+                      getTextColor(),
+                      'py-2'
+                    )}>
+                    Sign in
+                  </Link>
                 </div>
-                <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-start">
-                  <div className="flex items-center">
-                    <Link href="/" passHref>
-                      {isScrolled || isFlydownOpen || pathname === '/pricing' || pathname === '/individuals' ? <LogoBlack /> : <Logo />}
-                    </Link>
-                  </div>
-                  <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
-                      {navigation.map((item) => {
-                        const isActive = item.href === pathname;
-                        return (
-                          <Link href={item.href} key={item.name}>
-                            <button
-                              onClick={() => {
-                                if (item.name === 'Products') {
-                                  toggleProductFlydown();
-                                } else if (item.name === 'Company') {
-                                  toggleCompanyFlydown();
-                                } else {
-                                  closeFlydowns()
-                                }
-                              }}
-                              aria-current={isActive ? 'page' : undefined}
-                              className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-medium')}
-                            >
-                              {item.name === 'Products' || item.name === 'Company' ? (
-                                <div>
-                                  {item.name}
-                                  <ChevronDownIcon
-                                    className={`ml-0.5 h-4 w-4 inline-block transition duration-150 ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
-                                      isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''}`}
-                                  />
-                                </div>
-                              ) : (
-                                <span>{item.name}</span>
-                              )}
-                            </button>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
+              </div>
 
-                {/* Right-side items (shown on larger screens) */}
-                <div className="sm:flex sm:items-center text-sm font-normal">
-                  <div className="hidden lg:flex lg:items-center gap-4">
-                    <div className={getTextColor().replace(/hover:\S+/g, '')}>
-                      Call us: 1(310)PL8-CHAT
-                    </div>
-                    <Button
-                      variant="navBar"
-                      className={classNames(
-                        getNavbarButtonColor()
-                      )}
-                      onClick={() => setModalOpen(true)}
-                      href="#"
-                    >
-                      Talk to sales
-                    </Button>
-                    <Link href={`/signIn`}>
-                      <button
-                        className={classNames(
-                          getTextColor(),
-                          'py-2'
-                        )}
-                      >
-                        Sign in
-                      </button>
-                    </Link>
-                  </div>
-                </div>
 
-           
             </div>
 
             {/* Flydown Components with refs */}
