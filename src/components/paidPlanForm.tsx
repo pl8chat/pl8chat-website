@@ -19,6 +19,7 @@ import Image from 'next/image'
 import GreenCheck from './svgs/checkGreen'
 import BackArrow from './svgs/backArrow'
 import Card from './svgs/cards'
+import EyeOff from './svgs/eyeOff'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
@@ -37,7 +38,7 @@ const emails = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -104,23 +105,15 @@ export default function PaidPlanForm() {
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
             <div className='relative w-full'>
               <Input variant='default' label='Password' id='password' name='password' type='password' className='w-full' />
-              <Image
-                src={`/assets/images/eyeOff.png`}
-                alt='Eye Icon'
-                width={20}
-                height={20}
-                className='absolute right-[13px] top-9'
-              />
+              <div className='absolute right-[13px] top-10'>
+                <EyeOff />
+              </div>
             </div>
             <div className='relative w-full'>
               <Input variant='default' label='Confirm password' id='currentPassword' name='currentPassword' type='password' className='w-full' />
-              <Image
-                src={`/assets/images/eyeOff.png`}
-                alt='Eye Icon'
-                width={20}
-                height={20}
-                className='absolute right-[13px] top-9'
-              />
+              <div className='absolute right-[13px] top-10'>
+                <EyeOff />
+              </div>
             </div>
             <div className="h-[60px] justify-start items-center gap-2 inline-flex">
               <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By creating an account, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
@@ -139,7 +132,7 @@ export default function PaidPlanForm() {
             <div className="h-[92px] flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Check your email</div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account, </span></div>
+                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account.</span></div>
               </div>
             </div>
           </div>
@@ -457,7 +450,7 @@ export default function PaidPlanForm() {
         <div className="flex w-full">
           {/* Left Column - max-w-[850px] h-[1044px] pl-24 */}
           <div className="basis-1/2 bg-[#f6f6f4] justify-end items-start gap-[164px] inline-flex">
-          {/* max-h-[800px] overflow-y-scroll overflow-x-hidden */}
+            {/* max-h-[800px] overflow-y-scroll overflow-x-hidden */}
             <div className="pr-6 pt-[100px]  flex-col justify-start items-end gap-6 inline-flex">
               <div className="w-[512px] justify-start items-center gap-8 inline-flex h-6">
                 <div className="justify-start items-center gap-2 flex cursor-pointer" onClick={handlePrevious}>

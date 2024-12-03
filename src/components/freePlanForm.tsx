@@ -15,6 +15,7 @@ import GreenCheck from './svgs/checkGreen'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
+import EyeOff from './svgs/eyeOff'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 
@@ -96,23 +97,15 @@ export default function FreePlanForm() {
             <Input variant='default' label='Business email' id='email' name='email' type='email' />
             <div className='relative w-full'>
               <Input variant='default' label='Password' id='password' name='password' type='password' className='w-full' />
-              <Image
-                src={`/assets/images/eyeOff.png`}
-                alt='Eye Icon'
-                width={20}
-                height={20}
-                className='absolute right-[13px] top-9'
-              />
+              <div className='absolute right-[13px] top-10'>
+                <EyeOff />
+              </div>
             </div>
             <div className='relative w-full'>
               <Input variant='default' label='Confirm password' id='currentPassword' name='currentPassword' type='password' className='w-full' />
-              <Image
-                src={`/assets/images/eyeOff.png`}
-                alt='Eye Icon'
-                width={20}
-                height={20}
-                className='absolute right-[13px] top-9'
-              />
+              <div className='absolute right-[13px] top-10'>
+                <EyeOff />
+              </div>
             </div>
             <div className="h-[60px] justify-start items-center gap-2 inline-flex">
               <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By creating an account, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
@@ -131,7 +124,7 @@ export default function FreePlanForm() {
             <div className="h-[92px] flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Check your email</div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account, </span></div>
+                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account.</span></div>
               </div>
             </div>
           </div>
@@ -327,8 +320,8 @@ export default function FreePlanForm() {
               </div> */}
             </div>
             <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
-              <Input variant='default' label='Address line 1 (Street address or post office box)' id='address1' name='address1' type='text' />
-              <Input variant='default' label='Address line 2' id='address2' name='address2' type='text' />
+              <Input variant='default' label='Street Address' id='address1' name='address1' type='text' />
+              <Input variant='default' label='Address line 2 (Optional)' id='address2' name='address2' type='text' />
               <div className="self-stretch gap-2 grid grid-cols-2">
                 <Input
                   variant='default'
