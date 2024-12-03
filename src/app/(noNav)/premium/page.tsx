@@ -1,4 +1,4 @@
-import ResetPasswordForm from "@/components/resetPasswordForm"
+import PaidPlanForm from "@/components/paidPlanForm"
 import Link from 'next/link'
 import Image from 'next/image'
 import GreenLogo from '@/components/svgs/logoGreen'
@@ -11,7 +11,7 @@ export default function FreePlan() {
           <GreenLogo />
         </Link>
       </div>
-      <ResetPasswordForm />
+      <PaidPlanForm />
     </div>
   );
 }
