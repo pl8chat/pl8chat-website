@@ -54,6 +54,12 @@ interface UserNavigationItem {
   href: string;
 }
 
+interface parkingCommunity {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  description: string;
+}
+
 const navigation: NavigationItem[] = [
   { name: 'Dashboard', href: '#', icon: Dashboardicon, current: true },
   { name: 'Messages', href: '#', icon: Messagesicon, current: false },
@@ -71,6 +77,12 @@ const userNavigation: UserNavigationItem[] = [
   { name: 'My settings', href: '#' },
   { name: 'Sign out', href: '#' },
 ];
+
+const parkingCommunity: parkingCommunity[] = [
+  { icon: Chat, title: 'Send a “PL8CHAT”', description: 'Start a chat-className conversation with a vehicle simply by entering the license plate number' },
+  { icon: SpeakerphoneWhite, title: 'Reach all vehicles', description: 'Help and inform everyone in your parking community at once by sending an announcement' },
+  { icon: MessagesWhite, title: 'Group chats', description: 'View insights and data in real time and help your customers stay connected via parking related communication' },
+]
 
 function classNames(...classes: (string | undefined | boolean)[]): string {
   return classes.filter(Boolean).join(' ');
@@ -328,42 +340,20 @@ export default function Dashboard() {
                 </div>
                 <div className="h-[204px] px-[60px] flex-col justify-start items-center gap-10 inline-flex">
                   <div className="self-stretch justify-start items-center gap-8 inline-flex">
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <div className="w-9 h-9 bg-[#034b48] rounded-md justify-center items-center inline-flex">
-                        <Chat />
+                    {parkingCommunity.map((item) => (
+                      <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
+                        <div className="w-9 h-9 bg-[#034b48] rounded-md justify-center items-center inline-flex">
+                          <item.icon />
+                        </div>
+                        <div className="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
+                          <div className="self-stretch text-gray-900 text-lg font-medium leading-normal">{item.title}</div>
+                          <div className="self-stretch text-gray-500 text-base font-normal leading-normal">{item.description}</div>
+                        </div>
+                        <div className="justify-start items-center inline-flex">
+                          <div className="text-[#034b48] text-base font-medium leading-normal">Chat now →</div>
+                        </div>
                       </div>
-                      <div className="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
-                        <div className="self-stretch text-gray-900 text-lg font-medium leading-normal">Send a “PL8CHAT”</div>
-                        <div className="self-stretch text-gray-500 text-base font-normal leading-normal">Start a chat-className conversation with a vehicle simply by entering the license plate number</div>
-                      </div>
-                      <div className="justify-start items-center inline-flex">
-                        <div className="text-[#034b48] text-base font-medium leading-normal">Chat now →</div>
-                      </div>
-                    </div>
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <div className="w-9 h-9 bg-[#034b48] rounded-md justify-center items-center inline-flex">
-                        <SpeakerphoneWhite />
-                      </div>
-                      <div className="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
-                        <div className="self-stretch text-gray-900 text-lg font-medium leading-normal">Reach all vehicles</div>
-                        <div className="self-stretch text-gray-500 text-base font-normal leading-normal">Help and inform everyone in your parking community at once by sending an announcement </div>
-                      </div>
-                      <div className="justify-start items-center inline-flex">
-                        <div className="text-[#034b48] text-base font-medium leading-normal">Post an announcement →</div>
-                      </div>
-                    </div>
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <div className="w-9 h-9 bg-[#034b48] rounded-md justify-center items-center inline-flex">
-                        <MessagesWhite />
-                      </div>
-                      <div className="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
-                        <div className="self-stretch text-gray-900 text-lg font-medium leading-normal">Group chats</div>
-                        <div className="self-stretch text-gray-500 text-base font-normal leading-normal">View insights and data in real time and help your customers stay connected via parking related communication</div>
-                      </div>
-                      <div className="justify-start items-center inline-flex">
-                        <div className="text-[#034b48] text-base font-medium leading-normal">Create a group chat now →</div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
