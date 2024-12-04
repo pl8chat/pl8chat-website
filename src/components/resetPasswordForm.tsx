@@ -31,10 +31,6 @@ export default function ResetPasswordForm() {
 
 
   const handleNext = () => {
-    if (step === 1 && !isEmailValid) {
-      setEmailEntered(true);
-      return;
-    };
     setStep((prevStep) => prevStep + 1);
   };
 
@@ -62,7 +58,6 @@ export default function ResetPasswordForm() {
               </div>
             </div>
           </div>
-          {!emailEntered ? (
             <Input
               variant='default'
               label='Email'
@@ -72,23 +67,6 @@ export default function ResetPasswordForm() {
               value={email}
               onChange={handleEmailChange}
             />
-          ) : (
-            <div className=''>
-              <Input
-                variant='error'
-                label='Email'
-                id='email'
-                name='email'
-                type='email'
-                value={email}
-                onChange={handleEmailChange}
-              />
-              <div className='text-[#f44e38] text-xs font-normal leading-tight 1bottom-1 pt-2'>
-                Invalid email
-              </div>
-            </div>
-          )}
-
           <div className='w-full'>
             <div className='pb-2'>
               <Button variant='signUp' onClick={handleNext} className={`w-full`}>Submit</Button>
