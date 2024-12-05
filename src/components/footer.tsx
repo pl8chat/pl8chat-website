@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface NavigationItem {
   name: string;
   href: string;
@@ -16,8 +18,8 @@ const navigation: Navigation = {
     { name: 'Contact', href: '#' },
   ],
   legal: [
-    { name: 'Terms of service', href: '/privacy' },
-    { name: 'Privacy Policy', href: '/terms' },
+    { name: 'Terms of service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ],
   social: [
     {
@@ -108,7 +110,9 @@ const LogoSVG = () => {
   );
 };
 
+
 export default function Footer() {
+
   return (
     <footer className="h-[447px] px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
       <div className="h-[220px] relative w-full flex justify-between">
@@ -129,9 +133,9 @@ export default function Footer() {
                       <ul role="list" className="flex flex-col gap-4">
                         {navigation.company.map((item) => (
                           <li key={item.name}>
-                            <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
+                            <Link href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
                               {item.name}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -143,9 +147,9 @@ export default function Footer() {
                       <ul role="list" className="flex flex-col gap-4">
                         {navigation.legal.map((item) => (
                           <li key={item.name}>
-                            <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
+                            <Link href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
                               {item.name}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
