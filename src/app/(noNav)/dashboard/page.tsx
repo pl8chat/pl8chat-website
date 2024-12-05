@@ -58,6 +58,8 @@ interface parkingCommunity {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
+  link: string;
+  href: string;
 }
 
 const navigation: NavigationItem[] = [
@@ -75,13 +77,13 @@ const settings: Settings[] = [
 
 const userNavigation: UserNavigationItem[] = [
   { name: 'My settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign out', href: '/' },
 ];
 
 const parkingCommunity: parkingCommunity[] = [
-  { icon: Chat, title: 'Send a “PL8CHAT”', description: 'Start a chat-className conversation with a vehicle simply by entering the license plate number' },
-  { icon: SpeakerphoneWhite, title: 'Reach all vehicles', description: 'Help and inform everyone in your parking community at once by sending an announcement' },
-  { icon: MessagesWhite, title: 'Group chats', description: 'View insights and data in real time and help your customers stay connected via parking related communication' },
+  { icon: Chat, title: 'Send a “PL8CHAT”', description: 'Start a chat-className conversation with a vehicle simply by entering the license plate number', link: 'Chat now', href: '#' },
+  { icon: SpeakerphoneWhite, title: 'Reach all vehicles', description: 'Help and inform everyone in your parking community at once by sending an announcement', link: 'Post an announcement', href: '#' },
+  { icon: MessagesWhite, title: 'Group chats', description: 'View insights and data in real time and help your customers stay connected via parking related communication', link: 'Create a group chat now', href: '#' },
 ]
 
 function classNames(...classes: (string | undefined | boolean)[]): string {
@@ -129,6 +131,7 @@ export default function Dashboard() {
                         {navigation.map((item) => (
                           <li key={item.name}>
                             <Link
+                              key={item.name}
                               href={item.href}
                               className={classNames(
                                 item.current
@@ -307,12 +310,12 @@ export default function Dashboard() {
                   >
                     {userNavigation.map((item) => (
                       <MenuItem key={item.name}>
-                        <a
+                        <Link
                           href={item.href}
                           className="block px-3 py-1 text-sm text-gray-700 hover:bg-[#034b48] hover:text-white focus:bg-gray-50"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </MenuItem>
                     ))}
                   </MenuItems>
@@ -334,14 +337,20 @@ export default function Dashboard() {
                   <div className="self-stretch h-px bg-gray-300" />
                 </div>
               </div>
-              <div className='flex flex-col gap-9'>
+
+              {/* divider */}
+              <div className='px-[60px]'>
+                <div className="h-px bg-gray-300 mb-6" />
+              </div>
+
+              <div className='flex flex-col gap-9 pb-20'>
                 <div className="h-7 px-[60px] flex-col justify-start items-start inline-flex">
                   <div className="text-gray-700 text-xl font-bold leading-7">Connect with your parking community</div>
                 </div>
                 <div className="h-[204px] px-[60px] flex-col justify-start items-center gap-10 inline-flex">
                   <div className="self-stretch justify-start items-center gap-8 inline-flex">
-                    {parkingCommunity.map((item) => (
-                      <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
+                    {parkingCommunity.map((item, index) => (
+                      <div key={index} className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
                         <div className="w-9 h-9 bg-[#034b48] rounded-md justify-center items-center inline-flex">
                           <item.icon />
                         </div>
@@ -350,13 +359,16 @@ export default function Dashboard() {
                           <div className="self-stretch text-gray-500 text-base font-normal leading-normal">{item.description}</div>
                         </div>
                         <div className="justify-start items-center inline-flex">
-                          <div className="text-[#034b48] text-base font-medium leading-normal">Chat now →</div>
+                          <Link href={item.href} className="text-[#034b48] text-base font-medium leading-normal">{item.link} →</Link>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="h-3 flex-col justify-center items-center gap-5 inline-flex w-full">
+              <div><span className="text-gray-700 text-xs font-normal leading-3">Questions or need help? Call us:</span><span className="text-[#034b48] text-xs font-normal leading-3"> 1(310)PL8-CHAT </span><span className="text-gray-700 text-xs font-normal leading-3">or </span><Link href={'#'} className="text-[#034b48] text-xs font-normal underline leading-3">Contact us</Link></div>
             </div>
           </div>
         </div>
