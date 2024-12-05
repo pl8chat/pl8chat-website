@@ -6,6 +6,7 @@ interface NavigationItem {
 
 interface Navigation {
   company: NavigationItem[];
+  legal: NavigationItem[];
   social: NavigationItem[];
 }
 
@@ -13,6 +14,10 @@ const navigation: Navigation = {
   company: [
     { name: 'About us', href: '/about' },
     { name: 'Contact', href: '#' },
+  ],
+  legal: [
+    { name: 'Terms of service', href: '/privacy' },
+    { name: 'Privacy Policy', href: '/terms' },
   ],
   social: [
     {
@@ -116,19 +121,35 @@ export default function Footer() {
                   <div>Every</div>
                   <div>Car</div>
                   <div>Connected</div>
-                </div>
-                <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
-                  <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
-                  <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-                    <ul role="list" className="flex flex-col gap-4">
-                      {navigation.company.map((item) => (
-                        <li key={item.name}>
-                          <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                </div> 
+                <div className="flex gap-8 -translate-x-3">
+                  <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
+                    <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
+                    <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
+                      <ul role="list" className="flex flex-col gap-4">
+                        {navigation.company.map((item) => (
+                          <li key={item.name}>
+                            <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
+                    <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Legal</div>
+                    <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
+                      <ul role="list" className="flex flex-col gap-4">
+                        {navigation.legal.map((item) => (
+                          <li key={item.name}>
+                            <a href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
