@@ -202,7 +202,9 @@ export default function Dashboard() {
         <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-[200px] lg:flex-col">
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-200 px-2 pb-4">
             <div className="flex h-16 shrink-0 items-center translate-x-1">
-              <Pl8CHATGray />
+              <Link href={`/`}>
+                <Pl8CHATGray />
+              </Link>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-10">
