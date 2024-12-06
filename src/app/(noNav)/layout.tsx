@@ -3,6 +3,12 @@ import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import "../globals.css";
 
+const poppins = localFont({
+  src: "../fonts/Poppins-Regular.ttf",
+  variable: "--font-poppins",
+  weight: "100 200 300 400 500 600 700 800 900",
+})
+
 export const metadata: Metadata = {
   title: "PL8CHAT - Smart & Social Parking",
   description: "We unite parking communities through license plate chat and connectivity",
@@ -14,13 +20,6 @@ export const metadata: Metadata = {
     type: "website",
   }
 };
-
-const poppins = localFont({
-  src: "../fonts/Poppins-Regular.ttf",
-  variable: "--font-poppins",
-  weight: "100 200 300 400 500 600 700 800 900",
-})
-
 
 export default function RootLayout({
   children,
