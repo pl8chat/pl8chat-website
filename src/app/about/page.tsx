@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function About() {
   return (
     <div className='bg-white'>
-      <div className=" pl-[100px] pt-20 justify-center items-center gap-[177px] inline-flex pb-[250px] w-full">
+      <div className=" pl-[100px] pt-20 justify-center items-center gap-[177px] inline-flex pb-[393px] w-full">
         <div className="grow shrink basis-0 justify-start items-center gap-[49px] flex">
           <div className="w-[856px] flex-col justify-start items-start gap-8 inline-flex">
             <div className="self-stretch text-[#034b48] text-[65px] font-semibold leading-[72px]"><br />About us</div>
