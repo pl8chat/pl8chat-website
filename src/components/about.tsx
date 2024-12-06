@@ -19,9 +19,9 @@ export default function AboutComponent() {
           />
         </div>
       </div>
-      <div className="w-[856px] h-[457px] flex-col justify-start items-start gap-8 flex -mt-64">
+      <div className="w-[856px] flex-col justify-start items-start gap-8 flex -mt-64 pb-[82px]">
         <div className="self-stretch text-[#034b48] text-[65px] font-semibold leading-[72px]">Our Mission</div>
-        <div><span className="text-gray-500 text-2xl font-normal leading-8">PL8CHAT is a technology company transforming license <br />plates into the universal line of vehicle communication.<br /><br />Through license plate innovation and simple human <br />interactions we can create a safe, accountable and <br />convenient parking and driving life for all.<br /><br />Join us on our mission to get </span><Link href={``} className="text-[#034b48] text-2xl font-normal leading-8">Every Car Connected™</Link><span className="text-gray-500 text-2xl font-normal leading-8">.<br /><br /></span></div>
+        <div><span className="text-gray-500 text-2xl h-[320px] font-normal leading-8">PL8CHAT is a technology company transforming license <br />plates into the universal line of vehicle communication.<br /><br />Through license plate innovation and simple human <br />interactions we can create a safe, accountable and <br />convenient parking and driving life for all.<br /><br />Join us on our mission to get </span><Link href={``} className="text-[#034b48] text-2xl font-normal leading-8">Every Car Connected™</Link><span className="text-gray-500 text-2xl font-normal leading-8">.<br /><br /></span></div>
       </div>
     </div>
   )
