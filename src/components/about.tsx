@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function AboutComponent() {
   return (
@@ -10,7 +11,7 @@ export default function AboutComponent() {
           <div className="self-stretch text-gray-500 text-2xl font-normal leading-8">We believe the license plate is an underutilized code<br />that’s been neglected for too long and we’re here to <br />do something about it. <br /></div>
         </div>
         <div className="basis-5/12 size-full h-[743px] relative text-black -top-24">
-          <Image 
+          <Image
             src={`/assets/images/aboutImage.png`}
             fill
             alt='licence plates'
@@ -20,7 +21,7 @@ export default function AboutComponent() {
       </div>
       <div className="w-[856px] h-[457px] flex-col justify-start items-start gap-8 flex -mt-64">
         <div className="self-stretch text-[#034b48] text-[65px] font-semibold leading-[72px]">Our Mission</div>
-        <div className="self-stretch text-gray-500 text-2xl font-normal leading-8">We believe the license plate is an underutilized code<br />that’s been neglected for too long and we’re here to <br />do something about it. <br /></div>
+        <div><span className="text-gray-500 text-2xl font-normal leading-8">PL8CHAT is a technology company transforming license <br />plates into the universal line of vehicle communication.<br /><br />Through license plate innovation and simple human <br />interactions we can create a safe, accountable and <br />convenient parking and driving life for all.<br /><br />Join us on our mission to get </span><Link href={``} className="text-[#034b48] text-2xl font-normal leading-8">Every Car Connected™</Link><span className="text-gray-500 text-2xl font-normal leading-8">.<br /><br /></span></div>
       </div>
     </div>
   )
