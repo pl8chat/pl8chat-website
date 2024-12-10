@@ -15,7 +15,7 @@ interface Navigation {
 const navigation: Navigation = {
   company: [
     { name: 'About us', href: '/about' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contact' },
   ],
   legal: [
     { name: 'Terms of service', href: '/terms' },

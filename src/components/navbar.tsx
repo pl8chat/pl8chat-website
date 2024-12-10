@@ -13,7 +13,7 @@ type NavigationItem = {
 
 const navigation: NavigationItem[] = [
   { name: 'About us', href: '/about', current: false },
-  { name: 'Contact', href: 'mailto:info@pl8chat.com', current: false },
+  { name: 'Contact', href: '/contact', current: false },
 ]
 
 function classNames(...classes: string[]): string {
@@ -54,7 +54,8 @@ const LogoBlack = () => {
 
 const navbarColors: Record<string, string> = {
   '/': 'bg-[#034b48]',
-  '/about': 'bg-white',
+  '/about': 'bg-[#faf4e8]',
+  '/contact': 'bg-[#e0fee6]',
   '/terms': 'bg-white',
   '/privacy': 'bg-white',
   default: 'bg-[#034b48]',
@@ -63,6 +64,7 @@ const navbarColors: Record<string, string> = {
 const navbarTextColors: Record<string, string> = {
   '/': 'text-white',
   '/about': 'text-black',
+  '/contact': 'text-black',
   '/terms': 'text-black',
   '/privacy': 'text-black',
   default: 'text-white',
@@ -71,6 +73,7 @@ const navbarTextColors: Record<string, string> = {
 const logoColor: Record<string, JSX.Element> = {
   '/': <Logo />,
   '/about': <LogoBlack />,
+  '/contact': <LogoBlack />,
   '/terms': <LogoBlack />,
   '/privacy': <LogoBlack />,
   default: <Logo />,
