@@ -77,7 +77,7 @@ const navigation: Navigation = {
     },
     {
       name: 'YouTube',
-      href: 'https://youtube.com/pl8chat',
+      href: 'https://youtube.com/@pl8chat',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
