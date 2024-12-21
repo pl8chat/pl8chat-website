@@ -84,7 +84,7 @@ export default function FreePlanForm() {
         <div className='flex flex-col gap-6'>
           <div className="w-[384px] h-[72px] flex-col justify-start items-start gap-3 inline-flex">
             <div className="flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a free account</div>
+              <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a free plan</div>
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
                 <div className="h-5 justify-start items-center inline-flex">
@@ -101,15 +101,9 @@ export default function FreePlanForm() {
                 <EyeOff />
               </div>
             </div>
-            <div className='relative w-full'>
-              <Input variant='default' label='Confirm password' id='currentPassword' name='currentPassword' type='password' className='w-full' />
-              <div className='absolute right-[13px] top-10'>
-                <EyeOff />
-              </div>
-            </div>
             <div className="h-[60px] justify-start items-center gap-2 inline-flex">
-              <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By creating an account, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
-              </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and have read and acknowledge our </span><Link href={`/privacy`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
+              <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By selecting continue, you agree to our </span><Link href={`/terms`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Terms of Service</span>
+              </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and </span><Link href={`/privacy`}><span className="text-[#004c3d] text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
             </div>
           </div>
           <div className='w-full'>
@@ -177,7 +171,7 @@ export default function FreePlanForm() {
                 <Input variant='default' label='First name' id='firstName' name='firstName' type='text' />
                 <Input variant='default' label='Last name' id='lastName' name='lastName' type='text' />
               </div>
-              <div className="self-stretch h-[98px] flex-col justify-start items-start gap-2 flex">
+              <div className="self-stretch flex-col justify-start items-start gap-2 flex">
                 <div className='w-full'>
                   <Select
                     value={values.role || ""}
@@ -192,7 +186,7 @@ export default function FreePlanForm() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
+                {/* <div className="w-[460px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div> */}
               </div>
               <div className='w-full relative'>
                 <span className={`absolute left-[21px] top-[38px] pr-[13px] rounded z-10 ${phoneNumber ? 'text-gray-900' : 'text-gray-400'}`}>+ 1</span>
@@ -232,9 +226,9 @@ export default function FreePlanForm() {
               </div>
             </div>
             <div className="w-[384px] flex-col justify-start items-start gap-6 inline-flex">
-              <div className='flex flex-col gap-2'>
+              <div className='flex flex-col gap-2 w-full'>
                 <Input variant='default' label='Business Name' id='firstName' name='firstName' type='text' />
-                <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div>
+                {/* <div className="w-[384px] h-[20px] text-gray-500 text-sm font-normal leading-tight">You can change this later in settings</div> */}
               </div>
               <div className='w-full'>
                 <Select
