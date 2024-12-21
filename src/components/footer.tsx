@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import localFont from "next/font/local";
+
+const inter = localFont({
+  src: "../app/fonts/Inter-Regular.ttf",
+  variable: "--font-geist-sans",
+  weight: "100 200 300 400 500 600 700 800 900",
+});
+
 
 interface NavigationItem {
   name: string;
@@ -124,7 +132,7 @@ export default function Footer() {
                 <div className="flex flex-col font-normal">
                   <div>Every</div>
                   <div>Car</div>
-                  <div>Connected</div>
+                  <div>Connected™</div>
                 </div> 
                 <div className="flex gap-8 -translate-x-3">
                   <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
