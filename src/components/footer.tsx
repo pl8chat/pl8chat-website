@@ -121,7 +121,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 w-full">
             <div className=" text-lg text-white">
               <div className="flex justify-between w-full">
-                <div className="flex flex-col font-semibold">
+                <div className="flex flex-col font-normal">
                   <div>Every</div>
                   <div>Car</div>
                   <div>Connected</div>
