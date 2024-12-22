@@ -33,7 +33,7 @@ export default function MailingListSubForm() {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState<string>('')
   const [emailTouched, setEmailTouched] = useState<boolean>(false);
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(true);  // State for submission status
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,7 +94,7 @@ export default function MailingListSubForm() {
   return (
     <div className={`${poppins.className}`}>
       {isSubmitted ? (
-        <div className="md:w-[457px] h-[162px] md:h-[177.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
+        <div className="md:w-[457px] h-[162px] md:h-[197px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
@@ -111,9 +111,9 @@ export default function MailingListSubForm() {
             </div>
           </div>
           <div className="self-stretch h-px bg-gray-200"></div>
-          <div className="self-stretch md:h-[122px] p-4 flex-col justify-start items-center gap-2 flex">
-            <div className="self-stretch md:h-[90px] flex-col justify-start items-start gap-4 flex">
-              <div className="self-stretch md:h-[90px] flex-col justify-center items-center gap-3 flex">
+          <div className="self-stretch p-4 flex-col justify-start items-center gap-2 flex">
+            <div className="self-stretch flex-col justify-start items-start gap-4 flex">
+              <div className="self-stretch flex-col justify-center items-center gap-3 flex">
                 <div className="self-stretch md:h-10 flex-col justify-start items-center gap-2 flex">
                   <div className="md:hidden self-stretch text-gray-900 text-sm font-normal leading-tight">You’ve been successfully added to our mailing list and will be hearing from us soon.</div>
                   <div className="hidden md:block self-stretch text-gray-900 text-sm font-normal leading-tight">You’ve been successfully added to our mailing list and <br />will be hearing from us soon.</div>
