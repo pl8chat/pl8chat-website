@@ -76,7 +76,7 @@ const logoColor: Record<string, JSX.Element> = {
   '/contact': <LogoBlack />,
   '/terms': <LogoBlack />,
   '/privacy': <LogoBlack />,
-  default: <Logo />,
+  default: <LogoBlack />,
 };
 
 export default function Navbar() {
@@ -96,24 +96,24 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className={`fixed w-full px-8 z-10 ${getNavbarBackgroundColor()}`}>
+    <Disclosure as="nav" className={`fixed w-full px-4 md:px-8 z-10 ${getNavbarBackgroundColor()}`}>
       {({ open }) => (
         <>
           <div className="mx-auto">
             <div className="relative flex h-[58px] items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:text-[] focus:outline-none">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
                   ) : (
-                    <Bars3Icon aria-hidden="true" className="block h-6 w-6 text-white" />
+                    <Bars3Icon aria-hidden="true" className="block h-6 w-6 text-[#1c274d]" />
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-lelft sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href={'/'}>
                     {getLogoComponent()}
@@ -156,50 +156,6 @@ export default function Navbar() {
                     )
                   })}
                 </div>
-
-                {/* Profile dropdown */}
-                {/* <Menu as="div" className="lg:hidden relative ml-3">
-                  <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        alt=""
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        className="h-8 w-8 rounded-full"
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <div className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')} >
-                          <div>Call us: 1(310)PL8-CHAT</div>
-                        </div>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Talk to Sales
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Sign in
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </Menu> */}
               </div>
             </div>
           </div>
@@ -212,7 +168,7 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className={classNames('block rounded-md px-3 py-2 text-base font-medium text-white')}
+                  className={classNames('block rounded-md px-3 py-2 text-base font-medium text-black')}
                 >
                   {item.name}
                 </Disclosure.Button>
