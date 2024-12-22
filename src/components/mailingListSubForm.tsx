@@ -94,7 +94,7 @@ export default function MailingListSubForm() {
   return (
     <div className={`${poppins.className}`}>
       {isSubmitted ? (
-        <div className="w-[457px] h-[177.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
+        <div className="md:w-[457px] h-[162px] md:h-[177.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
@@ -111,19 +111,19 @@ export default function MailingListSubForm() {
             </div>
           </div>
           <div className="self-stretch h-px bg-gray-200"></div>
-          <div className="self-stretch h-[122px] p-4 flex-col justify-start items-center gap-2 flex">
-            <div className="self-stretch h-[90px] flex-col justify-start items-start gap-4 flex">
-              <div className="self-stretch h-[90px] flex-col justify-center items-center gap-3 flex">
-                <div className="self-stretch h-10 flex-col justify-start items-center gap-2 flex">
-                  <div className="self-stretch text-gray-900 text-sm font-normal leading-tight">You’ve been successfully added to our mailing list and <br />will be hearing from us soon.</div>
+          <div className="self-stretch md:h-[122px] p-4 flex-col justify-start items-center gap-2 flex">
+            <div className="self-stretch md:h-[90px] flex-col justify-start items-start gap-4 flex">
+              <div className="self-stretch md:h-[90px] flex-col justify-center items-center gap-3 flex">
+                <div className="self-stretch md:h-10 flex-col justify-start items-center gap-2 flex">
+                  <div className="md:hidden self-stretch text-gray-900 text-sm font-normal leading-tight">You’ve been successfully added to our mailing list and will be hearing from us soon.</div>
+                  <div className="hidden md:block self-stretch text-gray-900 text-sm font-normal leading-tight">You’ve been successfully added to our mailing list and <br />will be hearing from us soon.</div>
                 </div>
-                <div className="self-stretch h-[38px]"></div>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <form ref={form} onSubmit={handleFormSubmit} action="/submit" className={`w-[457px] h-[261.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex`} noValidate>
+        <form ref={form} onSubmit={handleFormSubmit} action="/submit" className={`md:w-[457px] md:h-[261.34px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex`} noValidate>
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
@@ -140,14 +140,14 @@ export default function MailingListSubForm() {
             </div>
           </div>
           <div className="self-stretch h-px bg-gray-200"></div>
-          <div className="self-stretch h-[206px] p-4 flex-col justify-start items-center gap-2 flex">
-            <div className="self-stretch h-[174px] flex-col justify-start items-start gap-4 flex">
-              <div className="self-stretch h-[110px] flex-col justify-center items-center gap-3 flex">
+          <div className="self-stretch md:h-[206px] p-4 flex-col justify-start items-center gap-2 flex">
+            <div className="self-stretch md:h-[174px] flex-col justify-start items-start gap-4 flex">
+              <div className="self-stretch md:h-[110px] flex-col justify-center items-center gap-3 flex">
                 <div className="self-stretch h-[60px] flex-col justify-start items-center gap-2 flex">
-                  <div className="self-stretch text-gray-900 text-sm font-normal leading-tight">Join our mailing list to stay up to date on important news and product updates.<br /></div>
+                  <div className="w-[292px] md:w-auto self-stretch text-gray-900 text-sm font-normal leading-tight h-[60px]">Join our mailing list to stay up to date on important news and product updates.<br /></div>
                 </div>
-                <div className="self-stretch h-[38px] flex-col justify-start items-center gap-2 flex relative">
-                  <div className="self-stretch justify-start items-center gap-3 inline-flex ">
+                <div className="self-stretch md:h-[38px] flex-col justify-start items-center gap-2 flex relative">
+                  <div className="self-stretch justify-start items-center gap-3 inline-flex flex-col md:flex-row">
                     <input
                       id="email"
                       name="email"
@@ -164,7 +164,7 @@ export default function MailingListSubForm() {
                         : 'border-gray-300'
                         }`}
                     />
-                    <div className="mt-4 sm:mt-0 sm:flex-shrink-0" >
+                    <div className="mt-0 sm:mt-0 sm:flex-shrink-0 w-full md:w-auto" >
                       <button
                         type="submit"
                         className="flex w-full items-center justify-center rounded-md bg-[#034b48] px-[17px] py-[9px] text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -172,13 +172,15 @@ export default function MailingListSubForm() {
                         Subscribe
                       </button>
                     </div>
+                    
                   </div>
                   {emailTouched && !isValidEmail(email) && (
                     <span className="text-red-500 text-xs mt-1 absolute left-3.5 -bottom-5">Invalid email</span>
                   )}
                 </div>
+                
               </div>
-              <div className="self-stretch text-center text-[#00695c] pt-4 text-[10px] font-normal leading-normal"><br />By clicking subscribe you agree to receive marketing emails from PL8CHAT</div>
+              <div className="self-stretch text-center text-[#00695c] md:pt-4 text-[10px] font-normal leading-normal"><br />By clicking subscribe you agree to receive marketing emails from PL8CHAT</div>
             </div>
           </div>
         </form>
