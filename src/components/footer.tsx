@@ -122,20 +122,30 @@ const LogoSVG = () => {
 export default function Footer() {
 
   return (
-    <footer className="h-[447px] px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
-      <div className="h-[220px] relative w-full flex justify-between">
-        <div className="h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex w-full">
-          <LogoSVG />
+    <footer className="md:h-[447px] px-4 md:px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
+      <div className="md:h-[220px] relative w-full flex justify-between">
+        <div className="md:h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex w-full">
+          <div className='md:h-[220px]'>
+            <LogoSVG />
+          </div>
           <div className="flex flex-col gap-6 w-full">
             <div className=" text-lg text-white">
-              <div className="flex justify-between w-full">
+              <div className="flex flex-col md:flex-row justify-between w-full gap-6 md:gap-0">
                 <div className="flex flex-col font-normal">
                   <div>Every</div>
                   <div>Car</div>
                   <div>Connected™</div>
-                </div> 
-                <div className="flex gap-8 -translate-x-3">
-                  <div className="w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
+                </div>
+                <div className="md:hidden flex gap-x-6">
+                  {navigation.social.map((item) => (
+                    <Link key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                      <span className="sr-only">{item.name}</span>
+                      {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
+                    </Link>
+                  ))}
+                </div>
+                <div className="flex gap-8 md:-translate-x-3 pt-6 md:pt-0">
+                  <div className="basis-1/2 w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
                     <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
                     <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
                       <ul role="list" className="flex flex-col gap-4">
@@ -149,7 +159,7 @@ export default function Footer() {
                       </ul>
                     </div>
                   </div>
-                  <div className="self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
+                  <div className="basis-1/2 self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
                     <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Legal</div>
                     <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
                       <ul role="list" className="flex flex-col gap-4">
@@ -166,12 +176,12 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-x-6">
+            <div className="hidden md:flex gap-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                <Link key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
                   <span className="sr-only">{item.name}</span>
                   {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
