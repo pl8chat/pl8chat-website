@@ -33,7 +33,7 @@ export default function MailingListSubForm() {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState<string>('')
   const [emailTouched, setEmailTouched] = useState<boolean>(false);
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(true);  // State for submission status
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
