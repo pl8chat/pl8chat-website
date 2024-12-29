@@ -50,6 +50,7 @@ export default function MailingListSubForm() {
         .then((result) => {
           console.log(result.text);
           setIsSubmitted(true);
+          console.log('isSubmitted: '+isSubmitted)
           setEmailTouched(false);
         })
         .catch((error) => {
