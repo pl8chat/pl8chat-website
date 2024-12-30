@@ -1,5 +1,5 @@
 'use client'
-
+import { useState } from 'react'
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
@@ -80,25 +80,28 @@ const logoColor: Record<string, JSX.Element> = {
 };
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const getNavbarBackgroundColor = () => {
-    // if (isFlydownOpen || isScrolled) return 'bg-white';
     return navbarColors[pathname] || navbarColors.default;
   };
 
   const getNavbarTextColor = () => {
     return navbarTextColors[pathname] || navbarTextColors.default;
-  }
+  };
 
   const getLogoComponent = (): JSX.Element => {
     return logoColor[pathname] || logoColor.default;
   };
 
   return (
-    <Disclosure as="nav" className={`fixed w-full px-4 md:px-8 z-50 ${getNavbarBackgroundColor()}`}>
+    <Disclosure>
       {({ open }) => (
-        <>
+        <div
+          className={`fixed w-full px-4 md:px-8 z-50 ${
+            open ? 'border-b-2' : ''
+          } ${getNavbarBackgroundColor()}`}
+        >
           <div className="mx-auto">
             <div className="relative flex h-[58px] items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
@@ -109,58 +112,38 @@ export default function Navbar() {
                   {open ? (
                     <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
                   ) : (
-                    <Bars3Icon aria-hidden="true" className="block h-6 w-6 text-[#1c274d]" />
+                    <Bars3Icon
+                      aria-hidden="true"
+                      className="block h-6 w-6 text-[#1c274d]"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href={'/'}>
-                    {getLogoComponent()}
-                  </Link>
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  {/* <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
-                    {navigation.map((item) => {
-                      const isActive = item.href === pathname; // Declare isActive here
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          aria-current={isActive ? 'page' : undefined}
-                          className={classNames(
-                            isActive ? 'bg-white text-darkGreen' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'rounded-md px-3 py-3 text-md lg:text-lg font-medium'
-                          )}
-                        >
-                          {item.name}
-                        </Link>
-                      );
-                    })}
-
-                  </div> */}
+                  <Link href={'/'}>{getLogoComponent()}</Link>
                 </div>
               </div>
 
               {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0">
                 <div className={`hidden sm:flex space-x-4 text-base ${getNavbarTextColor()}`}>
-                  {navigation.map((item) => {
-                    return (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className='py-2 hover:text-[#034b48] font-semibold'>
-                        {item.name}
-                      </Link>
-                    )
-                  })}
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="py-2 hover:text-[#034b48] font-semibold"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden w-full absolute left-0 top-[58px] border-b-2">
+          {/* Mobile menu */}
+          <Disclosure.Panel className="sm:hidden w-full">
             <div className="space-y-1 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -168,15 +151,16 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className="block w-full rounded-md py-2 text-base font-medium text-black px-4"
+                  className="block w-full rounded-md py-2 text-base font-medium text-black"
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
             </div>
           </Disclosure.Panel>
-        </>
+        </div>
       )}
     </Disclosure>
-  )
+  );
 }
+
