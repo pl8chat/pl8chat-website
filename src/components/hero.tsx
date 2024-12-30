@@ -17,9 +17,9 @@ export default function Hero() {
     <div className='w-full'>
       <div className="h-[560px] md:h-[683px] w-full px-4 md:px-8 pt-[56px] lg:pt-32 md:pb-[120px] bg-[#f3f4f2] flex-col justify-start items-start gap-4 md:gap-10 inline-flex">
         {/* <div className="max-w-[12ch] text-white text-[100px] font-medium leading-[100px]">Smart and Social Parking </div> */}
-        <div className="md:w-[822px] w-[300px] pt-16">
+        <div className="md:w-[822px] w-[320px] pt-16">
           <span
-            className="text-[#034b48] text-[50px] md:text-[100px] font-medium md:font-normal leading-[50px] md:leading-[100px]"
+            className="text-[#034b48] text-[60px] md:text-[100px] font-medium md:font-normal leading-[50px] md:leading-[100px]"
           >
             Smart and Social Parking
           </span>
