@@ -131,7 +131,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 w-full">
             <div className=" text-lg text-white">
               <div className="flex flex-col md:flex-row justify-between w-full gap-6 md:gap-0">
-                <div className="flex flex-col font-normal">
+                <div className="flex flex-col font-normal text-[18px] leading-8">
                   <div>Every</div>
                   <div>Car</div>
                   <div>Connected<span className={`${inter.className}`}>™</span></div>
