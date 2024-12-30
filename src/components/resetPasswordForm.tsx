@@ -54,19 +54,19 @@ export default function ResetPasswordForm() {
             <div className="h-[92px] flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Reset your password</div>
               <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0 text-gray-900 text-sm font-normal leading-tight">Enter your email address to receive a link to your new password.</div>
+                <div className="text-gray-900 text-sm font-normal leading-tight">Enter your email address to receive a link to reset your password.</div>
               </div>
             </div>
           </div>
-            <Input
-              variant='default'
-              label='Email'
-              id='email'
-              name='email'
-              type='email'
-              value={email}
-              onChange={handleEmailChange}
-            />
+          <Input
+            variant='default'
+            label='Email'
+            id='email'
+            name='email'
+            type='email'
+            value={email}
+            onChange={handleEmailChange}
+          />
           <div className='w-full'>
             <div className='pb-2'>
               <Button variant='signUp' onClick={handleNext} className={`w-full`}>Submit</Button>
@@ -120,7 +120,6 @@ export default function ResetPasswordForm() {
           <div className="w-96 flex-col justify-start items-start gap-6 inline-flex">
             <div className="flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Change Password</div>
-              <div><span className="text-gray-900 text-sm font-normal leading-tight">Enter a new password for</span><span className="text-gray-900 text-sm font-semibold leading-tight"> michael@pl8chat.com.</span></div>
             </div>
           </div>
           <div className='relative'>

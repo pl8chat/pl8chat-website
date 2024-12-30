@@ -33,7 +33,7 @@ const emails = [
 ]
 
 export default function FreePlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [values, setValues] = useState<Record<SelectKeys, string | undefined>>({
     role: undefined,
@@ -440,14 +440,7 @@ export default function FreePlanForm() {
             </div>
             <div className=" flex-col justify-start items-start gap-2 flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">You’re ready to go!</div>
-              <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">Your account was successfully created and a confirmation email has been sent to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com. </span></div>
-              </div>
-            </div>
-            <div className="self-stretch justify-start items-center gap-1 inline-flex">
-              <div className="grow shrink basis-0 flex-col justify-start items-start gap-6 inline-flex">
-                <div className="self-stretch text-gray-900 text-xs font-normal leading-tight">Click below to start managing your parking community!</div>
-              </div>
+              <div><span className="text-gray-900 text-sm font-normal leading-tight">Your account was successfully created and a confirmation email has been sent.<br /></span><span className="text-gray-900 text-sm font-bold leading-tight"> </span></div>
             </div>
             <div className='w-[384px]'>
               <Button variant='signUp' onClick={handlePrevious} className={`w-full`}>Sign In</Button>
