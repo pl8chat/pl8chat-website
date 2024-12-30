@@ -99,7 +99,7 @@ export default function Navbar() {
       {({ open }) => (
         <div
           className={`fixed w-full px-4 md:px-8 z-50 ${
-            open ? 'border-b-2' : ''
+            open ? 'border-b-2 border-[#adadaf]' : ''
           } ${getNavbarBackgroundColor()}`}
         >
           <div className="mx-auto">
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden w-full">
-            <div className="space-y-1 pb-3 pt-2">
+            <div className="space-y-1 pb-2 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
