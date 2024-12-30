@@ -21,7 +21,7 @@ export default function About() {
           >
             ™
           </span></Link></div> */}
-          <div className="w-[352px] h-[400px]"><span className="text-[#353535] text-sm font-normal leading-[25px]">PL8CHAT is a technology company transforming license plates into the universal line of vehicle communication.<br /><br />We believe through license plate innovation and simple human interactions we can create a safe, accountable and convenient parking and driving life for all.<br /><br />Join us on our mission to get</span><span className="text-black text-sm font-normal leading-[25px]"> </span><span className="text-[#034b48] text-sm font-semibold leading-[25px]">Every Car Connected</span><span className={`text-[#034b48] text-sm font-semibold leading-[25px] ${inter.className}`}>™</span></div>
+          <div className="w-[352px] h-[400px]"><span className="text-[#353535] text-sm font-normal leading-[25px]">PL8CHAT is a technology company transforming license plates into the universal line of vehicle communication.<br /><br />We believe through license plate innovation and simple human interactions we can create a safe, accountable and convenient parking and driving life for all.<br /><br />Join us on our mission to get</span><span className="text-black text-sm font-normal leading-[25px]"> </span><span className="text-[#034b48] text-sm font-semibold leading-[25px]">Every Car Connected</span><span className={`text-[#034b48] text-sm font-normal leading-[25px] ${inter.className}`}>™</span></div>
         </div>
         {/* Desktop */}
         <div className='hidden md:block'>

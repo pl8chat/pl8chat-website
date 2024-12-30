@@ -30,7 +30,7 @@ export default function Hero() {
             ™
           </span>
         </div>
-        <div className="w-[316px] text-[#353535] text-[17px] font-normal leading-[25px] pb-2">We’re a new line of communication connecting people, cars and parking communities through license plates.  </div>
+        <div className="w-[316px] md:w-[768px] text-[#353535] text-[17px] md:text-[29px] font-normal leading-[25px] md:leading-[35px] pb-2">We’re a new line of communication connecting people, cars and parking communities through license plates.  </div>
         <Button variant="secondary" className={``} onClick={() => setModalOpen(true)}>Learn more</Button>
       </div>
       <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
