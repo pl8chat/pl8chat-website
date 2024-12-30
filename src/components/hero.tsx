@@ -19,7 +19,7 @@ export default function Hero() {
         {/* <div className="max-w-[12ch] text-white text-[100px] font-medium leading-[100px]">Smart and Social Parking </div> */}
         <div className="md:w-[822px] w-[300px] pt-16">
           <span
-            className="text-[#034b48] text-[45px] md:text-[100px] font-medium md:font-normal leading-[50px] md:leading-[100px]"
+            className="text-[#034b48] text-[50px] md:text-[100px] font-medium md:font-normal leading-[50px] md:leading-[100px]"
           >
             Smart and Social Parking
           </span>
