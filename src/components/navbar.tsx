@@ -96,7 +96,7 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className={`fixed w-full px-4 md:px-8 z-10 ${getNavbarBackgroundColor()}`}>
+    <Disclosure as="nav" className={`fixed w-full px-4 md:px-8 z-50 ${getNavbarBackgroundColor()}`}>
       {({ open }) => (
         <>
           <div className="mx-auto">
