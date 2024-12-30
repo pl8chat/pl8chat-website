@@ -24,7 +24,7 @@ const emails = [
 ]
 
 export default function ResetPasswordForm() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1)
   const [email, setEmail] = useState('');
   const [emailEntered, setEmailEntered] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
@@ -141,15 +141,15 @@ export default function ResetPasswordForm() {
       {step === 4 && (
         <div className='flex flex-col w-full h-screen justify-center items-center gap-6'>
           <div className="w-96 flex-col justify-start items-start gap-6 inline-flex">
-            <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
-              <GreenCheck />
-            </div>
-            <div className="h-16 flex-col justify-start items-start gap-2 flex">
-              <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Success!</div>
-              <div className="justify-start items-center gap-1 inline-flex">
-                <div className="text-gray-900 text-xs font-normal leading-tight h-5 flex items-center">Your password has been successfully changed.</div>
+              <div className="w-12 h-12 p-3 rounded-3xl border-2 border-[#034b48] justify-center items-center inline-flex">
+                <GreenCheck />
               </div>
-            </div>
+              <div className="h-16 flex-col justify-start items-start gap-2 flex">
+                <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Success!</div>
+                <div className="justify-start items-center gap-1 inline-flex">
+                  <div className="text-gray-900 text-xs font-normal leading-tight h-5 flex items-center">Your password has been successfully changed.</div>
+                </div>
+              </div>
           </div>
           <Link href={`/signin`} className='w-[384px]'>
             <Button variant='signUp' onClick={handlePrevious} className={`w-full`}>Sign In</Button>

@@ -38,7 +38,7 @@ const emails = [
 ]
 
 export default function PaidPlanForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(6);
   const [isChecked, setIsChecked] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -94,7 +94,7 @@ export default function PaidPlanForm() {
             <div className="flex-col justify-start items-start gap-2 flex">
               <div className="text-center text-nowrap text-gray-900 text-3xl font-semibold leading-9">Sign up for a premium plan</div>
               <div className="justify-start items-center gap-1 inline-flex">
-                <div className="text-gray-900 text-sm font-normal leading-tight">Create an account or</div>
+                <div className="text-gray-900 text-sm font-normal leading-tight">Already a customer?</div>
                 <div className="h-5 justify-start items-center inline-flex">
                   <div className="text-[#004c3d] text-sm font-normal underline leading-tight">Sign in</div>
                 </div>
@@ -125,9 +125,7 @@ export default function PaidPlanForm() {
           <div className="w-96 h-[84px] flex-col justify-start items-start gap-6 inline-flex">
             <div className="h-[92px] flex-col justify-start items-start gap-4 inline-flex">
               <div className="text-center text-gray-900 text-3xl font-semibold leading-9">Check your email</div>
-              <div className="self-stretch justify-start items-center gap-1 inline-flex">
-                <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email to </span><span className="text-gray-900 text-sm font-bold leading-tight">michael@pl8chat.com </span><span className="text-gray-900 text-sm font-normal leading-tight">with a link to activate your account.</span></div>
-              </div>
+              <div className="text-gray-900 text-sm font-normal leading-tight">We’ve sent an email with a link to activate your account. </div>
             </div>
           </div>
           <div className="w-[460px] h-12 justify-start items-start gap-1 inline-flex">
