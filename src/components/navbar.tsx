@@ -53,7 +53,7 @@ const LogoBlack = () => {
 }
 
 const navbarColors: Record<string, string> = {
-  '/': 'bg-[#f3f4f2]',
+  '/': 'bg-white md:bg-[#f3f4f2]',
   '/about': 'bg-[#f3f4f2]',
   '/contact': 'bg-[#f3f4f2]',
   '/terms': 'bg-white',
@@ -160,15 +160,15 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden flex justify-end">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          <Disclosure.Panel className="sm:hidden w-full absolute left-0 top-[58px] border-b-2">
+            <div className="space-y-1 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className={classNames('block rounded-md px-3 py-2 text-base font-medium text-black')}
+                  className="block w-full rounded-md py-2 text-base font-medium text-black px-4"
                 >
                   {item.name}
                 </Disclosure.Button>
