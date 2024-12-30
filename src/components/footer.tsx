@@ -134,7 +134,7 @@ export default function Footer() {
                 <div className="flex flex-col font-normal">
                   <div>Every</div>
                   <div>Car</div>
-                  <div>Connected™</div>
+                  <div>Connected<span className={`${inter.className}`}>™</span></div>
                 </div>
                 <div className="md:hidden flex gap-x-6">
                   {navigation.social.map((item) => (

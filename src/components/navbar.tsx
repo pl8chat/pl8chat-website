@@ -53,7 +53,7 @@ const LogoBlack = () => {
 }
 
 const navbarColors: Record<string, string> = {
-  '/': 'bg-white md:bg-[#f3f4f2]',
+  '/': 'bg-[#f3f4f2]',
   '/about': 'bg-[#f3f4f2]',
   '/contact': 'bg-[#f3f4f2]',
   '/terms': 'bg-white',
@@ -99,7 +99,7 @@ export default function Navbar() {
       {({ open }) => (
         <div
           className={`fixed w-full px-4 md:px-8 z-50 ${
-            open ? 'border-b-2 border-[#adadaf]' : ''
+            open ? 'border-b-[1px] drop-shadow border-[#adadaf]' : ''
           } ${getNavbarBackgroundColor()}`}
         >
           <div className="mx-auto">
