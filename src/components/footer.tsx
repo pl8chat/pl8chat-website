@@ -122,7 +122,7 @@ const LogoSVG = () => {
 export default function Footer() {
 
   return (
-    <footer className="md:h-[447px] px-4 md:px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
+    <footer className="md:h-[447px]  px-4 md:px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
       <div className="md:h-[220px] relative w-full flex justify-between">
         <div className="md:h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex w-full">
           <div className='md:h-[220px]'>
