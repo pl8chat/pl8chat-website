@@ -95,7 +95,7 @@ export default function MailingListSubForm() {
   return (
     <div className={`${poppins.className}`}>
       {isSubmitted ? (
-        <div className=" md:w-[457px] h-[162px] md:h-[197px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
+        <div className="md:w-[457px] h-[162px] md:h-[197px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
               <div className="w-[22.54px] h-[22.34px] relative">
