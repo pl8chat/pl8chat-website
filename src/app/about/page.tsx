@@ -11,7 +11,7 @@ const inter = localFont({
 
 export default function About() {
   return (
-    <div className='bg-[#f3f4f2] '>
+    <div className='bg-[#f3f4f2]'>
       <div className="px-4 md:pl-[140px] pt-6 md:pt-[184px] justify-start items-start inline-flex flex-col gap-4 md:pb-[16px] w-full">
         <div className="text-[#034b48] text-xl md:text-[45px] font-semibold leading-[50px] md:leading-[100px]">About us</div>
         {/* Mobile */}
