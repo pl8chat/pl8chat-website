@@ -242,7 +242,7 @@ export default function NavbarFinal() {
                   >
                     Talk to sales
                   </Button>
-                  <Link href={`/signin`}
+                  <Link href={`https://pl8-chat-admin.vercel.app/login`}
                     className={classNames(
                       getTextColor(),
                       'py-2'

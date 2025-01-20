@@ -125,7 +125,7 @@ export default function PricingComponent() {
                 }
               </p>
               <Link
-                href={tier.href}
+                href={''}
                 aria-describedby={tier.id}
                 className={classNames(
                   selectedTierId === tier.id
