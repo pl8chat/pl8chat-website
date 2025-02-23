@@ -58,6 +58,7 @@ const navbarColors: Record<string, string> = {
   '/contact': 'bg-[#f3f4f2]',
   '/terms': 'bg-white',
   '/privacy': 'bg-white',
+  '/usersafety': 'bg-white',
   default: 'bg-[#034b48]',
 };
 
@@ -67,6 +68,7 @@ const navbarTextColors: Record<string, string> = {
   '/contact': 'text-black',
   '/terms': 'text-black',
   '/privacy': 'text-black',
+  '/usersafety': 'text-black',
   default: 'text-white',
 }
 
@@ -76,6 +78,7 @@ const logoColor: Record<string, JSX.Element> = {
   '/contact': <LogoBlack />,
   '/terms': <LogoBlack />,
   '/privacy': <LogoBlack />,
+  '/usersafety': <LogoBlack />,
   default: <LogoBlack />,
 };
 
