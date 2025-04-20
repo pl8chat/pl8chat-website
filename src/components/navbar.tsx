@@ -53,7 +53,7 @@ const LogoBlack = () => {
 }
 
 const navbarColors: Record<string, string> = {
-  '/': 'bg-[#f3f4f2]',
+  '/': 'bg-transparent',
   '/about': 'bg-[#f3f4f2]',
   '/contact': 'bg-[#f3f4f2]',
   '/terms': 'bg-white',
@@ -64,7 +64,7 @@ const navbarColors: Record<string, string> = {
 };
 
 const navbarTextColors: Record<string, string> = {
-  '/': 'text-black',
+  '/': 'text-white',
   '/about': 'text-black',
   '/contact': 'text-black',
   '/terms': 'text-black',
@@ -132,7 +132,7 @@ export default function Navbar() {
               </div>
 
               {/* Right-side items are hidden on mobile */}
-              <div className="sm:flex sm:items-center sm:pr-0 z-30">
+              <div className="sm:flex sm:items-center sm:pr-0 relative" style={{ zIndex: 999 }}>
                 <div className={`hidden sm:flex space-x-4 text-base ${getNavbarTextColor()}`}>
                   {navigation.map((item) => (
                     <Link

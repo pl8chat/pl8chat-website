@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Nabvar from "../components/navbar";
 import Footer from "../components/footer";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 
 const poppins = localFont({
@@ -31,10 +32,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <header>
-          <Nabvar />
-        </header>
-        <div className="pt-[58px] bg-[#034b48]">
+        <Nabvar />
+        <div className='bg-[#f3f4f2]'>
           {children}
         </div>
         <div className="w-full">

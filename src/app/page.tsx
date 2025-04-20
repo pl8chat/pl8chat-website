@@ -3,7 +3,7 @@ import Hero from "../components/hero";
 export default function Home() {
   return (
     <div>
-      <div className="bg-[#034b48]">
+      <div className="bg-transparent">
         <Hero />
       </div>
     </div>
