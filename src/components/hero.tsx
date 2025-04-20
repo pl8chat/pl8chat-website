@@ -36,7 +36,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="md:hidden flex bg-[#f3f4f2] w-full relative">
-        <div className="absolute inset-0 bg-[url('/assets/images/License%20Plate.png')] bg-cover bg-center z-0" />
+        <div className="absolute inset-0 bg-[url('/assets/images/License%20Plate.png')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 w-full px-4 pt-[56px] pb-[120px] flex-col justify-start items-start gap-4 inline-flex">
