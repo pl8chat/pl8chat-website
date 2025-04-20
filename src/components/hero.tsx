@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <div className='w-full flex bg-[#f3f4f2]'>
       <div className='basis-1/2'>
-        <div className="h-[560px] md:h-[683px] w-full px-4 md:px-8 pt-[56px] lg:pt-32 md:pb-[120px] flex-col justify-start items-start gap-4 md:gap-10 inline-flex">
+        <div className="h-[560px] md:h-[751px] w-full px-4 md:px-8 pt-[56px] lg:pt-32 md:pb-[120px] flex-col justify-start items-start gap-4 md:gap-10 inline-flex">
           <div className="w-full max-w-[822px] pt-16">
             <div className="w-full justify-start text-[#363636] text-8xl font-medium leading-[90px]">
               The Voice <br />of Cars
@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
-      <div className='basis-1/2 bg-[#f3f4f2] relative h-[683px]'>
+      <div className='basis-1/2 bg-[#f3f4f2] relative h-[751px]'>
         <Image src={'/assets/images/License Plate.png'} fill alt='License Plate' />
       </div>
     </div>
