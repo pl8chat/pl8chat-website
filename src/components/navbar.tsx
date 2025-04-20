@@ -124,7 +124,7 @@ export default function Navbar() {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start relative z-30 bg-pink-500">
+                <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start relative z-30">
                   <div className="flex flex-shrink-0 items-center">
                     <Link href={'/'}>{getLogoComponent()}</Link>
                   </div>
@@ -161,7 +161,7 @@ export default function Navbar() {
             </Disclosure.Panel>
           </div>
           <div>
-            
+
           </div>
         </div>
       )}
