@@ -10,6 +10,12 @@ const poppins = localFont({
   weight: "100 200 300 400 500 600 700 800 900",
 });
 
+const inter = localFont({
+  src: "./fonts/Inter-Regular.ttf",
+  variable: "--font-geist-sans",
+  weight: "100 200 300 400 500 600 700 800 900",
+});
+
 export const metadata: Metadata = {
   title: "PL8CHAT - Smart & social parking",
   description: "Smart & Social parking",
@@ -24,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <header>
           <Nabvar />
         </header>
