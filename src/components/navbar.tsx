@@ -104,7 +104,7 @@ export default function Navbar() {
     <Disclosure>
       {({ open }) => (
         <div
-          className={`fixed w-full px-4 md:px-8 z-20 backdrop-blur-sm ${
+          className={`fixed w-full px-4 md:px-8 z-10 backdrop-blur-sm ${
             open ? 'border-b-[1px] drop-shadow border-[#adadaf]' : ''
           } ${getNavbarBackgroundColor()}`}
         >
