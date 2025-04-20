@@ -104,14 +104,15 @@ export default function Navbar() {
     <Disclosure>
       {({ open }) => (
         <div
-          className={`fixed w-full px-4 md:px-8 z-10 backdrop-blur-sm ${
+          className={`fixed w-full px-4 md:px-8 z-10 ${
             open ? 'border-b-[1px] drop-shadow border-[#adadaf]' : ''
           } ${getNavbarBackgroundColor()}`}
         >
           <div className="mx-auto">
             <div className="relative flex h-[58px] items-center justify-between">
-              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden z-30">
-                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:text-[#034b48] focus:outline-none">
+              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden z-50">
+                {/* Mobile menu button */}
+                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:text-[] focus:outline-none">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -129,6 +130,8 @@ export default function Navbar() {
                   <Link href={'/'}>{getLogoComponent()}</Link>
                 </div>
               </div>
+
+              {/* Right-side items are hidden on mobile */}
               <div className="sm:flex sm:items-center sm:pr-0 z-30">
                 <div className={`hidden sm:flex space-x-4 text-base ${getNavbarTextColor()}`}>
                   {navigation.map((item) => (
@@ -144,15 +147,17 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className="sm:hidden w-full z-30">
-            <div className="space-y-1 pb-2 pt-2 bg-[#f3f4f2]/80 backdrop-blur-sm">
+
+          {/* Mobile menu */}
+          <Disclosure.Panel className="sm:hidden w-full">
+            <div className="space-y-1 pb-2 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className="block w-full rounded-md py-2 text-base font-medium text-black hover:text-[#034b48]"
+                  className="block w-full rounded-md py-2 text-base font-medium text-black"
                 >
                   {item.name}
                 </Disclosure.Button>

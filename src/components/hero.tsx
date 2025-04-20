@@ -25,13 +25,13 @@ export default function Hero() {
           </div>
           <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
         </div>
-        <div className='basis-1/2 bg-[#f3f4f2] relative h-[809] -top-[28px]'>
+        <div className='basis-1/2 bg-[#f3f4f2] relative h-[809]'>
           <Image
             src={'/assets/images/License Plate.png'}
             alt='License Plate'
             fill
             objectFit='cover'
-            className="absolute top-0 left-0 w-full h-full z-20"
+            className="absolute top-0 left-0 w-full h-full z-0"
           />
         </div>
       </div>
