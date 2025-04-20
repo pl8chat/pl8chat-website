@@ -40,8 +40,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[url('/assets/images/License%20Plate%202.png')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/60" />
 
-        <div className='pt-[58px]'>  
-          <div className="relative w-full px-4 pt-[56px] pb-[120px] flex-col justify-start items-start gap-4 inline-flex">
+        <div className='pt-[91px]'>  
+          <div className="relative w-full px-4 pt-[56px] pb-[120px] flex-col justify-start items-start gap-6 inline-flex">
             <div className="w-80 text-white text-5xl font-medium leading-[50px]">
               The Voice <br />of Cars
             </div>

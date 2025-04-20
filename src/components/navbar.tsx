@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
@@ -15,6 +15,20 @@ const navigation: NavigationItem[] = [
   { name: 'About us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < breakpoint)
+    checkMobile()
+
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [breakpoint])
+
+  return isMobile
+}
 
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
@@ -52,7 +66,7 @@ const LogoBlack = () => {
   )
 }
 
-const navbarColors: Record<string, string> = {
+let navbarColors: Record<string, string> = {
   '/': 'bg-transparent',
   '/about': 'bg-[#f3f4f2]',
   '/contact': 'bg-[#f3f4f2]',
@@ -63,7 +77,7 @@ const navbarColors: Record<string, string> = {
   default: 'bg-[#034b48]',
 };
 
-const navbarTextColors: Record<string, string> = {
+let navbarTextColors: Record<string, string> = {
   '/': 'text-white',
   '/about': 'text-black',
   '/contact': 'text-black',
@@ -74,7 +88,7 @@ const navbarTextColors: Record<string, string> = {
   default: 'text-white',
 }
 
-const logoColor: Record<string, JSX.Element> = {
+let logoColor: Record<string, JSX.Element> = {
   '/': <LogoBlack />,
   '/about': <LogoBlack />,
   '/contact': <LogoBlack />,
@@ -87,26 +101,42 @@ const logoColor: Record<string, JSX.Element> = {
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+
+  }
 
   const getNavbarBackgroundColor = () => {
     return navbarColors[pathname] || navbarColors.default;
   };
 
   const getNavbarTextColor = () => {
-    return navbarTextColors[pathname] || navbarTextColors.default;
+    const textColor = navbarTextColors[pathname] || navbarTextColors.default;
+
+    if (isMobile && pathname === '/') {
+      return 'text-white';
+    }
+
+    return textColor;
   };
 
   const getLogoComponent = (): JSX.Element => {
-    return logoColor[pathname] || logoColor.default;
+    const color = logoColor[pathname] || logoColor.default;
+
+    if (isMobile && pathname === '/') {
+      return <Logo />;
+    }
+
+    return color;
   };
 
   return (
     <Disclosure>
       {({ open }) => (
         <div
-          className={`fixed w-full px-4 md:px-8 z-10 ${
-            open ? 'border-b-[1px] drop-shadow border-[#adadaf]' : ''
-          } ${getNavbarBackgroundColor()}`}
+          className={`fixed w-full px-4 md:px-8 z-10 ${open ? 'border-b-[1px] bg-white drop-shadow border-[#adadaf]' : ''
+            } ${getNavbarBackgroundColor()}`}
         >
           <div className="mx-auto">
             <div className="relative flex h-[58px] items-center justify-between">
@@ -120,14 +150,14 @@ export default function Navbar() {
                   ) : (
                     <Bars3Icon
                       aria-hidden="true"
-                      className="block h-6 w-6 text-[#1c274d]"
+                      className={`block h-6 w-6 text-white`}
                     />
                   )}
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start z-30">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href={'/'}>{getLogoComponent()}</Link>
+                <Link href={'/'}>{open ? <LogoBlack /> : getLogoComponent()}</Link>
                 </div>
               </div>
 
@@ -148,7 +178,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile menu */}
+          {/* Mobile drop down menu */}
           <Disclosure.Panel className="sm:hidden w-full">
             <div className="space-y-1 pb-2 pt-2">
               {navigation.map((item) => (

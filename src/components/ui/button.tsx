@@ -1,7 +1,6 @@
 import * as Headless from '@headlessui/react'
 import { clsx } from 'clsx'
 import { Link } from '../link'
-import localFont from 'next/font/local'
 
 const variants = {
   primary: clsx(
