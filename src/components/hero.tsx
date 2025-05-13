@@ -1,14 +1,58 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Button } from './ui/button'
-import Image from "next/image";
 import HeroText from './svgs/HeroTextLogo';
 import { Input } from './ui/input';
 import MailingListModal from './mailingListModal'
 import { TopPaddingLayout } from './layouts/topPaddingLayout';
+import emailjs from '@emailjs/browser'
+
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return emailRegex.test(email);
+};
+
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
+const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
 export default function Hero() {
+  const form = useRef<HTMLFormElement>(null);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('')
+  const [emailTouched, setEmailTouched] = useState<boolean>(false);
+  const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
+
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!isValidEmail(email)) {
+      setValidEmail(false);
+      setEmailTouched(false);
+      console.log("Invalid email, form not sent.");
+      return;
+    }
+
+    // Sends email to Michael
+    if (form.current !== null) {
+      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${publicKey}`)
+        .then((result) => {
+          console.log(result.text);
+          setIsSubmitted(true);
+          console.log('isSubmitted: ' + isSubmitted)
+          setEmailTouched(false);
+        })
+        .catch((error) => {
+          console.log("Error sending the form:", error.text);
+        });
+    } else {
+      console.error("Form reference is null.");
+    }
+
+    setEmail(email.trim());
+  };
 
   return (
     <div className=''>
@@ -66,20 +110,50 @@ export default function Hero() {
           </div>
           <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[72px]">
             <div className="text-center justify-center text-black text-[50px] font-medium leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
-            <div className="w-[478px] inline-flex justify-start items-start gap-2">
-              <div className="w-80 inline-flex flex-col justify-start items-start gap-2.5">
-                <Input variant={'hero'} placeholder='Enter email address' className='placeholder:text-emerald-950' />
-                <div className="w-80 inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                  <div className="flex-1 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+            <form ref={form} action="/submit" onSubmit={handleFormSubmit} noValidate>
+              <div className="w-[478px] inline-flex justify-start items-start gap-2">
+                <div className="w-80 inline-flex flex-col justify-start items-start gap-2.5">
+                  <div className='flex flex-col'>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      variant={'hero'}
+                      autoComplete="email"    
+                      value={email}
+                      onBlur={() => {
+                        setEmailTouched(true);
+                      }}
+                      placeholder='Enter email address'
+                      className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500' : 'border-emerald-950'}`}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                    />
+                    {emailTouched && validEmail && (
+                      <div className='pt-[10px] text-[#EF4444]'>
+                        This field is required
+                      </div>
+                    )}{!validEmail && (
+                      <div className='pt-[10px] text-[#EF4444]'>
+                        A valid email is required
+                      </div>
+                    )}
+                  </div>
+                  <div className="w-80 inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                    <div className="flex-1 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+                  </div>
                 </div>
+                <button data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
+                  <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
+                </button>
               </div>
-              <div data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
-                <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
+      <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   )
 }

@@ -50,6 +50,7 @@ export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) 
                                     </button>
                                 </div>
                                 <div>
+                                    {/* Content */}
                                     <MailingListSubForm />
                                 </div>
                             </Dialog.Panel>
