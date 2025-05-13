@@ -22,7 +22,6 @@ interface Navigation {
 
 const navigation: Navigation = {
   company: [
-    { name: 'About us', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ],
   legal: [

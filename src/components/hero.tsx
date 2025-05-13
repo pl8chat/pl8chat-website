@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Button } from './ui/button'
 import Image from "next/image";
+import HeroText from './svgs/HeroTextLogo';
+import { Input } from './ui/input';
 import MailingListModal from './mailingListModal'
 import { TopPaddingLayout } from './layouts/topPaddingLayout';
 
@@ -10,7 +12,8 @@ export default function Hero() {
 
   return (
     <div className=''>
-      <div className='w-full md:flex h-[741px] bg-[#f3f4f2] hidden'>
+      {/* Side by side w/ image */}
+      {/* <div className='w-full md:flex h-[741px] bg-[#f3f4f2] hidden'>
         <div className='basis-1/2'>
           <div className="h-[560px] md:h-[751px] w-full px-4 md:pl-8 pt-[56px] lg:pt-32 md:pb-[120px] flex-col justify-start items-start gap-4 md:gap-10 inline-flex">
             <div className="w-full max-w-[822px] pt-16">
@@ -53,6 +56,27 @@ export default function Hero() {
             </div>
             <Button variant="secondary" onClick={() => setModalOpen(true)}>Learn more</Button>
             <MailingListModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+          </div>
+        </div>
+      </div> */}
+      <div className='mx-auto w-full h-screen flex justify-center items-center bg-[#E8F4F0]'>
+        <div className='flex-col justify-center'>
+          <div className='flex justify-center'>
+            <HeroText />
+          </div>
+          <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[72px]">
+            <div className="text-center justify-center text-black text-[50px] font-medium leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
+            <div className="w-[478px] inline-flex justify-start items-start gap-2">
+              <div className="w-80 inline-flex flex-col justify-start items-start gap-2.5">
+                <Input variant={'hero'} placeholder='Enter email address' className='placeholder:text-emerald-950' />
+                <div className="w-80 inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                  <div className="flex-1 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+                </div>
+              </div>
+              <div data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
+                <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
