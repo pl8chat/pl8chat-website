@@ -26,17 +26,17 @@ export default function Hero() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
 
   useEffect(() => {
-      const handleBeforeUnload = () => {
-        setIsSubmitted(false);  // Reset submission status on window close or refresh
-      };
-  
-      window.addEventListener('beforeunload', handleBeforeUnload);
-  
-      // Clean up the event listener when the component unmounts
-      return () => {
-        window.removeEventListener('beforeunload', handleBeforeUnload);
-      };
-    }, []);
+    const handleBeforeUnload = () => {
+      setIsSubmitted(false);  // Reset submission status on window close or refresh
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -122,46 +122,64 @@ export default function Hero() {
           <div className='flex justify-center'>
             <HeroText />
           </div>
-          <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[72px]">
-            <div className="text-center justify-center text-black text-[50px] font-medium leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
+          <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[50px] md:pt-[72px]">
+            <div className="w-[350px] md:w-[905px] text-center justify-center text-black text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
             <form ref={form} action="/submit" onSubmit={handleFormSubmit} noValidate>
-              <div className="w-[478px] inline-flex justify-start items-start gap-2">
-                <div className="w-80 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className='flex flex-col'>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      variant={'hero'}
-                      autoComplete="email"
-                      value={email}
-                      onBlur={() => {
-                        setEmailTouched(true);
-                      }}
-                      placeholder='Enter email address'
-                      className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500 focus:border-red-500' : 'border-emerald-950 focus:border-emerald-950'}`}
-                      onChange={(e) => {
-                        setEmail(e.target.value);
-                      }}
-                    />
+              <div className="w-full flex flex-col items-center justify-center md:justify-start md:items-start gap-2 md:flex-row md:w-[478px]">
+                <div className="w-[350px] md:w-80 inline-flex flex-col justify-start items-start gap-2.5">
+                  <div className='flex flex-col w-full md:w-auto md:flex-row gap-2'>
+                    <div>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        variant={'hero'}
+                        autoComplete="email"
+                        value={email}
+                        onBlur={() => {
+                          setEmailTouched(true);
+                        }}
+                        placeholder='Enter email address'
+                        className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500 focus:border-red-500' : 'border-emerald-950 focus:border-emerald-950'}`}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                      />
+                      <div className='flex flex-col md:hidden leading-[18px] text-[11px]'>
+                        {emailTouched && validEmail && (
+                          <div className='pt-[10px] text-red-500'>
+                            This field is required
+                          </div>
+                        )}{!validEmail && (
+                          <div className='pt-[10px] text-red-500'>
+                            A valid email is required
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <button data-state="Default" data-type="Primary" className="w-full md:w-[150px] h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
+                      <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
+                    </button>
+                  </div>
+                  <div className='hidden md:flex flex-col'>
                     {emailTouched && validEmail && (
-                      <div className='pt-[10px] text-[#EF4444]'>
+                      <div className='pt-[10px] text-red-500'>
                         This field is required
                       </div>
                     )}{!validEmail && (
-                      <div className='pt-[10px] text-[#EF4444]'>
+                      <div className='pt-[10px] text-red-500'>
                         A valid email is required
                       </div>
                     )}
                   </div>
-                  <div className="w-80 inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                    <div className="flex-1 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+                  <div className="inline-flex justify-start items-center gap-2.5 overflow-hidden">
+                    <div className="flex-1 justify-start text-emerald-950 text-[11px] md:text-xs font-normal leading-[15px] md:leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
                   </div>
                 </div>
-                <button data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
+                {/* <button data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
                   <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
-                </button>
+                </button> */}
               </div>
             </form>
           </div>

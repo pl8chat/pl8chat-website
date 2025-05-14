@@ -14,7 +14,7 @@ const inputVariants = cva(
         message: "text-sm focus:border-[#034b48] focus:ring-0",
         checkout: "border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm focus:border-[#034b48] focus:ring-0",
         promoCode: "border-gray-300 rounded-md placeholder:text-gray-500 text-sm focus:border-[#034b48] focus:ring-0",
-        hero: "w-80 h-12 pl-3 pr-5 py-2 bg-white rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] inline-flex justify-start items-center gap-2 overflow-hidden border-[1px] focus:border-[2px] focus:ring-0"
+        hero: "w-full md:w-80 h-12 pl-3 pr-5 py-2 bg-white rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] inline-flex justify-start items-center gap-2 overflow-hidden border-[1px] focus:border-[2px] focus:ring-0"
 
 
       },
