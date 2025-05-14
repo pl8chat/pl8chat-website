@@ -22,7 +22,7 @@ const Success = forwardRef<HTMLDivElement, SuccessProps>(
 
     return (
       <div ref={ref} className={show ? '' : 'hidden'}>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <div className="rounded-md bg-green-50 p-4 z-10 absolute max-w-3/4 -top-12">
             <div className="flex">
               <div className="flex-shrink-0">
@@ -47,6 +47,15 @@ const Success = forwardRef<HTMLDivElement, SuccessProps>(
                 </div>
               </div>
             </div>
+          </div>
+        </div> */}
+        <div className="w-[350px] px-6 py-2 bg-white rounded-lg shadow-md inline-flex justify-start items-start gap-2">
+          <div className="w-6 h-6 relative overflow-hidden">
+            <CheckCircleIcon className="h-6 w-6 text-green-500" aria-hidden="true" />
+          </div>
+          <div className="inline-flex flex-col justify-start items-start gap-2">
+            <div className="justify-start text-emerald-950 text-base font-semibold font-['Inter'] leading-snug">Success!</div>
+            <div className="justify-start text-emerald-950 text-xs font-normal font-['Inter'] leading-normal">This email has been added to our mailing list.</div>
           </div>
         </div>
       </div>

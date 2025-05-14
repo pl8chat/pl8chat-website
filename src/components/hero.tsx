@@ -1,8 +1,9 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Button } from './ui/button'
 import HeroText from './svgs/HeroTextLogo';
 import { Input } from './ui/input';
+import Success from './success';
 import MailingListModal from './mailingListModal'
 import { TopPaddingLayout } from './layouts/topPaddingLayout';
 import emailjs from '@emailjs/browser'
@@ -18,12 +19,24 @@ const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
 export default function Hero() {
   const form = useRef<HTMLFormElement>(null);
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>('')
-  const [emailTouched, setEmailTouched] = useState<boolean>(false);
+  const [isModalOpen, setModalOpen] = useState<boolean>(false); // State for modal open/close
+  const [email, setEmail] = useState<string>('') // State for email input
+  const [emailTouched, setEmailTouched] = useState<boolean>(false); // State for email input touch
   const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
 
+  useEffect(() => {
+      const handleBeforeUnload = () => {
+        setIsSubmitted(false);  // Reset submission status on window close or refresh
+      };
+  
+      window.addEventListener('beforeunload', handleBeforeUnload);
+  
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
+    }, []);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,6 +56,7 @@ export default function Hero() {
           setIsSubmitted(true);
           console.log('isSubmitted: ' + isSubmitted)
           setEmailTouched(false);
+          setModalOpen(true); // Open the modal on successful submission
         })
         .catch((error) => {
           console.log("Error sending the form:", error.text);
@@ -120,13 +134,13 @@ export default function Hero() {
                       type="email"
                       required
                       variant={'hero'}
-                      autoComplete="email"    
+                      autoComplete="email"
                       value={email}
                       onBlur={() => {
                         setEmailTouched(true);
                       }}
                       placeholder='Enter email address'
-                      className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500' : 'border-emerald-950'}`}
+                      className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500 focus:border-red-500' : 'border-emerald-950 focus:border-emerald-950'}`}
                       onChange={(e) => {
                         setEmail(e.target.value);
                       }}
