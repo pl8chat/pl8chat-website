@@ -32,7 +32,7 @@ export default function Hero() {
       buttonClickedRef.current = false;
       return;
     }
-    setEmailTouched(true); // or whatever your blur logic is
+    setEmailTouched(true); 
   };
 
   const handleButtonMouseDown = () => {
@@ -69,9 +69,8 @@ export default function Hero() {
         .then((result) => {
           console.log(result.text);
           setIsSubmitted(true);
-          console.log('isSubmitted: ' + isSubmitted)
           setEmailTouched(false);
-          setModalOpen(true); // Open the modal on successful submission
+          setModalOpen(true);
         })
         .catch((error) => {
           console.log("Error sending the form:", error.text);
@@ -138,7 +137,7 @@ export default function Hero() {
             <HeroText />
           </div>
           <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[50px] md:pt-[72px]">
-            <div className="w-[350px] md:w-[905px] text-center justify-center text-black text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
+            <div className="w-[350px] md:w-[905px] text-center justify-center text-[#002823] text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
             <form ref={form} onSubmit={handleFormSubmit} noValidate>
               <div className="w-full flex flex-col items-center justify-center md:justify-start md:items-start gap-2 md:flex-row md:w-[478px]">
                 <div className="w-[350px] md:w-80 inline-flex flex-col justify-start items-start gap-2.5">
