@@ -24,6 +24,21 @@ export default function Hero() {
   const [emailTouched, setEmailTouched] = useState<boolean>(false); // State for email input touch
   const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
+  const buttonClickedRef = useRef(false);
+
+  const handleBlur = () => {
+    if (buttonClickedRef.current) {
+      // Reset and skip blur logic
+      buttonClickedRef.current = false;
+      return;
+    }
+    setEmailTouched(true); // or whatever your blur logic is
+  };
+
+  const handleButtonMouseDown = () => {
+    buttonClickedRef.current = true;
+  };
+
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -137,9 +152,7 @@ export default function Hero() {
                         variant={'hero'}
                         autoComplete="email"
                         value={email}
-                        onBlur={() => {
-                          setEmailTouched(true);
-                        }}
+                        onBlur={handleBlur}
                         placeholder='Enter email address'
                         className={`placeholder:text-emerald-950 ${emailTouched || !validEmail ? 'border-red-500 focus:border-red-500' : 'border-emerald-950 focus:border-emerald-950'}`}
                         onChange={(e) => {
@@ -158,7 +171,7 @@ export default function Hero() {
                         )}
                       </div>
                     </div>
-                    <button data-state="Default" data-type="Primary" className="w-full md:w-[150px] h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
+                    <button onMouseDown={handleButtonMouseDown} data-state="Default" data-type="Primary" className="w-full md:w-[150px] h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
                       <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
                     </button>
                   </div>
