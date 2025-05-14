@@ -13,9 +13,9 @@ const isValidEmail = (email: string): boolean => {
   return emailRegex.test(email);
 };
 
-const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
-const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
-const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+const templateID = process.env.templateID
+const serviceID = process.env.serviceID
+const publicKey = process.env.publicKey
 
 export default function Hero() {
   const form = useRef<HTMLFormElement>(null);
@@ -139,7 +139,7 @@ export default function Hero() {
           </div>
           <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[50px] md:pt-[72px]">
             <div className="w-[350px] md:w-[905px] text-center justify-center text-black text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
-            <form ref={form} action="/submit" onSubmit={handleFormSubmit} noValidate>
+            <form ref={form} onSubmit={handleFormSubmit} noValidate>
               <div className="w-full flex flex-col items-center justify-center md:justify-start md:items-start gap-2 md:flex-row md:w-[478px]">
                 <div className="w-[350px] md:w-80 inline-flex flex-col justify-start items-start gap-2.5">
                   <div className='flex flex-col w-full md:w-auto md:flex-row gap-2'>

@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    templateID: 'template_r2u48ea',
+    serviceID: 'service_xy0ogsj',
+    publicKey: 'FKhKWeOTif_yR4NGG',
+  },
+
   async rewrites() {
     return [
       {
