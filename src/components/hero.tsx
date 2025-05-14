@@ -186,7 +186,7 @@ export default function Hero() {
                     )}
                   </div>
                   <div className="inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                    <div className="flex-1 justify-start text-emerald-950 text-[11px] md:text-xs font-normal leading-[15px] md:leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+                    <div className="md:w-[370px] flex-1 justify-start text-emerald-950 text-[11px] md:text-xs font-normal leading-[15px] md:leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
                   </div>
                 </div>
                 {/* <button data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
