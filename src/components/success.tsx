@@ -2,6 +2,7 @@
 import { useState, useEffect, forwardRef } from 'react'
 import { Transition } from '@headlessui/react'
 import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import CheckMark from './svgs/SuccessAlert'
 
 type SuccessProps = {
   message: string,
@@ -51,7 +52,7 @@ const Success = forwardRef<HTMLDivElement, SuccessProps>(
         </div> */}
         <div className="w-[350px] px-6 py-2 bg-white rounded-lg shadow-md inline-flex justify-start items-start gap-2">
           <div className="w-6 h-6 relative overflow-hidden">
-            <CheckCircleIcon className="h-6 w-6 text-green-500" aria-hidden="true" />
+            <CheckMark />
           </div>
           <div className="inline-flex flex-col justify-start items-start gap-2">
             <div className="justify-start text-emerald-950 text-base font-semibold font-['Inter'] leading-snug">Success!</div>

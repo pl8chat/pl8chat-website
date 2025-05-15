@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import MailingListSubForm from './mailingListSubForm';
@@ -10,6 +10,16 @@ type ImageModalrProps = {
 };
 
 export default function MailingListModal({ isOpen, onClose }: ImageModalrProps) {
+    useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        onClose()
+      }, 1000) // 1 second = 1000 ms
+
+      return () => clearTimeout(timer) // Clear timeout if the component unmounts or isOpen changes
+    }
+  }, [isOpen, onClose])
+  
     const handleClose = () => {
         if (onClose) onClose();
     };

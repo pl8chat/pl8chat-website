@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react'
 import { Button } from './ui/button'
 import HeroText from './svgs/HeroTextLogo';
 import { Input } from './ui/input';
-import Success from './success';
 import MailingListModal from './mailingListModal'
 import { TopPaddingLayout } from './layouts/topPaddingLayout';
 import emailjs from '@emailjs/browser'
@@ -71,6 +70,7 @@ export default function Hero() {
           setIsSubmitted(true);
           setEmailTouched(false);
           setModalOpen(true);
+          setEmail('');
         })
         .catch((error) => {
           console.log("Error sending the form:", error.text);
@@ -138,7 +138,7 @@ export default function Hero() {
           </div>
           <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[50px] md:pt-[72px]">
             <div className="w-[350px] md:w-[905px] text-center justify-center text-[#002823] text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
-            <form ref={form} onSubmit={handleFormSubmit} noValidate>
+            <form ref={form} onSubmit={handleFormSubmit} noValidate className='md:-translate-x-5'>
               <div className="w-full flex flex-col items-center justify-center md:justify-start md:items-start gap-2 md:flex-row md:w-[478px]">
                 <div className="w-[350px] md:w-80 inline-flex flex-col justify-start items-start gap-2.5">
                   <div className='flex flex-col w-full md:w-auto md:flex-row gap-2'>
@@ -174,13 +174,13 @@ export default function Hero() {
                       <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
                     </button>
                   </div>
-                  <div className='hidden md:flex flex-col'>
+                  <div className={`hidden text-xs ${emailTouched && validEmail ? 'md:flex flex-col' : ''} ${!validEmail ? 'md:flex flex-col' : ''}`}>
                     {emailTouched && validEmail && (
-                      <div className='pt-[10px] text-red-500'>
+                      <div className='text-red-500'>
                         This field is required
                       </div>
                     )}{!validEmail && (
-                      <div className='pt-[10px] text-red-500'>
+                      <div className='text-red-500'>
                         A valid email is required
                       </div>
                     )}
