@@ -69,8 +69,8 @@ export default function Hero() {
           console.log(result.text);
           setIsSubmitted(true);
           setEmailTouched(false);
-          setModalOpen(true);
           setEmail('');
+          setModalOpen(true);
         })
         .catch((error) => {
           console.log("Error sending the form:", error.text);
