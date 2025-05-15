@@ -135,7 +135,7 @@ export default function Navbar() {
     <Disclosure>
       {({ open }) => (
         <div
-          className={`fixed w-full px-4 md:px-8 z-10 ${open ? 'border-b-[1px] bg-white drop-shadow border-[#adadaf]' : ''
+          className={`${pathname === '/' ? 'hidden' : ''} fixed w-full px-4 md:px-8 z-10 ${open ? 'border-b-[1px] bg-white drop-shadow border-[#adadaf]' : ''
             } ${getNavbarBackgroundColor()}`}
         >
           <div className="mx-auto">

@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        {/* <Nabvar /> */}
+        <Nabvar />
         <div className='bg-[#f3f4f2]'>
           {children}
         </div>

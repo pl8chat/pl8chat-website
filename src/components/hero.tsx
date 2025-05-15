@@ -131,7 +131,7 @@ export default function Hero() {
           </div>
         </div>
       </div> */}
-      <div className='mx-auto w-full h-screen flex justify-center items-center bg-[#E8F4F0]'>
+      <div className='mx-auto w-full h-screen flex justify-center items-center bg-[#E8F4F0] z-30'>
         <div className='flex-col justify-center'>
           <div className='flex justify-center'>
             <HeroText />
