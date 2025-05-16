@@ -19,7 +19,7 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: "PL8CHAT",
-  description: "Smart & Social parking",
+  description: "",
   openGraph: {
     title: "PL8CHAT",
     images: "./assets/images/logoGreen.jpg",
