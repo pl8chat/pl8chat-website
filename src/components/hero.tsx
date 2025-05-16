@@ -132,7 +132,7 @@ export default function Hero() {
           </div>
         </div>
       </div> */}
-      <div className='mx-auto w-full h-screen flex justify-center items-start md:items-center bg-[#E8F4F0] z-30 pt-[109px]'>
+      <div className='mx-auto w-full flex h-[100vh] justify-center items-start md:items-center bg-[#E8F4F0] z-30 pt-[109px] md:pt-0'>
         <div className='flex-col justify-center'>
           <div className='flex justify-center'>
             <div className='hidden md:flex'>
@@ -164,6 +164,7 @@ export default function Hero() {
                           setEmail(e.target.value);
                         }}
                       />
+                      {/* Mobile */}
                       <div className='flex flex-col md:hidden leading-[18px] text-[11px]'>
                         {emailTouched && validEmail && (
                           <div className='pt-[10px] text-red-500'>
@@ -180,21 +181,26 @@ export default function Hero() {
                       <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
                     </button>
                   </div>
-                  <div className={`hidden text-xs ${emailTouched && validEmail ? 'md:flex flex-col' : ''} ${!validEmail ? 'md:flex flex-col' : ''}`}>
-                    {emailTouched && validEmail && (
-                      <div className='text-red-500'>
-                        This field is required
+                  {/* Desktop */}
+                  <div className='relative w-full'>
+                    <div className={`hidden text-xs ${emailTouched && validEmail ? 'md:flex flex-col' : ''} ${!validEmail ? 'md:flex flex-col' : ''} absolute`}>
+                      {emailTouched && validEmail && (
+                        <div className='text-red-500'>
+                          This field is required
+                        </div>
+                      )}{!validEmail && (
+                        <div className='text-red-500'>
+                          A valid email is required
+                        </div>
+                      )}
+                    </div>
+                    <div className='relative'>
+                      <div className={`inline-flex justify-start items-center gap-2.5 overflow-hidden absolute ${emailTouched && validEmail ? 'top-5' : ''} ${!validEmail ? 'top-5' : ''}`}>
+                        <div className="md:w-[370px] flex-1 justify-start text-emerald-950 text-[11px] md:text-xs font-normal leading-[15px] md:leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
                       </div>
-                    )}{!validEmail && (
-                      <div className='text-red-500'>
-                        A valid email is required
-                      </div>
-                    )}
+                    </div>
                   </div>
-                  <div className="inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                    <div className="md:w-[370px] flex-1 justify-start text-emerald-950 text-[11px] md:text-xs font-normal leading-[15px] md:leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
                   </div>
-                </div>
                 {/* <button data-state="Default" data-type="Primary" className="w-36 h-12 px-5 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-emerald-950 flex justify-center items-center overflow-hidden">
                   <div className="justify-start text-white text-base font-medium leading-normal tracking-tight">Join waitlist</div>
                 </button> */}
