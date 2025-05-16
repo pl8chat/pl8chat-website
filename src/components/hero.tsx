@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Button } from './ui/button'
 import HeroText from './svgs/HeroTextLogo';
+import HeroTextMobile from './svgs/HeroTextLogoMobile';
 import { Input } from './ui/input';
 import MailingListModal from './mailingListModal'
 import { TopPaddingLayout } from './layouts/topPaddingLayout';
@@ -131,13 +132,18 @@ export default function Hero() {
           </div>
         </div>
       </div> */}
-      <div className='mx-auto w-full h-screen flex justify-center items-center bg-[#E8F4F0] z-30'>
+      <div className='mx-auto w-full h-screen flex justify-center items-start md:items-center bg-[#E8F4F0] z-30 pt-[109px]'>
         <div className='flex-col justify-center'>
           <div className='flex justify-center'>
-            <HeroText />
+            <div className='hidden md:flex'>
+              <HeroText />
+            </div>
+            <div className='md:hidden'>
+              <HeroTextMobile />
+            </div>
           </div>
           <div className="pl-[5px] inline-flex flex-col justify-center items-center gap-[50px] pt-[50px] md:pt-[72px]">
-            <div className="w-[350px] md:w-[905px] text-center justify-center text-[#002823] text-[33px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
+            <div className="w-[350px] md:w-[905px] text-center justify-center text-[#002823] text-[37px] md:text-[50px] font-medium leading-[34px] md:leading-[60px]">We’re a new kind of auto club. Built on<br />communication and community. </div>
             <form ref={form} onSubmit={handleFormSubmit} noValidate className='md:-translate-x-5'>
               <div className="w-full flex flex-col items-center justify-center md:justify-start md:items-start gap-2 md:flex-row md:w-[478px]">
                 <div className="w-[350px] md:w-80 inline-flex flex-col justify-start items-start gap-2.5">
