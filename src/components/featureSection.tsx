@@ -12,8 +12,8 @@ import PhoneIconSVG from './svgs/phoneIcon'
 import AppStoreSVG from './svgs/appleAppStore'
 import GooglePlayStoreSVG from './svgs/googlePlayStore'
 import FAQ from './faq'
+import Feature3 from './feature3'
 import { FC } from 'react'
-import { isPromise } from 'util/types'
 
 interface Feature {
   name: string
@@ -90,9 +90,9 @@ const FeatureSection: FC = () => {
   console.log('Image src:', src);
 
   return (
-    <div className='flex justify-center w-full'>
-      <div className="self-stretch pt-20 pb-6 bg-emerald-50 inline-flex flex-col justify-start items-center gap-20 w-full">
-        <div className="self-stretch flex flex-col justify-start items-center gap-20">
+    <div className='flex flex-col justify-center w-full'>
+      <div className="self-stretch pt-20 pb-6  inline-flex flex-col justify-start items-center gap-20 w-full bg-emerald-50">
+        <div className="self-stretch flex flex-col justify-start items-center gap-20 ">
           <div className="w-[813px] inline-flex justify-center items-start">
             <div className="inline-flex flex-col justify-start items-center gap-1">
               <div className="text-center justify-start text-emerald-950 text-4xl font-medium leading-[48px]">How to start connecting on PL8CHAT</div>
@@ -172,8 +172,9 @@ const FeatureSection: FC = () => {
             </div>
           </div>
         </div>
-        <FAQ />
       </div>
+      <FAQ />
+      <Feature3 />
     </div>
   )
 }
