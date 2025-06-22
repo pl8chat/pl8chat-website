@@ -60,7 +60,7 @@ const features2: Feature2[] = [
       'Tap to send a vehicle alert and help other drivers fast without having to type a message.',
     href: '#',
     icon: CautionIconSVG,
-    image: '/assets/images/featurePhoneImageQuickAlerts.png',
+    image: '/assets/images/featurePhoneImageAlerts.png',
   },
   {
     name: 'Chat convos',
@@ -68,7 +68,7 @@ const features2: Feature2[] = [
       'Chat with other drivers, share photos, and help make parking and driving safer than ever.',
     href: '#',
     icon: ChatBubbleSVG,
-    image: '/assets/images/featurePhoneImageChatConvos.png',
+    image: '/assets/images/featurePhoneImageChat.png',
   },
   {
     name: 'Emergency calls',
@@ -76,13 +76,17 @@ const features2: Feature2[] = [
       'Call the driver in emergencies when seconds matter, like if their vehicle is about to be towed.',
     href: '#',
     icon: PhoneIconSVG,
-    image: '/assets/images/featurePhoneImageEmergencyCalls.png',
+    image: '/assets/images/featurePhoneImageCalls.png',
   },
 ]
 
 const FeatureSection: FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
+  const src =
+    hoveredIndex !== null && features2[hoveredIndex]?.image
+      ? features2[hoveredIndex].image
+      : '/assets/images/featurePhoneImage.png';
+  console.log('Image src:', src);
 
   return (
     <div className='flex justify-center w-full'>
@@ -128,8 +132,8 @@ const FeatureSection: FC = () => {
                     <div
                       key={index}
                       className="w-[644px] self-stretch px-6 py-2.5 hover:bg-gray-100 rounded-tl-3xl rounded-bl-3xl inline-flex justify-start items-start gap-2"
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
+                      onMouseEnter={() => {setHoveredIndex(index);}}
+                      onMouseLeave={() => {setHoveredIndex(null);}}
                     >
                       <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start">
                         <div className="inline-flex justify-start items-center gap-3">
@@ -153,7 +157,7 @@ const FeatureSection: FC = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='w-[508px] h-[675px] relative rounded-3xl'>
               <Image
                 src={
                   hoveredIndex !== null && features2[hoveredIndex]?.image
@@ -161,9 +165,8 @@ const FeatureSection: FC = () => {
                     : '/assets/images/featurePhoneImageDefault.png'
                 }
                 alt="Feature Section Image"
-                width={600}
-                height={400}
-                className="rounded-3xl"
+                fill
+                className="rounded-3xl object-contain"
               />
             </div>
           </div>
