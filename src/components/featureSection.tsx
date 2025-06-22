@@ -1,4 +1,8 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import FreeAccountSVG from './svgs/freeAccount'
 import SearchIconSVG from './svgs/searchIcon'
 import ChatIconSVG from './svgs/chatIcon'
@@ -22,6 +26,7 @@ interface Feature2 {
   description: string
   href: string
   icon: FC<{ className?: string }>
+  image: string
 }
 
 const features: Feature[] = [
@@ -48,13 +53,14 @@ const features: Feature[] = [
   },
 ]
 
-const fetaures2: Feature2[] = [
+const features2: Feature2[] = [
   {
     name: 'Quick alerts',
     description:
       'Tap to send a vehicle alert and help other drivers fast without having to type a message.',
     href: '#',
     icon: CautionIconSVG,
+    image: '/assets/images/featurePhoneImageQuickAlerts.png',
   },
   {
     name: 'Chat convos',
@@ -62,6 +68,7 @@ const fetaures2: Feature2[] = [
       'Chat with other drivers, share photos, and help make parking and driving safer than ever.',
     href: '#',
     icon: ChatBubbleSVG,
+    image: '/assets/images/featurePhoneImageChatConvos.png',
   },
   {
     name: 'Emergency calls',
@@ -69,10 +76,14 @@ const fetaures2: Feature2[] = [
       'Call the driver in emergencies when seconds matter, like if their vehicle is about to be towed.',
     href: '#',
     icon: PhoneIconSVG,
+    image: '/assets/images/featurePhoneImageEmergencyCalls.png',
   },
 ]
 
 const FeatureSection: FC = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+
   return (
     <div className='flex justify-center w-full'>
       <div className="self-stretch pt-20 pb-6 bg-emerald-50 inline-flex flex-col justify-start items-center gap-20 w-full">
@@ -113,29 +124,42 @@ const FeatureSection: FC = () => {
               </div>
               <div className="self-stretch flex flex-col justify-start items-center gap-10">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
-                  {fetaures2.map((feature, index) => (
-                    <div key={index} className="w-[644px] self-stretch px-6 py-2.5 bg-gray-100 rounded-tl-3xl rounded-bl-3xl inline-flex justify-start items-start gap-2">
+                  {features2.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="w-[644px] self-stretch px-6 py-2.5 hover:bg-gray-100 rounded-tl-3xl rounded-bl-3xl inline-flex justify-start items-start gap-2"
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
+                    >
                       <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start">
                         <div className="inline-flex justify-start items-center gap-3">
                           <div className='text-gray-900 text-xl font-bold leading-loose tracking-tight'>{feature.name}</div>
                           <feature.icon />
                         </div>
                         <div className="self-stretch inline-flex justify-center items-center gap-2.5">
-                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-loose tracking-tight">Tap to send a vehicle alert and help other drivers fast <br />without having to type a message.</div>
+                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-[30px] tracking-tight">{feature.description}</div>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
                 <div className="inline-flex justify-start items-center gap-5">
-                  <AppStoreSVG />
-                  <GooglePlayStoreSVG />
+                  <Link href='https://pl8chat.com/ios'>
+                    <AppStoreSVG />
+                  </Link>
+                  <Link href='https://pl8chat.com/android'>
+                    <GooglePlayStoreSVG />
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <Image
-                src="/assets/images/featurePhoneImage.png"
+                src={
+                  hoveredIndex !== null && features2[hoveredIndex]?.image
+                    ? features2[hoveredIndex].image
+                    : '/assets/images/featurePhoneImageDefault.png'
+                }
                 alt="Feature Section Image"
                 width={600}
                 height={400}
