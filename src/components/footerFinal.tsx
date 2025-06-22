@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+import Link from 'next/link'
 
 interface NavigationItem {
   name: string;
@@ -11,28 +11,28 @@ interface Navigation {
   products: NavigationItem[];
   solutions: NavigationItem[];
   company: NavigationItem[];
-  legal: NavigationItem[];
   social: NavigationItem[];
 }
 
 const navigation: Navigation = {
   products: [
-    { name: 'Pricing', href: '/pricing' },
     { name: 'For business', href: '#' },
-    { name: 'For individuals', href: '/individuals' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
   ],
   solutions: [
-    { name: 'FAQ', href: '#' },
+    { name: 'For business', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
   ],
   company: [
-    { name: 'Contact', href: '/contact' },
-    { name: 'About us', href: '/about' },
-    { name: 'Careers', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'For business', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '#' },
   ],
   social: [
     {
@@ -87,12 +87,8 @@ const navigation: Navigation = {
       name: 'YouTube',
       href: '#',
       icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-            clipRule="evenodd"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.60156C6.48 2.60156 2 7.08156 2 12.6016C2 18.1216 6.48 22.6016 12 22.6016C17.51 22.6016 22 18.1216 22 12.6016C22 7.08156 17.51 2.60156 12 2.60156ZM18.605 7.21156C19.8357 8.71087 20.5167 10.5859 20.535 12.5256C20.254 12.4716 17.434 11.8966 14.592 12.2546C14.527 12.1136 14.472 11.9616 14.408 11.8096C14.231 11.3926 14.043 10.9805 13.844 10.5736C16.989 9.29356 18.421 7.44956 18.605 7.21156ZM12 4.07656C14.17 4.07656 16.154 4.88956 17.662 6.22456C17.51 6.44056 16.219 8.16556 13.182 9.30456C11.783 6.73456 10.232 4.62956 9.993 4.30456C10.6509 4.15078 11.3244 4.07426 12 4.07656ZM8.367 4.87956C9.51144 6.46587 10.5687 8.11331 11.534 9.81456C7.542 10.8776 4.017 10.8546 3.638 10.8546C3.91283 9.56169 4.48261 8.34978 5.3029 7.31335C6.12319 6.27693 7.17182 5.44401 8.367 4.87956ZM3.453 12.6116V12.3516C3.823 12.3616 7.965 12.4166 12.228 11.1366C12.478 11.6136 12.705 12.1016 12.922 12.5896C12.813 12.6226 12.694 12.6546 12.586 12.6876C8.182 14.1076 5.839 17.9906 5.644 18.3166C4.23384 16.751 3.45264 14.7186 3.453 12.6116ZM12 21.1486C10.1014 21.1518 8.25667 20.518 6.761 19.3486C6.913 19.0336 8.649 15.6926 13.464 14.0116C13.486 14.0016 13.497 14.0016 13.518 13.9896C14.3303 16.085 14.9407 18.2531 15.341 20.4646C14.2858 20.9186 13.1487 21.1514 12 21.1486ZM16.761 19.6836C16.675 19.1636 16.219 16.6686 15.102 13.5996C17.781 13.1766 20.124 13.8706 20.416 13.9686C20.2336 15.1217 19.8148 16.2246 19.1858 17.2081C18.5568 18.1916 17.7313 19.0344 16.761 19.6836Z" fill="#6B7280" />
         </svg>
       ),
     },
@@ -101,15 +97,15 @@ const navigation: Navigation = {
 
 const FooterLogo = () => {
   return (
-    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M40.1494 19.8C40.1494 30.7352 31.1617 39.6 20.0747 39.6L13.9408 39.6L13.9408 28.6L20.0747 28.6C25.0022 28.6 28.9968 24.6601 28.9968 19.8C28.9968 14.9399 25.0022 11 20.0747 11C15.1472 11 11.1526 14.9399 11.1526 19.8V39.6L0 39.6V19.8C0 8.86476 8.98775 0 20.0747 0C31.1617 0 40.1494 8.86476 40.1494 19.8Z" fill="white" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M40.1494 19.8C40.1494 30.7352 31.1617 39.6 20.0747 39.6L13.9408 39.6L13.9408 28.6L20.0747 28.6C25.0022 28.6 28.9968 24.6601 28.9968 19.8C28.9968 14.9399 25.0022 11 20.0747 11C15.1472 11 11.1526 14.9399 11.1526 19.8V39.6L0 39.6V19.8C0 8.86476 8.98775 0 20.0747 0C31.1617 0 40.1494 8.86476 40.1494 19.8Z" fill="#1F2937" />
     </svg>
   )
 }
 
 export default function FooterFinal() {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-gray-900">
+    <footer aria-labelledby="footer-heading" className="bg-[#F7F7F7]">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -119,34 +115,80 @@ export default function FooterFinal() {
             <div className='relative'>
               <FooterLogo />
             </div>
-            <div className="font-semibold text-lg text-white">
+            <div className="font-normal text-lg text-[#1F2937]">
               <div>Every</div>
               <div>Car</div>
-              <div>Connected</div>
+              <div>Connected®</div>
+            </div>
+            <div className="flex space-x-6 md:order-2">
+              {navigation.social.map((item) => (
+                <Link key={item.name} href={item.href} className="text-gray-500">
+                  <span className="sr-only">{item.name}</span>
+                  {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 pb-10">
+          <div className="mt-16 flex flex-row justify-between gap-8 xl:col-span-2 xl:mt-0 pb-10 -translate-x-[7.5rem]">
+            <div>
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {navigation.products.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-10 md:mt-0">
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {navigation.solutions.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {navigation.company.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 pb-10">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Solutions</h3>
+                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.products.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Support</h3>
+                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -154,75 +196,32 @@ export default function FooterFinal() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Company</h3>
+                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
                         {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white -mt-1.5">Legal</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-white">Subscribe to our newsletter</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-300">
-              The latest news, articles, and resources, sent to your inbox weekly.
-            </p>
-          </div>
-          <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email-address"
-              name="email-address"
-              type="email"
-              required
-              placeholder="Enter your email"
-              autoComplete="email"
-              className="w-full min-w-0 appearance-none rounded-md border-0 bg-white/5 px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-darkGreen sm:w-56 sm:text-sm sm:leading-6"
-            />
-            <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen"
-              >
-                Subscribe
-              </button>
-            </div>
-          </form>
+          </div> */}
         </div>
         <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                <span className="sr-only">{item.name}</span>
-                {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
-              </a>
-            ))}
-          </div>
 
-          <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
-            &copy; 2024 PL8CHAT, LLC. All rights reserved
-          </p>
+
+          <div className="self-stretch inline-flex flex-col justify-start items-start gap-6 w-full">
+            <div className="self-stretch h-px" />
+            <div className="self-stretch flex flex-col justify-end items-start">
+              <div className="self-stretch h-px opacity-30 bg-gray-800" />
+              <div className="self-stretch h-14 pt-8 inline-flex justify-between items-start">
+                <div className="flex-1 justify-start text-gray-800 text-base font-normal leading-normal">© 2025 PL8CHAT, LLC. All rights reserved<br /></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
