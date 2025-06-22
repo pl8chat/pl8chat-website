@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import CreateAccountSVG from './svgs/freeAccount'
+import CreateAccountSVG from './svgs/createAccount'
 import SearchIconSVG from './svgs/searchIcon'
 import ChatIconSVG from './svgs/chatIcon'
 import CautionIconSVG from './svgs/cautionIcon'
