@@ -5,8 +5,8 @@ import NavbarFinal from "../../components/navbarFinal";
 import FooterFinal from "../../components/footerFinal";
 import "../globals.css";
 
-const poppins = localFont({
-  src: "../fonts/Poppins-Regular.ttf",
+const inter = localFont({
+  src: "../fonts/Inter-Regular.woff",
   variable: "--font-poppins",
   weight: "100 200 300 400 500 600 700 800 900",
 })
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <header>
           <NavbarFinal />
         </header>
-        <div className="pt-[58px] bg-[#034b48]">
+        <div className="pt-[58px] bg-white">
           {children}
           <Analytics />
         </div>
