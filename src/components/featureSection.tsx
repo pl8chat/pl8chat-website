@@ -11,6 +11,7 @@ import ChatBubbleSVG from './svgs/chatBubble'
 import PhoneIconSVG from './svgs/phoneIcon'
 import AppStoreSVG from './svgs/appleAppStore'
 import GooglePlayStoreSVG from './svgs/googlePlayStore'
+import FAQ from './faq'
 import { FC } from 'react'
 import { isPromise } from 'util/types'
 
@@ -132,8 +133,8 @@ const FeatureSection: FC = () => {
                     <div
                       key={index}
                       className="w-[644px] self-stretch px-6 py-2.5 hover:bg-gray-100 rounded-tl-3xl rounded-bl-3xl inline-flex justify-start items-start gap-2"
-                      onMouseEnter={() => {setHoveredIndex(index);}}
-                      onMouseLeave={() => {setHoveredIndex(null);}}
+                      onMouseEnter={() => { setHoveredIndex(index); }}
+                      onMouseLeave={() => { setHoveredIndex(null); }}
                     >
                       <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start">
                         <div className="inline-flex justify-start items-center gap-3">
@@ -171,6 +172,7 @@ const FeatureSection: FC = () => {
             </div>
           </div>
         </div>
+        <FAQ />
       </div>
     </div>
   )
