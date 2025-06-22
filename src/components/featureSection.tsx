@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import FreeAccountSVG from './svgs/freeAccount'
+import CreateAccountSVG from './svgs/freeAccount'
 import SearchIconSVG from './svgs/searchIcon'
 import ChatIconSVG from './svgs/chatIcon'
 import CautionIconSVG from './svgs/cautionIcon'
@@ -36,7 +36,7 @@ const features: Feature[] = [
     description:
       'Signing up is quick and easy. Every member verifies their identity and license plate to keep our community safe and trusted.',
     href: '#',
-    icon: FreeAccountSVG,
+    icon: CreateAccountSVG,
   },
   {
     name: 'Search a license plate',
