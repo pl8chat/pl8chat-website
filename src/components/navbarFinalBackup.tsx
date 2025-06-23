@@ -23,9 +23,10 @@ type NavigationItem = {
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItem[] = [
-  { name: 'For business', href: '#', current: false },
-  { name: 'FAQ', href: '/pricing', current: false },
-  { name: 'Contact Us', href: '/individuals', current: false },
+  { name: 'Products', href: '#', current: true },
+  { name: 'Pricing', href: '/pricing', current: false },
+  { name: 'For individuals', href: '/individuals', current: false },
+  { name: 'Company', href: '#', current: false },
 ]
 
 function ChevronDownIcon(props: SVGProps) {
@@ -164,10 +165,11 @@ export default function NavbarFinal() {
 
   return (
     <div>
-      <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 bg-white`}>
+      <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 ${isScrolled || isFlydownOpen ? 'bg-white' : `${getNavbarBackgroundColor()}`}`}>
         {({ open }) => (
           <>
-            <div className="mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
+            <div className="mx-auto px-2 sm:px-6 lg:px-8 py-2 h-[58px] flex items-center">
+
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -182,48 +184,77 @@ export default function NavbarFinal() {
               </div>
 
               {/* Left side Logo */}
-              <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-between">
+              <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-start">
                 <div className="flex items-center">
                   <Link href="/" passHref>
-                    <LogoBlack />
+                    {isScrolled || isFlydownOpen || pathname === '/pricing' || pathname === '/individuals' ? <LogoBlack /> : <Logo />}
                   </Link>
                 </div>
 
                 {/* Navbar text */}
-                <div className="hidden sm:ml-6 sm:block md:translate-x-[4.25rem]">
+                <div className="hidden sm:ml-6 sm:block">
                   <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {navigation.map((item) => {
                       const isActive = item.href === pathname;
                       return (
                         <Link href={item.href} key={item.name}>
                           <button
+                            onClick={() => {
+                              if (item.name === 'Products') {
+                                toggleProductFlydown();
+                              } else if (item.name === 'Company') {
+                                toggleCompanyFlydown();
+                              } else {
+                                closeFlydowns()
+                              }
+                            }}
                             aria-current={isActive ? 'page' : undefined}
-                            className={'rounded-md px-3 py-3 text-md lg:text-base font-medium text-black'}
+                            className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-base font-medium')}
                           >
-                            {item.name}
+                            {item.name === 'Products' || item.name === 'Company' ? (
+                              <div>
+                                {item.name}
+                                <ChevronDownIcon
+                                  className={`ml-0.5 h-4 w-4 inline-block transition duration-150 ${isProductFlydownOpen && item.name === 'Products' ? 'rotate-180' :
+                                    isCompanyFlydownOpen && item.name === 'Company' ? 'rotate-180' : ''}`}
+                                />
+                              </div>
+                            ) : (
+                              <span>{item.name}</span>
+                            )}
                           </button>
                         </Link>
                       );
                     })}
                   </div>
                 </div>
-                {/* Right-side items (shown on larger screens) */}
-                <div className="sm:flex sm:items-center text-sm font-normal">
-                  <div className="hidden lg:flex lg:items-center gap-8">
-                    <div className={`text-black leading-[24px] text-sm`}>
-                      Call us: 1(310)PL8-CHAT
-                    </div>
-                    <Link href={`https://pl8-chat-admin-v2.vercel.app/login`}
-                      className={'py-2 text-black'}>
-                      <Button variant="SignIn">
-                        Sign In
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
               </div>
 
-
+              {/* Right-side items (shown on larger screens) */}
+              <div className="sm:flex sm:items-center text-sm font-normal">
+                <div className="hidden lg:flex lg:items-center gap-4 ">
+                  <div className={getTextColor().replace(/hover:\S+/g, '')}>
+                    Call us: 1(310)PL8-CHAT
+                  </div>
+                  <Button
+                    variant="navBar"
+                    className={classNames(
+                      getNavbarButtonColor()
+                    )}
+                    onClick={() => setModalOpen(true)}
+                    href="#"
+                  >
+                    Talk to sales
+                  </Button>
+                  <Link href={`https://pl8-chat-admin.vercel.app/login`}
+                    className={classNames(
+                      getTextColor(),
+                      'py-2'
+                    )}>
+                    Sign in
+                  </Link>
+                </div>
+              </div>
 
 
             </div>
