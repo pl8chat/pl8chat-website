@@ -30,7 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header>
           <NavbarFinal />
         </header>
-        <div className="pt-[58px] bg-white">
+        <div className="pt-[70px] bg-white">
           {children}
           <Analytics />
         </div>
