@@ -24,24 +24,9 @@ type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItem[] = [
   { name: 'For business', href: '#', current: false },
-  { name: 'FAQ', href: '/pricing', current: false },
-  { name: 'Contact Us', href: '/individuals', current: false },
+  { name: 'FAQ', href: '#', current: false },
+  { name: 'Contact Us', href: '/contact', current: false },
 ]
-
-function ChevronDownIcon(props: SVGProps) {
-  return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
-        stroke='currentColor'
-        strokeWidth="1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
 
 const navbarColors: Record<string, string> = {
   '/': 'bg-[#034b48]',
@@ -86,34 +71,7 @@ export default function NavbarFinal() {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const productFlydownRef = useRef<HTMLDivElement>(null);
-  const companyFlydownRef = useRef<HTMLDivElement>(null);
   const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen;
-
-  const toggleProductFlydown = () => {
-    setProductFlydownOpen(!isProductFlydownOpen);
-    setCompanyFlydownOpen(false); // Close the company flydown when toggling the product flydown
-  };
-
-  const toggleCompanyFlydown = () => {
-    setCompanyFlydownOpen(!isCompanyFlydownOpen);
-    setProductFlydownOpen(false); // Close the product flydown when toggling the company flydown
-  };
-
-  const closeFlydowns = () => {
-    setProductFlydownOpen(false);
-    setCompanyFlydownOpen(false);
-  };
-
-  const getNavbarBackgroundColor = () => {
-    if (isFlydownOpen || isScrolled) return 'bg-white';
-    return navbarColors[pathname] || navbarColors.default;
-  };
-
-  const getNavbarButtonColor = () => {
-    if (isFlydownOpen || isScrolled) return 'bg-darkGreen hover:bg-darkerGreen text-white';
-    return navBarButtonColors[pathname] || navbarColors.default;
-  }
 
   const getTextColor = (isButton: boolean = false): string => {
     if (isScrolled || isFlydownOpen) {
@@ -123,32 +81,6 @@ export default function NavbarFinal() {
       ? 'text-white hover:text-tGreen'
       : textColors[pathname] || textColors.default;
   };
-
-  const getLogoSrc = () => {
-    if (isFlydownOpen || isScrolled) return '/assets/images/PL8CHATBlack.png';
-    return logoSrc[pathname] || logoSrc.default;
-  }
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      // Check if click is outside both flydowns
-      if (
-        isFlydownOpen &&
-        productFlydownRef.current &&
-        !productFlydownRef.current.contains(event.target as Node) &&
-        companyFlydownRef.current &&
-        !companyFlydownRef.current.contains(event.target as Node)
-      ) {
-        closeFlydowns();
-      }
-    }
-
-    // Use 'click' instead of 'mousedown' to avoid conflicts with button click events
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isFlydownOpen]);
 
   // Checks to see if the user has scrolled
   useEffect(() => {
@@ -227,18 +159,6 @@ export default function NavbarFinal() {
                   </div>
                 </div>
               </div>
-
-
-
-
-            </div>
-
-            {/* Flydown Components with refs */}
-            <div ref={productFlydownRef}>
-              <ProductsFlydown isOpen={isProductFlydownOpen} onClose={closeFlydowns} />
-            </div>
-            <div ref={companyFlydownRef}>
-              <CompanyFlydown isOpen={isCompanyFlydownOpen} onClose={closeFlydowns} />
             </div>
 
             {/* Mobile menu */}
