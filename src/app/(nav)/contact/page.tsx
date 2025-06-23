@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 interface ContactCardProps {
   title: string;
@@ -75,21 +76,17 @@ export default function Contact() {
       <div className="w-[1027px] flex-1 p-10 bg-gray-100 rounded-3xl inline-flex justify-start items-start gap-12">
         <div className="inline-flex flex-col justify-start items-start gap-2">
           <div className="w-96 h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
-          <div className="w-96 justify-start text-gray-900 text-base font-normal leading-normal">Subscribe to receive news, product update<br />s and much more.</div>
+          <div className="w-96 justify-start text-gray-900 text-base font-normal leading-[24PX]">Subscribe to receive news, product update<br />s and much more.</div>
         </div>
         <div className="inline-flex flex-col justify-start items-start gap-2">
           <div className="inline-flex justify-start items-start gap-2">
-            <div className="w-72 inline-flex flex-col justify-start items-start">
-              <div className="self-stretch h-11 px-5 py-2 bg-white rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-gray-400 inline-flex justify-start items-center gap-2 overflow-hidden">
-                <div className="flex-1 justify-start text-gray-500 text-sm font-normal leading-tight">Email address*</div>
-              </div>
-            </div>
-            <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-emerald-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-white flex justify-center items-center overflow-hidden">
+            <Input variant='newsletter' placeholder='Email address*' />
+            <Button variant='contact'>
               <div className="justify-start text-white text-sm font-medium leading-normal">Subscribe</div>
-            </div>
+            </Button>
           </div>
           <div className="self-stretch py-2.5 inline-flex justify-start items-center gap-2.5">
-            <div className="w-96 justify-start text-emerald-950 text-xs font-normal leading-none">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
+            <div className="w-96 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
           </div>
         </div>
       </div>
