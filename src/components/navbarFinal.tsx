@@ -167,6 +167,9 @@ export default function NavbarFinal() {
       <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 bg-white`}>
         {({ open }) => (
           <>
+            <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-emerald-50">
+              <div className="flex text-right justify-center"><span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span><span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span></div>
+            </div>
             <div className="mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
