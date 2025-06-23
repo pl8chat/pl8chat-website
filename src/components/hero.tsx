@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Hero({ }) {
   return (
-    <div className='flex justify-center pt-[64px] pb-6'>
+    <div className='flex justify-center pt-[50px] pb-6'>
       <div className="w-[1392px] h-[700px] pl-24 pr-28 pt-44 pb-36 rounded-3xl inline-flex flex-col justify-start items-start gap-7 bg-[linear-gradient(to_left,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.6)_50%,_rgba(0,0,0,0.6)_100%),url('/assets/images/HeroBg.png')] bg-cover bg-center bg-no-repeat">
         <div className="w-[768px] flex flex-col justify-start items-start gap-10">
           <div className="self-stretch flex flex-col justify-start items-start gap-4">

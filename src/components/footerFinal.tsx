@@ -9,30 +9,24 @@ interface NavigationItem {
 
 interface Navigation {
   products: NavigationItem[];
-  solutions: NavigationItem[];
   company: NavigationItem[];
+  legal: NavigationItem[];
   social: NavigationItem[];
 }
 
 const navigation: Navigation = {
   products: [
-    { name: 'For business', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
-  ],
-  solutions: [
-    { name: 'For business', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
+    { name: 'For individuals', href: '/individuals' },
+    { name: 'PL8CHAT for business', href: '#' },
   ],
   company: [
-    { name: 'For business', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
-    { name: 'For individuals', href: '#' },
+    { name: 'FAQ', href: '#' },
+    { name: 'Contact Us', href: '/contact' },
+  ],
+  legal: [
+    { name: 'Terms of Services', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'User Safety', href: '/safety' },
   ],
   social: [
     {
@@ -135,7 +129,7 @@ export default function FooterFinal() {
               <ul role="list" className="mt-4 space-y-4">
                 {navigation.products.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                    <Link href={item.href} className="text-sm leading-6 text-black">
                       {item.name}
                     </Link>
                   </li>
@@ -145,9 +139,9 @@ export default function FooterFinal() {
             <div className="mt-10 md:mt-0">
               <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
               <ul role="list" className="mt-4 space-y-4">
-                {navigation.solutions.map((item) => (
+                {navigation.company.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                    <Link href={item.href} className="text-sm leading-6 text-black">
                       {item.name}
                     </Link>
                   </li>
@@ -155,11 +149,11 @@ export default function FooterFinal() {
               </ul>
             </div>
             <div>
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Legal</h3>
               <ul role="list" className="mt-4 space-y-4">
-                {navigation.company.map((item) => (
+                {navigation.legal.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
+                    <Link href={item.href} className="text-sm leading-6 text-black">
                       {item.name}
                     </Link>
                   </li>
