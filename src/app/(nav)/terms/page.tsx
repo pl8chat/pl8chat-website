@@ -72,7 +72,7 @@ const termsData: Terms[] = [
 
 export default function Terms() {
   return (
-    <div className="self-stretch pl-36 pt-44 pb-16 inline-flex flex-col justify-start items-start gap-4">
+    <div className="self-stretch pl-36 pt-44 pb-20 inline-flex flex-col justify-start items-start gap-4">
       <div className="self-stretch justify-start text-black text-3xl font-semibold leading-[100px]">
         Terms of Service
       </div>
