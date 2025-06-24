@@ -34,7 +34,10 @@ const variants = {
   ),
   contact: clsx(
     'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-emerald-950 rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
-  )
+  ),
+  newsletter: clsx(
+    'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-emerald-950 rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+  ),
 }
 
 type ButtonProps = {
