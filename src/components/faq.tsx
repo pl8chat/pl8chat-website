@@ -48,11 +48,15 @@ export default function FAQ({ }) {
   };
 
   return (
-    <div className="self-stretch px-28 py-20 bg-emerald-900 inline-flex flex-col justify-start items-center gap-20">
+    <div className="self-stretch px-28 py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-20">
       <div className="self-stretch text-center justify-start text-neutral-100 text-4xl font-medium leading-[48px]">Frequently asked questions</div>
       <div className="self-stretch flex flex-col justify-start items-start gap-4">
-        {faqs.map((faq) => (
-          <div key={faq.id} className='w-full pt-6 flex flex-col gap-4'>
+        {faqs.map((faq, index) => (
+          <div key={faq.id} className={`w-full pt-6 flex flex-col gap-4 ${index < faqs.length - 1
+              ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-2'} border-b border-gray-200`
+              : ''
+            }`}
+          >
             <button onClick={() => handleAccordion(faq.id)} className='flex w-full items-start justify-between text-left text-gray-100'>
               <span className="text-[28px] font-semibold leading-7">{faq.question}</span>
               <span className="ml-6 flex h-7 items-center">

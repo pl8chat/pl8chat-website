@@ -47,7 +47,7 @@ export default function Contact() {
         <div className="flex flex-col justify-start items-center">
           <div className="flex flex-wrap gap-6 md:w-[1027px]">
             {ContactCards.map((card, index) => (
-              <div key={index} className="w-[496px] h-[185px] bg-emerald-50 rounded-3xl p-6 flex flex-col justify-between">
+              <div key={index} className="w-[496px] h-[185px] bg-[#E8F4F0] rounded-3xl p-10 flex flex-col justify-between">
                 <div className='flex flex-col gap-3'>
                   <div className="text-gray-900 text-xl font-semibold">{card.title}</div>
                   <div className='flex flex-col gap-2'>
@@ -65,7 +65,7 @@ export default function Contact() {
                 </div>
               </div>
             ))}
-            <div className="w-[496px] h-[185px] self-stretch p-10 bg-emerald-50 rounded-3xl inline-flex flex-col justify-start items-start gap-3">
+            <div className="w-[496px] h-[185px] self-stretch p-10 bg-[#E8F4F0] rounded-3xl inline-flex flex-col justify-start items-start gap-3">
               <div className="self-stretch flex flex-col justify-start items-start gap-2">
                 <div className="self-stretch h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Talk to sales</div>
                 <div className="self-stretch justify-center text-gray-900 text-base font-normal leading-normal">Have a parking community you want to connect?</div>
@@ -79,12 +79,12 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="w-[1027px] flex-1 p-10 bg-gray-100 rounded-3xl inline-flex justify-start items-start gap-12">
+      <div className="w-[1027px] flex-1 p-10 bg-gray-100 rounded-3xl inline-flex justify-between items-start gap-12">
         <div className="inline-flex flex-col justify-start items-start gap-2">
           <div className="w-96 h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
           <div className="w-96 justify-start text-gray-900 text-base font-normal leading-[24PX]">Subscribe to receive news, product update<br />s and much more.</div>
         </div>
-        <div className="inline-flex flex-col justify-start items-start gap-2">
+        <div className="inline-flex flex-col justify-start items-start gap-2 -translate-x-2">
           <div className="inline-flex justify-start items-start gap-2">
             <Input variant='newsletter' placeholder='Email address*' />
             <Button variant='contact'>
