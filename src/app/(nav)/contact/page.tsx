@@ -1,6 +1,10 @@
+'use client'
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import Modal from '@/components/modal';
+import TalkToSales from '@/components/talkToSales';
 
 interface ContactCardProps {
   title: string;
@@ -31,6 +35,8 @@ const ContactCards: ContactCardProps[] = [
 ];
 
 export default function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className='flex flex-col justify-center items-center pb-32'>
       <div className="self-stretch pt-[50px] pb-6 w-full bg-white inline-flex flex-col justify-center items-center gap-20 overflow-hidden">
@@ -65,7 +71,7 @@ export default function Contact() {
                 <div className="self-stretch justify-center text-gray-900 text-base font-normal leading-normal">Have a parking community you want to connect?</div>
               </div>
               <Link href={'#'}>
-                <Button variant='contact'>
+                <Button variant='contact' onClick={() => setIsModalOpen(true)}>
                   Contact sales
                 </Button>
               </Link>
@@ -90,6 +96,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} component={<TalkToSales />} noX={true} />
     </div>
   )
 }

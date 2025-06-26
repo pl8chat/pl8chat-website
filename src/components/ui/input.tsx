@@ -1,9 +1,10 @@
+'use client'
 import * as React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full h-[42px] px-[13px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#034b48] text-base font-normal leading-normal border text-gray-900",
+  "w-full px-[20px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#034b48] text-base font-normal leading-normal border placeholder:text-gray-500 text-gray-900",
   {
     variants: {
       variant: {
@@ -13,8 +14,9 @@ const inputVariants = cva(
         contact: 'border-gray-300 rounded-md',
         message: 'text-sm',
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
-        promoCode: 'border-gray-300 rounded-md placeholder:text-gray-500 text-sm',
-        newsletter: 'rounded-[14px] h-[46px] border-gray-300'
+        promoCode: 'border-gray-300 rounded-md text-sm',
+        newsletter: 'rounded-[14px] h-[46px] border-gray-300',
+        talkToSales: 'rounded-[14px] h-[44px] border-gray-400 hover:border-1 hover:border-[#034B48] focus:border-[#034B48] text-sm',
       },
     },
     defaultVariants: {

@@ -38,6 +38,9 @@ const variants = {
   newsletter: clsx(
     'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-emerald-950 rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
+  talkToSales: clsx(
+    'self-stretch w-96 h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+  )
 }
 
 type ButtonProps = {
