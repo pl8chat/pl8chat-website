@@ -149,7 +149,7 @@ export default function NavbarFinal() {
                 </div>
                 {/* Right-side items (shown on larger screens) */}
                 <div className="sm:flex sm:items-center text-sm font-normal">
-                  <div className="hidden lg:flex lg:items-center gap-8">
+                  <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
                     <div className={`text-black leading-[24px] text-sm`}>
                       Call us: 1(310)PL8-CHAT
                     </div>
