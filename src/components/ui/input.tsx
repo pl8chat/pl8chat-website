@@ -28,10 +28,11 @@ const inputVariants = cva(
 type InputProps = React.ComponentProps<"input"> &
   VariantProps<typeof inputVariants> & {
     label?: string;
+    error?: string;
   };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, label, variant, ...props }, ref) => {
+  ({ className, label, variant, error, ...props }, ref) => {
     return (
       <div className={`w-full flex flex-col gap-2 ${label ? 'h-[70px]' : ''}`}>
         {label && <label htmlFor={props.id} className={`text-gray-900 text-sm leading-tight h-5 flex items-center ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
@@ -40,17 +41,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <div className="relative">
           {variant === "phone" ? (
             // Render specific structure for the phone variant
-              <input
-                className={cn(inputVariants({ variant }), "pl-[50px]", className)}
-                ref={ref}
-                {...props}
-              />
+            <input
+              className={cn(inputVariants({ variant }), "pl-[50px]", className)}
+              ref={ref}
+              {...props}
+            />
           ) : (
             <input
               className={cn(inputVariants({ variant }), className)}
               ref={ref}
               {...props}
             />
+          )}
+          {error && (
+            <span className="mt-1 text-sm text-red-600">{error}</span>
           )}
         </div>
       </div>

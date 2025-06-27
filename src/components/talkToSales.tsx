@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { Button } from "./ui/button"
@@ -17,6 +18,21 @@ const points: TalkToSalesPoints[] = [
 ];
 
 export default function TalkToSales() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    workEmail: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; message?: string }>({});
+
+  const validate = () => {
+    const newErrors: typeof errors = {};
+    if (!formData.fullName.trim()) newErrors.fullName = "Name is required";
+    if (!formData.workEmail.trim()) newErrors.workEmail = "Email is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
   return (
     <div className="w-full h-[778px] p-[140px] bg-white rounded-3xl inline-flex justify-start items-start gap-28 overflow-hidden">
       <div className="flex-1 inline-flex flex-col justify-start items-start gap-6">
@@ -44,9 +60,29 @@ export default function TalkToSales() {
         <div className="w-[479px] min-h-[497px] px-10 py-8 bg-emerald-50 rounded-3xl inline-flex flex-col justify-start items-center gap-4">
           <div className="w-96 flex-1 flex flex-col justify-start items-start gap-1">
             <div className="flex flex-col justify-start items-start gap-2.5 w-full">
-              <Input variant='talkToSales' name='fullName' placeholder='Full name*' />
-              <Input variant='talkToSales' name='workEmail' placeholder='Work email*' />
-              <Textarea variant='talkToSales' name='message' placeholder='Type message here...' rows={4} />
+              <Input
+                variant='talkToSales'
+                name='fullName'
+                placeholder='Full name*'
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                error={errors.fullName}
+              />
+              <Input
+                variant='talkToSales'
+                name='workEmail'
+                placeholder='Work email*'
+                value={formData.workEmail}
+                onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
+              />
+              <Textarea
+                variant='talkToSales'
+                name='message'
+                placeholder='Type message here...'
+                rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              />
             </div>
           </div>
           <div className='w-full flex justify-center'>
