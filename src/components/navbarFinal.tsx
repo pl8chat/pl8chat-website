@@ -3,16 +3,12 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
-import ProductsFlydown from './productsFlydown'
-import CompanyFlydown from './companyFlydown'
 import Modal from './modal'
 import Contact from './contactForm'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import Logo from './svgs/logoSVG'
-import LogoBlack from './svgs/logoBlack'
+import NavbarLogoSVG from './svgs/navbarLogo'
 
 type NavigationItem = {
   name: string;
@@ -125,7 +121,7 @@ export default function NavbarFinal() {
               <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-between">
                 <div className="flex items-center">
                   <Link href="/" passHref>
-                    <LogoBlack />
+                    <NavbarLogoSVG />
                   </Link>
                 </div>
 
