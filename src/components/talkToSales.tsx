@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link';
 import { Button } from "./ui/button"
 import { Input } from "./ui/input";
@@ -17,13 +17,44 @@ const points: TalkToSalesPoints[] = [
   { icon: TalkToSalesEmailSVG, text: 'sales@pl8chat.com' },
 ];
 
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return emailRegex.test(email);
+};
+
 export default function TalkToSales() {
   const [formData, setFormData] = useState({
     fullName: '',
     workEmail: '',
     message: ''
   });
+  const [emailTouched, setEmailTouched] = useState<boolean>(false); // State for email input touch
+  const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
   const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; }>({});
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
+  const buttonClickedRef = useRef(false);
+
+  const handleBlur = () => {
+    if (buttonClickedRef.current) {
+      // Reset and skip blur logic
+      buttonClickedRef.current = false;
+      return;
+    }
+    setEmailTouched(true); 
+  };
+
+  useEffect(() => {
+      const handleBeforeUnload = () => {
+        setIsSubmitted(false);  // Reset submission status on window close or refresh
+      };
+  
+      window.addEventListener('beforeunload', handleBeforeUnload);
+  
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
+    }, []);
 
   const validate = () => {
     const newErrors: typeof errors = {};
@@ -31,6 +62,49 @@ export default function TalkToSales() {
     if (!formData.workEmail.trim()) newErrors.workEmail = "Email is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const isValid = validate();
+    const isEmailFormatValid = isValidEmail(formData.workEmail);
+
+    if (!isValid || !isEmailFormatValid) {
+    if (!isEmailFormatValid) {
+      setErrors((prev) => ({
+        ...prev,
+        workEmail: 'Enter a valid email address',
+      }));
+    }
+    return;
+  }
+
+    if (!isValidEmail(formData.workEmail)) {
+      setValidEmail(false);
+      setEmailTouched(false);
+      console.log("Invalid email, form not sent.");
+      return;
+    }
+
+    // Sends email to Michael
+    // if (form.current !== null) {
+    //   emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${publicKey}`)
+    //     .then((result) => {
+    //       console.log(result.text);
+    //       setIsSubmitted(true);
+    //       setEmailTouched(false);
+    //       setEmail('');
+    //       setModalOpen(true);
+    //     })
+    //     .catch((error) => {
+    //       console.log("Error sending the form:", error.text);
+    //     });
+    // } else {
+    //   console.error("Form reference is null.");
+    // }
+
+    // setEmail(email.trim());
   };
   return (
     <div className="w-full h-[778px] p-[140px] bg-white rounded-3xl inline-flex justify-start items-start gap-28 overflow-hidden">
@@ -55,7 +129,7 @@ export default function TalkToSales() {
           </div>
         </div>
       </div>
-      <form action="submit">
+      <form onSubmit={handleFormSubmit}>
         <div className="w-[479px] min-h-[497px] px-10 py-8 bg-emerald-50 rounded-3xl inline-flex flex-col justify-start items-center gap-4">
           <div className="w-96 flex-1 flex flex-col justify-start items-start gap-1">
             <div className="flex flex-col justify-start items-start gap-2.5 w-full">
@@ -65,7 +139,7 @@ export default function TalkToSales() {
                 placeholder='Full name*'
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                error={"Name is required"}
+                error={errors.fullName}
               />
               <Input
                 variant='talkToSales'
