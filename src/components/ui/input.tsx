@@ -17,6 +17,7 @@ const inputVariants = cva(
         promoCode: 'border-gray-300 rounded-md text-sm',
         newsletter: 'rounded-[14px] h-[46px] border-gray-300',
         talkToSales: 'rounded-[14px] h-[44px] border-gray-400 hover:border-1 hover:border-[#034B48] focus:border-[#034B48] text-sm',
+        errorState: 'border-red-500 text-red-700 rounded-md',
       },
     },
     defaultVariants: {
@@ -53,9 +54,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {...props}
             />
           )}
-          {error && (
-            <span className="mt-1 text-sm text-red-600">{error}</span>
-          )}
+
+          <span className="mt-1 text-sm text-red-600 absolute left-0 -bottom-4">{error}</span>
+
         </div>
       </div>
     );

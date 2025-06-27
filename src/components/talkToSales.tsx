@@ -23,13 +23,12 @@ export default function TalkToSales() {
     workEmail: '',
     message: ''
   });
-  const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; message?: string }>({});
+  const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; }>({});
 
   const validate = () => {
     const newErrors: typeof errors = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Name is required";
     if (!formData.workEmail.trim()) newErrors.workEmail = "Email is required";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -66,7 +65,7 @@ export default function TalkToSales() {
                 placeholder='Full name*'
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                error={errors.fullName}
+                error={"Name is required"}
               />
               <Input
                 variant='talkToSales'
@@ -74,6 +73,7 @@ export default function TalkToSales() {
                 placeholder='Work email*'
                 value={formData.workEmail}
                 onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
+                error={errors.workEmail}
               />
               <Textarea
                 variant='talkToSales'
