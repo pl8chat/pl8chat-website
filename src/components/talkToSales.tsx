@@ -50,7 +50,7 @@ export default function TalkToSales() {
             </div>
           </div>
           <div className='w-full flex justify-center'>
-            <Button variant='talkToSales'>
+            <Button variant='talkToSales' className={`w-full`}>
               <div className="justify-start text-white text-sm font-medium leading-normal">Submit</div>
             </Button>
           </div>
