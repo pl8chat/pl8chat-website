@@ -6,22 +6,22 @@ import MinusIconSVG from './svgs/minusIcon'
 const faqs = [
   {
     id: 1,
-    question: 'The question?',
+    question: 'Is PL8CHAT safe?',
     answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
   },
   {
     id: 2,
-    question: 'The question?',
+    question: 'What if someone says something rude or mean?',
     answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
   },
   {
     id: 3,
-    question: 'The question?',
+    question: 'Is my personal info public since I have my license plate?',
     answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
   },
   {
     id: 4,
-    question: 'The question?',
+    question: 'One about I want to use it but dont want peeps msg me',
     answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
   },
   {
