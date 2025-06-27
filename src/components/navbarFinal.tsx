@@ -120,7 +120,7 @@ export default function NavbarFinal() {
               {/* Left side Logo */}
               <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-between">
                 <div className="flex items-center">
-                  <Link href="/" passHref>
+                  <Link href="/" passHref className='-translate-x-3.5'>
                     <NavbarLogoSVG />
                   </Link>
                 </div>
