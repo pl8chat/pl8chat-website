@@ -35,7 +35,7 @@ export default function Feature3() {
         </div>
         <div className="self-stretch px-28 pb-2.5 inline-flex justify-start items-center gap-6">
           {reviews.map((review, index) => {
-            const bgColors = ['bg-[#D7EDE9]', 'bg-emerald-50', 'bg-[#DDEFF0]']; // Add more if needed
+            const bgColors = ['bg-[#D7EDE9]', 'bg-[#E8F4F0]', 'bg-[#DDEFF0]']; // Add more if needed
             const bgColor = bgColors[index % bgColors.length];
 
             return (

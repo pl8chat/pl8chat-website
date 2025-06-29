@@ -91,7 +91,7 @@ const FeatureSection: FC = () => {
 
   return (
     <div className='flex flex-col justify-center w-full'>
-      <div className="self-stretch pt-20 pb-5 inline-flex flex-col justify-start items-center gap-20 w-full bg-emerald-50">
+      <div className="self-stretch pt-20 pb-5 inline-flex flex-col justify-start items-center gap-20 w-full bg-[#E8F4F0]">
         <div className="self-stretch flex flex-col justify-start items-center gap-20 ">
           <div className="w-[813px] inline-flex justify-center items-start">
             <div className="inline-flex flex-col justify-start items-center gap-1">
