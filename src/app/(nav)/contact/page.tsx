@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import ContactSalesCard from '@/components/contactSalesCard';
+import NewsletterSubscription from '@/components/newsletterSubscription';
 
 interface ContactCardProps {
   title: string;
@@ -63,17 +64,6 @@ export default function Contact() {
               </div>
             ))}
             <ContactSalesCard />
-            {/* <div className="w-[496px] h-[185px] self-stretch p-10 bg-[#E8F4F0] rounded-3xl inline-flex flex-col justify-start items-start gap-3">
-              <div className="self-stretch flex flex-col justify-start items-start gap-2">
-                <div className="self-stretch h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Talk to sales</div>
-                <div className="self-stretch justify-center text-gray-900 text-base font-normal leading-normal">Have a parking community you want to connect?</div>
-              </div>
-              <Link href={'#'}>
-                <Button variant='contact' onClick={() => setIsModalOpen(true)}>
-                  Contact sales
-                </Button>
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>
@@ -82,17 +72,7 @@ export default function Contact() {
           <div className="w-96 h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
           <div className="w-96 justify-start text-gray-900 text-base font-normal leading-[24PX]">Subscribe to receive news, product update<br />s and much more.</div>
         </div>
-        <div className="inline-flex flex-col justify-start items-start gap-2 -translate-x-2">
-          <div className="inline-flex justify-start items-start gap-2">
-            <Input variant='newsletter' placeholder='Email address*' />
-            <Button variant='contact'>
-              <div className="justify-start text-white text-sm font-medium leading-normal">Subscribe</div>
-            </Button>
-          </div>
-          <div className="self-stretch py-2.5 inline-flex justify-start items-center gap-2.5">
-            <div className="w-96 justify-start text-emerald-950 text-xs font-normal leading-[18px]">By submitting my personal data I agree to receive marketing emails from PL8CHAT.</div>
-          </div>
-        </div>
+        <NewsletterSubscription />
       </div>
     </div>
   )

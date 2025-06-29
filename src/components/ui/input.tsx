@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full px-[20px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#034b48] text-base font-normal leading-normal border placeholder:text-gray-500 text-gray-900",
+  "w-full px-[20px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#034b48] text-sm font-normal leading-normal border placeholder:text-gray-500 text-gray-900",
   {
     variants: {
       variant: {
@@ -15,9 +15,9 @@ const inputVariants = cva(
         message: 'text-sm',
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
         promoCode: 'border-gray-300 rounded-md text-sm',
-        newsletter: 'rounded-[14px] h-[46px] border-gray-300',
+        newsletter: 'rounded-[14px] h-[44px] border-gray-400',
         talkToSales: 'rounded-[14px] h-[44px] border-gray-400 hover:border-1 hover:border-[#034B48] focus:border-[#034B48] ',
-        errorState: 'border-red-500 text-red-700 rounded-[14px] text-sm',
+        errorState: 'h-[44px] border-red-500 text-red-700 rounded-[14px] text-sm',
       },
     },
     defaultVariants: {

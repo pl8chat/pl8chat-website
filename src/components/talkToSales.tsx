@@ -6,6 +6,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import TalkToSalesEmailSVG from './svgs/talkToSalesEmail';
 import TalkToSalesPhoneSVG from './svgs/talkToSalesPhone';
+import emailjs from '@emailjs/browser';
 
 interface TalkToSalesPoints {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -32,6 +33,7 @@ export default function TalkToSales() {
   const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
   const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; }>({});
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
+  const form = useRef<HTMLFormElement>(null);
   const buttonClickedRef = useRef(false);
 
   const handleBlur = () => {
@@ -107,9 +109,14 @@ export default function TalkToSales() {
     //     .then((result) => {
     //       console.log(result.text);
     //       setIsSubmitted(true);
+    //       setFormData({
+    //         fullName: '',
+    //         workEmail: '',
+    //         message: '',
+    //       });
     //       setEmailTouched(false);
-    //       setEmail('');
-    //       setModalOpen(true);
+    //       setValidEmail(true);
+    //       setErrors({});
     //     })
     //     .catch((error) => {
     //       console.log("Error sending the form:", error.text);
@@ -117,9 +124,8 @@ export default function TalkToSales() {
     // } else {
     //   console.error("Form reference is null.");
     // }
-
-    // setEmail(email.trim());
   };
+
   return (
     <div className="w-full h-[778px] p-[140px] bg-white rounded-3xl inline-flex justify-start items-start gap-28 overflow-hidden">
       <div className="flex-1 inline-flex flex-col justify-start items-start gap-6">
@@ -143,7 +149,7 @@ export default function TalkToSales() {
           </div>
         </div>
       </div>
-      <form onSubmit={handleFormSubmit}>
+      <form ref={form} onSubmit={handleFormSubmit}>
         <div className="w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-3xl inline-flex flex-col justify-start items-center gap-4">
           <div className="w-96 flex-1 flex flex-col justify-start items-start gap-1">
             <div className="flex flex-col justify-start items-start gap-2.5 w-full">
