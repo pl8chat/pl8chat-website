@@ -28,7 +28,7 @@ const reviews: Reviews[] = [
 
 export default function Feature3() {
   return (
-    <div className="self-stretch pt-16 pb-6 bg-white rounded-tl-3xl rounded-bl-3xl rounded-br-3xl inline-flex flex-col justify-start items-center gap-16">
+    <div className="self-stretch pt-16 pb-5 bg-white rounded-tl-3xl rounded-bl-3xl rounded-br-3xl inline-flex flex-col justify-start items-center gap-16">
       <div className="self-stretch flex flex-col justify-start items-center gap-14">
         <div className="self-stretch px-28 flex flex-col justify-start items-start gap-4">
           <div className="self-stretch justify-start text-emerald-950 text-4xl font-medium leading-[48px]">Hear why everyone’s<br />loving PL8CHAT</div>
