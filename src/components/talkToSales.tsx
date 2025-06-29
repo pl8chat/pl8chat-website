@@ -36,25 +36,39 @@ export default function TalkToSales() {
 
   const handleBlur = () => {
     if (buttonClickedRef.current) {
-      // Reset and skip blur logic
       buttonClickedRef.current = false;
       return;
     }
-    setEmailTouched(true); 
+
+    setEmailTouched(true);
+
+    if (!isValidEmail(formData.workEmail)) {
+      setValidEmail(false);
+      setErrors((prev) => ({
+        ...prev,
+        workEmail: 'Enter a valid email address',
+      }));
+    } else {
+      setValidEmail(true);
+      setErrors((prev) => ({
+        ...prev,
+        workEmail: undefined,
+      }));
+    }
   };
 
   useEffect(() => {
-      const handleBeforeUnload = () => {
-        setIsSubmitted(false);  // Reset submission status on window close or refresh
-      };
-  
-      window.addEventListener('beforeunload', handleBeforeUnload);
-  
-      // Clean up the event listener when the component unmounts
-      return () => {
-        window.removeEventListener('beforeunload', handleBeforeUnload);
-      };
-    }, []);
+    const handleBeforeUnload = () => {
+      setIsSubmitted(false);  // Reset submission status on window close or refresh
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   const validate = () => {
     const newErrors: typeof errors = {};
@@ -71,14 +85,14 @@ export default function TalkToSales() {
     const isEmailFormatValid = isValidEmail(formData.workEmail);
 
     if (!isValid || !isEmailFormatValid) {
-    if (!isEmailFormatValid) {
-      setErrors((prev) => ({
-        ...prev,
-        workEmail: 'Enter a valid email address',
-      }));
+      if (!isEmailFormatValid) {
+        setErrors((prev) => ({
+          ...prev,
+          workEmail: 'Enter a valid email address',
+        }));
+      }
+      return;
     }
-    return;
-  }
 
     if (!isValidEmail(formData.workEmail)) {
       setValidEmail(false);
@@ -130,11 +144,11 @@ export default function TalkToSales() {
         </div>
       </div>
       <form onSubmit={handleFormSubmit}>
-        <div className="w-[479px] min-h-[497px] px-10 py-8 bg-emerald-50 rounded-3xl inline-flex flex-col justify-start items-center gap-4">
+        <div className="w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-3xl inline-flex flex-col justify-start items-center gap-4">
           <div className="w-96 flex-1 flex flex-col justify-start items-start gap-1">
             <div className="flex flex-col justify-start items-start gap-2.5 w-full">
               <Input
-                variant={`${emailTouched && !validEmail ? 'errorState' : 'talkToSales'}`}
+                variant={errors.fullName ? 'errorState' : 'talkToSales'}
                 name='fullName'
                 placeholder='Full name*'
                 value={formData.fullName}
@@ -142,12 +156,13 @@ export default function TalkToSales() {
                 error={errors.fullName}
               />
               <Input
-                variant='talkToSales'
+                variant={(errors.workEmail || (emailTouched && !validEmail)) ? 'errorState' : 'talkToSales'}
                 name='workEmail'
                 placeholder='Work email*'
                 value={formData.workEmail}
                 onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
                 error={errors.workEmail}
+                onBlur={handleBlur}
               />
               <Textarea
                 variant='talkToSales'
@@ -156,11 +171,12 @@ export default function TalkToSales() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className='h-2'
               />
             </div>
           </div>
           <div className='w-full flex justify-center'>
-            <Button variant='talkToSales' className={`w-full`}>
+            <Button type='submit' variant='talkToSales' className={`w-full`}>
               <div className="justify-start text-white text-sm font-medium leading-normal">Submit</div>
             </Button>
           </div>

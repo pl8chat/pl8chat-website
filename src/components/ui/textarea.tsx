@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 // Define variants using cva
 const textareaVariants = cva(
-  "w-full h-[42px] px-[20px] py-[9px] bg-white font-normal leading-normal rounded-[14px]",
+  "w-full px-[20px] pt-[8px] bg-white font-normal leading-normal rounded-[14px]",
   {
     variants: {
       variant: {
@@ -32,17 +32,22 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={props.id}
-            className={`text-gray-900 text-sm leading-tight ${variant === 'message' ? 'font-semibold' : 'font-medium'}`}
+            className={`text-gray-900 text-sm leading-tight ${variant === 'message' ? 'font-semibold' : 'font-medium'
+              }`}
           >
             {label}
           </label>
         )}
-        <div className="bg-white border rounded-[14px] min-h-[168px] text-sm border-gray-400 hover:border-[#034B48] focus:border-[#00695c] focus:ring-0 focus:outline-none">
-          <div className="px-5 pt-4">
+        <div className="h-[168px] bg-white border rounded-[14px] text-sm border-gray-400 hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col">
+          <div className="px-5 pt-4 pb-1 text-gray-500 text-sm shrink-0">
             Tell us about your parking (optional)
           </div>
           <textarea
-            className={cn(textareaVariants({ variant }), className)}
+            className={cn(
+              textareaVariants({ variant }),
+              'resize-none flex-1 min-h-0 px-5 pb-3',
+              className
+            )}
             ref={ref}
             {...props}
           />

@@ -16,8 +16,8 @@ const inputVariants = cva(
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
         promoCode: 'border-gray-300 rounded-md text-sm',
         newsletter: 'rounded-[14px] h-[46px] border-gray-300',
-        talkToSales: 'rounded-[14px] h-[44px] border-gray-400 hover:border-1 hover:border-[#034B48] focus:border-[#034B48] text-sm',
-        errorState: 'border-red-500 text-red-700 rounded-md',
+        talkToSales: 'rounded-[14px] h-[44px] border-gray-400 hover:border-1 hover:border-[#034B48] focus:border-[#034B48] ',
+        errorState: 'border-red-500 text-red-700 rounded-[14px] text-sm',
       },
     },
     defaultVariants: {
@@ -35,7 +35,7 @@ type InputProps = React.ComponentProps<"input"> &
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, error, ...props }, ref) => {
     return (
-      <div className={`w-full flex flex-col gap-2 ${label ? 'h-[70px]' : ''}`}>
+      <div className={`w-full flex flex-col gap-2 ${label ? 'h-[70px]' : ''} ${error ? 'h-[66px]' : ''}`}>
         {label && <label htmlFor={props.id} className={`text-gray-900 text-sm leading-tight h-5 flex items-center ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
         </label>}
@@ -54,9 +54,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {...props}
             />
           )}
-
-          <span className="mt-1 text-sm text-red-600 absolute left-0 -bottom-4">{error}</span>
-
+          {error && (
+            <span className="mt-1 text-sm text-red-600 min-h-[20px] block">
+              {error || ""}
+            </span>
+          )}
         </div>
       </div>
     );
