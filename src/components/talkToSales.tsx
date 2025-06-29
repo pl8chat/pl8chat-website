@@ -134,7 +134,7 @@ export default function TalkToSales() {
           <div className="w-96 flex-1 flex flex-col justify-start items-start gap-1">
             <div className="flex flex-col justify-start items-start gap-2.5 w-full">
               <Input
-                variant='talkToSales'
+                variant={`${emailTouched && !validEmail ? 'errorState' : 'talkToSales'}`}
                 name='fullName'
                 placeholder='Full name*'
                 value={formData.fullName}
