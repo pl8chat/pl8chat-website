@@ -51,8 +51,8 @@ export default function NewsletterSubscription() {
 
 
   return (
-    <form ref={form} onSubmit={handleNewsletterSubmit} className="inline-flex flex-col justify-start items-start gap-2 -translate-x-2 w-full max-w-[450px]">
-      <div className="inline-flex justify-start items-start gap-2 w-full">
+    <form ref={form} onSubmit={handleNewsletterSubmit} className="inline-flex flex-col justify-start items-start gap-2 -translate-x-2 w-full max-w-[413px]">
+      <div className="inline-flex justify-end items-start gap-2 w-full -translate-x-1">
         <Input
           variant={!isValidEmail(newsletterEmail) && newsletterTouched ? 'errorState' : 'newsletter'}
           placeholder='Email address*'
@@ -78,7 +78,7 @@ export default function NewsletterSubscription() {
       </div>
       <div className="self-stretch py-2.5 inline-flex justify-start items-center gap-2.5">
         <div className="text-emerald-950 text-xs font-normal leading-[18px]">
-          By submitting my personal data I agree to receive marketing emails from PL8CHAT.
+          By submitting my personal data I agree to receive marketing emails <br /> from PL8CHAT.
         </div>
       </div>
     </form>

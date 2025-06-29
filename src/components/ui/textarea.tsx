@@ -39,7 +39,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           </label>
         )}
         <div className="h-[168px] bg-white border rounded-[14px] text-sm border-gray-400 hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col">
-          <div className="px-5 pt-4 pb-1 text-gray-500 text-sm shrink-0">
+          <div className="px-5 pt-4 pb-1 text-gray-900 text-sm shrink-0">
             Tell us about your parking (optional)
           </div>
           <textarea

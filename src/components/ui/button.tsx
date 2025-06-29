@@ -36,7 +36,7 @@ const variants = {
     'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-[#002823] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   newsLetter: clsx(
-    'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-[#002823] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+    'self-stretch w-[125px] h-[46px] px-[17px] py-[9px] bg-[#002823] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   newsLetterSuccess: clsx(
     'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
