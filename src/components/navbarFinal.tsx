@@ -24,7 +24,7 @@ type NavigationItemsBusiness = {
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation: NavigationItems[] = [
-  { name: 'For business', href: '#', current: false },
+  { name: 'For business', href: '/business', current: false },
   { name: 'FAQ', href: '#', current: false },
   { name: 'Contact Us', href: '/contact', current: false },
 ]
