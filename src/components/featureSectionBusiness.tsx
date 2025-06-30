@@ -96,7 +96,7 @@ export default function FeatureSectionBusiness() {
             </div>
           </div>
         </div>
-        <div className='w-[1400px] px-[90px] py-20 bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
+        <div className='w-[1400px] pl-[90px] py-20 bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
           <div className='flex flex-row justify-between gap-12'>
             <div className="w-[536px] inline-flex flex-col justify-start items-start gap-5">
               <div className="self-stretch flex flex-col justify-start items-start gap-6">
@@ -121,11 +121,12 @@ export default function FeatureSectionBusiness() {
                 </Link>
               </div>
             </div>
-            <div className='w-[785px] h-[675px] relative rounded-3xl translate-x-[4.5rem]'>
+            <div className='rounded-3xl'>
               <Image
                 src={'/assets/images/featureBusiness.png'}
                 alt="Feature Section Image"
-                fill
+                width={785}
+                height={675}
               />
             </div>
           </div>
