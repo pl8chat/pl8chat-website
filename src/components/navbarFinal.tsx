@@ -176,7 +176,7 @@ export default function NavbarFinal() {
                         <Button variant="talkToSalesInverse">
                           Talk to Sales
                         </Button>
-                        <Link href={`#`}>
+                        <Link href={`/business/pricing`}>
                           <Button variant="getStarted">
                             Get started
                           </Button>
