@@ -114,7 +114,7 @@ export default function FeatureSectionBusiness() {
                     </div>
                   </div>
                 ))}
-                <Link href={'/business/plans'} className='flex justify-center'>
+                <Link href={'/business/pricing'} className='flex justify-center'>
                   <Button variant={`seePlans`}>
                     See plans
                   </Button>
@@ -148,14 +148,14 @@ export default function FeatureSectionBusiness() {
           </div>
           <div className="flex justify-start items-center gap-4">
             <Link href={`#`}>
-              <Button variant="talktoSalesBusiness">
+              <Button variant="talkToSalesBusiness">
                 Talk to sales
               </Button>
             </Link>
             {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-green-400 rounded-2xl flex justify-center items-center overflow-hidden">
               <div className="justify-start text-emerald-900 text-base font-semibold leading-normal">Talk to sales</div>
             </div> */}
-            <Link href={`#`} className="justify-start text-[#58FF89] text-[15px] font-medium leading-loose">Learn more</Link>
+            <Link href={`/business/pricing`} className="justify-start text-[#58FF89] text-[15px] font-medium leading-loose">Learn more</Link>
           </div>
         </div>
       </div>

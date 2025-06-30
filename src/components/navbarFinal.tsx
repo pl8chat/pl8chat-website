@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from './svgs/navbarLogo'
+import path from 'path'
 
 type NavigationItems = {
   name: string;
@@ -30,7 +31,7 @@ const navigation: NavigationItems[] = [
 ]
 
 const navigationBusiness: NavigationItemsBusiness[] = [
-  { name: 'View Plans', href: '/business/plans', current: false },
+  { name: 'View Plans', href: '/business/pricing', current: false },
   { name: 'FAQ', href: '#', current: false },
   { name: 'Contact Us', href: '/contact', current: false },
 ]
@@ -106,14 +107,24 @@ export default function NavbarFinal() {
       <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 bg-white`}>
         {({ open }) => (
           <>
-            <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#E8F4F0]">
-              <div className="text-xs text-black font-medium leading-normal text-right">
-                <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
-                <Link href={'/business'}>
-                  <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
-                </Link>
+            {pathname.includes('/business') ? (
+              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#034B48]">
+                <div className="text-xs text-black font-medium leading-normal text-right">
+                  <span className="text-[#FFFFFF] text-xs font-normal leading-6">Already a PL8CHAT customer?{` `}
+                    <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-xs font-semibold leading-6">Log in</Link>
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#E8F4F0]">
+                <div className="text-xs text-black font-medium leading-normal text-right">
+                  <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
+                  <Link href={'/business'}>
+                    <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
+                  </Link>
+                </div>
+              </div>
+            )}
             <div className="mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -155,19 +166,39 @@ export default function NavbarFinal() {
                   </div>
                 </div>
                 {/* Right-side items (shown on larger screens) */}
-                <div className="sm:flex sm:items-center text-sm font-normal">
-                  <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
-                    <div className={`text-black leading-[24px] text-sm`}>
-                      Call us: 1(310)PL8-CHAT
+                {pathname.includes('/business') ? (
+                  <div className="sm:flex sm:items-center text-sm font-normal">
+                    <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
+                      <div className={`text-black leading-[24px] text-sm`}>
+                        Call us: 1(310)PL8-CHAT
+                      </div>
+                      <div className='flex flex-row gap-4'>
+                        <Button variant="talkToSalesInverse">
+                          Talk to Sales
+                        </Button>
+                        <Link href={`#`}>
+                          <Button variant="getStarted">
+                            Get started
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                    <Link href={`https://pl8-chat-admin-v2.vercel.app/login`}
-                      className={'py-2 text-black'}>
-                      <Button variant="SignIn">
-                        Sign In
-                      </Button>
-                    </Link>
                   </div>
-                </div>
+                ) : (
+                  <div className="sm:flex sm:items-center text-sm font-normal">
+                    <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
+                      <div className={`text-black leading-[24px] text-sm`}>
+                        Call us: 1(310)PL8-CHAT
+                      </div>
+                      <Link href={`https://pl8-chat-admin-v2.vercel.app/login`}
+                        className={'py-2 text-black'}>
+                        <Button variant="SignIn">
+                          Sign In
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

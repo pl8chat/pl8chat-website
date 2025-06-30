@@ -44,12 +44,19 @@ const variants = {
   talkToSales: clsx(
     'self-stretch w-96 h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
-  talktoSalesBusiness: clsx(
-    'self-stretch w-[140px] h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-[#034B48] text-[15px] font-medium leading-[24px] bg-[#58FF89]'
+  talkToSalesInverse: clsx(
+    'self-stretch w-[122px] h-[42px] px-[21px] py-[13px] bg-none hover:bg-[#E8F4F0] rounded-[14px] border border-[#034B48] justify-center items-center flex text-[#034B48] text-[15px] leading-[24px] whitespace-nowrap'
+  ),
+  getStarted: clsx(
+    'self-stretch w-[122px] h-[42px] px-[16px] py-[13px] bg-[#034B48] hover:bg-[#002823] rounded-[14px] justify-center items-center inline-flex font-medium text-white text-[15px] leading-[24px]'
+  ),
+  talkToSalesBusiness: clsx(
+    'self-stretch w-[140px] h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-[#034B48] text-[15px] font-medium leading-[24px] bg-[#58FF89] hover:bg-[#38E06B]'
   ),
   seePlans: clsx(
     'self-stretch w-[150px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
-  )
+  ),
+
 }
 
 type ButtonProps = {
