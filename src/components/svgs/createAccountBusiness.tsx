@@ -1,4 +1,4 @@
-import CreateAccountBusiness from '../../../public/assets/images/CreateAccountBusiness.svg';
+import CreateAccountBusiness from '@/assets/svgs/CreateAccountBusiness.svg'; // Adjust as needed
 
 export default function CreateAccountBusinessSVG() {
   return <CreateAccountBusiness />;
