@@ -97,7 +97,7 @@ export default function FeatureSectionBusiness() {
           </div>
         </div>
         <div className='w-[1400px] px-[90px] py-20 bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
-          <div className='flex flex-row justify-between gap-[28px]'>
+          <div className='flex flex-row justify-between gap-12'>
             <div className="w-[536px] inline-flex flex-col justify-start items-start gap-5">
               <div className="self-stretch flex flex-col justify-start items-start gap-6">
                 <div className="self-stretch flex flex-col justify-start items-start gap-5">
@@ -114,12 +114,14 @@ export default function FeatureSectionBusiness() {
                     </div>
                   </div>
                 ))}
-                <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-[#034B48] rounded-2xl inline-flex justify-center items-center overflow-hidden">
-                  <div className="justify-start text-white text-base font-semibold leading-normal">See plans</div>
-                </div>
+                <Link href={'/business/plans'} className='flex justify-center'>
+                  <Button variant={`seePlans`}>
+                    See plans
+                  </Button>
+                </Link>
               </div>
             </div>
-            <div className='w-[785px] h-[675px] relative rounded-3xl'>
+            <div className='w-[785px] h-[675px] relative rounded-3xl translate-x-[4.5rem]'>
               <Image
                 src={'/assets/images/featureBusiness.png'}
                 alt="Feature Section Image"
