@@ -1,5 +1,4 @@
 'use client'
-
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
@@ -10,7 +9,13 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from './svgs/navbarLogo'
 
-type NavigationItem = {
+type NavigationItems = {
+  name: string;
+  href: string;
+  current: boolean;
+}
+
+type NavigationItemsBusiness = {
   name: string;
   href: string;
   current: boolean;
@@ -18,8 +23,14 @@ type NavigationItem = {
 
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
-const navigation: NavigationItem[] = [
+const navigation: NavigationItems[] = [
   { name: 'For business', href: '#', current: false },
+  { name: 'FAQ', href: '#', current: false },
+  { name: 'Contact Us', href: '/contact', current: false },
+]
+
+const navigationBusiness: NavigationItemsBusiness[] = [
+  { name: 'View Plans', href: '/business/plans', current: false },
   { name: 'FAQ', href: '#', current: false },
   { name: 'Contact Us', href: '/contact', current: false },
 ]
@@ -128,7 +139,7 @@ export default function NavbarFinal() {
                 {/* Navbar text */}
                 <div className="hidden sm:ml-6 sm:block md:translate-x-[4.25rem]">
                   <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
-                    {navigation.map((item) => {
+                    {(pathname.includes('/business') ? navigationBusiness : navigation).map((item) => {
                       const isActive = item.href === pathname;
                       return (
                         <Link href={item.href} key={item.name}>
