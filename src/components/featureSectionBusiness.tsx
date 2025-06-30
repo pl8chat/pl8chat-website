@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import FAQ from './faq'
 import Reviews from './reviews'
 import { Button } from './ui/button'
@@ -131,7 +132,32 @@ export default function FeatureSectionBusiness() {
       </div>
       <FAQ />
       <Reviews />
-      {/* <Feature3 /> */}
+      <div className="w-full h-[513px] relative rounded-3xl">
+        <div className="w-full h-96 py-20 left-0 top-[130px] absolute bg-[#F0EDE5] inline-flex flex-col justify-end items-center gap-7">
+          <div className="self-stretch flex flex-col justify-center items-center gap-14">
+            <div className="self-stretch flex flex-col justify-start items-start gap-7">
+              <div className="self-stretch text-center justify-start text-[#002823] text-5xl font-medium leading-[65px]">Join PL8CHAT and help get <br />Every Car Connected®</div>
+            </div>
+          </div>
+        </div>
+        <div className="w-[1400px] h-64 pl-24 pr-40 left-1/2 top-0 absolute bg-[#034B48] rounded-3xl inline-flex justify-start items-center gap-4 -translate-x-1/2">
+          <div className="flex-1 h-52 inline-flex flex-col justify-center items-start gap-4">
+            <div className="w-96 justify-start text-white text-4xl font-medium leading-[48px]">Have some questions?</div>
+            <div className="w-[700px] justify-start text-white text-xl font-normal leading-[32px]">You can reach out to us anytime to ask questoins, learn more and<br />find out how PL8CHAT can help your busines. </div>
+          </div>
+          <div className="flex justify-start items-center gap-4">
+            <Link href={`#`}>
+              <Button variant="talktoSalesBusiness">
+                Talk to sales
+              </Button>
+            </Link>
+            {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-green-400 rounded-2xl flex justify-center items-center overflow-hidden">
+              <div className="justify-start text-emerald-900 text-base font-semibold leading-normal">Talk to sales</div>
+            </div> */}
+            <Link href={`#`} className="justify-start text-[#58FF89] text-[15px] font-medium leading-loose">Learn more</Link>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

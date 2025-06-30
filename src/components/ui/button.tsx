@@ -43,6 +43,9 @@ const variants = {
   ),
   talkToSales: clsx(
     'self-stretch w-96 h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+  ),
+  talktoSalesBusiness: clsx(
+    'self-stretch w-[140px] h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-[#034B48] text-[15px] font-medium leading-[24px] bg-[#58FF89]'
   )
 }
 
