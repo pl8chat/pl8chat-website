@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import ContactSalesCard from '@/components/contactSalesCard';
 import NewsletterSubscription from '@/components/newsletterSubscription';
 

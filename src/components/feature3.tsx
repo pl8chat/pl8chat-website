@@ -1,14 +1,15 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import Reviews from './reviews'
 
-interface Reviews {
+interface ReviewPosts {
   name: string
   location: string
   review: string
 }
 
-const reviews: Reviews[] = [
+const reviews: ReviewPosts[] = [
   {
     name: 'Ashley',
     location: 'Los Angeles',
@@ -28,35 +29,8 @@ const reviews: Reviews[] = [
 
 export default function Feature3() {
   return (
-    <div className="self-stretch pt-16 pb-5 bg-white rounded-tl-3xl rounded-bl-3xl rounded-br-3xl inline-flex flex-col justify-start items-center gap-16">
-      <div className="self-stretch flex flex-col justify-start items-center gap-14">
-        <div className="self-stretch px-28 flex flex-col justify-start items-start gap-4">
-          <div className="self-stretch justify-start text-emerald-950 text-4xl font-medium leading-[48px]">Hear why everyone’s<br />loving PL8CHAT</div>
-        </div>
-        <div className="self-stretch px-28 pb-2.5 inline-flex justify-start items-center gap-6">
-          {reviews.map((review, index) => {
-            const bgColors = ['bg-[#D7EDE9]', 'bg-[#E8F4F0]', 'bg-[#DDEFF0]']; // Add more if needed
-            const bgColor = bgColors[index % bgColors.length];
-
-            return (
-              <div
-                key={index}
-                className={`self-stretch h-64 px-6 pt-10 pb-5 ${bgColor} rounded-tl-[50px] rounded-tr-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start`}
-              >
-                <div className="self-stretch flex-1 justify-start text-gray-900 text-[22px] font-normal leading-[26px]">
-                  {review.review}
-                </div>
-                <div className="justify-start text-gray-900 text-[22px] font-semibold leading-loose">
-                  {review.name}
-                </div>
-                <div className="justify-start text-gray-900 text-base font-normal leading-loose">
-                  {review.location}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <div className="self-stretch pb-5 bg-white rounded-tl-3xl rounded-bl-3xl rounded-br-3xl inline-flex flex-col justify-start items-center">
+      <Reviews />
       <div className="w-[1392px] rounded-3xl flex flex-col justify-start items-start">
         <div className="self-stretch py-20 bg-stone-200 rounded-3xl flex flex-col justify-start items-start gap-7">
           <div className="self-stretch flex flex-col justify-center items-center gap-14">

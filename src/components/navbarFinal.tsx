@@ -98,7 +98,7 @@ export default function NavbarFinal() {
             <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#E8F4F0]">
               <div className="text-xs text-black font-medium leading-normal text-right">
                 <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
-                <Link href={'#'}>
+                <Link href={'/business'}>
                   <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
                 </Link>
               </div>
