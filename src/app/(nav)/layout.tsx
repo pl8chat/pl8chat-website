@@ -12,13 +12,12 @@ const inter = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "PL8CHAT - Smart & Social Parking",
-  description: "We unite parking communities through license plate chat and connectivity",
+  title: "PL8CHAT",
+  description: "",
   openGraph: {
     title: "PL8CHAT",
-    description: "Smart & Social Parking",
     images: "./assets/images/logoGreen.jpg",
-    url: "PL8CHAT",
+    url: "https://pl8chat.com",
     type: "website",
   }
 };
