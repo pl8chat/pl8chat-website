@@ -56,7 +56,9 @@ const variants = {
   seePlans: clsx(
     'self-stretch w-[150px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
-
+  pricing: clsx(
+    'self-stretch w-full h-[46px] px-[11px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+  )
 }
 
 type ButtonProps = {

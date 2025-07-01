@@ -98,7 +98,7 @@ export default function ResetPasswordForm() {
                     className="relative"
                   />
                 </div>
-                <div onClick={handleNext} className="text-[#004c3d] text-sm font-normal underline leading-tight">Open Gmail</div>
+                <div onClick={handleNext} className="text-[darkGreen] text-sm font-normal underline leading-tight">Open Gmail</div>
               </div>
             ))}
           </div>

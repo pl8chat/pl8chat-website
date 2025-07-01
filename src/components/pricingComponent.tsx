@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { CheckIcon } from '@heroicons/react/20/solid'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 type Tier = {
@@ -10,6 +11,7 @@ type Tier = {
   href: string
   price: string
   description: string
+  extraText?: string
   features: string[]
   buttonText: string,
   mostPopular: boolean
@@ -17,46 +19,51 @@ type Tier = {
 
 const tiers: Tier[] = [
   {
-    name: 'Standard',
-    id: 'tier-freelancer',
-    href: '/free',
-    price: 'Free',
-    description: 'The essentials to provide your best work for clients.',
-    features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
-    buttonText: 'Sign Up',
+    name: 'Single location',
+    id: 'single-location',
+    href: '#',
+    price: 'Always Free',
+    description: 'If your business has parking you need to set up your official PL8CHAT line of communication today!',
+    extraText: 'text?',
+    features: [
+      'Contact parked cars via license plates', 
+      'Receive messages from your customers', 
+      'Keep your parking safe and connected', 
+      'More features coming soon!',
+    ],
+    buttonText: 'Sign up',
     mostPopular: true,
   },
   {
-    name: 'Premium',
-    id: 'tier-startup',
-    href: '/premium',
-    price: '$299',
-    description: 'A plan that scales with your rapidly growing business.',
+    name: 'Multiple locations',
+    id: 'multiple-locations',
+    href: '#',
+    price: 'Free to start',
+    description: 'Great for managing multi-unit locations, including apartment communities and business chains.',
+    extraText: 'Text goes here',
     features: [
-      '25 products',
-      'Up to 10,000 subscribers',
-      'Advanced analytics',
+      'Create a private parking community',
+      'Group chats connect your parkers',
+      'Send announcements to everyone',
       '24-hour support response time',
-      'Marketing automations',
     ],
-    buttonText: 'Sign Up',
+    buttonText: 'Sign up',
     mostPopular: false,
   },
   {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
+    name: 'Custom solution',
+    id: 'custom-solution',
     href: '#',
-    price: ' ',
-    description: 'Dedicated support and infrastructure for your company.',
+    price: 'Custom',
+    description: 'Need help customizing a parking experience or choosing the right product? Talk to our experts today!',
+    extraText: 'Text goes here',
     features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      '1-hour, dedicated support response time',
-      'Marketing automations',
-      'Custom reporting tools',
+      'Create a private parking community',
+      '5 Group chats connect your parkers',
+      'Send announcements to everyone',
+      'Let admins help you manage',
     ],
-    buttonText: 'Contact Sales',
+    buttonText: 'Talk to Sales',
     mostPopular: false,
   },
 ]
@@ -70,83 +77,68 @@ export default function PricingComponent() {
   const [selectedTierId, setSelectedTierId] = useState<string | null>(mostPopularTierId) // Set initial state to most popular
 
   return (
-    <div className="bg-lightGrey py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto text-center">
-          <p className="mt-2 text-balance text-4xl font-semibold tracking-tight text-offBlack sm:text-6xl">
-            Pricing for different types of parking
-          </p>
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
-          Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
-          loyalty, and driving sales.
-        </p>
-
-        <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
-              className={classNames(
-                selectedTierId === tier.id ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200', // Apply green outline if the tier is selected
-                'rounded-3xl p-8 xl:p-10 cursor-pointer',
-              )}
-            >
-              <div className="flex items-center justify-between gap-x-4">
-                <h3
-                  id={tier.id}
-                  className={classNames(
-                    selectedTierId === tier.id ? 'text-darkGreen' : 'text-gray-900',
-                    'text-lg/8 font-semibold',
-                  )}
-                >
-                  {tier.name}
-                </h3>
-                {tier.mostPopular ? (
-                  <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs/5 font-semibold text-darkGreen">
-                    Most popular
-                  </p>
-                ) : null}
-              </div>
-              <p className="mt-4 text-sm/6 text-gray-600">{tier.description}</p>
-              <p className="mt-6 flex items-baseline gap-x-1 relative">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">
-                  {tier.price}
-                </span>
-                {tier.price === 'Free' ? (
-                  <div>
-                    <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
-                    {/* <span className='text-sm/6 font-normal text-gray-600 absolute left-0 -bottom-4'>$50/year</span> */}
-                  </div>
-                ) : tier.price !== ' ' ? (
-                  <span className="text-sm/6 font-semibold text-gray-600">/year</span>
-                ) :
-                  <span className='pt-10'></span>
-                }
-              </p>
-              <Link
-                href={''}
-                aria-describedby={tier.id}
+    <div className="bg-white pt-[50px] pb-5">
+      <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto rounded-[14px] pt-10 pb-20'>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="self-stretch w-full inline-flex flex-col justify-center items-center gap-5">
+            <div className="text-center justify-center text-[#034B48] text-lg font-semibold leading-8">Parking plans</div>
+            <div className="text-center justify-center text-[#111827] text-[40px] font-medium leading-[60px]">Choose the right plan</div>
+          </div>
+          <div className="isolate mx-auto pt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {tiers.map((tier) => (
+              <div
+                key={tier.id}
+                onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
-                  selectedTierId === tier.id
-                    ? 'bg-darkGreen text-white shadow-sm hover:bg-darkerGreen'
-                    : 'text-darkerGreen ring-1 ring-inset ring-indigo-200 hover:ring-darkGreen',
-                  'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkGreen',
+                  selectedTierId === tier.id ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200', // Apply green outline if the tier is selected
+                  'bg-white rounded-[25px] p-10 cursor-pointer flex flex-col gap-8',
                 )}
               >
-                {tier.buttonText}
-              </Link>
-
-              <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                <div className="flex items-center justify-between gap-x-4">
+                  <h3 id={tier.id} className={classNames('text-[#034B48] text-lg font-semibold',)}>
+                    {tier.name}
+                  </h3>
+                  {/* {tier.mostPopular ? (
+                    <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs/5 font-semibold text-darkGreen">
+                      Most popular
+                    </p>
+                  ) : null} */}
+                </div>
+                <p className="text-[15px] text-[#111827]">{tier.description}</p>
+                <p className="flex flex-col items-baseline gap-x-1 relative">
+                  <span className="text-2xl font-medium tracking-tight text-[#101828]">
+                    {tier.price}
+                  </span>
+                  <p className="text-xs text-[#111827]">{tier.extraText}</p>
+                  {/* {tier.price === 'Free' ? (
+                    <div>
+                      <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
+                    </div>
+                  ) : tier.price !== ' ' ? (
+                    <span className="text-sm/6 font-semibold text-gray-600">/year</span>
+                  ) :
+                    <span className='pt-10'></span>
+                  } */}
+                </p>
+                <Link
+                  href={''}
+                  aria-describedby={tier.id}
+                >
+                  <Button variant='pricing'>
+                    {tier.buttonText}
+                  </Button>
+                </Link>
+                <ul role="list" className="space-y-3 text-sm/6 text-gray-600">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex gap-x-3">
+                      <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
