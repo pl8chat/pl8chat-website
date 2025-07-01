@@ -48,7 +48,7 @@ export default function FAQ({ }) {
   };
 
   return (
-    <div className="self-stretch px-28 py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-20">
+    <div className="self-stretch px-28 py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-20" id="faq">
       <div className="self-stretch text-center justify-start text-neutral-100 text-4xl font-medium leading-[48px]">Frequently asked questions</div>
       <div className="self-stretch flex flex-col justify-start items-start">
         {faqs.map((faq, index) => (
