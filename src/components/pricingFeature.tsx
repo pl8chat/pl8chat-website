@@ -1,25 +1,24 @@
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+
 export default function pricingFeature() {
   return (
-    <div className="bg-darkGreen">
-      <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Boost your productivity. Start using our app today.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-tGreen">
-            Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur
-            commodo do ea.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-darkGreen shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Get started
-            </a>
-            <a href="#" className="text-sm/6 font-semibold text-white">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+    <div className="w-full flex justify-center pb-6">
+      <div className="w-[1400px] h-[378px] bg-[#034B48] rounded-[25px] inline-flex justify-center items-center gap-4">
+        <div className="flex-1 inline-flex flex-col justify-start items-center gap-7">
+          <div className="self-stretch flex flex-col justify-start items-start gap-2">
+            <div className="self-stretch text-center justify-start text-white text-4xl font-medium leading-10">Need some help or have questions?</div>
+          </div>
+          <div className="flex flex-col justify-start items-center gap-10">
+            <div className="w-[792px] text-center justify-start text-zinc-100 text-[22px] font-normal leading-8">Talk to one of our specialists today and we’ll help<br />you find the right plan.</div>
+            <div className="inline-flex justify-start items-center gap-4">
+              <Link href="#">
+                <Button variant='talkToSalesBusiness'>
+                  Talk to expert
+                </Button>
+              </Link>
+              <div className="justify-start text-[#58FF89] text-base font-medium leading-loose">Learn more</div>
+            </div>
           </div>
         </div>
       </div>

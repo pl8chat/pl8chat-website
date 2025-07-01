@@ -37,7 +37,7 @@ export default function SignInForm() {
               <div className="text-gray-900 text-sm font-normal leading-tight">Remember me</div>
             </div>
             <div className="justify-start items-center flex">
-              <Link href={`/resetpassword`} className="text-right text-[darkGreen] text-sm font-normal underline leading-tight">Forgot your password?</Link>
+              <Link href={`/resetpassword`} className="text-right text-darkGreen text-sm font-normal underline leading-tight">Forgot your password?</Link>
             </div>
           </div>
           <div className='w-full pt-2'>

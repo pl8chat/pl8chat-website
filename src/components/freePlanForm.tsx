@@ -88,7 +88,7 @@ export default function FreePlanForm() {
               <div className="justify-start items-center gap-1 inline-flex">
                 <div className="text-gray-900 text-sm font-normal leading-tight">Already a customer?</div>
                 <div className="h-5 justify-start items-center inline-flex">
-                  <div className="text-[darkGreen] text-sm font-normal underline leading-tight">Sign in</div>
+                  <div className="text-darkGreen text-sm font-normal underline leading-tight">Sign in</div>
                 </div>
               </div>
             </div>
@@ -102,8 +102,8 @@ export default function FreePlanForm() {
               </div>
             </div>
             <div className="h-[60px] justify-start items-center gap-2 inline-flex">
-              <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By selecting continue, you agree to our </span><Link href={`/terms`}><span className="text-[darkGreen] text-sm font-normal underline leading-tight">Terms of Service</span>
-              </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and </span><Link href={`/privacy`}><span className="text-[darkGreen] text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
+              <div className="grow shrink basis-0"><span className="text-gray-900 text-sm font-normal leading-tight">By selecting continue, you agree to our </span><Link href={`/terms`}><span className="text-darkGreen text-sm font-normal underline leading-tight">Terms of Service</span>
+              </Link><span className="text-gray-900 text-sm font-normal leading-tight"> and </span><Link href={`/privacy`}><span className="text-darkGreen text-sm font-normal underline leading-tight">Privacy Policy.</span></Link></div>
             </div>
           </div>
           <div className='w-full'>
@@ -132,7 +132,7 @@ export default function FreePlanForm() {
                     className="relative"
                   />
                 </div>
-                <div onClick={handleNext} className="text-[darkGreen] text-sm font-normal underline leading-tight">Open Gmail</div>
+                <div onClick={handleNext} className="text-darkGreen text-sm font-normal underline leading-tight">Open Gmail</div>
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ export default function FreePlanForm() {
             </div>
             <div className="self-stretch h-[42px] flex-col justify-start items-start gap-2 flex">
               <div className="self-stretch h-[42px] py-[9px] rounded-md justify-start items-center inline-flex">
-                <div onClick={handlePrevious} className="cursor-pointer text-[darkGreen] text-sm font-normal underline leading-tight">Re-enter your email and try again</div>
+                <div onClick={handlePrevious} className="cursor-pointer text-darkGreen text-sm font-normal underline leading-tight">Re-enter your email and try again</div>
               </div>
             </div>
           </div>

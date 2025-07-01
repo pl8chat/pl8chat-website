@@ -78,7 +78,7 @@ export default function PricingComponent() {
 
   return (
     <div className="bg-white pt-[50px] pb-5">
-      <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto rounded-[14px] pt-10 pb-20'>
+      <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto rounded-[px] pt-10 pb-20'>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="self-stretch w-full inline-flex flex-col justify-center items-center gap-5">
             <div className="text-center justify-center text-[#034B48] text-lg font-semibold leading-8">Parking plans</div>
