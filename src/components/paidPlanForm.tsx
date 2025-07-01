@@ -594,7 +594,7 @@ export default function PaidPlanForm() {
               </div>
             </div>
           </div>
-          <Modal isOpen={isModalOpen} component={<CancelPurchase />} onClose={() => setModalOpen(false)} noX={true} />
+          {/* <Modal isOpen={isModalOpen} component={<CancelPurchase />} onClose={() => setModalOpen(false)} noX={true} /> */}
         </div>
       )}
 
