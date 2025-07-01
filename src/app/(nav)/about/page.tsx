@@ -1,5 +1,3 @@
-'use client'
-
 export default function About() {
   return (
     <div className="py-10 pb-[4.75rem] lg:py-20 lg:pb-[24.5rem] bg-darkGreen h-full">

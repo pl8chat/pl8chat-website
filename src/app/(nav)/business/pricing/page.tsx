@@ -1,4 +1,3 @@
-'use client'
 import PricingComponent from '@/components/pricingComponent'
 import PricingFeature from '@/components/pricingFeature'
 
