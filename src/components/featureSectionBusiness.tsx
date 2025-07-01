@@ -1,3 +1,5 @@
+'use client'
+import React from 'react'
 import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,6 +10,7 @@ import CreateAccountBusinessSVG from './svgs/createAccountBusiness'
 import MembersBusinessSVG from './svgs/membersBusiness'
 import ChatIconBusinessSVG from './svgs/chatIconBusiness'
 import CheckBusinessSVG from './svgs/checkBusiness'
+import { useModal } from '@/components/modalContext'
 
 interface Feature {
   name: string
@@ -64,6 +67,8 @@ const features2: Feature2[] = [
 ]
 
 export default function FeatureSectionBusiness() {
+  const { open } = useModal()
+
   return (
     <div className='flex flex-col justify-center w-full'>
       <div className="self-stretch pt-20 pb-5 inline-flex flex-col justify-start items-center gap-20 w-full bg-[#E8F4F0]">
@@ -148,11 +153,9 @@ export default function FeatureSectionBusiness() {
             <div className="w-[700px] justify-start text-white text-xl font-normal leading-[32px]">You can reach out to us anytime to ask questoins, learn more and<br />find out how PL8CHAT can help your busines. </div>
           </div>
           <div className="flex justify-start items-center gap-4">
-            <Link href={`#`}>
-              <Button variant="talkToSalesBusiness">
-                Talk to sales
-              </Button>
-            </Link>
+            <Button variant="talkToSalesBusiness" onClick={open}>
+              Talk to sales
+            </Button>
             {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-green-400 rounded-2xl flex justify-center items-center overflow-hidden">
               <div className="justify-start text-emerald-900 text-base font-semibold leading-normal">Talk to sales</div>
             </div> */}

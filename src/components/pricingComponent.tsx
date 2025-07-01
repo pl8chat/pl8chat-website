@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { useModal } from '@/components/modalContext'
 
 type Tier = {
   name: string
@@ -73,6 +74,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function PricingComponent() {
+  const { open } = useModal()
   const mostPopularTierId = tiers.find((tier) => tier.mostPopular)?.id || null // Get ID of the most popular tier
   const [selectedTierId, setSelectedTierId] = useState<string | null>(mostPopularTierId) // Set initial state to most popular
 
@@ -105,7 +107,7 @@ export default function PricingComponent() {
                   ) : null} */}
                 </div>
                 <p className="text-[15px] text-[#111827]">{tier.description}</p>
-                <p className="flex flex-col items-baseline gap-x-1 relative">
+                <div className="flex flex-col items-baseline gap-x-1 relative">
                   <span className="text-2xl font-medium tracking-tight text-[#101828]">
                     {tier.price}
                   </span>
@@ -119,12 +121,18 @@ export default function PricingComponent() {
                   ) :
                     <span className='pt-10'></span>
                   } */}
-                </p>
+                </div>
                 <Link
                   href={''}
                   aria-describedby={tier.id}
                 >
-                  <Button variant='pricing'>
+                  <Button variant='pricing' onClick={() => {
+                    if (tier.buttonText === 'Talk to Sales') {
+                      open()
+                    } else if (tier.buttonText === 'Sign up') {
+                      window.location.href = 'https://pl8-chat-admin-v2.vercel.app/signup'
+                    }
+                  }}>
                     {tier.buttonText}
                   </Button>
                 </Link>

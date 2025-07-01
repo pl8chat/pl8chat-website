@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from './svgs/navbarLogo'
+import { useModal } from '@/components/modalContext'
 import path from 'path'
 
 type NavigationItems = {
@@ -73,6 +74,7 @@ function classNames(...classes: string[]): string {
 }
 
 export default function NavbarFinal() {
+  const { open: openModal } = useModal();
   const pathname = usePathname();
   const [isProductFlydownOpen, setProductFlydownOpen] = useState(false);
   const [isCompanyFlydownOpen, setCompanyFlydownOpen] = useState(false);
@@ -173,7 +175,7 @@ export default function NavbarFinal() {
                         Call us: 1(310)PL8-CHAT
                       </div>
                       <div className='flex flex-row gap-4'>
-                        <Button variant="talkToSalesInverse">
+                        <Button variant="talkToSalesInverse" onClick={openModal}>
                           Talk to Sales
                         </Button>
                         <Link href={`/business/pricing`}>
@@ -221,7 +223,6 @@ export default function NavbarFinal() {
           </>
         )}
       </Disclosure>
-      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} component={<Contact isModal={true} />} />
     </div>
   );
 }
