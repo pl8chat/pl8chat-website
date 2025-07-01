@@ -3,6 +3,8 @@ import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import NavbarFinal from "../../components/navbarFinal";
 import FooterFinal from "../../components/footerFinal";
+import { ModalProvider } from "../../components/modalContext";
+import TalkToSalesModal from '@/components/talkToSalesModal'
 import "../globals.css";
 
 const inter = localFont({
@@ -22,20 +24,21 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <header>
-          <NavbarFinal />
-        </header>
-        <div className="pt-[114px] bg-white">
-          {children}
-          <Analytics />
-        </div>
-        <div>
+        <ModalProvider>
+          <header>
+            <NavbarFinal />
+          </header>
+          <div className="pt-[114px] bg-white">
+            {children}
+            <Analytics />
+            <TalkToSalesModal />
+          </div>
           <FooterFinal />
-        </div>
+        </ModalProvider>
       </body>
     </html>
   );
