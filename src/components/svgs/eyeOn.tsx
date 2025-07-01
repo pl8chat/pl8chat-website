@@ -1,4 +1,4 @@
-import EyeOn from '../../../public/assets/images/eyeOn.svg';
+import EyeOn from '../../../public/assets/svgs/eyeOn.svg';
 
 export default function eyeOn() {
   return <EyeOn />;

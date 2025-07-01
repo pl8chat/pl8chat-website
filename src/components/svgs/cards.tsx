@@ -1,4 +1,4 @@
-import Cards from '../../../public/assets/images/Cards.svg';
+import Cards from '../../../public/assets/svgs/Cards.svg';
 
 export default function CreditCards() {
   return (

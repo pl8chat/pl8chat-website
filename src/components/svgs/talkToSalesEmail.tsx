@@ -1,4 +1,4 @@
-import TalkToSalesEmail from '../../../public/assets/images/TalkToSalesEmail.svg';
+import TalkToSalesEmail from '../../../public/assets/svgs/TalkToSalesEmail.svg';
 
 export default function TalkToSalesEmailSVG() {
   return <TalkToSalesEmail />;

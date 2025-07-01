@@ -1,4 +1,4 @@
-import UpChevron from '../../../public/assets/images/chevronUp.svg';
+import UpChevron from '../../../public/assets/svgs/chevronUp.svg';
 
 export default function ChevronUp() {
   return <UpChevron />;

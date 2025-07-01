@@ -1,4 +1,4 @@
-import PlusIcon from '../../../public/assets/images/plusIcon.svg';
+import PlusIcon from '../../../public/assets/svgs/plusIcon.svg';
 
 export default function PlusIconSVG() {
   return <PlusIcon />;

@@ -1,4 +1,4 @@
-import QuestionMarkIcon from '../../../public/assets/images/help.svg';
+import QuestionMarkIcon from '../../../public/assets/svgs/questionMark.svg';
 
 export default function QuestionMark() {
   return <QuestionMarkIcon />;

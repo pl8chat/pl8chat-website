@@ -1,4 +1,4 @@
-import NavbarLogo from '../../../public/assets/images/navbarLogo.svg';
+import NavbarLogo from '../../../public/assets/svgs/navbarLogo.svg';
 
 export default function NavbarLogoSVG() {
   return <NavbarLogo />;

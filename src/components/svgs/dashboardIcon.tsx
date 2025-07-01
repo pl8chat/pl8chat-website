@@ -1,4 +1,4 @@
-import DashboardIcon from '../../../public/assets/images/dashboardIcon.svg';
+import DashboardIcon from '../../../public/assets/svgs/dashboardIcon.svg';
 
 export default function Dashboardicon() {
   return <DashboardIcon />;

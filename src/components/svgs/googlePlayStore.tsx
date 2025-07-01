@@ -1,4 +1,4 @@
-import GooglePlayStore from '../../../public/assets/images/googleplaystore.svg';
+import GooglePlayStore from '../../../public/assets/svgs/googleplaystore.svg';
 
 export default function GooglePlayStoreSVG() {
   return <GooglePlayStore />;
