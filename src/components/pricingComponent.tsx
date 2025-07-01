@@ -22,7 +22,7 @@ const tiers: Tier[] = [
   {
     name: 'Single location',
     id: 'single-location',
-    href: '#',
+    href: 'https://pl8-chat-admin-v2.vercel.app/signup?userType=parking',
     price: 'Always Free',
     description: 'If your business has parking you need to set up your official PL8CHAT line of communication today!',
     extraText: 'text?',
@@ -123,14 +123,12 @@ export default function PricingComponent() {
                   } */}
                 </div>
                 <Link
-                  href={''}
+                  href={tier.href}
                   aria-describedby={tier.id}
                 >
                   <Button variant='pricing' onClick={() => {
                     if (tier.buttonText === 'Talk to Sales') {
                       open()
-                    } else if (tier.buttonText === 'Sign up') {
-                      window.location.href = 'https://pl8-chat-admin-v2.vercel.app/signup'
                     }
                   }}>
                     {tier.buttonText}
