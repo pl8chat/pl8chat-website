@@ -14,9 +14,6 @@ const variants = {
     'whitespace-nowrap text-[1.1rem] font-bold text-black rounded-md',
     `data-[disabled]:opacity-40 `
   ),
-  hero: clsx(
-    'rounded-md px-4 py-[13px] text-md font-medium shadow-sm', 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2', 'focus-visible:outline-white'
-  ),
   homeHero: clsx(
     'w-[158px] h-[60px] px-[21px] py-[13px] bg-pl8Green rounded-md border border-[#083937] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
   ),
@@ -58,7 +55,13 @@ const variants = {
   ),
   pricing: clsx(
     'self-stretch w-full h-[46px] px-[11px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
-  )
+  ),
+  hero: clsx(
+    'rounded-[15px] w-[140px] h-[46px] px-4 py-[13px] bg-white text-[15px] font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+  ),
+  hero2: clsx(
+    'rounded-[15px] w-[140px] h-[46px] px-4 py-[13px] bg-none text-[15px] text-white border border-2 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+  ),
 }
 
 type ButtonProps = {

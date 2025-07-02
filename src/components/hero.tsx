@@ -1,3 +1,6 @@
+import { Button } from './ui/button';
+import Link from 'next/link';
+
 export default function Hero({ }) {
   return (
     <div className='flex justify-center pt-[50px] pb-5'>
@@ -8,9 +11,14 @@ export default function Hero({ }) {
             <div className="self-stretch justify-start text-white text-xl font-normal leading-relaxed tracking-tight">Connect with drivers, vehicles and<br />businesses all through license plates.</div>
           </div>
         </div>
-        <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-white rounded-2xl inline-flex justify-center items-center overflow-hidden">
+        <Link href={'#'} className='flex justify-center'>
+          <Button variant='hero' >
+            Get PL8CHAT
+          </Button>
+        </Link>
+        {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-white rounded-2xl inline-flex justify-center items-center overflow-hidden">
           <div className="justify-start text-emerald-950 text-base font-semibold leading-normal">Get PL8CHAT</div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
