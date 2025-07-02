@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -41,7 +40,7 @@ const features: Feature[] = [
   {
     name: 'Search a license plate',
     description:
-      'See a vehicle you want to reach? are Just type in the license plate info the and if they’re a member you can the view their profile and connect.',
+      'See a vehicle you want to reach? are Just type in the license plate info the and if they’re a member you can the view their profile and connect. thett',
     href: '#',
     icon: SearchIconSVG,
   },
@@ -112,7 +111,7 @@ const FeatureSection: FC = () => {
                         {feature.name}
                       </div>
                     </div>
-                    <div className="self-stretch justify-start text-gray-900 text-xl font-normal leading-7">
+                    <div className="w-[360px] self-stretch justify-start text-gray-900 text-xl font-normal leading-7">
                       {feature.description}
                     </div>
                   </div>
