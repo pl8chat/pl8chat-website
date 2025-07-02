@@ -28,7 +28,7 @@ export default function Reviews() {
       <div className="self-stretch px-28 flex flex-col justify-start items-start gap-4">
         <div className="self-stretch justify-start text-emerald-950 text-4xl font-medium leading-[48px]">Hear why everyone’s<br />loving PL8CHAT</div>
       </div>
-      <div className="self-stretch px-28 pb-2.5 inline-flex justify-start items-center gap-6">
+      <div className="self-stretch px-28 pb-2.5 flex flex-col md:flex-row justify-start items-center gap-6">
         {reviews.map((review, index) => {
           const bgColors = ['bg-[#D7EDE9]', 'bg-[#E8F4F0]', 'bg-[#DDEFF0]'];
           const bgColor = bgColors[index % bgColors.length];

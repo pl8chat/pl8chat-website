@@ -48,13 +48,13 @@ export default function FAQ({ }) {
   };
 
   return (
-    <div className="self-stretch px-28 py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-20" id="faq">
-      <div className="self-stretch text-center justify-start text-neutral-100 text-4xl font-medium leading-[48px]">Frequently asked questions</div>
+    <div className="self-stretch px-[34px] md:px-[114px] py-10 md:py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-5 md:gap-20" id="faq">
+      <div className="self-stretch md:text-center justify-start text-neutral-100 text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Frequently asked <br /> questions</div>
       <div className="self-stretch flex flex-col justify-start items-start">
         {faqs.map((faq, index) => (
           <div key={faq.id} className={`w-full pt-6 flex flex-col gap-4 ${index < faqs.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-2'} border-b border-gray-200` : '' }`}>
             <button onClick={() => handleAccordion(faq.id)} className='flex w-full items-center justify-between text-left text-gray-100'>
-              <span className="text-[28px] font-medium leading-7">{faq.question}</span>
+              <span className="text-[18px] md:text-[28px] font-medium leading-7">{faq.question}</span>
               <span className="ml-6 flex h-7 items-center">
                 {openIds.includes(faq.id) ? (
                   <MinusIconSVG />
@@ -64,7 +64,7 @@ export default function FAQ({ }) {
               </span>
             </button>
             <div className={`${openIds.includes(faq.id) ? 'accordionOpen accordion' : 'accordion'}`}>
-              <div className={`pr-[120px] text-gray-100 text-[22px] font-light leading-[30px] tracking-tight accordionInner`}>
+              <div className={`w-[290px] md:w-[990px] md:pr-[120px] text-gray-100 text-sm md:text-[22px] font-light leading-[24px] md:leading-[30px] tracking-[0.14px] md:tracking-[0.22px] accordionInner`}>
                 {faq.answer}
               </div>
             </div>
