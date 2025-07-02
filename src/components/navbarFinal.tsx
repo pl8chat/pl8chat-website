@@ -28,13 +28,13 @@ type SVGProps = React.SVGAttributes<SVGSVGElement>;
 const navigation: NavigationItems[] = [
   { name: 'For business', href: '/business', current: false },
   { name: 'FAQ', href: '#faq', current: false },
-  { name: 'Contact Us', href: '/contact', current: false },
+  { name: 'Contact us', href: '/contact', current: false },
 ]
 
 const navigationBusiness: NavigationItemsBusiness[] = [
-  { name: 'View Plans', href: '/business/pricing', current: false },
+  { name: 'View plans', href: '/business/pricing', current: false },
   { name: 'FAQ', href: '#faq', current: false },
-  { name: 'Contact Us', href: '/contact', current: false },
+  { name: 'Contact us', href: '/contact', current: false },
 ]
 
 const navbarColors: Record<string, string> = {
