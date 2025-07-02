@@ -176,7 +176,7 @@ export default function NavbarFinal() {
                       </div>
                       <div className='flex flex-row gap-4'>
                         <Button variant="talkToSalesInverse" onClick={openModal}>
-                          Talk to Sales
+                          Talk to sales
                         </Button>
                         <Link href={`/business/pricing`}>
                           <Button variant="getStarted">
@@ -195,7 +195,7 @@ export default function NavbarFinal() {
                       <Link href={`https://pl8-chat-admin-v2.vercel.app/login`}
                         className={'py-2 text-black'}>
                         <Button variant="SignIn">
-                          Sign In
+                          Sign in
                         </Button>
                       </Link>
                     </div>

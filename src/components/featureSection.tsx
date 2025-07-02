@@ -122,9 +122,9 @@ const FeatureSection: FC = () => {
         </div>
         <div className='w-[1392px] px-[120px] py-20 bg-white rounded-3xl inline-flex justify-start items-center'>
           <div className='flex'>
-            <div className="self-stretch inline-flex flex-col justify-start items-start gap-10">
+            <div className="self-stretch inline-flex flex-col justify-center items-start gap-10">
               <div className="flex flex-col justify-start items-start gap-5">
-                <div className="justify-start text-emerald-950 text-4xl font-medium leading-[48px]">Search a license plate and <br />start connecting</div>
+                <div className="justify-start text-emerald-950 text-[40px] font-medium leading-[48px]">Search a license plate and <br />start connecting</div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-center gap-10">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
@@ -137,7 +137,7 @@ const FeatureSection: FC = () => {
                     >
                       <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start">
                         <div className="inline-flex justify-start items-center gap-3">
-                          <div className='text-gray-900 text-xl font-bold leading-loose tracking-tight'>{feature.name}</div>
+                          <div className='text-gray-900 text-[22px] font-bold leading-[30px] tracking-tight'>{feature.name}</div>
                           <feature.icon />
                         </div>
                         <div className="self-stretch inline-flex justify-center items-center gap-2.5">
@@ -157,7 +157,7 @@ const FeatureSection: FC = () => {
                 </div>
               </div>
             </div>
-            <div className='w-[508px] h-[675px] relative rounded-3xl'>
+            <div className='rounded-3xl'>
               <Image
                 src={
                   hoveredIndex !== null && features2[hoveredIndex]?.image
@@ -165,8 +165,9 @@ const FeatureSection: FC = () => {
                     : '/assets/images/featurePhoneImageDefault.png'
                 }
                 alt="Feature Section Image"
-                fill
-                className="rounded-3xl object-contain"
+                height={675}
+                width={508}
+                className="rounded-[25px]"
               />
             </div>
           </div>
