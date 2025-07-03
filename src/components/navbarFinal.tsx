@@ -161,10 +161,10 @@ export default function NavbarFinal() {
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     // <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
-                    <XIconSVG aria-hidden="true"/>
+                    <XIconSVG aria-hidden="true" />
                   ) : (
                     // <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
-                    <HamburgerIconSVG aria-hidden="true"/>
+                    <HamburgerIconSVG aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
@@ -195,6 +195,7 @@ export default function NavbarFinal() {
                     })}
                   </div>
                 </div>
+
                 {/* Right-side items (shown on larger screens) */}
                 {pathname.includes('/business') ? (
                   <div className="sm:flex sm:items-center text-sm font-normal">
@@ -233,19 +234,27 @@ export default function NavbarFinal() {
             </div>
 
             {/* Mobile menu */}
-            <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 px-2 pb-3 pt-2 flex flex-col">
+            <Disclosure.Panel className="sm:hidden h-screen">
+              <div className="space-y-1 px-4 pt-2 flex flex-col pb-6 font-medium">
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as="a"
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
-                    className={classNames('rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
+                    className={classNames('flex items-center rounded-md h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
                   >
                     {item.name}
                   </Disclosure.Button>
                 ))}
+                <div className={`text-black leading-[24px] text-sm px-4 py-3 border-b-[0.5px] border-[#D1D5DB]`}>
+                  Call us: 1(310)PL8-CHAT
+                </div>
+              </div>
+              <div className='px-4 '>
+                <Button variant="SignIn">
+                  Sign In
+                </Button>
               </div>
             </Disclosure.Panel>
           </>
