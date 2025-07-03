@@ -147,10 +147,10 @@ const FeatureSection: FC = () => {
             <div className="text-start md:text-center justify-start text-[#002823] text-[40px] font-medium leading-10 hidden md:block">®</div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start">
-            <div className="self-stretch flex justify-center items-start gap-16">
+            <div className="self-stretch flex justify-start md:justify-center items-start gap-16">
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 {features.map((feature, index) => (
-                  <div key={index} className="md:w-96 py-1 flex flex-col justify-start items-start gap-[10px] md:gap-4 px-0">
+                  <div key={index} className="md:w-96 py-1 flex flex-col justify-start items-start gap-[10px] md:gap-4 px-[18px]">
                     <div className="self-stretch flex flex-col justify-start items-start gap-2 md:gap-7">
                       <div className="hidden md:flex items-center justify-center w-10 h-10">
                         <feature.icon />
