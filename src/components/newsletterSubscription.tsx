@@ -51,8 +51,8 @@ export default function NewsletterSubscription() {
 
 
   return (
-    <form ref={form} onSubmit={handleNewsletterSubmit} className="inline-flex flex-col justify-start items-start gap-2 -translate-x-2 w-full max-w-[413px]">
-      <div className="inline-flex justify-end items-start gap-2 w-full -translate-x-1">
+    <form ref={form} onSubmit={handleNewsletterSubmit} className="inline-flex flex-col justify-start items-start gap-2 md:-translate-x-2 max-w-[413px]">
+      <div className="flex flex-col md:flex-row justify-end items-start gap-2 w-full -translate-x-1">
         <Input
           variant={!isValidEmail(newsletterEmail) && newsletterTouched ? 'errorState' : 'newsletter'}
           placeholder='Email address*'
@@ -70,7 +70,7 @@ export default function NewsletterSubscription() {
           }}
           error={newsletterTouched && !isValidEmail(newsletterEmail) ? newsletterError : undefined}
         />
-        <Button type='submit' variant={isSubmitted ? 'newsLetterSuccess' : 'newsLetter'}>
+        <Button type='submit' variant={isSubmitted ? 'newsLetterSuccess' : 'newsLetter'} className={``}>
           <div className="justify-start text-white text-sm font-medium leading-normal">
             {isSubmitted ? 'Success' : 'Subscribe'}
           </div>

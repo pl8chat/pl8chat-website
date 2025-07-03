@@ -160,6 +160,7 @@ export default function TalkToSales() {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 error={errors.fullName}
+                className=''
               />
               <Input
                 variant={(errors.workEmail || (emailTouched && !validEmail)) ? 'errorState' : 'talkToSales'}
