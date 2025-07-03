@@ -36,15 +36,15 @@ export default function Reviews() {
           return (
             <div
               key={index}
-              className={`self-stretch h-64 px-6 pt-10 pb-5 ${bgColor} rounded-tl-[50px] rounded-tr-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start`}
+              className={`self-stretch h-56 md:h-64 px-6 pt-10 pb-5 ${bgColor} rounded-tl-[50px] rounded-tr-[50px] rounded-br-[50px] inline-flex flex-col justify-start items-start`}
             >
-              <div className="self-stretch flex-1 justify-start text-gray-900 text-[22px] font-normal leading-[26px]">
+              <div className="self-stretch flex-1 justify-start text-gray-900 text-lg md:text-[22px] font-normal leading-[26px]">
                 {review.review}
               </div>
-              <div className="justify-start text-gray-900 text-[22px] font-semibold leading-loose">
+              <div className="justify-start text-gray-900 text-lg text-[22px] font-semibold leading-loose">
                 {review.name}
               </div>
-              <div className="justify-start text-gray-900 text-base font-normal leading-loose">
+              <div className="justify-start text-gray-900 text-sm md:text-base font-normal leading-loose">
                 {review.location}
               </div>
             </div>

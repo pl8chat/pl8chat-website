@@ -123,7 +123,7 @@ export default function FooterFinal() {
               ))}
             </div>
           </div>
-          <div className="mt-16 flex flex-row justify-between gap-8 xl:col-span-2 xl:mt-0 pb-10 -translate-x-[7.5rem]">
+          <div className="mt-16 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
             <div>
               <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -136,8 +136,8 @@ export default function FooterFinal() {
                 ))}
               </ul>
             </div>
-            <div className="mt-10 md:mt-0">
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+            <div className="">
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Company</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
@@ -204,15 +204,12 @@ export default function FooterFinal() {
             </div>
           </div> */}
         </div>
-        <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-
-
+        <div className="md:mt-8 border-t border-white/10 md:pt-8 md:flex md:items-center md:justify-between">
           <div className="self-stretch inline-flex flex-col justify-start items-start gap-6 w-full">
-            <div className="self-stretch h-px" />
             <div className="self-stretch flex flex-col justify-end items-start">
               <div className="self-stretch h-px opacity-30 bg-gray-800" />
               <div className="self-stretch h-14 pt-8 inline-flex justify-between items-start">
-                <div className="flex-1 justify-start text-gray-800 text-base font-normal leading-normal">© 2025 PL8CHAT, LLC. All rights reserved<br /></div>
+                <div className="flex-1 justify-start text-gray-800 text-xs md:text-base font-normal leading-normal">© 2025 PL8CHAT, LLC. All rights reserved<br /></div>
               </div>
             </div>
           </div>
