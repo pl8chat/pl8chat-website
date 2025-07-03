@@ -110,6 +110,7 @@ export default function NavbarFinal() {
         {({ open }) => (
           <>
             {pathname.includes('/business') ? (
+              // business site
               <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#034B48]">
                 <div className="text-xs text-black font-medium leading-normal text-right">
                   <span className="text-[#FFFFFF] text-xs font-normal leading-6">Already a PL8CHAT customer?{` `}
@@ -118,12 +119,28 @@ export default function NavbarFinal() {
                 </div>
               </div>
             ) : (
-              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#E8F4F0]">
-                <div className="text-xs text-black font-medium leading-normal text-right">
-                  <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
-                  <Link href={'/business'}>
-                    <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
-                  </Link>
+              // consumer site
+              <div>
+                {/* mobile */}
+                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#E8F4F0]">
+                  <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
+                    <span className="text-black text-xs font-medium leading-normal whitespace-nowrap">
+                      Have a parking community you want to connect?
+                    </span>
+                    <Link href={'/business'}>
+                      <span className="text-black text-xs font-bold leading-normal">Explore PL8CHAT for Business.</span>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* desktop */}
+                <div className="hidden md:flex h-[44px] w-full self-stretch px-20 justify-end items-center gap-2 bg-[#E8F4F0]">
+                  <div className="text-xs text-black font-medium leading-normal text-right">
+                    <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
+                    <Link href={'/business'}>
+                      <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
