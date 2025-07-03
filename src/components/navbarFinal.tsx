@@ -8,7 +8,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from './svgs/navbarLogo'
-import NavbarMobileLogoSVG from './svgs/navbarLogo'
+import NavbarMobileLogoSVG from './svgs/navbarMobileLogo'
 import HamburgerIconSVG from './svgs/hamburgerIcon'
 import XIconSVG from './svgs/xIcon'
 import { useModal } from '@/components/modalContext'
@@ -148,7 +148,7 @@ export default function NavbarFinal() {
                 </div>
               </div>
             )}
-            <div className="w-full mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
+            <div className="w-full mx-auto px-4 sm:px-6 lg:px-[92px] py-2 h-[58px] md:h-[70px] flex items-center">
               <div className="md:hidden w-full flex justify-between items-center">
                 {/* Mobile menu button */}
                 <div className="flex items-center">
