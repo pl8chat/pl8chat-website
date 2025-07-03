@@ -8,8 +8,12 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from './svgs/navbarLogo'
+import NavbarMobileLogoSVG from './svgs/navbarLogo'
+import HamburgerIconSVG from './svgs/hamburgerIcon'
+import XIconSVG from './svgs/xIcon'
 import { useModal } from '@/components/modalContext'
 import path from 'path'
+import { X, XIcon } from 'lucide-react'
 
 type NavigationItems = {
   name: string;
@@ -144,22 +148,29 @@ export default function NavbarFinal() {
                 </div>
               </div>
             )}
-            <div className="mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="w-full mx-auto px-2 sm:px-6 lg:px-[92px] py-2 h-[70px] flex items-center">
+              <div className="md:hidden w-full flex justify-between items-center">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <div className="flex items-center">
+                  <Link href="/" passHref>
+                    <NavbarMobileLogoSVG />
+                  </Link>
+                </div>
+                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-none">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
+                    // <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
+                    <XIconSVG aria-hidden="true"/>
                   ) : (
-                    <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
+                    // <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
+                    <HamburgerIconSVG aria-hidden="true"/>
                   )}
                 </Disclosure.Button>
               </div>
 
               {/* Left side Logo */}
-              <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-between">
+              <div className="hidden md:flex flex-1 items-center justify-center sm:items-center sm:justify-between">
                 <div className="flex items-center">
                   <Link href="/" passHref className='-translate-x-3.5'>
                     <NavbarLogoSVG />
@@ -223,14 +234,14 @@ export default function NavbarFinal() {
 
             {/* Mobile menu */}
             <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 px-2 pb-3 pt-2">
+              <div className="space-y-1 px-2 pb-3 pt-2 flex flex-col">
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as="a"
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
-                    className={classNames(getTextColor(), 'rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
+                    className={classNames('rounded-md px-3 py-3 text-md lg:text-lg font-[550]')}
                   >
                     {item.name}
                   </Disclosure.Button>
