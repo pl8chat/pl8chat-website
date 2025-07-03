@@ -209,7 +209,7 @@ const FeatureSection: FC = () => {
                 </div>
               </div>
             </div>
-            <div className='rounded-3xl'>
+            <div className='rounded-3xl px-4 md:px-0'>
               <Image
                 src={
                   activeDesktopIndex !== null && features2[activeDesktopIndex]?.image
@@ -227,14 +227,13 @@ const FeatureSection: FC = () => {
         {/* Mobile */}
         <div className="md:hidden self-stretch py-10 bg-white rounded-3xl inline-flex flex-col justify-start items-center gap-6">
           <div className="w-80 text-center justify-start text-[#002823] text-2xl font-medium leading-[34px]">Search a license plate and<br /> start connecting</div>
-          <div className="flex flex-col justify-start items-center gap-1">
+          <div className="relative w-full max-w-[508px] h-[394px] rounded-3xl px-4 md:px-0">
             <Image
               src={mobileImage}
               alt="Feature Section Image"
-              height={326}
-              width={394}
-              onClick={() => setActiveMobileIndex(null)}
-              className="rounded-[25px] scroll-px-4 cursor-pointer"
+              fill
+              className="rounded-[25px] object-contain cursor-pointer"
+              onClick={() => setActiveMobileIndex(null)} // optional: deselect image on tap
             />
           </div>
           <div className="w-72 flex flex-col justify-start items-center gap-5">
