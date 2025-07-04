@@ -72,17 +72,17 @@ const termsData: Terms[] = [
 
 export default function Terms() {
   return (
-    <div className="self-stretch pl-36 pt-44 pb-20 inline-flex flex-col justify-start items-start gap-4">
-      <div className="self-stretch justify-start text-black text-3xl font-semibold leading-[100px]">
+    <div className="self-stretch px-4 md:pl-36 pt-6 md:pt-[186px] pb-7 md:pb-20 inline-flex flex-col justify-start items-start gap-4">
+      <div className="self-stretch justify-start text-black text-3xl font-semibold leading-[50px] md:leading-[100px]">
         Terms of Service
       </div>
-      <div className="w-[897px] justify-start">
+      <div className="md:w-[897px] justify-start">
         {termsData.map((section, idx) => (
           <div key={idx} className="mb-4">
-            <div className="text-black text-sm font-semibold  leading-[25px] mb-1">
+            <div className="text-black text-sm font-semibold leading-[25px] mb-1">
               {section.title}
             </div>
-            <div className="text-black text-sm font-normal  leading-[25px] whitespace-pre-line">
+            <div className="text-black text-sm font-normal leading-[25px] whitespace-pre-line">
               {section.content}
               {section.isHighlight && (
                 <span className="text-[#034B48]">pl8chat.com/privacy</span>
@@ -90,15 +90,15 @@ export default function Terms() {
             </div>
           </div>
         ))}
-        <div className="mt-6 text-black text-sm font-semibold  leading-[25px]">Contact Us</div>
-        <div className="text-black text-sm font-normal  leading-[25px]">
+        <div className="mt-6 text-black text-sm font-semibold leading-[25px]">Contact Us</div>
+        <div className="text-black text-sm font-normal leading-[25px]">
           If you have any questions or concerns about our Terms of Service, please contact us at:
           <br />
           +1 (310) PL8-CHAT
         </div>
         <Link
           href={'mailto:info@pl8chat.com'}
-          className="text-[#034B48] text-sm font-semibold  leading-[25px]"
+          className="text-[#034B48] text-sm font-semibold leading-[25px]"
         >
           info@pl8chat.com
         </Link>
