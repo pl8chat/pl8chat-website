@@ -32,11 +32,11 @@ const safetyData: SafetySection[] = [
 
 export default function Safety() {
   return (
-    <div className="self-stretch pl-36 pt-44 pb-20 inline-flex flex-col justify-start items-start gap-4">
-      <div className="self-stretch justify-start text-black text-3xl font-semibold leading-[100px]">
+    <div className="self-stretch px-4 md:pl-36 pt-6 md:pt-44 pb-7 md:pb-20 inline-flex flex-col justify-start items-start gap-4">
+      <div className="self-stretch justify-start text-black text-xl md:text-3xl font-semibold leading-[50px] md:leading-[100px]">
         User Safety
       </div>
-      <div className="w-[897px] justify-start">
+      <div className="md:w-[897px] justify-start">
         {safetyData.map((section, idx) => (
           <div key={idx} className="mb-4">
             <div

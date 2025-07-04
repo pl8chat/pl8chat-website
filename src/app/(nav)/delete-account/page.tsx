@@ -25,11 +25,11 @@ const deleteAccountData: DeleteSection[] = [
 
 export default function DeleteAccount() {
   return (
-    <div className="self-stretch pl-36 pt-44 pb-20 inline-flex flex-col justify-start items-start gap-4">
-      <div className="self-stretch justify-start text-black text-3xl font-semibold leading-[100px]">
+    <div className="self-stretch px-4 md:pl-36 pt-6 md:pt-44 pb-7 md:pb-20 inline-flex flex-col justify-start items-start gap-4">
+      <div className="self-stretch justify-start text-black text-xl md:text-3xl font-semibold leading-[50px] md:leading-[100px]">
         Delete Your Account
       </div>
-      <div className="justify-start w-[897px]">
+      <div className="flex flex-col gap-3.5 justify-start md:w-[897px]">
         {deleteAccountData.map((section, idx) => (
           <div key={idx} className="mb-4">
             <div
