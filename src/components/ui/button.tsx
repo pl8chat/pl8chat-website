@@ -48,19 +48,19 @@ const variants = {
     'self-stretch w-[122px] h-[42px] px-[16px] py-[13px] bg-[#034B48] hover:bg-[#002823] rounded-[14px] justify-center items-center inline-flex font-medium text-white text-[15px] leading-[24px]'
   ),
   talkToSalesBusiness: clsx(
-    'self-stretch w-[140px] h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-[#034B48] text-[15px] font-medium leading-[24px] bg-[#58FF89] hover:bg-[#38E06B]'
+    'self-stretch w-[121px] md:w-[140px] h-[38px] text-nowrap md:h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-[#034B48] text-[15px] font-medium leading-[24px] bg-[#58FF89] hover:bg-[#38E06B]'
   ),
   seePlans: clsx(
-    'self-stretch w-[150px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+    'self-stretch w-[125px] md:w-[150px] h-[40px] md:h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-[15px] font-medium leading-[24px]'
   ),
   pricing: clsx(
     'self-stretch w-full h-[46px] px-[11px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   hero: clsx(
-    'rounded-[15px] w-[120px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-white text-xs md:text-[15px] font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+    'rounded-[15px] w-[125px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-white text-[15px] font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
   ),
   hero2: clsx(
-    'rounded-[15px] w-[140px] h-[46px] px-4 py-[13px] bg-none text-[15px] text-white border border-2 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+    'rounded-[15px] w-[125px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-none text-[15px] text-white border border-2 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
   ),
 }
 

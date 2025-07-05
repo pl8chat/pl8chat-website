@@ -236,17 +236,35 @@ export default function NavbarFinal() {
             {/* Mobile menu */}
             <Disclosure.Panel className="sm:hidden h-screen">
               <div className="space-y-1 px-4 pt-2 flex flex-col pb-6 font-medium">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames('flex items-center rounded-md h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
+                {pathname.includes('/business') ? (
+                  <div>
+                    {navigationBusiness.map((item) => (
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        aria-current={item.current ? 'page' : undefined}
+                        className={classNames('flex items-center h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                    ))}
+                  </div>
+                ) : (
+                  <div>
+                    {navigation.map((item) => (
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        aria-current={item.current ? 'page' : undefined}
+                        className={classNames('flex items-center rounded-md h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                    ))}
+                  </div>
+                )}
                 <div className={`text-black leading-[24px] text-sm px-4 py-3 border-b-[0.5px] border-[#D1D5DB]`}>
                   Call us: 1(310)PL8-CHAT
                 </div>
