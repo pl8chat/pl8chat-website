@@ -79,25 +79,25 @@ export default function PricingComponent() {
   const [selectedTierId, setSelectedTierId] = useState<string | null>(mostPopularTierId) // Set initial state to most popular
 
   return (
-    <div className="bg-white pt-[50px] pb-5">
-      <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto rounded-[px] pt-10 pb-20'>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-white pt-[50px] pb-4 md:pb-5 px-4">
+      <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto pt-8 md:pt-10 pb-4 md:pb-20 rounded-[25px]'>
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="self-stretch w-full inline-flex flex-col justify-center items-center gap-5">
-            <div className="text-center justify-center text-[#034B48] text-lg font-semibold leading-8">Parking plans</div>
-            <div className="text-center justify-center text-[#111827] text-[40px] font-medium leading-[60px]">Choose the right plan</div>
+            <div className="text-center justify-center text-[#034B48] text-base md:text-lg font-semibold leading-8">Parking plans</div>
+            <div className="text-center justify-center text-[#002823] md:text-[#111827] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[60px]">Choose the right plan</div>
           </div>
-          <div className="isolate mx-auto pt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="isolate mx-auto pt-[16px] md:pt-10 grid max-w-md grid-cols-1 gap-4 md:gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {tiers.map((tier) => (
               <div
                 key={tier.id}
                 onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
-                  selectedTierId === tier.id ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200', // Apply green outline if the tier is selected
-                  'bg-white rounded-[25px] p-10 cursor-pointer flex flex-col gap-8',
+                  selectedTierId === tier.id ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200',
+                  'bg-white rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
                 )}
               >
                 <div className="flex items-center justify-between gap-x-4">
-                  <h3 id={tier.id} className={classNames('text-[#034B48] text-lg font-semibold',)}>
+                  <h3 id={tier.id} className={classNames('text-[#034B48] text-base md:text-lg font-semibold',)}>
                     {tier.name}
                   </h3>
                   {/* {tier.mostPopular ? (
@@ -108,10 +108,10 @@ export default function PricingComponent() {
                 </div>
                 <p className="text-[15px] text-[#111827]">{tier.description}</p>
                 <div className="flex flex-col items-baseline gap-x-1 relative">
-                  <span className="text-2xl font-medium tracking-tight text-[#101828]">
+                  <span className="h-[43px] md:h-auto text-xl md:text-2xl font-medium tracking-tight text-[#101828]">
                     {tier.price}
                   </span>
-                  <p className="text-xs text-[#111827]">{tier.extraText}</p>
+                  <p className="hidden md:flex text-xs text-[#111827]">{tier.extraText}</p>
                   {/* {tier.price === 'Free' ? (
                     <div>
                       <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
@@ -134,9 +134,9 @@ export default function PricingComponent() {
                     {tier.buttonText}
                   </Button>
                 </Link>
-                <ul role="list" className="space-y-3 text-sm/6 text-gray-600">
+                <ul role="list" className="space-y-3 text-[10px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
+                    <li key={feature} className="flex gap-x-3 items-center">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
                       {feature}
                     </li>
