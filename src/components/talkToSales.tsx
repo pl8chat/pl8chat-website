@@ -127,7 +127,7 @@ export default function TalkToSales() {
   };
 
   return (
-    <div className="w-full h-auto md:h-[778px] pt-4 md:pt-0 md:px-4 md:p-[140px] bg-white rounded-3xl flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-28 overflow-hidden">
+    <div className="w-full h-auto md:h-[778px] pt-4 md:p-[140px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-28 overflow-hidden">
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
         <div className="self-stretch flex flex-col justify-start items-center gap-4">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
@@ -150,9 +150,9 @@ export default function TalkToSales() {
         </div>
       </div>
       <form ref={form} onSubmit={handleFormSubmit}>
-        <div className="w-[316px] md:w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-3xl inline-flex flex-col justify-start items-center gap-4">
-          <div className="md:w-96 flex-1 flex flex-col justify-start items-start gap-1">
-            <div className="flex flex-col justify-start items-start gap-2.5 w-full">
+        <div className="w-[316px] md:w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
+          <div className="md:w-[400px] flex-1 flex flex-col justify-start items-start gap-1">
+            <div className="w-[284px] md:w-auto flex flex-col justify-start items-start gap-2.5">
               <Input
                 variant={errors.fullName ? 'errorState' : 'talkToSales'}
                 name='fullName'
@@ -178,7 +178,6 @@ export default function TalkToSales() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className='h-2'
               />
             </div>
           </div>

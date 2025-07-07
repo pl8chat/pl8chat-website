@@ -11,7 +11,7 @@ const textareaVariants = cva(
         default: "border-input",
         error: "border-red-500 text-red-700",
         message: "text-sm",
-        talkToSales: "text-sm min-h-[140px] border-none pt-0 focus:ring-0 pt-2",
+        talkToSales: "w-[281px] md:w-[395px] text-sm min-h-[140px] border-none pt-0 focus:ring-0 pt-2",
       },
     },
     defaultVariants: {
@@ -38,8 +38,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             {label}
           </label>
         )}
-        <div className="h-[168px] bg-white border rounded-[14px] text-sm border-gray-400 hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col">
-          <div className="px-5 pt-4 pb-1 text-gray-900 text-sm shrink-0">
+        <div className="h-[168px] w-[284px] md:w-[400px] bg-white border rounded-[14px] text-sm border-gray-400 hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col">
+          <div className="w-[284px] md:w-[400px] px-5 pt-4 pb-1 text-gray-900 text-sm shrink-0">
             Tell us about your parking (optional)
           </div>
           <textarea
