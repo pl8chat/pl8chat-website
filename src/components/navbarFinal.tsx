@@ -258,7 +258,7 @@ export default function NavbarFinal() {
                         as="a"
                         href={item.href}
                         aria-current={item.current ? 'page' : undefined}
-                        className={classNames('flex items-center rounded-md h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
+                        className={classNames('flex items-center h-[46px] px-4 text-sm lg:text-lg border-b-[0.5px] border-[#D1D5DB]')}
                       >
                         {item.name}
                       </Disclosure.Button>
