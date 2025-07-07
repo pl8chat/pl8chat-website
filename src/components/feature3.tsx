@@ -31,7 +31,7 @@ export default function Feature3() {
   return (
     <div className="self-stretch md:pb-5 bg-white rounded-tl-[25px] rounded-bl-[25px] rounded-br-[25px] inline-flex flex-col justify-start items-center">
       <Reviews />
-      <div className="w-full md:w-[1400px] rounded-[25px] flex flex-col justify-start items-start">
+      <div className="smd:w-[1400px] rounded-[25px] flex flex-col justify-start items-start">
         <div className="w-full">
           <div className="pt-10 pb-4 md:py-20 bg-stone-200 md:rounded-3xl flex flex-col justify-start items-start gap-7">
             <div className="flex flex-col justify-center items-center gap-14">

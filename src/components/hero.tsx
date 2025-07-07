@@ -11,8 +11,8 @@ export default function Hero({ }) {
             <div className="self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-tight">Connect with drivers, vehicles and <br />businesses all through license plates.</div>
           </div>
         </div>
-        <Link href={'#'} className='flex justify-center'>
-          <Button variant='hero' >
+        <Link href={'#'} className=''>
+          <Button variant='hero' className={`text-nowrap flex justify-center items-center`}>
             Get PL8CHAT
           </Button>
         </Link>
