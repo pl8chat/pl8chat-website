@@ -35,7 +35,7 @@ type InputProps = React.ComponentProps<"input"> &
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, variant, error, ...props }, ref) => {
     return (
-      <div className={`flex flex-col w-auto gap-2 ${label ? 'h-[70px]' : ''} ${error ? 'h-[66px]' : ''} ${variant === 'talkToSales' ? 'w-full' : ''}`}>
+      <div className={`flex flex-col w-auto gap-2 ${label ? 'h-[70px]' : ''} ${error ? 'h-[55px] md:h-[66px]' : ''} ${variant === 'talkToSales' ? 'w-full' : ''}`}>
         {label && <label htmlFor={props.id} className={`text-gray-900 text-sm leading-tight h-5 flex items-center ${variant === 'contact' ? 'font-semibold' : 'font-medium'}`}>
           {label}
         </label>}
@@ -55,7 +55,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             />
           )}
           {error && (
-            <span className="mt-1 text-sm text-red-600 min-h-[20px] block">
+            <span className="mt-1 text-[9px] md:text-sm text-red-600 h-[10px] md:min-h-[20px] block">
               {error || ""}
             </span>
           )}
