@@ -115,7 +115,7 @@ export default function NavbarFinal() {
           <>
             {pathname.includes('/business') ? (
               // business site
-              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-end items-center gap-2 bg-[#034B48]">
+              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center items-center gap-2 bg-[#034B48]">
                 <div className="text-xs text-black font-medium leading-normal text-right">
                   <span className="text-[#FFFFFF] text-xs font-normal leading-6">Already a PL8CHAT customer?{` `}
                     <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-xs font-semibold leading-6">Log in</Link>
