@@ -137,7 +137,7 @@ const FeatureSection: FC = () => {
 
 
   return (
-    <div className='flex flex-col justify-center w-full '>
+    <div className='flex flex-col justify-center w-full'>
       <div className="self-stretch px-4 md:px-0 pt-10 md:pt-20 pb-5 flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
         <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
@@ -256,7 +256,9 @@ const FeatureSection: FC = () => {
         </div>
       </div>
       <FAQ />
-      <Feature3 />
+      <div className='w-full overflow-x-hidden'>
+        <Feature3 />
+      </div>
     </div>
   )
 }
