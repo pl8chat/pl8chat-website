@@ -51,11 +51,11 @@ export default function NewsletterSubscription() {
 
 
   return (
-    <form ref={form} onSubmit={handleNewsletterSubmit} className="inline-flex flex-col justify-start items-start gap-2 md:-translate-x-2 max-w-[413px]">
-      <div className="flex flex-col md:flex-row justify-end items-start gap-2 w-full -translate-x-1">
+    <form ref={form} onSubmit={handleNewsletterSubmit} className="w-full max-w-[413px]">
+      <div className="flex flex-col md:flex-row gap-2 w-full">
         <Input
           variant={!isValidEmail(newsletterEmail) && newsletterTouched ? 'errorState' : 'newsletter'}
-          className={``}
+          className="flex-1"
           placeholder='Email address*'
           value={newsletterEmail}
           onChange={(e) => setNewsletterEmail(e.target.value)}
@@ -71,7 +71,11 @@ export default function NewsletterSubscription() {
           }}
           error={newsletterTouched && !isValidEmail(newsletterEmail) ? newsletterError : undefined}
         />
-        <Button type='submit' variant={isSubmitted ? 'newsLetterSuccess' : 'newsLetter'} className={``}>
+        <Button
+          type='submit'
+          variant={isSubmitted ? 'newsLetterSuccess' : 'newsLetter'}
+          className="w-full md:w-auto"
+        >
           <div className="justify-start text-white text-sm font-medium leading-normal">
             {isSubmitted ? 'Success' : 'Subscribe'}
           </div>
@@ -79,7 +83,7 @@ export default function NewsletterSubscription() {
       </div>
       <div className="self-stretch py-2.5 inline-flex justify-start items-center gap-2.5">
         <div className="text-emerald-950 text-xs font-normal leading-[18px]">
-          By submitting my personal data I agree to receive marketing emails <br /> from PL8CHAT.
+          By submitting my personal data I agree to receive marketing emails <br className='hidden md:flex' /> from PL8CHAT.
         </div>
       </div>
     </form>

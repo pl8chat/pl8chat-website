@@ -15,7 +15,7 @@ const inputVariants = cva(
         message: 'text-sm',
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
         promoCode: 'border-gray-300 rounded-md text-sm',
-        newsletter: 'w-[302px] md:w-[280px] rounded-[14px] h-[44px] border-gray-400',
+        newsletter: 'w-full max-w-[380px] rounded-[14px] h-[44px] border-gray-400',
         talkToSales: 'w-full min-w-[284px] max-w-[400px] rounded-[14px] h-[44px] border-gray-400 hover:border-[#034B48] focus:border-[#034B48]',
         errorState: 'w-full min-w-[284px] max-w-[400px] h-[44px] border-red-500 text-red-700 rounded-[14px] text-sm',
       },
