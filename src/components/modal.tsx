@@ -10,7 +10,7 @@ type ImageModalProps = {
 };
 
 export default function Modal({ component, noX }: ImageModalProps) {
-    const { isOpen, close } = useModal(); // ✅ Use context only
+    const { isOpen, close } = useModal();
 
     const handleClose = () => {
         close();

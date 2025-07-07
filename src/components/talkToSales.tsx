@@ -6,6 +6,8 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import TalkToSalesEmailSVG from './svgs/talkToSalesEmail';
 import TalkToSalesPhoneSVG from './svgs/talkToSalesPhone';
+import { useModal } from './modalContext';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import emailjs from '@emailjs/browser';
 
 interface TalkToSalesPoints {
@@ -35,6 +37,7 @@ export default function TalkToSales() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
   const form = useRef<HTMLFormElement>(null);
   const buttonClickedRef = useRef(false);
+  const { close } = useModal();
 
   const handleBlur = () => {
     if (buttonClickedRef.current) {
@@ -128,6 +131,12 @@ export default function TalkToSales() {
 
   return (
     <div className="w-full h-auto md:h-[778px] pt-4 md:p-[140px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-28 overflow-hidden">
+      <button
+        onClick={close}
+        className="sm:hidden absolute top-2.5 right-2.5 z-10 p-2 rounded-md text-gray-700 hover:text-black focus:outline-none focus:ring-none"
+      >
+        <XMarkIcon className="h-6 w-6" />
+      </button>
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
         <div className="self-stretch flex flex-col justify-start items-center gap-4">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
@@ -140,7 +149,7 @@ export default function TalkToSales() {
               return (
                 <div key={index} className="inline-flex justify-start items-center gap-5">
                   <Icon className="w-4 h-4 text-gray-600" />
-                  <div className="w-36 justify-start text-gray-600 text-[15px] font-normal leading-tight">
+                  <div className="w-36 justify-start text-gray-600 text-xs md:text-[15px] font-normal leading-tight">
                     {point.text}
                   </div>
                 </div>
@@ -150,6 +159,9 @@ export default function TalkToSales() {
         </div>
       </div>
       <form ref={form} onSubmit={handleFormSubmit}>
+        <div>
+
+        </div>
         <div className="w-[316px] md:w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
           <div className="md:w-[400px] flex-1 flex flex-col justify-start items-start gap-1">
             <div className="w-[284px] md:w-auto flex flex-col justify-start items-start gap-2.5">
