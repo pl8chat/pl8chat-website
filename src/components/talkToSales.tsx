@@ -159,9 +159,9 @@ export default function TalkToSales() {
         </div>
       </div>
       <form ref={form} onSubmit={handleFormSubmit} className='w-full'>
-        <div className="w-full min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
-          <div className="md:w-[400px] flex-1 flex flex-col justify-start items-start gap-1">
-            <div className="w-[284px] md:w-auto flex flex-col justify-start items-start gap-2.5">
+        <div className="w-full min-h-[497px] px-4 md:px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
+          <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
+            <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
               <Input
                 variant={errors.fullName ? 'errorState' : 'talkToSales'}
                 name='fullName'

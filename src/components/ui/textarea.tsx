@@ -11,7 +11,7 @@ const textareaVariants = cva(
         default: "border-input",
         error: "border-red-500 text-red-700",
         message: "text-sm",
-        talkToSales: "w-[281px] md:w-[395px] text-sm min-h-[140px] border-none pt-0 focus:ring-0 pt-2",
+        talkToSales: "w-full min-w-[284px] max-w-[400px] text-sm min-h-[140px] border-none pt-0 focus:ring-0 pt-2",
       },
     },
     defaultVariants: {
@@ -32,14 +32,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={props.id}
-            className={`text-gray-900 text-sm leading-tight ${variant === 'message' ? 'font-semibold' : 'font-medium'
-              }`}
+            className={`text-gray-900 text-sm leading-tight ${variant === 'message' ? 'font-semibold' : 'font-medium'}`}
           >
             {label}
           </label>
         )}
-        <div className="h-[168px] w-[284px] md:w-[400px] bg-white border rounded-[14px] text-sm border-gray-400 hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col">
-          <div className="w-[284px] md:w-[400px] px-5 pt-4 pb-1 text-gray-900 text-sm shrink-0">
+        <div className="relative h-[168px] w-full min-w-[284px] max-w-[400px] bg-white border border-gray-400 rounded-[14px] text-sm hover:border-[#034B48] focus-within:border-[#00695c] focus-within:ring-0 focus-within:outline-none flex flex-col z-0 overflow-hidden">
+          <div className="z-10 bg-white px-5 pt-4 pb-1 text-gray-900 text-sm shrink-0 relative">
             Tell us about your parking (optional)
           </div>
           <textarea

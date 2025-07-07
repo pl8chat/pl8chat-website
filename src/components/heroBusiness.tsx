@@ -20,7 +20,7 @@ export default function HeroBusiness() {
             </div>
           </div>
           <div className='flex flex-row justify-between gap-4'>
-            <Link href={'/business/pricing'} className='flex justify-center'>
+            <Link href={'#'} className='flex justify-center'>
               <Button variant='hero' onClick={open} className={`flex justify-center items-center`}>
                 Talk to sales
               </Button>
