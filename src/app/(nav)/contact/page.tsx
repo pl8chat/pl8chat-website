@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="flex flex-col justify-start items-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:w-[1027px]">
             {ContactCards.map((card, index) => (
-              <div key={index} className="w-[358px] md:w-[496px] h-[185px] bg-[#E8F4F0] rounded-3xl px-7 pt-10 md:p-10 flex flex-col justify-between">
+              <div key={index} className="w-full md:w-[496px] h-[185px] bg-[#E8F4F0] rounded-[25px] px-7 pt-10 md:p-10 flex flex-col justify-between">
                 <div className='flex flex-col gap-3'>
                   <div className="text-gray-900 text-lg md:text-xl font-semibold">{card.title}</div>
                   <div className='flex flex-col gap-2'>

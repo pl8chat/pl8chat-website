@@ -138,7 +138,7 @@ export default function TalkToSales() {
         <XMarkIcon className="h-6 w-6" />
       </button>
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
-        <div className="self-stretch flex flex-col justify-start items-center gap-4">
+        <div className="md:w-[292px] self-stretch flex flex-col justify-start items-center gap-4">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
           <div className="self-stretch justify-start text-gray-900 text-xs md:text-sm font-normal leading-5">Speak to a member of our sales team by reaching out to us directly or filling out the contact form.</div>
         </div>
@@ -158,11 +158,8 @@ export default function TalkToSales() {
           </div>
         </div>
       </div>
-      <form ref={form} onSubmit={handleFormSubmit}>
-        <div>
-
-        </div>
-        <div className="min-w-[316px] md:w-[479px] min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
+      <form ref={form} onSubmit={handleFormSubmit} className='w-full'>
+        <div className="w-full min-h-[497px] px-10 py-8 bg-[#E8F4F0] rounded-[25px] inline-flex flex-col justify-start items-center gap-4">
           <div className="md:w-[400px] flex-1 flex flex-col justify-start items-start gap-1">
             <div className="w-[284px] md:w-auto flex flex-col justify-start items-start gap-2.5">
               <Input
