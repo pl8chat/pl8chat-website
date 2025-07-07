@@ -33,11 +33,11 @@ const ContactCards: ContactCardProps[] = [
 export default function Contact() {
 
   return (
-    <div className='flex flex-col justify-center items-center pb-4 md:pb-32'>
+    <div className='flex flex-col justify-center items-center pb-4 md:pb-32 px-4'>
       <div className="self-stretch pt-[50px] pb-6 w-full bg-white inline-flex flex-col justify-center items-center gap-8 md:gap-20 overflow-hidden">
         <div className="flex flex-col justify-start items-center gap-6">
-          <div className="md:w-[1700px] h-14 text-center justify-center text-gray-900 text-5xl font-semibold leading-[60px]">Contact us</div>
-          <div className="md:w-[700px] text-center md:text-start text-gray-900 text-xl font-medium leading-tight">Questions? Comments? Something else? We’d love to hear from you.</div>
+          <div className="max-w-[1700px] h-14 text-center justify-center text-gray-900 text-5xl font-semibold leading-[60px]">Contact us</div>
+          <div className="max-w-[700px] text-center md:text-start text-gray-900 text-xl font-medium leading-tight">Questions? Comments? Something else? We’d love to hear from you.</div>
         </div>
         <div className="flex flex-col justify-start items-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:w-[1027px]">
@@ -64,12 +64,14 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="w-[358px] md:w-[1027px] flex-1 p-7 md:p-10 bg-gray-100 rounded-3xl flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12">
-        <div className="inline-flex flex-col justify-start items-start gap-2">
-          <div className="w-[302px] md:w-[400px] h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
-          <div className="w-[302px] md:w-[400px] justify-start text-gray-900 text-base font-normal leading-[24px]">Subscribe to receive news, product updates<span className='hidden md:flex'><br /></span> and much more.</div>
+      <div className='max-w-[1027px] overflow-x-hidden'>
+        <div className="flex-1 p-7 md:p-10 bg-gray-100 rounded-3xl flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12">
+          <div className="inline-flex flex-col justify-start items-start gap-2">
+            <div className="w-[302px] md:w-[400px] h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
+            <div className="w-[302px] md:w-[400px] justify-start text-gray-900 text-base font-normal leading-[24px]">Subscribe to receive news, product updates<span className='hidden md:flex'><br /></span> and much more.</div>
+          </div>
+          <NewsletterSubscription />
         </div>
-        <NewsletterSubscription />
       </div>
     </div>
   )
