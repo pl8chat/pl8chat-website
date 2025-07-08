@@ -26,7 +26,7 @@ export default function Reviews() {
   return (
     <div className="self-stretch flex flex-col justify-start items-center md:gap-14 pb-10 md:py-20">
       <div className="self-stretch md:px-28 flex flex-col justify-start items-start gap-4">
-        <div className="self-stretch justify-start pt-10 pl-[34px] pr-[24px] pb-[30px] text-[#002823] text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Hear why everyone’s<br />loving PL8CHAT</div>
+        <div className="self-stretch justify-start pt-10 md:pt-0 pl-[34px] pr-[24px] pb-[30px] text-[#002823] text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Hear why everyone’s<br />loving PL8CHAT</div>
       </div>
       <div className="self-stretch px-4 md:px-28 pb-2.5 flex flex-col md:flex-row justify-start items-center gap-6">
         {reviews.map((review, index) => {
