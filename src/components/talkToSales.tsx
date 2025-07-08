@@ -38,6 +38,7 @@ export default function TalkToSales() {
   const form = useRef<HTMLFormElement>(null);
   const buttonClickedRef = useRef(false);
   const { close } = useModal();
+  
 
   const handleBlur = () => {
     if (buttonClickedRef.current) {
@@ -108,7 +109,7 @@ export default function TalkToSales() {
 
     // Sends email to Michael
     // if (form.current !== null) {
-    //   emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${publicKey}`)
+    //   emailjs.sendForm(`${emailjsServiceID}`, `${emailjsTemplateID}`, form.current, `${emailjsPublicKey}`)
     //     .then((result) => {
     //       console.log(result.text);
     //       setIsSubmitted(true);

@@ -33,10 +33,11 @@ const variants = {
     'self-stretch w-[143px] h-[42px] md:h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   newsLetter: clsx(
-    'self-stretch w-full md:w-[125px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+    'self-stretch w-full h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   newsLetterSuccess: clsx(
-    'self-stretch w-[143px] h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
+    'self-stretch w-full h-[46px] px-[17px] py-[9px] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px] cursor-no-drop',
+    '[background:linear-gradient(0deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.5)_100%),var(--PL8CHAT-Dark-green,#034B48)]'
   ),
   talkToSales: clsx(
     'self-stretch w-96 h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
