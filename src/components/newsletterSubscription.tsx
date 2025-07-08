@@ -55,7 +55,7 @@ export default function NewsletterSubscription() {
       <div className="flex flex-col md:flex-row gap-2 w-full">
         <Input
           variant={!isValidEmail(newsletterEmail) && newsletterTouched ? 'errorState' : 'newsletter'}
-          className="flex-1"
+          className="flex-1 w-[284px]"
           placeholder='Email address*'
           value={newsletterEmail}
           onChange={(e) => setNewsletterEmail(e.target.value)}

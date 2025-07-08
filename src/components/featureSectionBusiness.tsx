@@ -144,19 +144,21 @@ export default function FeatureSectionBusiness() {
               </div>
             </div>
             <div className='rounded-3xl'>
-              <Image
-                src={'/assets/images/featureBusiness.png'}
-                alt="Feature Section Image"
-                width={785}
-                height={675}
-                className='hidden md:flex'
-              />
+              {/* Mobile */}
               <Image
                 src={'/assets/images/featureBusinessMobile.png'}
                 alt="Feature Section Image"
                 width={342}
                 height={295}
                 className='md:hidden'
+              />
+              {/* Desktop */}
+              <Image
+                src={'/assets/images/featureBusiness.png'}
+                alt="Feature Section Image"
+                width={785}
+                height={675}
+                className='hidden md:flex -translate-y-[26px]'
               />
             </div>
           </div>
@@ -188,7 +190,7 @@ export default function FeatureSectionBusiness() {
               <Button variant="talkToSalesBusiness" onClick={open}>
                 Talk to sales
               </Button>
-              <Link href={`/business/pricing`} className="text-[#58FF89] text-[15px] font-medium leading-loose">Learn more</Link>
+              <Link href={`/business/pricing`} className="text-[#58FF89] hover:text-[#38E06B] text-[15px] font-medium leading-loose">Learn more</Link>
             </div>
           </div>
         </div>

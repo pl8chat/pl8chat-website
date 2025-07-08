@@ -49,7 +49,7 @@ export default function FAQ({ }) {
 
   return (
     <div className="self-stretch px-[34px] md:px-[114px] py-10 md:py-20 bg-[#034B48] inline-flex flex-col justify-start items-center gap-5 md:gap-20" id="faq">
-      <div className="self-stretch md:text-center justify-start text-neutral-100 text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Frequently asked <br /> questions</div>
+      <div className="self-stretch md:text-center justify-start text-neutral-100 text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Frequently asked <br className='md:hidden' /> questions</div>
       <div className="self-stretch flex flex-col justify-start items-start">
         {faqs.map((faq, index) => (
           <div key={faq.id} className={`w-full pt-6 flex flex-col gap-4 ${index < faqs.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-2'} border-b border-gray-200` : '' }`}>
