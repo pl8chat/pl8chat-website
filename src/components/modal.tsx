@@ -45,7 +45,7 @@ export default function Modal({ component, noX }: ImageModalProps) {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative transform overflow-hidden rounded-[25px] bg-white px-4 pb-4 text-left transition-all sm:my-8 sm:w-full sm:max-w-[1163px]">
+                            <Dialog.Panel className="relative transform overflow-hidden rounded-[25px] bg-white text-left transition-all sm:my-8 sm:w-full sm:max-w-[1163px]">
                                 {!noX && (
                                     <div className="absolute right-4 top-4 pr-4 pt-4 sm:block">
                                         <button
