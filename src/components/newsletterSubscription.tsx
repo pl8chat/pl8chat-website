@@ -17,7 +17,7 @@ export default function NewsletterSubscription() {
   const [newsletterTouched, setNewsletterTouched] = useState(false);
   const form = useRef<HTMLFormElement>(null);
   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  const templateID = process.env.NEXT_PUBLIC_EMAILJS_WAITLIST;
+  const templateID = process.env.NEXT_PUBLIC_EMAILJS_NEWSLETTER;
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {

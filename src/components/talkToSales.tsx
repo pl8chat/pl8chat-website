@@ -38,6 +38,9 @@ export default function TalkToSales() {
   const form = useRef<HTMLFormElement>(null);
   const buttonClickedRef = useRef(false);
   const { close } = useModal();
+  const emailjsServiceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const emailjsTemplateID = process.env.NEXT_PUBLIC_EMAILJS_TALKTOSALES;
+  const emailjsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
   
 
   const handleBlur = () => {
@@ -108,26 +111,26 @@ export default function TalkToSales() {
     }
 
     // Sends email to Michael
-    // if (form.current !== null) {
-    //   emailjs.sendForm(`${emailjsServiceID}`, `${emailjsTemplateID}`, form.current, `${emailjsPublicKey}`)
-    //     .then((result) => {
-    //       console.log(result.text);
-    //       setIsSubmitted(true);
-    //       setFormData({
-    //         fullName: '',
-    //         workEmail: '',
-    //         message: '',
-    //       });
-    //       setEmailTouched(false);
-    //       setValidEmail(true);
-    //       setErrors({});
-    //     })
-    //     .catch((error) => {
-    //       console.log("Error sending the form:", error.text);
-    //     });
-    // } else {
-    //   console.error("Form reference is null.");
-    // }
+    if (form.current !== null) {
+      emailjs.sendForm(`${emailjsServiceID}`, `${emailjsTemplateID}`, form.current, `${emailjsPublicKey}`)
+        .then((result) => {
+          console.log(result.text);
+          setIsSubmitted(true);
+          setFormData({
+            fullName: '',
+            workEmail: '',
+            message: '',
+          });
+          setEmailTouched(false);
+          setValidEmail(true);
+          setErrors({});
+        })
+        .catch((error) => {
+          console.log("Error sending the form:", error.text);
+        });
+    } else {
+      console.error("Form reference is null.");
+    }
   };
 
   return (
@@ -165,16 +168,15 @@ export default function TalkToSales() {
             <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
               <Input
                 variant={errors.fullName ? 'errorState' : 'talkToSales'}
-                name='fullName'
+                name='name'
                 placeholder='Full name*'
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 error={errors.fullName}
-                className=''
               />
               <Input
                 variant={(errors.workEmail || (emailTouched && !validEmail)) ? 'errorState' : 'talkToSales'}
-                name='workEmail'
+                name='email'
                 placeholder='Work email*'
                 value={formData.workEmail}
                 onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}

@@ -65,7 +65,7 @@ export default function Contact() {
         </div>
       </div>
       <div className='w-full max-w-[1027px] md:w-[1027px] overflow-x-hidden'>
-        <div className="flex-1 p-7 md:p-10 bg-gray-100 rounded-3xl flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12">
+        <div className="flex-1 p-7 md:p-10 md:pr-12 bg-gray-100 rounded-3xl flex flex-col md:flex-row justify-between items-start gap-6 md:gap-12">
           <div className="inline-flex flex-col justify-start items-start gap-2">
             <div className="w-[302px] md:w-[400px] h-7 justify-center text-gray-900 text-xl font-semibold leading-7">Join our newsletter</div>
             <div className="w-[302px] md:w-[400px] justify-start text-gray-900 text-base font-normal leading-[24px]">Subscribe to receive news, product updates<br className='hidden md:flex' /> and much more.</div>
