@@ -167,11 +167,11 @@ export default function TalkToSales() {
           <div className="w-full min-h-[497px] px-4 md:px-10 py-8 inline-flex flex-col justify-start items-center">
             <div className="w-96 h-80 inline-flex flex-col justify-center items-center gap-1">
               <div className="flex flex-col justify-start items-start gap-8">
-                <div className="self-stretch text-center justify-center text-gray-900 text-4xl font-medium leading-[60px]">Thank you!</div>
+                <div className="self-stretch text-center justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Thank you!</div>
                 <div className="self-stretch text-center justify-start text-gray-900 text-sm font-normal leading-tight">Thanks for reaching out. You’ll be hearing <br />from a member our sales team shortly. </div>
               </div>
             </div>
-            <div className='w-full md:w-[400px] flex justify-center'>
+            <div className='w-full md:w-[400px] flex justify-center pt-10 md:pt-0'>
               <Button variant='talkToSales' className={`w-full`} onClick={() => setIsSubmitted(false)}>
                 <div className="justify-start text-white text-sm font-medium leading-normal">Submit another form</div>
               </Button>
