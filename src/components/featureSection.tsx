@@ -142,7 +142,7 @@ const FeatureSection: FC = () => {
         <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
             <div className="flex flex-col justify-start items-start">
-              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">How to start connecting <span className='md:hidden'> <br /> </span> on PL8CHAT <span className='md:hidden text-[24px] font-medium leading-[34px]'>®</span></div>
+              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">How to start connecting <span className='md:hidden'> <br /> </span> on PL8CHAT<span className='md:hidden text-[24px] font-medium leading-[34px]'>®</span></div>
             </div>
             <div className="text-start md:text-center justify-start text-[#002823] text-[40px] font-medium leading-10 hidden md:block">®</div>
           </div>
@@ -227,7 +227,7 @@ const FeatureSection: FC = () => {
         {/* Mobile */}
         <div className="md:hidden self-stretch py-10 bg-white rounded-3xl inline-flex flex-col justify-start items-center gap-6">
           <div className="w-80 text-center justify-start text-[#002823] text-2xl font-medium leading-[34px]">Search a license plate and<br /> start connecting</div>
-          <div className="relative w-full max-w-[508px] h-[394px] rounded-3xl px-4 md:px-0">
+          <div className="relative w-[326px] h-[394px] rounded-3xl px-4 md:px-0">
             <Image
               src={mobileImage}
               alt="Feature Section Image"
@@ -238,18 +238,22 @@ const FeatureSection: FC = () => {
           </div>
           <div className="w-72 flex flex-col justify-start items-center gap-5">
             <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-              {featuresMobile.map((feature, index) => (
-                <div
-                  key={index}
-                  onClick={() => setActiveMobileIndex(index)}
-                  className="flex flex-col justify-start items-center gap-2.5 cursor-pointer"
-                >
-                  <feature.icon />
-                  <div className="text-center text-gray-900 text-xs font-normal leading-tight tracking-tight">
-                    {feature.description}
+              {featuresMobile.map((feature, index) => {
+                const isActive = activeMobileIndex === index;
+
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveMobileIndex(index)}
+                    className={`flex flex-col justify-start items-center gap-2.5 cursor-pointer`}
+                  >
+                    <feature.icon className={isActive ? 'w-6 h-6 text-[#002823] font-bold' : 'w-6 h-6 text-[#4B5563]'} />
+                    <div className={`text-center ${isActive ? 'text-[#002823] font-semibold' : 'text-gray-900 font-normal'} text-xs leading-tight tracking-tight`}>
+                      {feature.description}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             {/* GOOGLE AND APPLE STORE BUTTONS GO HERE */}
           </div>

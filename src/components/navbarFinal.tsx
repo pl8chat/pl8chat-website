@@ -120,7 +120,7 @@ export default function NavbarFinal() {
             ) : (
               // consumer site
               <div>
-                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7ED39]">
+                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7EDE9]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
                     <span className="text-black text-xs font-medium leading-normal whitespace-nowrap">
                       Have a parking community you want to connect?
