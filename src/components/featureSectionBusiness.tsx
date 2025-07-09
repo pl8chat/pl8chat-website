@@ -114,13 +114,12 @@ export default function FeatureSectionBusiness() {
           </div>
         </div>
         <div className='md:w-[1400px] pl-[14px] md:pl-[90px] py-10 md:py-20 bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
-          <div className='flex flex-col-reverse md:flex-row justify-between gap-12'>
+          <div className='flex flex-col-reverse md:flex-row justify-between gap-4 md:gap-12'>
             <div className="md:w-[536px] pr-[14px] inline-flex flex-col justify-start items-start gap-5">
               <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-6">
                 <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-5">
-                  <div className="self-stretch justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[48px]">Safer. Smarter. Parking</div>
+                  <div className="hidden md:flex self-stretch justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[48px] pb-12">Safer, smarter parking for you and your business</div>
                 </div>
-                <div className="self-stretch md:h-[84px] justify-start text-gray-900 text-sm md:text-xl font-normal leading-[26px] md:leading-7">PL8CHAT gives businesses tools to manage their parking environments.</div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-center gap-4 md:gap-10">
                 {features2.map((feature, index) => (
@@ -144,6 +143,7 @@ export default function FeatureSectionBusiness() {
               </div>
             </div>
             <div className='rounded-3xl'>
+              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-12">Safer, smarter parking for <br /> you and your business</div>
               {/* Mobile */}
               <Image
                 src={'/assets/images/featureBusinessMobile.png'}
