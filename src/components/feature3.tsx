@@ -54,12 +54,12 @@ export default function Feature3() {
                     Did you know PL8CHAT works best when everyone parking in the same place uses it? Whether you live in an apartment or neighborhood, or park at school or work, ask your admin to join so everyone stays connected.
                   </div>
                   <div className="inline-flex justify-start items-center gap-4 pt-2.5">
-                    <div data-state="Default" data-type="Primary" className="w-[130px] md:w-[140px] h-11 px-4 py-3 bg-[#58FF89] rounded-2xl flex justify-center items-center overflow-hidden">
+                    <div data-state="Default" data-type="Primary" className="w-[130px] md:w-[140px] h-11 px-4 py-3 bg-[#58FF89] hover:bg-[#38E06B] rounded-2xl flex justify-center items-center overflow-hidden">
                       <Link href={'#'} className="justify-start text-[#002823] text-base font-semibold leading-normal">
                         Learn more
                       </Link>
                     </div>
-                    <Link href={'#'} className="justify-start text-neutral-100 text-base font-medium leading-loose">
+                    <Link href={'#'} className="justify-start text-neutral-100 hover:text-[#E8F4F0] text-base font-medium leading-loose">
                       Tell your admin
                     </Link>
                   </div>

@@ -27,7 +27,7 @@ const variants = {
     'self-stretch h-[35px] px-[17px] py-[9px] bg-pl8Green rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
   ),
   SignIn: clsx(
-    'flex items-center justify-center w-[122px] h-[42px] px-[16px] py-[13px] text-white text-sm font-medium leading-6 rounded-[14px] bg-[#034B48]'
+    'flex items-center justify-center w-[122px] h-[42px] px-[16px] py-[13px] text-white text-sm font-medium leading-6 rounded-[14px] bg-[#034B48] hover:bg-[#002823]'
   ),
   contact: clsx(
     'self-stretch w-[143px] h-[42px] md:h-[46px] px-[17px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'

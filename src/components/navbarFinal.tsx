@@ -120,7 +120,7 @@ export default function NavbarFinal() {
             ) : (
               // consumer site
               <div>
-                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#E8F4F0]">
+                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7ED39]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
                     <span className="text-black text-xs font-medium leading-normal whitespace-nowrap">
                       Have a parking community you want to connect?
@@ -192,6 +192,7 @@ export default function NavbarFinal() {
 
                 {/* Right-side items (shown on larger screens) */}
                 {pathname.includes('/business') ? (
+                  // business site
                   <div className="sm:flex sm:items-center text-sm font-normal">
                     <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
                       <div className={`text-black leading-[24px] text-sm`}>
@@ -210,6 +211,7 @@ export default function NavbarFinal() {
                     </div>
                   </div>
                 ) : (
+                  // consumer site
                   <div className="sm:flex sm:items-center text-sm font-normal">
                     <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
                       <div className={`text-black leading-[24px] text-sm`}>
