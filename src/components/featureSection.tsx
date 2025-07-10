@@ -227,13 +227,13 @@ const FeatureSection: FC = () => {
         {/* Mobile */}
         <div className="md:hidden self-stretch py-10 bg-white rounded-3xl inline-flex flex-col justify-start items-center gap-6">
           <div className="w-80 text-center justify-start text-[#002823] text-2xl font-medium leading-[34px]">Search a license plate and<br /> start connecting</div>
-          <div className="relative w-[326px] h-[394px] rounded-3xl px-4 md:px-0">
+          <div className="relative w-full aspect-[326/394] rounded-3xl px-4 mx-auto">
             <Image
               src={mobileImage}
               alt="Feature Section Image"
               fill
               className="rounded-[25px] object-contain cursor-pointer"
-              onClick={() => setActiveMobileIndex(null)} // optional: deselect image on tap
+              onClick={() => setActiveMobileIndex(null)}
             />
           </div>
           <div className="w-72 flex flex-col justify-start items-center gap-5">

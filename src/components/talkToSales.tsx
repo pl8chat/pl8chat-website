@@ -183,7 +183,7 @@ export default function TalkToSales() {
             </div>
           </div>
         ) : (
-          <div className="w-full min-h-[497px] p-4 md:px-10 inline-flex flex-col justify-between items-center">
+          <div className="w-full min-h-[457px] p-4 md:px-10 inline-flex flex-col justify-between items-center">
             <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
               <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
                 <Input

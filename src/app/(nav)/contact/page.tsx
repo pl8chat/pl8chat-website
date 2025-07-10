@@ -36,8 +36,8 @@ export default function Contact() {
     <div className='flex flex-col justify-center items-center pb-4 md:pb-32 px-4'>
       <div className="self-stretch pt-[50px] pb-4 w-full bg-white inline-flex flex-col justify-center items-center gap-8 md:gap-20 overflow-hidden">
         <div className="flex flex-col justify-start items-center gap-6">
-          <div className="max-w-[1700px] h-14 text-center justify-center text-gray-900 text-5xl font-semibold leading-[60px]">Contact us</div>
-          <div className="max-w-[700px] text-center md:text-start text-gray-900 text-xl font-medium leading-tight">Questions? Comments? Something else? We’d love to hear from you.</div>
+          <div className="max-w-[1700px] h-14 text-center justify-center text-gray-900 text-2xl md:text-5xl font-semibold leading-[60px]">Contact us</div>
+          <div className="max-w-[700px] text-center md:text-start text-gray-900 text-base md:text-xl font-medium leading-tight">Questions? Comments? Something else? We’d love to hear from you.</div>
         </div>
         <div className="flex flex-col justify-start items-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:w-[1027px]">
