@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Button } from "./ui/button"
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import TalkToSalesEmailSVG from '@/svgs/talkToSalesEmail.svg';
-import TalkToSalesPhoneSVG from '@/svgs/talkToSalesPhone.svg';
+import TalkToSalesEmailSVG from '@/svgs/TalkToSalesEmail.svg';
+import TalkToSalesPhoneSVG from '@/svgs/TalkToSalesPhone.svg';
 import { useModal } from './modalContext';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import emailjs from '@emailjs/browser';

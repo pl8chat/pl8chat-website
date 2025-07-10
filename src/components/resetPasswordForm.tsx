@@ -6,8 +6,8 @@ import { Input } from '@/components/ui/input'
 import GreenCheck from '@/svgs/checkGreen.svg'
 import Link from 'next/link'
 import Image from 'next/image'
-import EyeOff from './svgs/eyeOff'
-import EyeOn from './svgs/eyeOn'
+import EyeOff from '@/svgs/eyeOff.svg'
+import EyeOn from '@/svgs/eyeOn.svg'
 import { Divide } from 'lucide-react'
 
 const emails = [
