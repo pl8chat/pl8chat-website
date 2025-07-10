@@ -92,7 +92,7 @@ export default function PricingComponent() {
                 key={tier.id}
                 onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
-                  selectedTierId === tier.id ? 'ring-1 ring-darkGreen' : 'ring-1 ring-gray-200',
+                  selectedTierId === tier.id ? 'border border-darkGreen' : 'border border-gray-200',
                   'bg-white rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
                 )}
               >

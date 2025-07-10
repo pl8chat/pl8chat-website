@@ -115,7 +115,7 @@ export default function FeatureSectionBusiness() {
         </div>
         <div className='md:w-[1400px] pl-[14px] md:pl-[90px] py-10 md:py-20 bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
           <div className='flex flex-col-reverse md:flex-row justify-between gap-4 md:gap-12'>
-            <div className="md:w-[536px] pr-[14px] inline-flex flex-col justify-start items-start gap-5">
+            <div className="md:w-[536px] pr-[14px] inline-flex flex-col justify-start items-start gap-2 md:gap-5">
               <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-6">
                 <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-5">
                   <div className="hidden md:flex self-stretch justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[48px] pb-12">Safer, smarter parking for you and your business</div>
@@ -143,7 +143,7 @@ export default function FeatureSectionBusiness() {
               </div>
             </div>
             <div className='rounded-3xl'>
-              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-12">Safer, smarter parking for <br /> you and your business</div>
+              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-2 md:pb-12">Safer, smarter parking for <br /> you and your business</div>
               {/* Mobile */}
               <Image
                 src={'/assets/images/featureBusinessMobile.png'}
@@ -174,23 +174,30 @@ export default function FeatureSectionBusiness() {
             </div>
           </div>
         </div>
-        <div className="w-[358px] md:w-[1400px] h-[262px] md:h-[265px] px-6 md:pl-24 md:pr-40 left-1/2 top-0 absolute bg-[#034B48] rounded-3xl flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 -translate-x-1/2">
-          <div className="md:flex-1 md:h-52 inline-flex flex-col md:justify-center items-start gap-[10px] md:gap-4">
-            <div className="md:w-96 text-white text-2xl md:text-4xl font-medium leading-6 md:leading-[48px]">Have some questions?</div>
-            <div className="w-[310px] md:w-[700px] justify-start text-white text-base md:text-xl font-normal leading-[28px] md:leading-[32px]">You can reach out to us anytime to ask questoins, learn more and<br className='hidden md:flex' />find out how PL8CHAT can help your busines. </div>
-          </div>
-          {/* <div className="flex justify-start items-center gap-4 pb-4">
-            <Button variant="talkToSalesBusiness" onClick={open}>
-              Talk to sales
-            </Button>
-            <Link href={`/business/pricing`} className="justify-start text-[#58FF89] text-[15px] font-medium leading-loose">Learn more</Link>
-          </div> */}
-          <div className="w-full md:px-0">
-            <div className="flex justify-start md:justify-end items-center gap-4">
-              <Button variant="talkToSalesBusiness" onClick={open}>
-                Talk to sales
-              </Button>
-              <Link href={`/business/pricing`} className="text-[#58FF89] hover:text-[#38E06B] text-[15px] font-medium leading-loose">Learn more</Link>
+        <div className="px-4 md:px-0 absolute top-0 left-1/2 w-full -translate-x-1/2 flex justify-center">
+          <div className="w-full md:w-[1400px] h-[262px] md:h-[265px] bg-[#034B48] rounded-3xl flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-6 md:pl-24 md:pr-40">
+            <div className="w-full md:flex-1 md:h-52 flex flex-col md:justify-center items-start gap-[10px] md:gap-4">
+              <div className="md:w-96 text-white text-2xl md:text-4xl font-medium leading-6 md:leading-[48px]">
+                Have some questions?
+              </div>
+              <div className="w-[310px] md:w-[700px] justify-start text-white text-base md:text-xl font-normal leading-[28px] md:leading-[32px]">
+                You can reach out to us anytime to ask questions, learn more and
+                <br className="hidden md:flex" />
+                find out how PL8CHAT can help your business.
+              </div>
+            </div>
+            <div className="w-full md:px-0">
+              <div className="flex justify-start md:justify-end items-center gap-4">
+                <Button variant="talkToSalesBusiness" onClick={open}>
+                  Talk to sales
+                </Button>
+                <Link
+                  href={`/business/pricing`}
+                  className="text-[#58FF89] hover:text-[#38E06B] text-[15px] font-medium leading-loose"
+                >
+                  Learn more
+                </Link>
+              </div>
             </div>
           </div>
         </div>
