@@ -21,18 +21,18 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import Pl8CHATGray from '@/components/svgs/PL8CHATGray.svg';
-import Dashboardicon from '@/components/svgs/dashboardIcon.svg';
-import Messagesicon from '@/components/svgs/messagesIcon.svg';
-import speakerphone from '@/components/svgs/speakerphone.svg';
-import UserGroup from '@/components/svgs/userGroup.svg';
-import Members from '@/components/svgs/members.svg';
-import Key from '@/components/svgs/key.svg';
-import OfficeBuilding from '@/components/svgs/officeBuilding.svg';
-import QuestionMark from '@/components/svgs/questionMark.svg';
-import Chat from '@/components/svgs/chat.svg';
-import SpeakerphoneWhite from '@/components/svgs/speakerphoneWhite.svg';
-import MessagesWhite from '@/components/svgs/messagesWhite.svg';
+import Pl8CHATGray from '@/svgs/Pl8CHATGray.svg';
+import Dashboardicon from '@/svgs/dashboardIcon.svg';
+import Messagesicon from '@/svgs/messagesIcon.svg';
+import speakerphone from '@/svgs/Speakerphone.svg';
+import UserGroup from '@/svgs/User group.svg';
+import Members from '@/svgs/Members.svg';
+import Key from '@/svgs/KeyIcon.svg';  
+import OfficeBuilding from '@/svgs/Office building.svg';
+import QuestionMark from '@/components/svgs/QuestionMark.svg';
+import Chat from '@/svgs/Chat.svg';
+import SpeakerphoneWhite from '@/svgs/SpeakerphoneWhite.svg';
+import MessagesWhite from '@/svgs/MessagesWhite.svg';
 
 interface NavigationItem {
   name: string;
