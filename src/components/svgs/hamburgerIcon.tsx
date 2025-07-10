@@ -1,4 +1,4 @@
-import HamburgerIcon from '../../../public/assets/svgs/hamburger.svg';
+import HamburgerIcon from '@/public/assets/svgs/hamburger.svg';
 
 export default function HamburgerIconSVG() {
   return (

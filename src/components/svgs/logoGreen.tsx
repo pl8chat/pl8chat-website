@@ -1,4 +1,4 @@
-import GreenLogo from '../../../public/assets/svgs/pl8chatGreen.svg';
+import GreenLogo from '@/public/assets/svgs/pl8chatGreen.svg';
 
 export default function logoGreen() {
   return (
