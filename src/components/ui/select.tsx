@@ -5,10 +5,10 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import Chevron from "../svgs/chevronDown";
-import UpChevron from "../svgs/chevronUp";
-import Check from "../svgs/check";
-import GreenCheck from "../svgs/checkGreen";
+import Chevron from "@/svgs/chevronDown.svg";
+import UpChevron from "@/svgs/chevronUp.svg";
+import Check from "@/svgs/check.svg";
+import GreenCheck from "@/svgs/checkGreen.svg";
 
 // Define select styles and variants with cva
 const selectVariants = cva(
