@@ -1,5 +1,5 @@
 import React from 'react';
-import BackArrow from '@/svgs/backArrow.svg';
+import BackArrow from '@/svgs/BackArrow.svg';
 
 interface ProgressBarProps {
   progress: number; // Progress value between 0 and 100
