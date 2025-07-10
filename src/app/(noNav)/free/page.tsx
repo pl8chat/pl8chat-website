@@ -1,7 +1,7 @@
 import FreePlanForm from "@/components/freePlanForm"
 import Link from 'next/link'
 import Image from 'next/image'
-import GreenLogo from '@/components/svgs/logoGreen'
+import GreenLogo from '@/svgs/logoGreen.svg'
 
 export default function FreePlan() {
   return (
