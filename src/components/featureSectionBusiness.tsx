@@ -131,7 +131,7 @@ export default function FeatureSectionBusiness() {
                       <div className='md:hidden'>
                         <CheckBusinessMobileSVG />
                       </div>
-                      <div className="md:w-[500px] justify-center text-gray-900 text-xs md:text-lg font-medium leading-5 md:leading-7">{feature.description}</div>
+                      <div className="md:w-[500px]  justify-center text-gray-900 text-xs md:text-lg font-medium leading-5 md:leading-7">{feature.description}</div>
                     </div>
                   </div>
                 ))}
