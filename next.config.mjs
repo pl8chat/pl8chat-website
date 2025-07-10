@@ -1,4 +1,4 @@
-// ✅ ESM-compatible next.config.mjs
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
