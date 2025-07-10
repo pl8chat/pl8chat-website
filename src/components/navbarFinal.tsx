@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from '@/svgs/navbarLogo.svg'
 import NavbarMobileLogoSVG from '@/svgs/navbarMobileLogo.svg'
-import HamburgerIconSVG from '@/components/svgs/hamburgerIcon'
+import HamburgerIconSVG from '../svgs/Hamburger.svg'
 import XIconSVG from '@/svgs/xIcon.svg'
 import { useModal } from '@/components/modalContext'
 
