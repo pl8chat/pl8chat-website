@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Checkbox } from "@/components/ui/checkbox"
 import Link from 'next/link'
 import Image from 'next/image'
-import EyeOff from './svgs/eyeOff'
+import EyeOff from '@/svgs/eyeOff.svg'
 
 export default function SignInForm() {
   return (

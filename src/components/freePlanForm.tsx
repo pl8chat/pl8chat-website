@@ -10,8 +10,8 @@ import {
   SelectItem,
   SelectValue,
 } from '@/components/ui/select';
-import BackArrow from './svgs/backArrow'
-import GreenCheck from './svgs/checkGreen'
+import BackArrow from '@/svgs/backArrow.svg'
+import GreenCheck from '@/svgs/checkGreen.svg'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'

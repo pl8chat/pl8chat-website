@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
-import PlusIconSVG from './svgs/plusIcon'
-import MinusIconSVG from './svgs/minusIcon'
+import PlusIconSVG from '@/svgs/plusIcon.svg'
+import MinusIconSVG from '@/svgs/minusIcon.svg'
 
 const faqs = [
   {
