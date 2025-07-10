@@ -16,10 +16,10 @@ import CancelPurchase from './cancelPurchase'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
-import GreenCheck from './svgs/checkGreen'
-import BackArrow from './svgs/backArrow'
-import Card from './svgs/cards'
-import EyeOff from './svgs/eyeOff'
+import GreenCheck from '@/svgs/checkGreen.svg'
+import BackArrow from '@/svgs/BackArrow.svg'
+import Card from '@/svgs/Cards.svg'
+import EyeOff from '@/svgs/eyeOff.svg'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 

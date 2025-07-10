@@ -15,7 +15,7 @@ import GreenCheck from '@/svgs/checkGreen.svg'
 import ProgressBar from './progressBar';
 import Link from 'next/link'
 import Image from 'next/image'
-import EyeOff from './svgs/eyeOff'
+import EyeOff from '@/svgs/eyeOff.svg'
 
 type SelectKeys = "role" | "industry" | "parkingSize" | "evCharging" | "state" | "country";
 

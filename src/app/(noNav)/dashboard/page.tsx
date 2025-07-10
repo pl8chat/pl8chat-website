@@ -29,7 +29,7 @@ import UserGroup from '@/svgs/User group.svg';
 import Members from '@/svgs/Members.svg';
 import Key from '@/svgs/KeyIcon.svg';  
 import OfficeBuilding from '@/svgs/Office building.svg';
-import QuestionMark from '@/components/svgs/QuestionMark.svg';
+import QuestionMark from '@/svgs/questionMark.svg';
 import Chat from '@/svgs/Chat.svg';
 import SpeakerphoneWhite from '@/svgs/SpeakerphoneWhite.svg';
 import MessagesWhite from '@/svgs/MessagesWhite.svg';
