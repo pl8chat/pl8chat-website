@@ -1,6 +1,6 @@
 import SignInForm from "@/components/signInForm"
 import Link from 'next/link'
-import GreenLogo from '@/components/svgs/logoGreen'
+import GreenLogo from '@/svgs/pl8chatGreen.svg'
 
 export default function Signin() {
   return (

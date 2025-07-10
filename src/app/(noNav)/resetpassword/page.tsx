@@ -1,6 +1,6 @@
 import ResetPasswordForm from "@/components/resetPasswordForm"
 import Link from 'next/link'
-import GreenLogo from '@/components/svgs/logoGreen'
+import GreenLogo from '@/svgs/pl8chatGreen.svg'
 
 export default function Resetpassword() {
   return (
