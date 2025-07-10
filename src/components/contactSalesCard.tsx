@@ -15,7 +15,7 @@ export default function ContactSalesCard() {
           Have a parking community you want to connect?
         </div>
       </div>
-      <div className='pt-2'>
+      <div className='pt-2 -translate-y-1.5'>
         <Button variant="contact" onClick={open}>
           Contact sales
         </Button>
