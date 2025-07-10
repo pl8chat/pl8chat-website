@@ -5,19 +5,22 @@ import { Button } from "./ui/button"
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import TalkToSalesEmailSVG from '@/svgs/TalkToSalesEmail.svg';
+import TalkToSalesEmailMobile from '@/svgs/TalkToSalesEmailMobile.svg';
 import TalkToSalesPhoneSVG from '@/svgs/TalkToSalesPhone.svg';
+import TalkToSalesPhoneMobile from '@/svgs/TalkToSalesPhoneMobile.svg';
 import { useModal } from './modalContext';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import emailjs from '@emailjs/browser';
 
 interface TalkToSalesPoints {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  iconMobile: React.FC<React.SVGProps<SVGSVGElement>>;
   text: string;
 }
 
 const points: TalkToSalesPoints[] = [
-  { icon: TalkToSalesPhoneSVG, text: '+1 (424) PL8-CHAT' },
-  { icon: TalkToSalesEmailSVG, text: 'sales@pl8chat.com' },
+  { icon: TalkToSalesPhoneSVG, iconMobile: TalkToSalesPhoneMobile, text: '+1 (424) PL8-CHAT' },
+  { icon: TalkToSalesEmailSVG, iconMobile: TalkToSalesEmailMobile, text: 'sales@pl8chat.com' },
 ];
 
 const isValidEmail = (email: string): boolean => {
@@ -142,7 +145,7 @@ export default function TalkToSales() {
         <XMarkIcon className="h-6 w-6" />
       </button>
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
-        <div className="md:w-[292px] self-stretch flex flex-col justify-start items-center gap-4">
+        <div className="md:w-[292px] self-stretch flex flex-col justify-start items-center gap-0">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
           <div className="self-stretch justify-start text-gray-900 text-xs md:text-sm font-normal leading-5">Speak to a member of our sales team by reaching out to us directly or filling out the contact form.</div>
         </div>
@@ -150,9 +153,11 @@ export default function TalkToSales() {
           <div className="self-stretch flex flex-col justify-start items-start gap-[10px] md:gap-4">
             {points.map((point, index) => {
               const Icon = point.icon;
+              const IconMobile = point.iconMobile;
               return (
-                <div key={index} className="inline-flex justify-start items-center gap-5">
-                  <Icon className="w-4 h-4 text-gray-600" />
+                <div key={index} className="inline-flex justify-start items-center gap-[10px] md:gap-5">
+                  <Icon className="w-5 h-5 text-gray-600 hidden md:flex" />
+                  <IconMobile className="md:hidden w-5 h-5 text-gray-600" />
                   <div className="w-36 justify-start text-gray-600 text-xs md:text-[15px] font-normal leading-tight">
                     {point.text}
                   </div>
@@ -178,7 +183,7 @@ export default function TalkToSales() {
             </div>
           </div>
         ) : (
-          <div className="w-full min-h-[497px] px-4 md:px-10 py-8 inline-flex flex-col justify-between items-center">
+          <div className="w-full min-h-[497px] p-4 md:px-10 inline-flex flex-col justify-between items-center">
             <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
               <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
                 <Input
@@ -208,13 +213,13 @@ export default function TalkToSales() {
                 />
               </div>
             </div>
-            <div className='flex flex-col gap-4'>
-              <div className='w-[284px] md:w-[400px] flex justify-center'>
+            <div className='flex flex-col gap-[10px] md:gap-4'>
+              <div className='w-full max-w-[400px] flex justify-center'>
                 <Button type='submit' variant='talkToSales' className={`w-full`}>
                   <div className="justify-start text-white text-sm font-medium leading-normal">Submit</div>
                 </Button>
               </div>
-              <div className="w-[284px] md:w-[400px] justify-start leading-[18px] text-xs"><span className="text-gray-900 font-normal leading-none">By submitting my data, I consent to PL8CHAT collecting, processing and storing my information in accordance with our</span><span className="text-emerald-900 font-normal leading-none"> </span><Link href={'https://www.pl8chat.com/privacy'} className="text-emerald-900 font-normal underline leading-none">Privacy Policy</Link><span className="text-emerald-900 font-normal underline leading-none">. </span></div>
+              <div className="w-full max-w-[400px] justify-start leading-[18px] text-[9px]"><span className="text-gray-900 font-normal leading-none">By submitting my data, I consent to PL8CHAT collecting, processing and storing my information in accordance with our</span><span className="text-emerald-900 font-normal leading-none"> </span><Link href={'https://www.pl8chat.com/privacy'} className="text-emerald-900 font-normal underline leading-none">Privacy Policy</Link><span className="text-emerald-900 font-normal underline leading-none">. </span></div>
             </div>
           </div>
         )}
