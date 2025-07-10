@@ -11,7 +11,7 @@ export default function pricingFeature() {
           </div>
           <div className="flex flex-col justify-start items-center gap-10 w-full">
             <div className="md:w-[792px] text-center justify-start text-zinc-100 text-base md:text-[22px] font-normal leading-8">Talk to one of our specialists today and we’ll help <br className='hidden md:flex' />you find the right plan.</div>
-            <div className="w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-4">
+            <div className="w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-2 md:gap-4">
               <Link href="#" className='w-full md:w-auto'>
                 <Button variant='talkToExpert'>
                   Talk to <span className='md:hidden px-1'>an</span> expert

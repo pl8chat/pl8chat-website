@@ -82,7 +82,7 @@ export default function PricingComponent() {
     <div className="bg-white pt-[50px] pb-4 md:pb-5 px-4">
       <div className='max-w-[1400px] bg-[#E8F4F0] mx-auto pt-8 md:pt-10 pb-4 md:pb-20 rounded-[25px]'>
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="self-stretch w-full inline-flex flex-col justify-center items-center gap-5">
+          <div className="self-stretch w-full inline-flex flex-col justify-center items-center gap-2 md:gap-5">
             <div className="text-center justify-center text-[#034B48] text-base md:text-lg font-semibold leading-8">Parking plans</div>
             <div className="text-center justify-center text-[#002823] md:text-[#111827] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[60px]">Choose the right plan</div>
           </div>
@@ -92,7 +92,7 @@ export default function PricingComponent() {
                 key={tier.id}
                 onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
-                  selectedTierId === tier.id ? 'ring-2 ring-darkGreen' : 'ring-1 ring-gray-200',
+                  selectedTierId === tier.id ? 'ring-1 ring-darkGreen' : 'ring-1 ring-gray-200',
                   'bg-white rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
                 )}
               >
@@ -134,7 +134,7 @@ export default function PricingComponent() {
                     {tier.buttonText}
                   </Button>
                 </Link>
-                <ul role="list" className="space-y-3 text-[10px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
+                <ul role="list" className="space-y-3 text-[11px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3 items-center">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
