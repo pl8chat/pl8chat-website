@@ -154,7 +154,7 @@ export default function TalkToSales() {
   };
 
   return (
-    <div className="w-full h-auto md:h-[677px] p-4 md:p-[90px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-[74px] overflow-hidden">
+    <div className="w-[1061px] md:w-full h-auto md:h-[677px] p-4 md:p-[90px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-[24px] overflow-hidden">
       <button
         onClick={close}
         className="sm:hidden absolute top-2.5 right-2.5 z-10 p-2 rounded-md text-gray-700 hover:text-black focus:outline-none focus:ring-none"
@@ -162,9 +162,9 @@ export default function TalkToSales() {
         <XMarkIcon className="h-6 w-6" />
       </button>
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
-        <div className="md:w-[292px] self-stretch flex flex-col justify-start items-center gap-0">
+        <div className="md:w-[350px] self-stretch flex flex-col justify-start items-center gap-0">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
-          <div className="self-stretch w-full justify-start text-gray-900 text-xs md:text-sm font-normal leading-5">Speak to a member of our sales team by reaching out to us directly or filling out the contact form.</div>
+          <div className="self-stretch w-full justify-start text-gray-900 text-sm md:text-sm font-normal leading-5 pt-4">Speak to a member of our sales team directly or by filling out the form.</div>
         </div>
         <div className="self-stretch flex flex-col justify-start items-start gap-4">
           <div className="self-stretch flex flex-col justify-start items-start gap-[10px] md:gap-4">
