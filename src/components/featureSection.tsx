@@ -83,7 +83,7 @@ const features2: Feature2[] = [
     description:
       'Tap to send a vehicle alert and help other drivers fast without having to type a message.',
     href: '#',
-    icon: CautionIconSVG,
+    icon: CautionIconBoldSVG,
     image: '/assets/images/featurePhoneImageAlerts.png',
   },
   {
@@ -137,7 +137,7 @@ const featuresMobile: FeatureMobile[] = [
 
 const FeatureSection: FC = () => {
   const [activeDesktopIndex, setActiveDesktopIndex] = useState<number | null>(null);
-  const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);
+  const [activeMobileIndex, setActiveMobileIndex] = useState<number | null>(0);
 
   const src =
     activeDesktopIndex !== null && features2[activeDesktopIndex]?.image
