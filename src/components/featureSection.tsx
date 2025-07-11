@@ -7,11 +7,18 @@ import CreateAccountSmallSVG from '@/svgs/createAccountSmall.svg'
 import SearchIconSVG from '@/svgs/searchIcon.svg'
 import SearchIconSmallSVG from '@/svgs/searchIconSmall.svg'
 import SearchIconSmall2SVG from '@/svgs/searchIconSmall2.svg'
+import SearchIconSmall2BoldSVG from '@/svgs/SearchIconSmall2Bold.svg'
 import ChatIconSVG from '@/svgs/chatIcon.svg'
 import ChatIconSmallSVG from '@/svgs/chatIconSmall.svg'
 import CautionIconSVG from '@/svgs/cautionIcon.svg'
+import CautionIconSmallSVG from '@/svgs/cautionIconSmall.svg'
+import CautionIconBoldSVG from '@/svgs/cautionIconBold.svg'
 import ChatBubbleSVG from '@/svgs/chatBubble.svg'
+import ChatBubbleSmallSVG from '@/svgs/chatBubbleSmall.svg'
+import ChatBubbleSmallBoldSVG from '@/svgs/chatBubbleSmallBold.svg'
 import PhoneIconSVG from '@/svgs/phoneIcon.svg'
+import PhoneIconSmallSVG from '@/svgs/phoneIconSmall.svg'
+import PhoneIconSmallBoldSVG from '@/svgs/phoneIconSmallBold.svg'
 import AppStoreSVG from '@/svgs/AppleAppStore.svg'
 import AppStoreMobile from '@/svgs/AppleAppStoreMobile.svg'
 import GooglePlayStoreSVG from '@/svgs/googleplaystore.svg'
@@ -39,6 +46,7 @@ interface Feature2 {
 interface FeatureMobile {
   description: string
   icon: FC<{ className?: string }>
+  iconBold: FC<{ className?: string }>
   image: string
 }
 
@@ -101,31 +109,35 @@ const featuresMobile: FeatureMobile[] = [
     description:
       'Search a vehicle and view their profile',
     icon: SearchIconSmall2SVG,
+    iconBold: SearchIconSmall2BoldSVG,
     image: '/assets/images/featurePhoneImageDefault.png',
   },
   {
     description:
       'Quick alerts help other drivers fast.',
-    icon: CautionIconSVG,
+    icon: CautionIconSmallSVG,
+    iconBold: CautionIconBoldSVG,
     image: '/assets/images/featurePhoneImageAlerts.png',
   },
   {
     description:
       'Start a chat style conversation',
-    icon: ChatBubbleSVG,
+    icon: ChatBubbleSmallSVG,
+    iconBold: ChatBubbleSmallBoldSVG,
     image: '/assets/images/featurePhoneImageChat.png',
   },
   {
     description:
       'Make a phone call in an emergency',
-    icon: PhoneIconSVG,
+    icon: PhoneIconSmallSVG,
+    iconBold: PhoneIconSmallBoldSVG,
     image: '/assets/images/featurePhoneImageCalls.png',
   },
 ]
 
 const FeatureSection: FC = () => {
   const [activeDesktopIndex, setActiveDesktopIndex] = useState<number | null>(null);
-  const [activeMobileIndex, setActiveMobileIndex] = useState<number | null>(null);
+  const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);
 
   const src =
     activeDesktopIndex !== null && features2[activeDesktopIndex]?.image
@@ -249,7 +261,7 @@ const FeatureSection: FC = () => {
                     onClick={() => setActiveMobileIndex(index)}
                     className={`flex flex-col justify-start items-center gap-2.5 cursor-pointer`}
                   >
-                    <feature.icon className={isActive ? 'w-6 h-6 text-[#002823] font-bold' : 'w-6 h-6 text-[#4B5563]'} />
+                    {isActive ? <feature.iconBold /> : <feature.icon />}
                     <div className={`text-center ${isActive ? 'text-[#002823] font-medium' : 'text-gray-900 font-normal'} text-xs leading-[20px] tracking-tight`}>
                       {feature.description}
                     </div>
