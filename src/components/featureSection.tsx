@@ -258,7 +258,7 @@ const FeatureSection: FC = () => {
               })}
             </div>
             {/* GOOGLE AND APPLE STORE BUTTONS GO HERE */}
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-5">
               <Link href='#'>
                 <AppStoreMobile />
               </Link>
