@@ -35,6 +35,7 @@ export default function TalkToSales() {
     message: ''
   });
   const [emailTouched, setEmailTouched] = useState<boolean>(false); // State for email input touch
+  const [fullNameTouched, setFullNameTouched] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(true); // State for email validation
   const [errors, setErrors] = useState<{ fullName?: string; workEmail?: string; }>({});
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);  // State for submission status
@@ -44,7 +45,6 @@ export default function TalkToSales() {
   const emailjsServiceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const emailjsTemplateID = process.env.NEXT_PUBLIC_EMAILJS_TALKTOSALES;
   const emailjsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
 
   const handleBlur = () => {
     if (buttonClickedRef.current) {
@@ -68,6 +68,23 @@ export default function TalkToSales() {
       }));
     }
   };
+
+  const handleFullNameBlur = () => {
+    setFullNameTouched(true);
+
+    if (!formData.fullName.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        fullName: 'Name is required',
+      }));
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        fullName: undefined,
+      }));
+    }
+  };
+
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -187,12 +204,13 @@ export default function TalkToSales() {
             <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
               <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
                 <Input
-                  variant={errors.fullName ? 'errorState' : 'talkToSales'}
+                  variant={(errors.fullName || (fullNameTouched && !formData.fullName.trim())) ? 'errorState' : 'talkToSales'}
                   name='name'
                   placeholder='Full name*'
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   error={errors.fullName}
+                  onBlur={handleFullNameBlur}
                 />
                 <Input
                   variant={(errors.workEmail || (emailTouched && !validEmail)) ? 'errorState' : 'talkToSales'}

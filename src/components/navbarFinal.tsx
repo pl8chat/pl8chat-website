@@ -36,38 +36,6 @@ const navigationBusiness: NavigationItemsBusiness[] = [
   { name: 'Contact us', href: '/contact', current: false },
 ]
 
-const navbarColors: Record<string, string> = {
-  '/': 'bg-[#034b48]',
-  '/pricing': 'bg-lightGrey',
-  '/individuals': 'bg-tGreen',
-  '/about': '',
-  default: 'bg-[#034b48]',
-};
-
-const textColors: Record<string, string> = {
-  '/': 'text-white hover:text-tGreen',
-  '/pricing': 'text-offBlack hover:text-darkGreen',
-  '/individuals': 'text-offBlack hover:text-darkGreen',
-  default: 'text-white hover:text-tGreen',
-};
-
-const logoSrc: Record<string, string> = {
-  '/': '/assets/images/PL8CHATWhite.png',
-  '/pricing': '/assets/images/PL8CHATBlack.png',
-  '/individuals': '/assets/images/PL8CHATBlack.png',
-  '/about': '/assets/images/PL8CHATWhite.png',
-  default: '/assets/images/PL8CHATWhite.png',
-}
-
-const navBarButtonColors: Record<string, string> = {
-  '/': 'bg-pl8Green hover:bg-tGreen text-034b48',
-  '/pricing': 'bg-[#034b48] hover:bg-darkerGreen text-white',
-  '/individuals': 'bg-[#034b48] hover:bg-darkerGreen text-white',
-  '/about': 'bg-white hover:bg-tGreen',
-  '/contact': 'bg-white hover:bg-darkerGreen hover:bg-tGreen text-offBlack',
-  default: 'bg-pl8Green hover:bg-tGreen text-034b48',
-}
-
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
@@ -77,19 +45,7 @@ export default function NavbarFinal() {
   const pathname = usePathname();
   const [isProductFlydownOpen, setProductFlydownOpen] = useState(false);
   const [isCompanyFlydownOpen, setCompanyFlydownOpen] = useState(false);
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const isFlydownOpen = isProductFlydownOpen || isCompanyFlydownOpen;
-
-  const getTextColor = (isButton: boolean = false): string => {
-    if (isScrolled || isFlydownOpen) {
-      return isButton ? 'text-white hover:text-darkGreen' : 'text-offBlack hover:text-darkGreen';
-    }
-    return isButton
-      ? 'text-white hover:text-tGreen'
-      : textColors[pathname] || textColors.default;
-  };
 
   // Checks to see if the user has scrolled
   useEffect(() => {
@@ -112,7 +68,7 @@ export default function NavbarFinal() {
               // business site
               <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center md:justify-end items-center gap-2 bg-[#034B48] md:-translate-x-0.5">
                 <div className="text-xs text-black font-medium leading-normal text-right">
-                  <span className="text-[#FFFFFF] text-[10px] font-normal leading-6">Already a PL8CHAT customer?{` `}
+                  <span className="text-[#FFFFFF] text-[10px] md:text-[12px] font-normal leading-6">Already a PL8CHAT customer?{` `}
                     <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-[10px] font-semibold leading-6">Log in</Link>
                   </span>
                 </div>
@@ -122,7 +78,7 @@ export default function NavbarFinal() {
               <div>
                 <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7EDE9]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
-                    <span className="text-black text-[10px] font-medium leading-normal whitespace-nowrap">
+                    <span className="text-black text-[10px] md:text-[12px] font-medium leading-normal whitespace-nowrap">
                       Have a parking community you want to connect?
                     </span>
                     <Link href={'/business'}>

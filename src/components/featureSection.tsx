@@ -13,7 +13,9 @@ import CautionIconSVG from '@/svgs/cautionIcon.svg'
 import ChatBubbleSVG from '@/svgs/chatBubble.svg'
 import PhoneIconSVG from '@/svgs/phoneIcon.svg'
 import AppStoreSVG from '@/svgs/AppleAppStore.svg'
+import AppStoreMobile from '@/svgs/AppleAppStoreMobile.svg'
 import GooglePlayStoreSVG from '@/svgs/googleplaystore.svg'
+import GooglePlayStoreMobile from '@/svgs/googleplaystoreMobile.svg'
 import FAQ from './faq'
 import Feature3 from './feature3'
 import { FC } from 'react'
@@ -236,7 +238,7 @@ const FeatureSection: FC = () => {
               onClick={() => setActiveMobileIndex(null)}
             />
           </div>
-          <div className="w-72 flex flex-col justify-start items-center gap-5">
+          <div className="w-72 flex flex-col justify-start items-center gap-6 md:gap-5">
             <div className="grid grid-cols-2 gap-x-4 gap-y-6">
               {featuresMobile.map((feature, index) => {
                 const isActive = activeMobileIndex === index;
@@ -248,7 +250,7 @@ const FeatureSection: FC = () => {
                     className={`flex flex-col justify-start items-center gap-2.5 cursor-pointer`}
                   >
                     <feature.icon className={isActive ? 'w-6 h-6 text-[#002823] font-bold' : 'w-6 h-6 text-[#4B5563]'} />
-                    <div className={`text-center ${isActive ? 'text-[#002823] font-semibold' : 'text-gray-900 font-normal'} text-xs leading-tight tracking-tight`}>
+                    <div className={`text-center ${isActive ? 'text-[#002823] font-medium' : 'text-gray-900 font-normal'} text-xs leading-[20px] tracking-tight`}>
                       {feature.description}
                     </div>
                   </div>
@@ -256,6 +258,14 @@ const FeatureSection: FC = () => {
               })}
             </div>
             {/* GOOGLE AND APPLE STORE BUTTONS GO HERE */}
+            <div className="flex justify-center items-center gap-4">
+              <Link href='#'>
+                <AppStoreMobile />
+              </Link>
+              <Link href='#'>
+                <GooglePlayStoreMobile />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

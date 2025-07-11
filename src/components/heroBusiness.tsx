@@ -19,7 +19,7 @@ export default function HeroBusiness() {
               <div className="hidden md:flex self-stretch justify-start text-white text-[22px] font-normal leading-[26px] tracking-tight">Manage parking in real time and <br /> communicate with vehicles through <br /> license plate messaging.</div>
             </div>
           </div>
-          <div className='flex flex-row justify-between gap-4'>
+          <div className='flex flex-row justify-between gap-[6px] md:gap-4'>
             <Link href={'#'} className='flex justify-center'>
               <Button variant='hero' onClick={open} className={`flex justify-center items-center`}>
                 Talk to sales
