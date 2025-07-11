@@ -154,7 +154,7 @@ export default function TalkToSales() {
   };
 
   return (
-    <div className="w-full h-auto md:h-[778px] p-4 md:p-[140px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-28 overflow-hidden">
+    <div className="w-full h-auto md:h-[677px] p-4 md:p-[90px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-[74px] overflow-hidden">
       <button
         onClick={close}
         className="sm:hidden absolute top-2.5 right-2.5 z-10 p-2 rounded-md text-gray-700 hover:text-black focus:outline-none focus:ring-none"
@@ -164,7 +164,7 @@ export default function TalkToSales() {
       <div className="md:flex-1 inline-flex flex-col justify-start items-start gap-3 md:gap-6">
         <div className="md:w-[292px] self-stretch flex flex-col justify-start items-center gap-0">
           <div className="self-stretch text-center md:text-start justify-center text-gray-900 text-2xl md:text-4xl font-medium leading-[60px]">Talk to sales </div>
-          <div className="self-stretch justify-start text-gray-900 text-xs md:text-sm font-normal leading-5">Speak to a member of our sales team by reaching out to us directly or filling out the contact form.</div>
+          <div className="self-stretch w-full justify-start text-gray-900 text-xs md:text-sm font-normal leading-5">Speak to a member of our sales team by reaching out to us directly or filling out the contact form.</div>
         </div>
         <div className="self-stretch flex flex-col justify-start items-start gap-4">
           <div className="self-stretch flex flex-col justify-start items-start gap-[10px] md:gap-4">
@@ -173,7 +173,7 @@ export default function TalkToSales() {
               const IconMobile = point.iconMobile;
               return (
                 <div key={index} className="inline-flex justify-start items-center gap-[10px] md:gap-5">
-                  <Icon className="w-5 h-5 text-gray-600 hidden md:flex" />
+                  <Icon className="w-6 h-6 text-gray-600 hidden md:flex" />
                   <IconMobile className="md:hidden w-5 h-5 text-gray-600" />
                   <div className="w-36 justify-start text-gray-600 text-xs md:text-[15px] font-normal leading-tight">
                     {point.text}
@@ -184,7 +184,7 @@ export default function TalkToSales() {
           </div>
         </div>
       </div>
-      <form ref={form} onSubmit={handleFormSubmit} className='w-full bg-[#E8F4F0] rounded-[25px]'>
+      <form ref={form} onSubmit={handleFormSubmit} className='w-full md:w-[497px] h-full bg-[#E8F4F0] rounded-[25px]'>
         {isSubmitted ? (
           <div className="w-full min-h-[497px] px-4 md:px-10 py-8 inline-flex flex-col justify-start items-center">
             <div className="w-96 h-80 inline-flex flex-col justify-center items-center gap-1">
@@ -200,7 +200,7 @@ export default function TalkToSales() {
             </div>
           </div>
         ) : (
-          <div className="w-full min-h-[457px] p-4 md:px-10 inline-flex flex-col justify-between items-center">
+          <div className="w-full h-[438px]  md:h-full p-4 md:px-10 inline-flex flex-col justify-between items-center">
             <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
               <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
                 <Input
