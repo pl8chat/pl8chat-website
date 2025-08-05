@@ -8,12 +8,12 @@ export default function Hero({ }) {
         <div className="w-[288px] md:w-[768px] flex flex-col justify-start items-start gap-10">
           <div className="self-stretch flex flex-col justify-start items-start gap-4">
             <div className="justify-start text-white text-[36px] md:text-6xl font-medium leading-[40px] md:leading-[58px]">Keep your car<br />safe and <br />connected.</div>
-            <div className="self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-tight">Connect with drivers, vehicles and <br />businesses all through license plates.</div>
+            <div className="self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-tight">Communicate with drivers,<br className='md:hidden' /> vehicles <br className='hidden md:flex' /> and businesses<br className='md:hidden' /> through license plates.</div>
           </div>
         </div>
         <Link href={'#'} className=''>
           <Button variant='hero' className={`text-nowrap flex justify-center items-center`}>
-            Get PL8CHAT
+            Get the app
           </Button>
         </Link>
         {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-white rounded-2xl inline-flex justify-center items-center overflow-hidden">

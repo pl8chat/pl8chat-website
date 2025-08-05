@@ -7,27 +7,27 @@ const faqs = [
   {
     id: 1,
     question: 'Is PL8CHAT safe?',
-    answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
+    answer: `Yes. We take your safety seriously. All users must verify their identity, and license plates are confirmed to match registered vehicles. You always control your visibility and privacy. PL8CHAT was built to promote help and kindness. Any misuse is not tolerated.`,
   },
   {
     id: 2,
-    question: 'What if someone says something rude or mean?',
-    answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
+    question: 'What if someone says something rude or inappropriate?',
+    answer: `We are a zero tolerance environment for unwanted communication. You can report anyone quickly, and those who misuse the app are suspended or banned. PL8CHAT is meant to help drivers, not harass them, and we’re constantly building tools to support that.`,
   },
   {
     id: 3,
-    question: 'Is my personal info public since I have my license plate?',
-    answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
+    question: 'If my license plate is on PL8CHAT, is my info public?',
+    answer: `No. PL8CHAT never shares your personal or private information. Only your license plate (if you’ve added a vehicle) and optional display name are visible on the app. No one can use your plate to find out who you are or access private information.`,
   },
   {
     id: 4,
-    question: 'One about I want to use it but dont want peeps msg me',
-    answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
+    question: 'Can I use PL8CHAT if I don’t have a car?',
+    answer: `Yes. You can sign up now and add a vehicle later. Many users join to help others or stay connected. You can still send alerts, messages, and support the community even without adding your own car right away.`,
   },
   {
     id: 5,
-    question: 'The question?',
-    answer: `And this is where the answer will go once i finalize them all and that will be shortly and then we will have a full great answer wow great amazing!`,
+    question: 'Can I use PL8CHAT without people messaging me?',
+    answer: `You’re in control. You can turn off private messages and only allow quick alerts. PL8CHAT is designed for helpful, purposeful connections, and we’ll keep adding meaningful features to give you the best experience.`,
   },
   // More questions...
 ]

@@ -54,7 +54,7 @@ const features: Feature[] = [
   {
     name: 'Create a free account',
     description:
-      'Signing up is quick and easy. Every member verifies their identity and license plate to keep our community safe and trusted.',
+      'Signing up is easy and free. And all members verify their identity and their vehicle’s license plate to keep our community safe and trusted.',
     href: '#',
     icon: CreateAccountSVG,
     iconSmall: CreateAccountSmallSVG,
@@ -62,7 +62,7 @@ const features: Feature[] = [
   {
     name: 'Search a license plate',
     description:
-      'See a vehicle you want to reach? are Just type in the license plate info the and if they’re a member you can the view their profile and connect. thett',
+      'See a vehicle you want to reach? Just enter their license plate digits and state. If they’re a member, you can view their profile and contact them.',
     href: '#',
     icon: SearchIconSVG,
     iconSmall: SearchIconSmallSVG,
@@ -70,7 +70,7 @@ const features: Feature[] = [
   {
     name: 'Start "PL8chattting"',
     description:
-      'Chat with the vehicle owner in real time to ask questions, offer help, and even prevent vehicle issues before they happen.',
+      'Now you can send quick alerts, start a chat convo or make an emergency call. It’s a fast, smart and safe way to keep drivers and vehicles connected.',
     href: '#',
     icon: ChatIconSVG,
     iconSmall: ChatIconSmallSVG,
@@ -156,9 +156,9 @@ const FeatureSection: FC = () => {
         <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
             <div className="flex flex-col justify-start items-start">
-              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">How to start connecting <span className='md:hidden'> <br /> </span> on PL8CHAT<span className='md:hidden text-[24px] font-medium leading-[34px]'>®</span></div>
+              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Start connecting on <br className='md:hidden' /> PL8CHAT<span className='md:hidden text-[24px] font-medium leading-[34px]'>®</span> <br className='hidden md:flex' /> in 3 easy steps:</div>
             </div>
-            <div className="text-start md:text-center justify-start text-[#002823] text-[40px] font-medium leading-10 hidden md:block">®</div>
+            <div className="text-start md:text-center justify-start text-[#002823] text-[30px] font-medium leading-10 hidden md:block -translate-x-4 md:-translate-y-0.5">®</div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start">
             <div className="self-stretch flex justify-start md:justify-center items-start gap-16">
