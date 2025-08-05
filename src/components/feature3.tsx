@@ -59,9 +59,6 @@ export default function Feature3() {
                         Learn more
                       </Link>
                     </div>
-                    <Link href={'#'} className="justify-start text-neutral-100 hover:text-[#E8F4F0] text-base font-medium leading-loose">
-                      Tell your admin
-                    </Link>
                   </div>
                 </div>
                 <div className="relative w-full md:w-[488px] max-w-[488px] min-h-[268px] md:h-[431px] rounded-bl-[25px] rounded-br-[25px] md:rounded-[25px] overflow-hidden">

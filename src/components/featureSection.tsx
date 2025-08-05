@@ -201,13 +201,13 @@ const FeatureSection: FC = () => {
                       onMouseEnter={() => { setActiveDesktopIndex(index); }}
                       onMouseLeave={() => { setActiveDesktopIndex(null); }}
                     >
-                      <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start">
+                      <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start w-full">
                         <div className="inline-flex justify-start items-center gap-3">
                           <div className='text-gray-900 text-[22px] font-bold leading-[30px] tracking-tight'>{feature.name}</div>
                           <feature.icon />
                         </div>
-                        <div className="self-stretch inline-flex justify-center items-center gap-2.5">
-                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-[30px] tracking-tight">{feature.description}</div>
+                        <div className="self-stretch inline-flex justify-center items-center gap-2.5 w-10/12">
+                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-[20px]">{feature.description}</div>
                         </div>
                       </div>
                     </div>

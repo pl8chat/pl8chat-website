@@ -6,19 +6,19 @@ interface Reviews {
 
 const reviews: Reviews[] = [
   {
-    name: 'Ashley',
-    location: 'Los Angeles',
-    review: 'I love how the app lets me yell and harrass drivers and be rude insult them all the time! its great!!',
+    name: 'Marco P',
+    location: 'Brooklyn, New York',
+    review: '“I got a message my tire was low. I had no idea. It might’ve saved me from a blowout or an accident!"',
   },
   {
-    name: 'Ashley',
-    location: 'Los Angeles',
-    review: 'I love how the app lets me yell and harrass drivers and be rude insult them all the time! its great!!',
+    name: 'Ben G',
+    location: 'Los Angeles, California',
+    review: '“Someone messaged me saying my lights were on. If not for PL8CHAT, my battery would’ve died.”',
   },
   {
-    name: 'Ashley',
-    location: 'Los Angeles',
-    review: 'I love how the app lets me yell and harrass drivers and be rude insult them all the time! its great!!',
+    name: 'Mona M',
+    location: 'Los Angeles, California',
+    review: '“PL8CHAT is so much faster and easier than leaving a note on someone’s windshield.”',
   }
 ]
 
