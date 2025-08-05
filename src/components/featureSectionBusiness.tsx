@@ -32,7 +32,7 @@ const features: Feature[] = [
   {
     name: 'Step 1. Create an account',
     description:
-      'The business owner or an authorized admin can create a free account to connect your location and start messaging anyone using the PL8CHAT app.',
+      'The business owner or an approved admin can create a free PL8CHAT account to connect the location and manage your parking environment.',
     href: '#',
     icon: CreateAccountBusinessSVG,
     iconMobile: CreateAccountBusinessMobileSVG,
@@ -40,7 +40,7 @@ const features: Feature[] = [
   {
     name: 'Step 2. Invite your parkers',
     description:
-      'PL8CHAT works best when everyone parking uses it Recommend or require residents, customers, or employees to join. Each person verifies their identity and vehicle for safety.',
+      'PL8CHAT works best when everyone signs up. Recommend or require your parking customers to join to keep your community safe and connected.',
     href: '#',
     icon: MembersBusinessSVG,
     iconMobile: MembersBusinessMobileSVG,
@@ -48,7 +48,7 @@ const features: Feature[] = [
   {
     name: 'Step 3. Start "PL8chatting"',
     description:
-      'Your all set! Now you can message your on-site vehicles, receive messages and encourage your parking guests to communicate with each other. ',
+      'Once your location is active, you can send & receive messages with on-site vehicles and be searchable in the app by your business name or address.',
     href: '#',
     icon: ChatIconBusinessSVG,
     iconMobile: ChatIconBusinessMobileSVG,
@@ -58,19 +58,19 @@ const features: Feature[] = [
 const features2: Feature2[] = [
   {
     description:
-      'Type in any license plate to message your on- site vehicles instantly',
+      'Type in any license plate to message on-site vehicles instantly',
   },
   {
     description:
-      'Let customers search and contact your business from the mobile app',
+      'Customers can search and contact your business from the PL8CHAT app',
   },
   {
     description:
-      'Encourage your parking customers to communicate with each other to solve problems.',
+      'Encourage your parking customers to communicate with each other to solve issues',
   },
   {
     description:
-      'Create more accountable vehicle behavior & build safer parking through communication',
+      'Create more accountable vehicle behavior and promote safer parking through communication',
   },
 ]
 

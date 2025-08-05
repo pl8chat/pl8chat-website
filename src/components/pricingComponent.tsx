@@ -24,13 +24,13 @@ const tiers: Tier[] = [
     id: 'single-location',
     href: 'https://pl8-chat-admin-v2.vercel.app/signup?userType=parking',
     price: 'Always Free',
-    description: 'If your business has parking you need to set up your official PL8CHAT line of communication today!',
+    description: 'If your business has parking you need a PL8CHAT line of communication. Get yours today!',
     extraText: 'text?',
     features: [
-      'Contact parked cars via license plates', 
+      'Message  parked cars via license plates', 
       'Receive messages from your customers', 
       'Keep your parking safe and connected', 
-      'More features coming soon!',
+      'Add admins to help you manage',
     ],
     buttonText: 'Sign up',
     mostPopular: true,
@@ -40,13 +40,12 @@ const tiers: Tier[] = [
     id: 'multiple-locations',
     href: '#',
     price: 'Free to start',
-    description: 'Great for managing multi-unit locations, including apartment communities and business chains.',
+    description: 'A great way to manage all your locations. Perfect for property managers or business chains.',
     extraText: 'Text goes here',
     features: [
-      'Create a private parking community',
-      'Group chats connect your parkers',
-      'Send announcements to everyone',
-      '24-hour support response time',
+      'Includes all the single location features',
+      'Manage all locations from one dashboard',
+      'More features coming soon...',
     ],
     buttonText: 'Sign up',
     mostPopular: false,
@@ -59,10 +58,9 @@ const tiers: Tier[] = [
     description: 'Need help customizing a parking experience or choosing the right product? Talk to our experts today!',
     extraText: 'Text goes here',
     features: [
-      'Create a private parking community',
-      '5 Group chats connect your parkers',
-      'Send announcements to everyone',
-      'Let admins help you manage',
+      'Custom help for your parking environment',
+      'Scalable solutions for larger operations',
+      'Enterprise features tailored to you',
     ],
     buttonText: 'Talk to Sales',
     mostPopular: false,
@@ -111,7 +109,7 @@ export default function PricingComponent() {
                   <span className="h-[43px] md:h-auto text-xl md:text-2xl font-medium tracking-tight text-[#101828]">
                     {tier.price}
                   </span>
-                  <p className="hidden md:flex text-xs text-[#111827]">{tier.extraText}</p>
+                  {/* <p className="hidden md:flex text-xs text-[#111827]">{tier.extraText}</p> */}
                   {/* {tier.price === 'Free' ? (
                     <div>
                       <span className="text-sm/6 font-semibold text-gray-600">/first year</span>
@@ -136,7 +134,7 @@ export default function PricingComponent() {
                 </Link>
                 <ul role="list" className="space-y-3 text-[11px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3 items-center">
+                    <li key={feature} className="flex gap-x-3 items-center text-nowrap">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />
                       {feature}
                     </li>
