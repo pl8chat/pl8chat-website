@@ -17,7 +17,9 @@ export default function pricingFeature() {
                   Talk to <span className='md:hidden px-1'>an</span> expert
                 </Button>
               </Link>
-              <div className="justify-start text-[#58FF89] text-base font-medium leading-loose">Learn more</div>
+              <Link href={'/business#faq'}>
+                <div className="justify-start text-[#58FF89] text-base font-medium leading-loose">Learn more</div>
+              </Link>
             </div>
           </div>
         </div>

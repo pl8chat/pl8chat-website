@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import FAQ from './faq'
@@ -76,6 +77,20 @@ const features2: Feature2[] = [
 
 export default function FeatureSectionBusiness() {
   const { open } = useModal()
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        // Delay to ensure layout is rendered
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [pathname])
 
   return (
     <div className='flex flex-col justify-center w-full'>

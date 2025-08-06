@@ -47,7 +47,7 @@ const tiers: Tier[] = [
       'Manage all locations from one dashboard',
       'More features coming soon...',
     ],
-    buttonText: 'Sign up',
+    buttonText: 'Talk to sales',
     mostPopular: false,
   },
   {
@@ -62,7 +62,7 @@ const tiers: Tier[] = [
       'Scalable solutions for larger operations',
       'Enterprise features tailored to you',
     ],
-    buttonText: 'Talk to Sales',
+    buttonText: 'Talk to sales',
     mostPopular: false,
   },
 ]
@@ -91,7 +91,7 @@ export default function PricingComponent() {
                 onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
                   selectedTierId === tier.id ? 'border border-darkGreen ring-0' : 'border border-white ring-0',
-                  'bg-white rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
+                  'bg-white w-[360px] rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
                 )}
               >
                 <div className="flex items-center justify-between gap-x-4">
@@ -125,7 +125,7 @@ export default function PricingComponent() {
                   aria-describedby={tier.id}
                 >
                   <Button variant='pricing' onClick={() => {
-                    if (tier.buttonText === 'Talk to Sales') {
+                    if (tier.buttonText === 'Talk to sales') {
                       open()
                     }
                   }}>
