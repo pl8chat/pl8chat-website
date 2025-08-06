@@ -207,7 +207,7 @@ const FeatureSection: FC = () => {
                           <feature.icon />
                         </div>
                         <div className="self-stretch inline-flex justify-center items-center gap-2.5 w-10/12">
-                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-[20px]">{feature.description}</div>
+                          <div className="flex-1 justify-start text-gray-900 text-xl font-normal leading-[20px] md:leading-[30px]">{feature.description}</div>
                         </div>
                       </div>
                     </div>
