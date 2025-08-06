@@ -13,8 +13,8 @@ export default function HeroBusiness() {
         <div className="w-full md:w-[1400px] h-[500px] md:h-[700px] px-[18px] md:px-[109px] pt-[130px] md:pt-[180px] pb-36 rounded-3xl inline-flex flex-col justify-start items-start gap-[30px] md:gap-10 bg-[linear-gradient(to_left,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.6)_0%,_rgba(0,0,0,0.6)_100%),url('/assets/images/parkedCars.png')] md:bg-[linear-gradient(to_left,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.6)_50%,_rgba(0,0,0,0.6)_100%),url('/assets/images/parkedCars.png')] bg-cover bg-center bg-no-repeat">
           <div className="md:w-[768px] flex flex-col justify-start items-start gap-10">
             <div className="self-stretch flex flex-col justify-start items-start gap-4">
-              <div className="justify-start text-white text-4xl md:text-6xl font-medium leading-[40px] md:leading-[58px]">The Smart and <br /> Social Parking <br className='md:hidden' /> Solution.</div>
-              <div className="w-[300px] md:w-[400px] self-stretch justify-start text-white text-[18px] font-normal leading-[26px] tracking-tight">Turn your parking environment <br className='md:hidden' /> into a safe and connected vehicle community through license <br className='md:hidden' /> plate communication.</div>
+              <div className="justify-start text-white text-4xl md:text-[48px] font-medium leading-[40px] md:leading-[58px]">The Smart and <br /> Social Parking <br className='md:hidden' /> Solution.</div>
+              <div className="w-[300px] md:w-auto self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[26px] tracking-tight">Turn your parking environment <br className='md:hidden' /> into a safe and <br className='hidden md:flex' /> connected vehicle community through license <br /> plate communication.</div>
             </div>
           </div>
           <div className='flex flex-row justify-between gap-[6px] md:gap-4'>
@@ -23,7 +23,7 @@ export default function HeroBusiness() {
                 Talk to sales
               </Button>
             </Link>
-            <Link href={'#'} className='flex justify-center'>
+            <Link href={'/business/pricing'} className='flex justify-center'>
               <Button variant='hero2' className={`flex justify-center items-center`}>
                 Join for free
               </Button>
