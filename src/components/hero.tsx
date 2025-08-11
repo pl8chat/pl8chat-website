@@ -11,7 +11,7 @@ export default function Hero({ }) {
             <div className="self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-normal">Communicate with drivers,<br className='md:hidden' /> vehicles <br className='hidden md:flex' /> and businesses<br className='md:hidden' /> through license plates.</div>
           </div>
         </div>
-        <Link href={'http://pl8chat.com/ios'} className=''>
+        <Link href={'/ios'} className=''>
           <Button variant='hero' className={`text-nowrap flex justify-center items-center`}>
             Get the app
           </Button>
