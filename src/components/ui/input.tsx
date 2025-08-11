@@ -16,8 +16,8 @@ const inputVariants = cva(
         checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
         promoCode: 'border-gray-300 rounded-md text-sm',
         newsletter: 'w-full max-w-[380px] rounded-[14px] h-[46px] border-gray-400',
-        talkToSales: 'w-full min-w-[284px] max-w-[400px] rounded-[14px] h-[46px] border-gray-400 hover:border-[#034B48] focus:border-[#034B48]',
-        errorState: 'w-full min-w-[284px] max-w-[400px] h-[46px] border-red-500 text-red-700 rounded-[14px] text-sm',
+        talkToSales: 'w-full min-w-[284px] max-w-[415px] rounded-[14px] h-[46px] border-gray-400 hover:border-[#034B48] focus:border-[#034B48]',
+        errorState: 'w-full min-w-[284px] max-w-[415px] h-[46px] border-red-500 text-red-700 rounded-[14px] text-sm',
       },
     },
     defaultVariants: {

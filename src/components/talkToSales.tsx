@@ -184,7 +184,7 @@ export default function TalkToSales() {
           </div>
         </div>
       </div>
-      <form ref={form} onSubmit={handleFormSubmit} className='w-full md:w-[497px] h-full bg-[#E8F4F0] rounded-[25px]'>
+      <form ref={form} onSubmit={handleFormSubmit} className='w-full md:w-[479px] h-full bg-[#E8F4F0] rounded-[25px]'>
         {isSubmitted ? (
           <div className="w-full min-h-[497px] px-4 md:px-10 py-8 inline-flex flex-col justify-start items-center">
             <div className="w-96 h-80 inline-flex flex-col justify-center items-center gap-1">
@@ -200,9 +200,9 @@ export default function TalkToSales() {
             </div>
           </div>
         ) : (
-          <div className="w-full h-[438px]  md:h-full p-4 md:px-10 inline-flex flex-col justify-between items-center">
-            <div className="w-full max-w-[400px] min-w-[284px] flex flex-col gap-1">
-              <div className="md:w-auto flex flex-col justify-start items-start gap-2.5">
+          <div className="w-full h-[438px] md:h-full p-4 md:p-8 inline-flex flex-col justify-between items-center">
+            <div className="w-full max-w-[415px] min-w-[284px] flex flex-col gap-1">
+              <div className="md:w- flex flex-col justify-start items-start gap-2.5">
                 <Input
                   variant={(errors.fullName || (fullNameTouched && !formData.fullName.trim())) ? 'errorState' : 'talkToSales'}
                   name='name'
@@ -232,12 +232,12 @@ export default function TalkToSales() {
               </div>
             </div>
             <div className='flex flex-col gap-[10px] md:gap-4'>
-              <div className='w-full max-w-[400px] flex justify-center'>
+              <div className='w-full max-w-[415px] flex justify-center'>
                 <Button type='submit' variant='talkToSales' className={`w-full`}>
                   <div className="justify-start text-white text-sm font-medium leading-normal">Submit</div>
                 </Button>
               </div>
-              <div className="w-full max-w-[400px] justify-start leading-[18px] text-[9px]"><span className="text-gray-900 font-normal leading-none">By submitting my data, I consent to PL8CHAT collecting, processing and storing my information in accordance with our</span><span className="text-emerald-900 font-normal leading-none"> </span><Link href={'https://www.pl8chat.com/privacy'} className="text-emerald-900 font-normal underline leading-none">Privacy Policy</Link><span className="text-emerald-900 font-normal underline leading-none">. </span></div>
+              <div className="w-full max-w-[415px] justify-start leading-[18px] text-[9px]"><span className="text-gray-900 font-normal leading-none">By submitting my data, I consent to PL8CHAT collecting, processing and storing my information in accordance with our</span><span className="text-emerald-900 font-normal leading-none"> </span><Link href={'https://www.pl8chat.com/privacy'} className="text-emerald-900 font-normal underline leading-none">Privacy Policy</Link><span className="text-emerald-900 font-normal underline leading-none">. </span></div>
             </div>
           </div>
         )}
