@@ -156,9 +156,9 @@ const FeatureSection: FC = () => {
         <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
             <div className="flex flex-col justify-start items-start">
-              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Start connecting on <br className='md:hidden' /> PL8CHAT<span className='md:hidden text-[24px] font-medium leading-[34px]'>®</span> <br className='hidden md:flex' /> in 3 easy steps:</div>
+              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Start connecting on <br className='md:hidden' /> PL8CHAT<span className='md:hidden text-[20px] font-medium leading-[34px] relative -top-[3px]'>®</span> <br className='hidden md:flex' /> in 3 easy steps:</div>
             </div>
-            <div className="text-start md:text-center justify-start text-[#002823] text-[30px] font-medium leading-10 hidden md:block -translate-x-4 md:-translate-y-0.5">®</div>
+            <div className="text-start md:text-center justify-start text-[#002823] text-[30px] font-medium leading-10 hidden md:block -translate-x-4 md:translate-y-[1px]">®</div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start">
             <div className="self-stretch flex justify-start md:justify-center items-start gap-16">

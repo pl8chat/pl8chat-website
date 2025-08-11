@@ -185,7 +185,7 @@ export default function FeatureSectionBusiness() {
         <div className="w-full h-[288px] md:h-96 pb-10 md:py-[60px] left-0 top-[130px] md:top-[130px] absolute bg-[#F0EDE5] inline-flex flex-col justify-end items-center gap-7">
           <div className="self-stretch flex flex-col justify-center items-center gap-14">
             <div className="self-stretch flex flex-col justify-start items-start gap-7">
-              <div className="self-stretch text-center text-[#002823] text-2xl md:text-[50px] font-medium leading-[34px] md:leading-[65px]">Join PL8CHAT and help get <br />Every Car Connected®</div>
+              <div className="self-stretch text-center text-[#002823] text-2xl md:text-[50px] font-medium leading-[34px] md:leading-[65px]">Join PL8CHAT and help get <br />Every Car Connected<span className='text-[35px] relative -top-2.5'>®</span></div>
             </div>
           </div>
         </div>
