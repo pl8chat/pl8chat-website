@@ -75,7 +75,7 @@ export default function Reviews() {
               key={index}
               className={`${baseClasses} ${isBusinessPage ? businessLayout : consumerLayout}`}
             >
-              <div className={`${isBusinessPage ? 'text-gray-900 text-lg md:text-[22px] font-normal leading-[26px]' : 'self-stretch flex-1 justify-start text-gray-900 text-lg md:text-[22px] font-normal leading-[26px]'}`}>
+              <div className={`${isBusinessPage ? '' : 'self-stretch flex-1 justify-start'} font-normal leading-[26px] text-gray-900 text-lg md:text-[22px]`}>
                 {review.review}
               </div>
               <div className={`${isBusinessPage ? '' : 'justify-start'}`}>
