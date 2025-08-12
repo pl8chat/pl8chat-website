@@ -94,7 +94,7 @@ export default function FeatureSectionBusiness() {
 
   return (
     <div className='flex flex-col justify-center w-full'>
-      <div className="self-stretch px-4 pt-10 md:pt-20 pb-5 inline-flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
+      <div className="self-stretch px-6 pt-10 md:pt-20 pb-5 inline-flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
         <div className="self-stretch flex flex-col justify-start items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] inline-flex justify-center items-start">
             <div className="inline-flex flex-col justify-start items-center gap-1">
@@ -133,7 +133,7 @@ export default function FeatureSectionBusiness() {
             <div className="md:w-[536px] pr-[14px] inline-flex flex-col justify-start items-start gap-2 md:gap-0">
               <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-6">
                 <div className="self-stretch flex flex-col justify-start items-start gap-4 md:gap-5">
-                  <div className="hidden md:flex self-stretch justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[48px] pb-[50px] md:pb-12">Safer, smarter parking for you and your business</div>
+                  <div className="hidden md:flex self-stretch justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[48px] pb-[50px] md:pb-12">Safer, smarter parking for your business</div>
                 </div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-center gap-4 md:gap-[35px]">
@@ -158,14 +158,14 @@ export default function FeatureSectionBusiness() {
               </div>
             </div>
             <div className='rounded-3xl'>
-              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-2 md:pb-12">Safer, smarter parking for <br /> you and your business</div>
+              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-2 md:pb-12">Safer, smarter parking <br /> for your business</div>
               {/* Mobile */}
               <Image
                 src={'/assets/images/featureBusinessMobile.png'}
                 alt="Feature Section Image"
                 width={342}
                 height={295}
-                className='md:hidden'
+                className='md:hidden translate-x-5'
               />
               {/* Desktop */}
               <Image
@@ -173,7 +173,7 @@ export default function FeatureSectionBusiness() {
                 alt="Feature Section Image"
                 width={785}
                 height={675}
-                className='hidden md:flex -translate-y-[26px]'
+                className='hidden md:flex translate-y-[5px]'
               />
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function FeatureSectionBusiness() {
         <div className="w-full h-[288px] md:h-96 pb-10 md:py-[60px] left-0 top-[130px] md:top-[130px] absolute bg-[#F0EDE5] inline-flex flex-col justify-end items-center gap-7">
           <div className="self-stretch flex flex-col justify-center items-center gap-14">
             <div className="self-stretch flex flex-col justify-start items-start gap-7">
-              <div className="self-stretch text-center text-[#002823] text-2xl md:text-[50px] font-medium leading-[34px] md:leading-[65px]">Join PL8CHAT and help get <br />Every Car Connected<span className='text-[35px] relative -top-2.5'>®</span></div>
+              <div className="self-stretch text-center text-[#002823] text-2xl md:text-[50px] font-medium leading-[34px] md:leading-[65px]">Join PL8CHAT and help get <br />Every Car Connected<span className='text-xl md:text-[35px] relative -top-1 md:-top-2.5'>®</span></div>
             </div>
           </div>
         </div>

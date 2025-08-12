@@ -91,7 +91,7 @@ export default function PricingComponent() {
                 onClick={() => setSelectedTierId(tier.id)} // Set selected tier ID on click
                 className={classNames(
                   selectedTierId === tier.id ? 'border border-darkGreen ring-0' : 'border border-white ring-0',
-                  'bg-white w-[360px] rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
+                  'bg-white  rounded-[25px] px-6 py-[30px] md:p-10 cursor-pointer flex flex-col gap-[14px] md:gap-8',
                 )}
               >
                 <div className="flex items-center justify-between gap-x-4">
@@ -132,7 +132,7 @@ export default function PricingComponent() {
                     {tier.buttonText}
                   </Button>
                 </Link>
-                <ul role="list" className="space-y-3 text-[11px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
+                <ul role="list" className="space-y-3 text-[12px] md:text-sm/6 text-gray-600 pt-[2px] md:pt-0">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3 items-center text-nowrap">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-darkGreen" />

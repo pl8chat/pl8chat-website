@@ -89,8 +89,8 @@ export default function FAQ({ }) {
               }`}
           >
             <button onClick={() => handleAccordion(faq.id)} className="flex w-full items-center justify-between text-left text-gray-100">
-              <span className="text-[18px] md:text-[28px] font-medium leading-7">{faq.question}</span>
-              <span className="ml-6 flex h-7 items-center">
+              <span className="text-[18px] md:text-[28px] font-medium leading-7 ">{faq.question}</span>
+              <span className="ml-4 flex h-7 items-center">
                 {openIds.includes(faq.id) ? <MinusIconSVG /> : <PlusIconSVG />}
               </span>
             </button>
