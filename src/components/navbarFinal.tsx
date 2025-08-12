@@ -69,7 +69,7 @@ export default function NavbarFinal() {
               <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center md:justify-end items-center gap-2 bg-[#034B48] md:-translate-x-0.5">
                 <div className="text-xs text-black font-medium leading-normal text-right">
                   <span className="text-[#FFFFFF] text-[10px] md:text-[12px] font-normal leading-6">Already a PL8CHAT customer?{` `}
-                    <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-[10px] font-semibold leading-6">Log in</Link>
+                    <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-[10px] md:text-[12px] font-semibold leading-6">Log in</Link>
                   </span>
                 </div>
               </div>

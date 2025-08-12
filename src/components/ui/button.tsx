@@ -61,7 +61,7 @@ const variants = {
     'self-stretch w-full h-[40px] md:h-[46px] px-[11px] py-[9px] bg-[#034B48] rounded-[14px] shadow justify-center items-center inline-flex text-white text-sm font-medium leading-[24px]'
   ),
   hero: clsx(
-    'rounded-[15px] w-[125px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-white hover:bg-[#E8F4F0] text-[12px] md:text-[15px] font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+    'rounded-[15px] w-[120px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-white hover:bg-[#E8F4F0] text-[12px] md:text-[15px] font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
   ),
   hero2: clsx(
     'rounded-[15px] w-[125px] md:w-[140px] h-[38px] md:h-[46px] px-4 py-[13px] bg-none text-[12px] md:text-[15px] text-white border font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
