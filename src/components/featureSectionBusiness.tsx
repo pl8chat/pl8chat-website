@@ -98,7 +98,7 @@ export default function FeatureSectionBusiness() {
         <div className="self-stretch flex flex-col justify-start items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] inline-flex justify-center items-start">
             <div className="inline-flex flex-col justify-start items-center gap-1">
-              <div className="md:text-center justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Start connecting with your parking <br className='hidden md:flex' /> customers in 3 easy steps:</div>
+              <div className="md:text-center justify-start text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Connect with your parking customers<br className='hidden md:flex' /> in 3 easy steps:</div>
             </div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start">
@@ -158,7 +158,7 @@ export default function FeatureSectionBusiness() {
               </div>
             </div>
             <div className='rounded-3xl'>
-              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-2 md:pb-12">Safer, smarter parking <br /> for your business</div>
+              <div className="md:hidden self-stretch justify-start text-[#002823] text-2xl font-medium leading-[34px] pb-4 md:pb-12">A better way to connect <br /> your parking</div>
               {/* Mobile */}
               <Image
                 src={'/assets/images/featureBusinessMobile.png'}
