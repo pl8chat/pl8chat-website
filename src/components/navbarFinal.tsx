@@ -76,25 +76,14 @@ export default function NavbarFinal() {
             ) : (
               // consumer site
               <div>
-                <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#B8D5D0] md:bg-[#D7EDE9]">
+                <div className="h-[44px] w-full self-stretch px-4 md:px-20 flex justify-center md:justify-end items-center bg-[#B8D5D0] md:bg-[#D7EDE9]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-row justify-center items-center">
                     <div className="text-black text-[11px] md:text-[13px] font-medium leading-normal whitespace-nowrap">
-                      Connect your parking with 
+                      Connect your parking with
                       <Link href={'/business'}>
-                        <span className="text-black text-[11px] md:text-[13px] font-normal underline leading-normal"> PL8CHAT for Business</span>
+                        <span className="text-black text-[11px] md:text-[13px] font-normal leading-normal"> <span className='underline'>PL8CHAT for Business</span></span>
                       </Link>
                     </div>
-                    
-                  </div>
-                </div>
-
-                {/* desktop */}
-                <div className="hidden md:flex h-[44px] w-full self-stretch px-20 justify-end items-center gap-2 bg-[#E8F4F0]">
-                  <div className="text-xs text-black font-medium leading-normal text-right">
-                    <span className="text-black text-xs font-medium leading-normal">Have a parking community you want to connect? Explore </span>
-                    <Link href={'/business'}>
-                      <span className="text-black text-xs font-bold leading-normal">PL8CHAT for Business.</span>
-                    </Link>
                   </div>
                 </div>
               </div>
