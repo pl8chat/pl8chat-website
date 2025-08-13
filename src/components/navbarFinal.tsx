@@ -77,13 +77,14 @@ export default function NavbarFinal() {
               // consumer site
               <div>
                 <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7EDE9]">
-                  <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
-                    <span className="text-black text-[11px] md:text-[13px] font-medium leading-normal whitespace-nowrap">
-                      Have a parking community you want to connect?
-                    </span>
-                    <Link href={'/business'}>
-                      <span className="text-black text-[11px] md:text-[13px] font-bold leading-normal">Explore PL8CHAT for Business.</span>
-                    </Link>
+                  <div className="text-xs text-black font-medium leading-normal text-center flex flex-row justify-center items-center">
+                    <div className="text-black text-[11px] md:text-[13px] font-medium leading-normal whitespace-nowrap">
+                      Connect your parking with 
+                      <Link href={'/business'}>
+                        <span className="text-black text-[11px] md:text-[13px] font-normal underline leading-normal"> PL8CHAT for Business</span>
+                      </Link>
+                    </div>
+                    
                   </div>
                 </div>
 
