@@ -31,7 +31,7 @@ const navigation: NavigationItems[] = [
 ]
 
 const navigationBusiness: NavigationItemsBusiness[] = [
-  { name: 'View plans', href: '/business/pricing', current: false },
+  { name: 'View plans', href: '/business/plans', current: false },
   { name: 'FAQ', href: '/business#faq', current: false },
   { name: 'Contact us', href: '/business/contact', current: false },
 ]
@@ -68,8 +68,8 @@ export default function NavbarFinal() {
               // business site
               <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center md:justify-end items-center gap-2 bg-[#034B48] md:-translate-x-0.5">
                 <div className="text-xs text-black font-medium leading-normal text-right">
-                  <span className="text-[#FFFFFF] text-[10px] md:text-[12px] font-normal leading-6">Already a PL8CHAT customer?{` `}
-                    <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-[10px] md:text-[12px] font-semibold leading-6">Log in</Link>
+                  <span className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal leading-6">Already a PL8CHAT customer?{` `}
+                    <Link href={'https://pl8-chat-admin-v2.vercel.app/login'} className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal leading-6">Log in</Link>
                   </span>
                 </div>
               </div>
@@ -78,11 +78,11 @@ export default function NavbarFinal() {
               <div>
                 <div className="md:hidden h-[44px] w-full self-stretch px-4 flex justify-center items-center bg-[#D7EDE9]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-col justify-center items-center">
-                    <span className="text-black text-[10px] md:text-[12px] font-medium leading-normal whitespace-nowrap">
+                    <span className="text-black text-[11px] md:text-[13px] font-medium leading-normal whitespace-nowrap">
                       Have a parking community you want to connect?
                     </span>
                     <Link href={'/business'}>
-                      <span className="text-black text-[10px] font-bold leading-normal">Explore PL8CHAT for Business.</span>
+                      <span className="text-black text-[11px] md:text-[13px] font-bold leading-normal">Explore PL8CHAT for Business.</span>
                     </Link>
                   </div>
                 </div>
