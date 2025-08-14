@@ -78,7 +78,7 @@ export default function NavbarFinal() {
               <div>
                 <div className="h-[44px] w-full self-stretch px-4 md:px-20 flex justify-center md:justify-end items-center bg-[#B8D5D0] md:bg-[#D7EDE9]">
                   <div className="text-xs text-black font-medium leading-normal text-center flex flex-row justify-center items-center">
-                    <div className="text-black text-[11px] md:text-[13px] font-medium leading-normal whitespace-nowrap">
+                    <div className="text-black text-[11px] md:text-[13px] font-normal leading-normal whitespace-nowrap">
                       Connect your parking with
                       <Link href={'/business'}>
                         <span className="text-black text-[11px] md:text-[13px] font-normal leading-normal"> <span className='underline'>PL8CHAT for Business</span></span>
