@@ -154,7 +154,7 @@ export default function TalkToSales() {
   };
 
   return (
-    <div className="w-[1061px] md:w-full h-auto md:h-[677px] p-4 md:p-[90px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-[24px] overflow-hidden">
+    <div className="w-full h-auto md:h-[677px] p-4 md:p-[90px] bg-white rounded-[25px] flex flex-col md:flex-row justify-start items-start gap-[10px] md:gap-[24px] overflow-hidden">
       <button
         onClick={close}
         className="sm:hidden absolute top-2.5 right-2.5 z-10 p-2 rounded-md text-gray-700 hover:text-black focus:outline-none focus:ring-none"
