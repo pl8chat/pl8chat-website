@@ -178,23 +178,23 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile drop down menu */}
-          <Disclosure.Panel className="sm:hidden w-full">
-            <div className="space-y-1 pb-2 pt-2">
+          <Disclosure.Panel className="sm:hidden flex justify-end">
+            <div className="flex flex-wrap flex-col gap-2 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
-                  className="block w-full rounded-md py-2 text-base font-medium text-black"
+                  className={classNames('rounded-md px-3 py-2 text-base font-medium text-white')}
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
             </div>
           </Disclosure.Panel>
-        </div>
+
+        </>
       )}
     </Disclosure>
   );

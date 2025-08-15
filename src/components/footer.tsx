@@ -98,82 +98,24 @@ const navigation: Navigation = {
   ],
 };
 
-const LogoSVG = () => {
-  return (
-    <svg
-      width="41"
-      height="40"
-      viewBox="0 0 41 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M40.1494 19.8C40.1494 30.7352 31.1617 39.6 20.0747 39.6L13.9408 39.6V28.6L20.0747 28.6C25.0022 28.6 28.9968 24.6601 28.9968 19.8C28.9968 14.9399 25.0022 11 20.0747 11C15.1472 11 11.1526 14.9399 11.1526 19.8V39.6L0 39.6V19.8C0 8.86476 8.98775 0 20.0747 0C31.1617 0 40.1494 8.86476 40.1494 19.8Z"
-        fill="white"
-      />
-    </svg>
-  );
-};
-
-
 export default function Footer() {
-
   return (
-    <footer className="md:h-[447px] px-4 md:px-8 pt-[82px] flex-col justify-start items-start gap-16 inline-flex bg-gray-900 w-full">
-      <div className="md:h-[220px] relative w-full flex justify-between">
-        <div className="md:h-[220px] left-0 top-0 flex-col justify-start items-start gap-8 inline-flex w-full">
-          <div className='md:h-[220px]'>
-            <LogoSVG />
-          </div>
-          <div className="flex flex-col gap-6 w-full">
-            <div className=" text-lg text-white">
-              <div className="flex flex-col md:flex-row justify-between w-full gap-6 md:gap-0">
-                <div className="flex flex-col font-normal text-[18px] leading-8">
-                  <div>Every</div>
-                  <div>Car</div>
-                  <div>Connected<span className={`${inter.className}`}>™</span></div>
-                </div>
-                <div className="md:hidden flex gap-x-6">
-                  {navigation.social.map((item) => (
-                    <Link key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                      <span className="sr-only">{item.name}</span>
-                      {item.icon && <item.icon aria-hidden="true" className="h-6 w-6" />}
-                    </Link>
-                  ))}
-                </div>
-                <div className="flex gap-8 md:-translate-x-3 pt-6 md:pt-0">
-                  <div className="basis-1/2 w-[206px] self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
-                    <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Company</div>
-                    <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-                      <ul role="list" className="flex flex-col gap-4">
-                        {navigation.company.map((item) => (
-                          <li key={item.name}>
-                            <Link href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="basis-1/2 self-stretch flex-col justify-start items-end gap-4 inline-flex pt-1.5">
-                    <div className="self-stretch flex justify-start text-white text-[14px] font-semibold leading-tight tracking-wide">Legal</div>
-                    <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
-                      <ul role="list" className="flex flex-col gap-4">
-                        {navigation.legal.map((item) => (
-                          <li key={item.name}>
-                            <Link href={item.href} className="text-[14px] leading-6 text-gray-300 hover:text-white">
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <footer aria-labelledby="footer-heading" className="bg-gray-900">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
+      <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="flex justify-between xl:gap-8">
+          <div className="">
+            <img
+              alt="Pl8CHAT logo"
+              src="/assets/images/logo.png"
+              className="h-10 lg:h-12"
+            />
+            <div className="font-semibold text-lg pb-6 pl-1">
+              <p>Every</p>
+              <p>Car</p>
+              <p>Connected</p>
             </div>
             <div className="hidden md:flex gap-x-6">
               {navigation.social.map((item) => (
@@ -206,6 +148,9 @@ export default function Footer() {
           <div className="self-stretch pt-8 justify-between items-start inline-flex">
             <div className="w-[1632px] text-gray-500 text-xs font-normal leading-normal">© 2024 PL8CHAT, LLC. All rights reserved<br /></div>
           </div>
+        </div>
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-gray-300">&copy; 2024 PL8CHAT, LLC. All rights reserved</p>
         </div>
       </div>
     </footer>

@@ -95,6 +95,7 @@ export default function MailingListSubForm() {
   return (
     <div>
       {isSubmitted ? (
+<<<<<<< HEAD
         <div className="md:w-[457px] h-[162px] md:h-[197px] bg-white rounded-lg shadow flex-col justify-start items-start inline-flex">
           <div className="self-stretch h-[54.34px] p-4 flex justify-center items-center">
             <div className="self-stretch flex justify-between items-center w-full">
@@ -108,9 +109,53 @@ export default function MailingListSubForm() {
                 <div className="w-5 h-5 relative">
                   <div className="w-5 h-5"></div>
                 </div>
+=======
+        <div className="text-center p-5 lg:p-10 bg-white rounded-md">
+          <h3 className="text-lg font-semibold leading-6 text-black">Thank you for subscribing!</h3>
+          <p className="mt-2 text-lg leading-6 text-gray-600">
+            We’ve added you to our mailing list. Stay tuned for updates and news.
+          </p>
+        </div>
+      ) : (
+        <form ref={form} onSubmit={handleFormSubmit} className='bg-white p-5 py-6 lg:p-5 lg:pb-14 rounded-md' noValidate>
+          <div className="xl:mt-0 relative">
+            <h3 className="text-xl font-semibold leading-6 text-black py-1">Join our mailing list</h3>
+            <p className="mt-2 text-lg leading-6 text-gray-600">
+              Stay up to date on our product launch and other important news
+            </p>
+            <div className="mt-6 sm:flex sm:max-w-md">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="john@example.com"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  if (email.length > 0) {
+                    setEmailTouched(true);
+                  }
+                }}
+                onBlur={() => setEmailTouched(true)}
+                className={`w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-darkGreen sm:w-64 sm:text-sm sm:leading-6 xl:w-full ${emailTouched && !isValidEmail(email) ? 'ring-2 ring-red-500 focus:ring-red-500' : ''}`}
+              />
+              <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="flex w-full items-center justify-center rounded-md bg-darkGreen px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-darkerGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Subscribe
+                </button>
+>>>>>>> 60691525586902505247a9e055ce610360e14092
               </div>
             </div>
           </div>
+<<<<<<< HEAD
           <div className="self-stretch h-px bg-gray-200"></div>
           <div className="self-stretch p-4 flex-col justify-start items-center gap-2 flex">
             <div className="self-stretch flex-col justify-start items-start gap-4 flex">
@@ -183,6 +228,10 @@ export default function MailingListSubForm() {
               </div>
               <div className="self-stretch text-center text-[#00695c] md:pt-4 text-[10px] font-normal leading-normal"><br />By clicking subscribe you agree to receive marketing emails from PL8CHAT</div>
             </div>
+=======
+          <div className='absolute bottom-5 left-8 lg:left-11 lg:bottom-8 text-gray-600 pt-5 mt-7 text-[8.5px] md:text-[11px] w-full'>
+            By clicking subscribe you agree to receive marketing emails from PL8CHAT
+>>>>>>> 60691525586902505247a9e055ce610360e14092
           </div>
         </form>
       )}
