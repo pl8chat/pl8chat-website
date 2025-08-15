@@ -50,7 +50,7 @@ export default function Reviews() {
   const reviewsToDisplay = isBusinessPage ? businessReviews : reviews
 
   return (
-    <div className="self-stretch flex flex-col justify-start items-center md:gap-[60px] pb-10 md:py-20">
+    <div className="max-w-[1440px] mx-auto self-stretch flex flex-col justify-start items-center md:gap-[60px] pb-10 md:py-20">
       <div className="self-stretch md:px-28 flex flex-col justify-start items-start gap-4">
         <div className="self-stretch justify-start pt-10 md:pt-0 pl-[34px] md:pl-0 pr-[24px] pb-[30px] md:pb-0 text-[#002823] text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">
           {isBusinessPage ?

@@ -29,7 +29,7 @@ const reviews: ReviewPosts[] = [
 
 export default function Feature3() {
   return (
-    <div className="md:pb-5 bg-white rounded-tl-[25px] rounded-bl-[25px] rounded-br-[25px] inline-flex flex-col justify-start items-center">
+    <div className="md:pb-5 bg-white rounded-tl-[25px] rounded-bl-[25px] rounded-br-[25px] flex flex-col justify-start items-center">
       <Reviews />
       <div className="w-full max-w-[1400px] rounded-[25px] flex flex-col justify-start items-start">
         <div className="w-full overflow-x-hidden">
