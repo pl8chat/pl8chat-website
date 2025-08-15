@@ -22,7 +22,7 @@ const tiers: Tier[] = [
   {
     name: 'Single location',
     id: 'single-location',
-    href: 'https://pl8-chat-admin-v2.vercel.app/signup?userType=parking',
+    href: 'https://account.pl8chat.com/signup?userType=parking',
     price: 'Always Free',
     description: 'If your business has parking you need a PL8CHAT line of communication. Get yours today!',
     extraText: 'text?',
