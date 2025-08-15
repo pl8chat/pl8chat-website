@@ -150,7 +150,7 @@ export default function FeatureSectionBusiness() {
                     </div>
                   </div>
                 ))}
-                <Link href={'/business/pricing'} className='flex justify-center'>
+                <Link href={'/business/plans'} className='flex justify-center'>
                   <Button variant={`seePlans`}>
                     See plans
                   </Button>
@@ -207,7 +207,7 @@ export default function FeatureSectionBusiness() {
                   Talk to sales
                 </Button>
                 <Link
-                  href={`/business/pricing`}
+                  href={`/business/plans`}
                   className="text-[#58FF89] hover:text-[#38E06B] text-[15px] font-medium leading-loose"
                 >
                   Learn more

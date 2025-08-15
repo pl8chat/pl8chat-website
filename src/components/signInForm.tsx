@@ -18,7 +18,7 @@ export default function SignInForm() {
             <div className="self-stretch justify-start items-center gap-1 inline-flex">
               <div className="text-gray-900 text-sm font-normal leading-tight">Not a customer? </div>
               <div className="justify-start items-center flex">
-                <Link href={`/pricing`} className="text-[#034b48] text-sm font-normal underline leading-tight">See our pricing plans</Link>
+                <Link href={`/plans`} className="text-[#034b48] text-sm font-normal underline leading-tight">See our pricing plans</Link>
               </div>
             </div>
           </div>

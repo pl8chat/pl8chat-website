@@ -23,7 +23,7 @@ export default function HeroBusiness() {
                 Talk to sales
               </Button>
             </Link>
-            <Link href={'/business/pricing'} className='flex justify-center'>
+            <Link href={'/business/plans'} className='flex justify-center'>
               <Button variant='hero2' className={`flex justify-center items-center`}>
                 Join for free
               </Button>

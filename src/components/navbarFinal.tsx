@@ -148,7 +148,7 @@ export default function NavbarFinal() {
                         <Button variant="talkToSalesInverse" onClick={openModal}>
                           Talk to sales
                         </Button>
-                        <Link href={`/business/pricing`}>
+                        <Link href={`/business/plans`}>
                           <Button variant="getStarted">
                             Get started
                           </Button>
@@ -163,7 +163,7 @@ export default function NavbarFinal() {
                       <div className={`text-black leading-[24px] text-sm`}>
                         Call us: 1(310)PL8-CHAT
                       </div>
-                      <Link href={`https://pl8-chat-admin-v2.vercel.app/login`}
+                      <Link href={`/login`}
                         className={'py-2 text-black'}>
                         <Button variant="SignIn">
                           Sign in
