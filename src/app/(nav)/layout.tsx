@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
-import NavbarFinal from "../../components/navbarFinal";
-import FooterFinal from "../../components/footerFinal";
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 import { ModalProvider } from "../../components/modalContext";
 import TalkToSalesModal from '@/components/talkToSalesModal'
 import "../globals.css";
@@ -30,14 +30,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${inter.className} antialiased`}>
         <ModalProvider>
           <header>
-            <NavbarFinal />
+            <Navbar />
           </header>
           <div className="pt-[102px] md:pt-[114px] bg-white">
             {children}
             <Analytics />
             <TalkToSalesModal />
           </div>
-          <FooterFinal />
+          <Footer />
         </ModalProvider>
       </body>
     </html>

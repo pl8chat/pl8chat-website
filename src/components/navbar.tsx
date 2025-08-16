@@ -40,7 +40,7 @@ function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavbarFinal() {
+export default function Navbar() {
   const { open: openModal } = useModal();
   const pathname = usePathname();
   const [isProductFlydownOpen, setProductFlydownOpen] = useState(false);

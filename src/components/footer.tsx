@@ -182,7 +182,7 @@ const FooterLogo = () => {
   )
 }
 
-export default function FooterFinal() {
+export default function Footer() {
   const pathname = usePathname();
   const nav = pathname.includes('/business') ? businessNavigation : navigation;
 
