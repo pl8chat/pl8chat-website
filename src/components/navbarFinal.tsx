@@ -163,7 +163,7 @@ export default function NavbarFinal() {
                       <div className={`text-black leading-[24px] text-sm`}>
                         Call us: 1(310)PL8-CHAT
                       </div>
-                      <Link href={`/login`}
+                      <Link href={`https://account.pl8chat.com/login`}
                         className={'py-2 text-black'}>
                         <Button variant="SignIn">
                           Sign in
