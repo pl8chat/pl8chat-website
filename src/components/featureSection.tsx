@@ -68,7 +68,7 @@ const features: Feature[] = [
     iconSmall: SearchIconSmallSVG,
   },
   {
-    name: 'Step 3. Start "PL8chattting"',
+    name: 'Step 3. Start "PL8chatting"',
     description:
       'Now you can send quick alerts, start a chat convo or make an emergency call. It’s a fast, smart and safe way to keep drivers and vehicles connected.',
     href: '#',
@@ -254,7 +254,6 @@ const FeatureSection: FC = () => {
             <div className="grid grid-cols-2 gap-x-4 gap-y-6">
               {featuresMobile.map((feature, index) => {
                 const isActive = activeMobileIndex === index;
-
                 return (
                   <div
                     key={index}
