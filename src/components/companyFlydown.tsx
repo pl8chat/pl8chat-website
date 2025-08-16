@@ -2,7 +2,6 @@ import { PhoneIcon, PlayCircleIcon, RectangleGroupIcon } from '@heroicons/react/
 import { ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
 import { useRef } from 'react';
 import Image from 'next/image';
-import localFont from 'next/font/local';
 
 type FlydownProps = {
   isOpen: boolean;
