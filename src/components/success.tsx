@@ -2,7 +2,7 @@
 import { useState, useEffect, forwardRef } from 'react'
 import { Transition } from '@headlessui/react'
 import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
-import CheckMark from './svgs/SuccessAlert'
+import CheckMark from '@/svgs/SuccessAlert.svg'
 
 type SuccessProps = {
   message: string,
