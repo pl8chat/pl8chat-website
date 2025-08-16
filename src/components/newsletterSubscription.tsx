@@ -40,6 +40,7 @@ export default function NewsletterSubscription() {
           console.log(result.text);
           setIsSubmitted(true);
           setNewsletterError('');
+          setNewsletterEmail('');
           setNewsletterTouched(false);
         })
         .catch((error) => {

@@ -31,7 +31,6 @@ const ContactCards: ContactCardProps[] = [
 ];
 
 export default function Contact() {
-
   return (
     <div className='flex flex-col justify-center items-center pb-4 md:pb-32 px-4'>
       <div className="self-stretch pt-[50px] pb-4 w-full bg-white inline-flex flex-col justify-center items-center gap-8 md:gap-20 overflow-hidden">
