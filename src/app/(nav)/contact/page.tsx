@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import ContactSalesCard from '@/components/contactSalesCard';
 import NewsletterSubscription from '@/components/newsletterSubscription';
 

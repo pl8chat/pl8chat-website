@@ -1,6 +1,9 @@
 // next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    globalNotFound: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
