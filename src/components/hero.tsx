@@ -9,8 +9,8 @@ export default function Hero({ }) {
       >
         <div className="w-[288px] md:w-[768px] flex flex-col justify-start items-start gap-10">
           <div className="self-stretch flex flex-col justify-start items-start gap-4">
-            <div className="justify-start text-white text-[36px] md:text-6xl font-medium leading-[40px] md:leading-[58px]">Keep your car<br />safe and <br />connected.</div>
-            <div className="self-stretch justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-normal">Communicate with drivers,<br className='md:hidden' /> vehicles <br className='hidden md:flex' /> and businesses<br className='md:hidden' /> through license plates.</div>
+            <div className="justify-start text-white text-[36px] md:text-6xl font-medium leading-[40px] md:leading-[58px]">Your car has<br />a username.<br />Use it.</div>
+            <div className="self-stretch text-nowrap justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-normal">Keep your car safe and connected, <br /> and help other drivers with <br className='md:hidden' /> license <br className='hidden md:flex' /> plate communication.</div>
           </div>
         </div>
         <Link href={'/ios'} className=''>

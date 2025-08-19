@@ -41,7 +41,7 @@ export default function Feature3() {
                 </div>
               </div>
               <div className="self-stretch md:px-24 flex flex-col md:flex-row justify-center items-start gap-2 md:gap-6 px-4">
-                <div className="w-full max-w-[700px] h-[355px] md:h-[431px] px-4 md:px-12 py-8 md:pt-8 md:pb-12 bg-[#034B48] rounded-tl-[25px] rounded-tr-[25px] md:rounded-[25px] inline-flex flex-col justify-start items-start gap-[6px] md:gap-4">
+                <div className="w-full max-w-[700px] h-[355px] md:h-[431px] px-4 md:px-12 py-8 md:pt-8 md:pb-12 bg-[#034B48] rounded-tl-[25px] rounded-tr-[25px] md:rounded-tr-[0px] md:rounded-bl-[25px] inline-flex flex-col justify-start items-start gap-[6px] md:gap-4">
                   <div data-state="Default" data-type="Primary" className="w-[117px] md:w-44 h-8 px-4 py-3 bg-[#1C7470] rounded-[50px] inline-flex justify-center items-center overflow-hidden">
                     <div className="flex justify-center items-center text-nowrap">
                       <span className="text-neutral-100 text-[9px] md:text-xs font-bold">PL8CHAT</span>&nbsp;<span className="text-neutral-100 text-[9px] md:text-xs font-medium leading-normal">for Parking</span>
@@ -61,7 +61,7 @@ export default function Feature3() {
                     </div>
                   </div>
                 </div>
-                <div className="relative w-full md:w-[488px] max-w-[488px] min-h-[268px] md:h-[431px] rounded-bl-[25px] rounded-br-[25px] md:rounded-[25px] overflow-hidden">
+                <div className="relative w-full md:w-[488px] max-w-[488px] min-h-[268px] md:h-[431px] rounded-bl-[25px] rounded-br-[25px] md:rounded-tr-[25px]  md:rounded-br-[25px] md:rounded-bl-[0px] overflow-hidden">
                   <Image
                     src={'/assets/images/parkedCars.png'}
                     fill

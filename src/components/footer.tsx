@@ -21,8 +21,8 @@ const navigation: Navigation = {
     { name: 'PL8CHAT for business', href: '/business' },
   ],
   company: [
-    { name: 'FAQ', href: '/#faq' },
     { name: 'Contact Us', href: '/contact' },
+    { name: 'FAQ', href: '/#faq' },
   ],
   legal: [
     { name: 'Terms of Services', href: '/terms' },
