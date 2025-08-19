@@ -165,7 +165,7 @@ export default function FeatureSectionBusiness() {
                 alt="Feature Section Image"
                 width={342}
                 height={295}
-                className='md:hidden translate-x-5'
+                className='md:hidden translate-x-5 '
               />
               {/* Desktop */}
               <Image
