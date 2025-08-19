@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 interface SafetySection {
   title: string;
   content?: string;
@@ -60,12 +58,12 @@ export default function Safety() {
           <br />
           +1 (310) PL8-CHAT
         </div>
-        <Link
+        <a
           href="mailto:info@pl8chat.com"
           className="text-emerald-950 text-sm font-semibold leading-[25px]"
         >
           info@pl8chat.com
-        </Link>
+        </a>
       </div>
     </div>
   );

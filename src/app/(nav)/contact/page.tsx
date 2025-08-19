@@ -45,11 +45,11 @@ export default function Contact() {
                 <div className='flex flex-col gap-3'>
                   <div className="text-gray-900 text-lg md:text-xl font-semibold">{card.title}</div>
                   <div className='flex flex-col gap-2'>
-                    <Link href={card.mailto}>
+                    <a href={card.mailto}>
                       <div className="text-emerald-900 text-base font-semibold">
                         {card.email}
                       </div>
-                    </Link>
+                    </a>
                     {card.phone && (
                       <div className="text-gray-900 text-sm font-normal">
                         {card.phone}
