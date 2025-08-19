@@ -118,7 +118,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Navbar text */}
-                <div className="hidden sm:ml-6 sm:block md:translate-x-[4.25rem]">
+                <div className="hidden sm:ml-6 sm:block">
                   <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
                     {(pathname.includes('/business') ? navigationBusiness : navigation).map((item) => {
                       const isActive = item.href === pathname;
@@ -160,9 +160,6 @@ export default function Navbar() {
                   // consumer site
                   <div className="sm:flex sm:items-center text-sm font-normal">
                     <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
-                      <div className={`text-black leading-[24px] text-sm`}>
-                        Call us: 1(310)PL8-CHAT
-                      </div>
                       <Link href={`https://account.pl8chat.com/login`}
                         className={'py-2 text-black'}>
                         <Button variant="SignIn">
