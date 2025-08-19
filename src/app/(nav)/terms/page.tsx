@@ -10,65 +10,94 @@ interface Terms {
 
 const termsData: Terms[] = [
   {
-    title: 'Last updated: December 01, 2024',
+    title: 'Last updated: August 21, 2025',
     isBold: false,
     content: '',
     isHighlight: false,
   },
   {
-    title: '1. Acceptance of Terms',
-    content: `1.1 By using PL8CHAT (“the App”) you agree to comply with and be bound by these terms and conditions (the "Terms"). If you do not agree to these Terms, please do not use the App.`,
+    title: 'Acceptance of Terms',
+    content: `By using PL8CHAT (“the App”) you agree to comply with and be bound by these Terms. If you do not agree, please do not use the App.`,
   },
   {
-    title: '2. User Registration',
-    content: `2.1 To use certain features of the App, you may be required to register for an account. You agree to provide accurate and complete information during the registration process and to update such information to keep it accurate and current.\n2.2 You must be 16 years of age and or of legal driving age in the USA\n2.3 You must be the registered owner and or an authorized insured driver of the vehicle you sign up with.`,
+    title: 'User Registration',
+    content: `To use certain features of the App, you may be required to register for an account. You agree to provide accurate and complete information during the registration process and to keep it updated.`,
   },
   {
-    title: '3. Privacy Policy',
-    content: `3.1 Your use of the App is also governed by our Privacy Policy, which can be found here at `,
+    title: 'Eligibility',
+    content: `You must be at least 16 years of age and/or of legal driving age in the USA.\n3.2 You must be the registered owner or an authorized insured driver of any vehicle you add to the App.\n3.3 By using the App, you confirm that all information you provide is accurate and that you are legally permitted to use the App.`,
+  },
+  {
+    title: 'Privacy Policy',
+    content: `Your use of the App is also governed by our Privacy Policy, which can be found at pl8chat.com/privacy. By using the App, you agree to the terms of the Privacy Policy.`,
     isHighlight: true,
   },
   {
-    title: '4. User Content',
-    content: `4.1 You retain ownership of the content you submit or post on the App ("User Content"). By submitting User Content, you grant PL8CHAT a worldwide, non-exclusive, royalty-free, sub-licensable, and transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform your User Content.`,
+    title: 'User Content',
+    content: `You retain ownership of the content you submit or post on the App (“User Content”). By submitting User Content, you grant PL8CHAT a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform your User Content in connection with operating and providing the App.`,
   },
   {
-    title: '5. User eligibility and conduct',
-    content: `5.1 You agree not to engage in any of the following prohibited activities:\n- Violating any applicable laws or regulations.\n- Posting or sharing content that is illegal, obscene, defamatory, or otherwise objectionable.\n- Impersonating another person or entity.\n- Using the App for any unauthorized commercial purpose.\n- Attempting to gain unauthorized access to the App or its related systems.\n- Using our app while driving\n- Sending rude, disrespectful or offensive messages to other users.\n5.2 You agree if you have been convicted of or are currently facing charges related to aggressive driving, reckless driving, harassment, stalking, or any other criminal offense involving unsafe or abusive behavior are not permitted to use PL8CHAT. By agreeing to these terms, you confirm that you have no such convictions or pending charges.`,
+    title: 'User Conduct',
+    content: `You agree not to engage in the following prohibited activities:\n- Violating any applicable laws or regulations\n- Posting or sharing content that is illegal, obscene, defamatory, or otherwise objectionable\n- Impersonating another person or entity\n- Using the App for any unauthorized commercial purpose\n- Attempting to gain unauthorized access to the App or its related systems\n- Using the App while driving\n- Sending rude, disrespectful, or offensive messages to other users\nYou also confirm that you have not been convicted of, and are not currently facing charges related to, aggressive driving, reckless driving, harassment, stalking, or any other criminal offense involving unsafe or abusive behavior. If you do have such convictions or pending charges, you are not permitted to use PL8CHAT.`,
   },
   {
-    title: '6. Intellectual Property',
-    content: `6.1 PL8CHAT retains all rights to the intellectual property associated with the App. You agree not to reproduce, distribute, or create derivative works based on the App or its content without our prior written consent.`,
+    title: 'User Interactions and Safety',
+    content: `You are solely responsible for your interactions with other users. We do not screen users and are not responsible for the conduct of any user, whether online or offline. Use caution and common sense when interacting with others through PL8CHAT.`,
   },
   {
-    title: '7. Termination',
-    content: `7.1 PL8CHAT reserves the right to terminate or suspend your account and access to the App at any time and for any reason.`,
+    title: 'Safety Disclaimer',
+    content: `PL8CHAT is not a substitute for safe driving. Do not use the App while operating a vehicle. You are solely responsible for complying with traffic laws and ensuring your use of PL8CHAT does not create unsafe conditions.`,
   },
   {
-    title: '8. Disclaimer of Warranties',
-    content: `8.1 The App is provided "as is" and without warranties of any kind, either express or implied. PL8CHAT disclaims all warranties, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.`,
+    title: 'Intellectual Property',
+    content: `We retain all rights to the intellectual property associated with the App. You agree not to reproduce, distribute, or create derivative works based on the App or its content without our prior written consent.`,
   },
   {
-    title: '9. Limitation of Liability',
-    content: `9.1 In no event shall PL8CHAT be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of the App.`,
+    title: 'Third-Party Services',
+    content: `The App may contain links to or integrate with third-party services, such as social media platforms, mapping services, or payment providers. We are not responsible for the availability, accuracy, or practices of those third parties. Your use of their services is governed by their terms and policies.`,
   },
   {
-    title: '10. Governing Law',
-    content: `10.1 These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction].`,
+    title: 'Availability of the App',
+    content: `We do not guarantee that PL8CHAT will always be available, uninterrupted, or error-free. We are not responsible for any harm caused by service outages, delays, or technical errors.`,
   },
   {
-    title: '11. Changes to Terms',
-    content: `11.1 We reserve the right to modify these Terms at any time. Your continued use of the App after the effective date of any changes constitutes your acceptance of the modified Terms.`,
+    title: 'Disclaimer of Warranties',
+    content: `The App is provided “as is” and without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement.`,
   },
   {
-    title: '12. Username Policy',
-    content: `12.1 We reserve the right to revoke usernames at any time for any reason.`,
+    title: 'Limitation of Liability',
+    content: `To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of the App.`,
   },
   {
-    title: 'Rights you grant us',
-    content: `13.1 We always love to hear from our users. By providing feedback, suggestions or ideas, we can use them without compensating you, and without any restriction or obligation to you. You agree that we will own all rights in anything we develop from your input.`,
+    title: 'Indemnification',
+    content: `You agree to indemnify, defend, and hold harmless PL8CHAT, its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including legal fees, arising out of or in any way connected to your use of the App or violation of these Terms.`,
+  },
+  {
+    title: 'Dispute Resolution and Arbitration',
+    content: `Any disputes arising under these Terms will be resolved through binding arbitration, rather than in court.\n15.2 You waive any right to participate in a className action, className arbitration, or other representative proceeding against PL8CHAT.`,
+  },
+  {
+    title: 'Termination',
+    content: `We reserve the right to terminate or suspend your account and access to the App at any time and for any reason.`,
+  },
+  {
+    title: 'Changes to Terms',
+    content: `We may modify these Terms at any time. Your continued use of the App after the effective date of any changes constitutes your acceptance of the modified Terms.`,
+  },
+  {
+    title: 'Username Policy',
+    content: `We reserve the right to revoke usernames at any time for any reason.`,
+  },
+  {
+    title: 'Rights You Grant Us',
+    content: `We always love to hear from our users. By providing feedback, suggestions, or ideas, you agree that we may use them without compensating you and without any restriction or obligation to you.\n19.2 You agree that we will own all rights in anything we develop from your input.`,
+  },
+  {
+    title: 'Contact Us',
+    content: `If you have any questions or concerns about these Terms of Service, please contact us at:\n+1 (310) PL8-CHAT\ninfo@pl8chat.com`,
   },
 ];
+
 
 export default function Terms() {
   return (
@@ -76,33 +105,19 @@ export default function Terms() {
       <div className="self-stretch justify-start text-black text-xl md:text-3xl font-semibold leading-[50px] md:leading-[100px]">
         Terms of Service
       </div>
-      <div className="md:w-[897px] justify-start">
-        {termsData.map((section, idx) => (
-          <div key={idx} className="mb-4">
-            <div className="text-black text-sm font-semibold leading-[25px] mb-1">
-              {section.title}
-            </div>
-            <div className="text-black text-sm font-normal leading-[25px] whitespace-pre-line">
-              {section.content}
-              {section.isHighlight && (
-                <span className="text-[#034B48]">pl8chat.com/privacy</span>
-              )}
-            </div>
-          </div>
-        ))}
-        <div className="mt-6 text-black text-sm font-semibold leading-[25px]">Contact Us</div>
-        <div className="text-black text-sm font-normal leading-[25px]">
-          If you have any questions or concerns about our Terms of Service, please contact us at:
-          <br />
-          +1 (310) PL8-CHAT
-        </div>
-        <Link
-          href={'mailto:info@pl8chat.com'}
-          className="text-[#034B48] text-sm font-semibold leading-[25px]"
-        >
-          info@pl8chat.com
-        </Link>
-      </div>
+      <div className="w-[897px] justify-start"><span className="text-black text-sm font-semibold leading-normal">Last updated: August 21, 2025<br /><br /></span><span className="text-black text-sm font-normal leading-normal">These Terms of Service (“Terms”) are a binding legal agreement between you and PL8CHAT that govern your right to use the websites, applications, and other offerings from PL8CHAT. When used in these Terms, “PL8CHAT,” “we,” “us,” or “our” refers to the PL8CHAT entity.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Acceptance of Terms<br /></span><span className="text-black text-sm font-normal leading-normal">By using PL8CHAT (“the App”) you agree to comply with and be bound by these Terms. If you do not agree, please do not use the App.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />User Registration<br /></span><span className="text-black text-sm font-normal leading-normal">To use certain features of the App, you may be required to register for an account. You agree to provide accurate and complete information during the registration process and to keep it updated.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Eligibility<br /></span><span className="text-black text-sm font-normal leading-normal">You must be at least 16 years of age and/or of legal driving age in the USA. You must be the registered owner or an authorized insured driver of any vehicle you add to the App. By using the App, you confirm that all information you provide is accurate and that you are legally permitted to use the App.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Privacy Policy<br /></span><span className="text-black text-sm font-normal leading-normal">Your use of the App is also governed by our Privacy Policy, which can be found at pl8chat.com/privacy. By using the App, you agree to the terms of the Privacy Policy.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />User Content<br /></span><span className="text-black text-sm font-normal leading-normal">You retain ownership of the content you submit or post on the App (“User Content”). By submitting User Content, you grant us a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform your User Content in connection with operating and providing the App.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />User Conduct<br /></span><div className="text-black text-sm font-normal leading-normal">You agree not to engage in the following prohibited activities:</div>
+      <ul className='text-black text-sm font-normal leading-normal list-disc translate-x-7'>
+        
+        <li className="text-black text-sm font-normal leading-normal">Violating any applicable laws or regulations</li>
+        <li className="text-black text-sm font-normal leading-normal">Posting or sharing content that is illegal, obscene, defamatory, or otherwise objectionable</li>
+        <li className="text-black text-sm font-normal leading-normal">Impersonating another person or entity</li>
+        <li className="text-black text-sm font-normal leading-normal">Using the App for any unauthorized commercial purpose</li>
+        <li className="text-black text-sm font-normal leading-normal">Attempting to gain unauthorized access to the App or its related systems</li>
+        <li className="text-black text-sm font-normal leading-normal">Using the App while driving</li>
+        <li className="text-black text-sm font-normal leading-normal">Sending rude, disrespectful, or offensive messages to other users</li>
+      </ul>
+      
+      <span className="text-black text-sm font-semibold leading-normal"><br /></span><span className="text-black text-sm font-normal leading-normal">You also confirm that you have not been convicted of, and are not currently facing charges related to, aggressive driving, reckless driving, harassment, stalking, or any other criminal offense involving unsafe or abusive behavior. If you do have such convictions or pending charges, you are not permitted to use PL8CHAT.<br /><br /></span><span className="text-black text-sm font-semibold leading-normal">User Interactions and Safety<br /></span><span className="text-black text-sm font-normal leading-normal">You are solely responsible for your interactions with other users. We do not screen users and are not responsible for the conduct of any user, whether online or offline. Use caution and common sense when interacting with others through PL8CHAT.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Safety Disclaimer<br /></span><span className="text-black text-sm font-normal leading-normal">PL8CHAT is not a substitute for safe driving. Do not use the App while operating a vehicle. You are solely responsible for complying with traffic laws and ensuring your use of PL8CHAT does not create unsafe conditions.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Intellectual Property<br /></span><span className="text-black text-sm font-normal leading-normal">We retain all rights to the intellectual property associated with the App. You agree not to reproduce, distribute, or create derivative works based on the App or its content without our prior written consent.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Third-Party Services<br /></span><span className="text-black text-sm font-normal leading-normal">The App may contain links to or integrate with third-party services, such as social media platforms, mapping services, or payment providers. We are not responsible for the availability, accuracy, or practices of those third parties. Your use of their services is governed by their terms and policies.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Availability of the App<br /></span><span className="text-black text-sm font-normal leading-normal">We do not guarantee that PL8CHAT will always be available, uninterrupted, or error-free. We are not responsible for any harm caused by service outages, delays, or technical errors.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Disclaimer of Warranties<br /></span><span className="text-black text-sm font-normal leading-normal">The App is provided “as is” and without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Limitation of Liability<br /></span><span className="text-black text-sm font-normal leading-normal">To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of the App.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Indemnification<br /></span><span className="text-black text-sm font-normal leading-normal">You agree to indemnify, defend, and hold harmless PL8CHAT, its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including legal fees, arising out of or in any way connected to your use of the App or violation of these Terms.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Dispute Resolution and Arbitration<br /></span><span className="text-black text-sm font-normal leading-normal">Any disputes arising under these Terms will be resolved through binding arbitration, rather than in court. You waive any right to participate in a className action, className arbitration, or other representative proceeding against PL8CHAT.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Termination<br /></span><span className="text-black text-sm font-normal leading-normal">We reserve the right to terminate or suspend your account and access to the App at any time and for any reason.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Changes to Terms<br /></span><span className="text-black text-sm font-normal leading-normal">We may modify these Terms at any time. Your continued use of the App after the effective date of any changes constitutes your acceptance of the modified Terms.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Username Policy<br /></span><span className="text-black text-sm font-normal leading-normal">We reserve the right to revoke usernames at any time for any reason.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Rights You Grant Us<br /></span><span className="text-black text-sm font-normal leading-normal">We always love to hear from our users. By providing feedback, suggestions, or ideas, you agree that we may use them without compensating you and without any restriction or obligation to you. You agree that we will own all rights in anything we develop from your input.<br /></span><span className="text-black text-sm font-semibold leading-normal"><br />Contact Us<br /></span><span className="text-black text-sm font-normal leading-normal">If you have any questions or concerns about these Terms of Service, please contact us at:<br />+1 (310) PL8-CHAT<br /> <Link href={'mailto:info@pl8chat.com'}>info@pl8chat.com</Link></span></div>
     </div>
   );
 }
