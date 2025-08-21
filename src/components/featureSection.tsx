@@ -261,7 +261,7 @@ const FeatureSection: FC = () => {
                     className={`flex flex-col justify-start items-center gap-2.5 cursor-pointer`}
                   >
                     {isActive ? <feature.iconBold /> : <feature.icon />}
-                    <div className={`text-center ${isActive ? 'text-[#111827] font-semibold' : 'text-[#111827] font-normal'} text-xs leading-[20px] tracking-tight`}>
+                    <div className={`text-center ${isActive ? 'text-[#111827] font-semibold' : 'text-[#111827] font-normal'} text-[13px] leading-[20px] tracking-tight`}>
                       {feature.description}
                     </div>
                   </div>
