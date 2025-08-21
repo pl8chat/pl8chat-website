@@ -214,7 +214,7 @@ const FeatureSection: FC = () => {
                   ))}
                 </div>
                 <div className="inline-flex justify-start items-center gap-5">
-                  <Link href='https://pl8chat.com/ios'>
+                  <Link href='https://apps.apple.com/app/pl8chat/id6474788258'>
                     <AppStoreSVG />
                   </Link>
                   <Link href='https://play.google.com/store/apps/details?id=com.pl8chat.mobile'>
