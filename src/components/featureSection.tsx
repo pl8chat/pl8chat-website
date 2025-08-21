@@ -270,10 +270,10 @@ const FeatureSection: FC = () => {
             </div>
             {/* GOOGLE AND APPLE STORE BUTTONS GO HERE */}
             <div className="flex justify-center items-center gap-5">
-              <Link href='#'>
+              <Link href='https://apps.apple.com/app/pl8chat/id6474788258'>
                 <AppStoreMobile />
               </Link>
-              <Link href='#'>
+              <Link href='https://play.google.com/store/apps/details?id=com.pl8chat.mobile'>
                 <GooglePlayStoreMobile />
               </Link>
             </div>
