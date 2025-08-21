@@ -217,7 +217,7 @@ const FeatureSection: FC = () => {
                   <Link href='https://pl8chat.com/ios'>
                     <AppStoreSVG />
                   </Link>
-                  <Link href='https://pl8chat.com/android'>
+                  <Link href='https://play.google.com/store/apps/details?id=com.pl8chat.mobile'>
                     <GooglePlayStoreSVG />
                   </Link>
                 </div>
