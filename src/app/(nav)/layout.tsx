@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description: "Keep your car safe and help other drivers through license plate communication.",
   openGraph: {
     title: "PL8CHAT - Connect through license plates",
-    description: "Keep your car safe and help other drivers through license plate communication.",
     images: "./assets/images/logoGreen.jpg",
     url: "https://pl8chat.com",
     type: "website",
@@ -30,9 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <ModalProvider>
-          <header>
-            <Navbar />
-          </header>
+          <Navbar />
           <div className="pt-[102px] md:pt-[114px] bg-white">
             {children}
             <Analytics />
