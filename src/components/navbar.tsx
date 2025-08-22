@@ -160,8 +160,7 @@ export default function Navbar() {
                   // consumer site
                   <div className="sm:flex sm:items-center text-sm font-normal">
                     <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
-                      <Link href={`https://account.pl8chat.com/login`}
-                        className={'py-2 text-black'}>
+                      <Link href={`https://account.pl8chat.com/login`} className={'py-2 text-black'}>
                         <Button variant="SignIn">
                           Sign in
                         </Button>
@@ -209,9 +208,11 @@ export default function Navbar() {
                 </div>
               </div>
               <div className='px-4 '>
-                <Button variant="SignIn">
-                  Sign In
-                </Button>
+                <Link href={`https://account.pl8chat.com/login`} className={'py-2 text-black'}>
+                  <Button variant="SignIn">
+                    Sign In
+                  </Button>
+                </Link>
               </div>
             </Disclosure.Panel>
           </>
