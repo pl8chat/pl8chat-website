@@ -63,7 +63,7 @@ export default function Feature3() {
                 </div>
                 <div className="relative w-full md:w-[488px] max-w-[488px] min-h-[268px] md:h-[431px] rounded-bl-[25px] rounded-br-[25px] md:rounded-tr-[25px]  md:rounded-br-[25px] md:rounded-bl-[0px] overflow-hidden">
                   <Image
-                    src={'/assets/images/parkedCars.png'}
+                    src={'/assets/images/parkedCars2Reverse.png'}
                     fill
                     alt="Parked Cars"
                     objectFit='cover'
