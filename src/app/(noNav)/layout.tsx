@@ -9,17 +9,6 @@ const inter = localFont({
   weight: "100 200 300 400 500 600 700 800 900",
 })
 
-export const metadata: Metadata = {
-  title: "PL8CHAT",
-  description: "",
-  openGraph: {
-    title: "PL8CHAT",
-    images: "./assets/images/logoGreen.jpg",
-    url: "https://pl8chat.com",
-    type: "website",
-  }
-};
-
 export default function RootLayout({
   children,
 }: {
