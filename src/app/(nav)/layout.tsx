@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Keep your car safe and help other drivers through license plate communication.",
   openGraph: {
     title: "PL8CHAT - Connect through license plates",
+    description: "Keep your car safe and help other drivers through license plate communication.",
     images: "./assets/images/logoGreen.jpg",
     url: "https://pl8chat.com",
     type: "website",
