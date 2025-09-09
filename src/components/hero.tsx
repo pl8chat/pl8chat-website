@@ -13,7 +13,7 @@ export default function Hero({ }) {
             <div className="self-stretch text-nowrap justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-normal">Keep your car safe <span className='hidden md:inline'>and</span><span className='md:hidden'>&</span> connected, <br /> and help other drivers with <br className='md:hidden' /> license <br className='hidden md:flex' /> plate communication.</div>
           </div>
         </div>
-        <Link href={'https://apps.apple.com/app/pl8chat/id6474788258'} className=''>
+        <Link href={'https://apps.apple.com/us/app/pl8chat/id6474788258?platform=iphone'} className=''>
           <Button variant='hero' className={`text-nowrap flex justify-center items-center`}>
             Get the app
           </Button>
