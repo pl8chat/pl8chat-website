@@ -214,7 +214,7 @@ const FeatureSection: FC = () => {
                   ))}
                 </div>
                 <div className="inline-flex justify-start items-center gap-5">
-                  <Link href='https://apps.apple.com/app/pl8chat/id6474788258'>
+                  <Link href='https://apps.apple.com/us/app/pl8chat/id6474788258?platform=iphone'>
                     <AppStoreSVG />
                   </Link>
                   <Link href='https://play.google.com/store/apps/details?id=com.pl8chat.mobile'>
@@ -270,7 +270,7 @@ const FeatureSection: FC = () => {
             </div>
             {/* GOOGLE AND APPLE STORE BUTTONS GO HERE */}
             <div className="flex justify-center items-center gap-5">
-              <Link href='https://apps.apple.com/app/pl8chat/id6474788258'>
+              <Link href='https://apps.apple.com/us/app/pl8chat/id6474788258?platform=iphone'>
                 <AppStoreMobile />
               </Link>
               <Link href='https://play.google.com/store/apps/details?id=com.pl8chat.mobile'>
