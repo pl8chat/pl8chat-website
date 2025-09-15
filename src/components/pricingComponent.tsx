@@ -22,7 +22,7 @@ const tiers: Tier[] = [
   {
     name: 'Single location',
     id: 'single-location',
-    href: 'https://account.pl8chat.com/signup?userType=parking',
+    href: 'https://account.pl8chat.com/signup?subscriptionType=single-location',
     price: 'Always Free',
     description: 'If your business has parking you need a PL8CHAT line of communication. Get yours today!',
     extraText: 'text?',
@@ -38,7 +38,7 @@ const tiers: Tier[] = [
   {
     name: 'Multiple locations',
     id: 'multiple-locations',
-    href: '#',
+    href: 'https://account.pl8chat.com/signup?subscriptionType=multi-location',
     price: 'Free to start',
     description: 'A great way to manage all your locations. Perfect for property managers or business chains.',
     extraText: 'Text goes here',
@@ -47,7 +47,7 @@ const tiers: Tier[] = [
       'Manage all locations from one dashboard',
       'More features coming soon...',
     ],
-    buttonText: 'Talk to sales',
+    buttonText: 'Sign up',
     mostPopular: false,
   },
   {
