@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
+import { ModalProvider } from "../../components/modalContext";
 import localFont from "next/font/local";
 import NavbarProducts from "@/components/navbarProducts";
+import Footer from "@/components/footer";
 import "../globals.css";
 
 const inter = localFont({
@@ -17,10 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <NavbarProducts />
+
       <body className={`${inter.className}`}>
-        {children}
-        <Analytics />
+        <ModalProvider>
+          <NavbarProducts />
+          <div className="bg-white">
+            {children}
+            <Analytics />
+          </div>
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   )
