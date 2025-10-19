@@ -22,12 +22,12 @@ export default function Hero() {
               There’s a million reason to connect with a car. <br />What’s yours?
             </div>
           </div>
-          <form className="h-14 pl-4 pr-2 py-2 bg-stone-600/80 rounded-3xl inline-flex justify-start items-center gap-0 md:gap-2">
+          <form className="h-[50px] md:h-[54px] pl-4 pr-2 py-2 bg-stone-600/80 rounded-3xl inline-flex justify-start items-center gap-0 md:gap-2">
             <div className="flex-1 flex justify-start items-center md:gap-10">
               <div className='flex flex-row items-center gap-2'>
                 <Search />
                 <input
-                  className="w-[136px] md:w-[152px] text-[#E5E7EB] text-xs md:text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent uppercase placeholder:normal-case placeholder:text-[#E5E7EB]"
+                  className="w-[136px] md:w-[152px] text-[#E5E7EB] text-xs md:text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent uppercase placeholder:normal-case placeholder:text-[#E5E7EB] pl-0"
                   type="text"
                   placeholder="Type plate #"
                   maxLength={7}
