@@ -20,8 +20,10 @@ import PhoneIconSVG from '@/svgs/phoneIcon.svg'
 import PhoneIconSmallSVG from '@/svgs/phoneIconSmall.svg'
 import PhoneIconSmallBoldSVG from '@/svgs/phoneIconSmallBold.svg'
 import AppStoreSVG from '@/svgs/AppleAppStore.svg'
+import AppleAppStoreWhite from '@/svgs/AppleAppStoreWhite.svg'
 import AppStoreMobile from '@/svgs/AppleAppStoreMobile.svg'
 import GooglePlayStoreSVG from '@/svgs/googleplaystore.svg'
+import GooglePlayStoreWhite from '@/svgs/googleplaystoreWhite.svg'
 import GooglePlayStoreMobile from '@/svgs/googleplaystoreMobile.svg'
 import FAQ from './faq'
 import Feature3 from './feature3'
@@ -179,33 +181,33 @@ const FeatureSection: FC = () => {
       </div>
       <div className="self-stretch p-14 bg-emerald-50 inline-flex flex-col justify-start items-center gap-10">
         <div className="flex flex-col justify-start items-center gap-8">
-          <div className="text-center justify-start text-emerald-950 text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
-          <div className="text-center justify-start text-neutral-700 text-2xl font-medium leading-loose">PL8CHAT is a communication ecosystem connecting drivers, <br />vehicles and businesses.</div>
+          <div className="text-center justify-start text-[#002823] text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
+          <div className="text-center justify-start text-[#363636] text-2xl font-medium leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br />vehicles and businesses.</div>
         </div>
         <div className="self-stretch flex flex-col justify-start items-center gap-20">
           <div className="self-stretch flex flex-col justify-start items-start">
             <div className="self-stretch inline-flex justify-center items-start gap-8">
               <div className="w-[420px] h-[550px] pl-4 pr-6 pt-28 rounded-3xl inline-flex flex-col justify-start items-start gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image1.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
-                  <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-4">
-                    <div className="justify-start text-white text-4xl font-medium leading-10 tracking-tight">A free, <br />new way <br />to connect</div>
-                    <div className="self-stretch justify-start text-white text-lg font-normal leading-normal tracking-tight">Keep your car safe, help other drivers and stay connected through license plates.</div>
+                  <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
+                    <div className="justify-start text-white text-4xl font-medium leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
+                    <div className="self-stretch justify-start text-white text-lg font-normal leading-[24px] tracking-tight">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
                   </div>
                 </div>
-                <div className='flex flex-row gap-5'>
-                  <AppStoreSVG />
-                  <GooglePlayStoreSVG />
+                <div className='flex flex-row items-center justify-center gap-5 w-full'>
+                  <AppleAppStoreWhite />
+                  <GooglePlayStoreWhite />
                 </div>
                 <div className="self-stretch flex justify-center text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
               </div>
               <div className="h-[550px] inline-flex flex-col justify-center items-start">
-                <div className="w-[420px] h-[550px] pl-4 pr-6 pt-28 rounded-t-[25px] inline-flex flex-col justify-start items-start gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image2.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
+                <div className="w-[420px] h-[550px] pl-4 pr-6 rounded-t-[25px] inline-flex flex-col justify-between items-start gap-[100px] bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image2.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
                   <div className="self-stretch py-2 inline-flex justify-center items-center gap-1">
                     <div className="text-center justify-start text-white text-lg font-medium leading-normal tracking-tight">for business</div>
                   </div>
                   <div className="w-[420px] flex-1 flex flex-col justify-start items-start gap-4">
                     <div className="self-stretch justify-start text-white text-4xl font-medium leading-10 tracking-tight">Modern day<br />fleet reporting</div>
-                    <div className="self-stretch justify-start text-white text-lg font-normal leading-normal tracking-tight">Increase safety and accountability for your vehicles and drivers through license plate reporting.</div>
+                    <div className="w-[378px] self-stretch justify-start text-white text-lg font-normal leading-[24px] tracking-[0.18]">Increase safety and accountability for your vehicles and drivers through license plate reporting.</div>
                     <div className="self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                   </div>
                 </div>
