@@ -17,7 +17,16 @@ const variants = {
   homeHero: clsx(
     'w-[158px] h-[60px] px-[21px] py-[13px] bg-pl8Green rounded-md border border-[#083937] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
   ),
+  search: clsx(
+    'h-[42px] w-[80px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#E5E7EB] text-[15px] font-medium leading-[24px] bg-[#1F9687] border border-[#1F9687]'
+  ),
   navBar: clsx(
+    'h-[40px] w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#404040] text-[15px] font-medium leading-[24px] bg-white'
+  ),
+  navBarTransparent: clsx(
+    'h-[40px] w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-white text-[15px] font-medium leading-[24px] border border-[#ECECEF]'
+  ),
+  navBarProducts: clsx(
     'h-[42px] px-4 py-[13px] rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'
   ),
   signUp: clsx(

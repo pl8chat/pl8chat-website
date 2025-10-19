@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${inter.className} antialiased`}>
         <ModalProvider>
           <Navbar />
-          <div className="pt-[102px] md:pt-[114px] bg-white">
+          <div className="bg-white">
             {children}
             <Analytics />
             <TalkToSalesModal />

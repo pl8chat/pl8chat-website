@@ -1,27 +1,48 @@
-import { Button } from './ui/button';
-import Link from 'next/link';
+'use client'
+import { useState } from 'react'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
+import StateInput from '@/components/stateInput'
+import Link from 'next/link'
+import Search from '@/svgs/search.svg'
 
-export default function Hero({ }) {
+export default function Hero() {
+  const [selectedState, setSelectedState] = useState('')
+
   return (
-    <div className='flex justify-center px-4 md:px-0  pt-[32px] md:pt-[50px] pb-4 md:pb-5'>
-      <div
-        className="w-full md:w-[1400px] h-[500px] md:h-[700px] pl-[18px] md:pl-[90px] md:pr-28 pt-[130px] md:pt-[180px] md:pb-[145px] rounded-3xl inline-flex flex-col justify-start items-start gap-7 bg-[linear-gradient(to_left,_rgba(0,0,0,0)_10%,_rgba(0,0,0,0.6)_70%,_rgba(0,0,0,0.6)_100%),url('/assets/images/HeroBg.png')] md:bg-[linear-gradient(to_left,_rgba(0,0,0,0)_10%,_rgba(0,0,0,0.6)_55%,_rgba(0,0,0,0.7)_90%),url('/assets/images/HeroBg.png')] bg-cover bg-no-repeat bg-[position:0%_0%,-18.25rem_0rem] md:bg-[position:0%_0%,_center_-12.5rem]"
-      >
-        <div className="w-[288px] md:w-[768px] flex flex-col justify-start items-start gap-10">
+    <div className="relative self-stretch bg-[url('/assets/images/HeroBg.jpg')] bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-7 w-full h-screen">
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="relative z-10 w-[768px] h-[656px] flex flex-col justify-center items-center gap-10">
+        <div className="self-stretch flex flex-col justify-center items-center gap-6">
           <div className="self-stretch flex flex-col justify-start items-start gap-4">
-            <div className="justify-start text-white text-[36px] md:text-6xl font-medium leading-[40px] md:leading-[58px]">Your car has<br />a username.<br />Use it.</div>
-            <div className="self-stretch text-nowrap justify-start text-white text-[18px] md:text-[22px] font-normal leading-[24px] md:leading-[26px] tracking-normal">Keep your car safe <span className='hidden md:inline'>and</span><span className='md:hidden'>&</span> connected, <br /> and help other drivers with <br className='md:hidden' /> license <br className='hidden md:flex' /> plate communication.</div>
+            <div className="self-stretch text-center text-white text-6xl font-medium leading-[60px]">
+              <br />The license plate is a <br />username. Use it
+            </div>
+            <div className="self-stretch text-center text-white text-base font-medium leading-snug tracking-tight">
+              There’s a million reason to connect with a car. <br />What’s yours?
+            </div>
           </div>
+          <form className="h-14 pl-4 pr-2 py-2 bg-stone-600/80 rounded-3xl inline-flex justify-start items-center gap-2">
+            <div className="flex-1 flex justify-start items-center gap-10">
+              <div className='flex flex-row items-center gap-2'>
+                <Search />
+                <input
+                  className="w-[152px] text-[#E5E7EB] text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent uppercase placeholder:normal-case placeholder:text-[#E5E7EB]"
+                  type="text"
+                  placeholder="Type plate #"
+                  maxLength={7}
+                />
+              </div>
+              <StateInput onSelect={setSelectedState} />
+              <Button variant="search">Search</Button>
+            </div>
+          </form>
         </div>
-        <Link href={'https://apps.apple.com/us/app/pl8chat/id6474788258?platform=iphone'} className=''>
-          <Button variant='hero' className={`text-nowrap flex justify-center items-center`}>
-            Get the app
-          </Button>
-        </Link>
-        {/* <div data-state="Default" data-type="Primary" className="w-36 h-11 px-4 py-3 bg-white rounded-2xl inline-flex justify-center items-center overflow-hidden">
-          <div className="justify-start text-emerald-950 text-base font-semibold leading-normal">Get PL8CHAT</div>
-        </div> */}
+      </div>
+
+      <div className="relative z-10 w-48 h-10 pt-2 pb-3 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex justify-center items-start gap-3">
+        <div className="justify-center text-gray-100 text-base font-semibold leading-normal">Get the free app</div>
       </div>
     </div>
   )
-} 
+}

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from '@/svgs/navbarLogo.svg'
 import NavbarMobileLogoSVG from '@/svgs/navbarMobileLogo.svg'
+import Pl8chatWhite from '@/svgs/pl8chatWhite.svg'
 import HamburgerIconSVG from '../svgs/Hamburger.svg'
 import XIconSVG from '@/svgs/xIcon.svg'
 import { useModal } from '@/components/modalContext'
@@ -61,39 +62,15 @@ export default function Navbar() {
 
   return (
     <div>
-      <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 bg-white`}>
+      <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150`}>
         {({ open }) => (
           <>
-            {pathname.includes('/business') ? (
-              // business site
-              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center md:justify-end items-center gap-2 bg-[#034B48] md:-translate-x-0.5">
-                <div className="text-xs text-black font-medium leading-normal text-right">
-                  <span className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal leading-6">Already a PL8CHAT customer?{` `}
-                    <Link href={'https://account.pl8chat.com/login'} className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal underline leading-6">Log in</Link>
-                  </span>
-                </div>
-              </div>
-            ) : (
-              // consumer site
-              <div>
-                <div className="h-[44px] w-full self-stretch px-4 md:px-20 flex justify-center md:justify-end items-center bg-[#B8D5D0] md:bg-[#D7EDE9]">
-                  <div className="text-xs text-black font-medium leading-normal text-center flex flex-row justify-center items-center">
-                    <div className="text-black text-[11px] md:text-[13px] font-normal leading-normal whitespace-nowrap">
-                      Connect your parking with
-                      <Link href={'/business'}>
-                        <span className="text-black text-[11px] md:text-[13px] font-normal leading-normal"> <span className='underline'>PL8CHAT for Business</span></span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            <div className="w-full mx-auto px-4 sm:px-6 lg:px-[92px] py-2 h-[58px] md:h-[70px] flex items-center">
+            <div className="w-full mx-auto px-4 sm:px-6 lg:px-[60px] py-2 md:pt-4 md:py-0 h-[58px] md:h-[70px] flex items-center">
               <div className="md:hidden w-full flex justify-between items-center">
                 {/* Mobile menu button */}
                 <div className="flex items-center">
                   <Link href="/" passHref>
-                    <NavbarMobileLogoSVG />
+                    <Pl8chatWhite />
                   </Link>
                 </div>
                 <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-none">
@@ -110,64 +87,18 @@ export default function Navbar() {
               </div>
 
               {/* Left side Logo */}
-              <div className="hidden md:flex flex-1 items-center justify-center sm:items-center sm:justify-between">
-                <div className="flex items-center">
-                  <Link href="/" passHref className='-translate-x-3.5'>
-                    <NavbarLogoSVG />
+              <div className="w-[1440px] mx-auto inline-flex justify-between items-center gap-16">
+                <Link href="/" passHref className=''>
+                  <Pl8chatWhite />
+                </Link>
+                <div className="flex justify-start items-center gap-3.5">
+                  <Link href={'#'}>
+                    <Button variant="navBarTransparent">Sign in</Button>
+                  </Link>
+                  <Link href={'#'}>
+                    <Button variant="navBar">Sign up</Button>
                   </Link>
                 </div>
-
-                {/* Navbar text */}
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex -space-x-1 xl:space-x-4 text-nowrap">
-                    {(pathname.includes('/business') ? navigationBusiness : navigation).map((item) => {
-                      const isActive = item.href === pathname;
-                      return (
-                        <Link href={item.href} key={item.name}>
-                          <button
-                            aria-current={isActive ? 'page' : undefined}
-                            className={'rounded-md px-3 py-3 text-md lg:text-base font-medium text-black'}
-                          >
-                            {item.name}
-                          </button>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Right-side items (shown on larger screens) */}
-                {pathname.includes('/business') ? (
-                  // business site
-                  <div className="sm:flex sm:items-center text-sm font-normal">
-                    <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
-                      <div className={`text-black leading-[24px] text-sm`}>
-                        Call us: 1(310)PL8-CHAT
-                      </div>
-                      <div className='flex flex-row gap-4'>
-                        <Button variant="talkToSalesInverse" onClick={openModal}>
-                          Talk to sales
-                        </Button>
-                        <Link href={`/business/plans`}>
-                          <Button variant="getStarted">
-                            Get started
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  // consumer site
-                  <div className="sm:flex sm:items-center text-sm font-normal">
-                    <div className="hidden lg:flex lg:items-center gap-8 translate-x-3.5">
-                      <Link href={`https://account.pl8chat.com/login`} className={'py-2 text-black'}>
-                        <Button variant="SignIn">
-                          Sign in
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 

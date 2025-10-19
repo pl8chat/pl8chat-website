@@ -4,20 +4,21 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const inputVariants = cva(
-  "w-full px-[20px] py-[9px] bg-white focus:ring-0 focus:outline-none focus:border-[#034b48] text-sm font-normal leading-normal border placeholder:text-gray-500 text-gray-900",
+  "w-full px-[20px] py-[9px] focus:ring-0 focus:outline-none focus:border-[#034b48] text-sm font-normal leading-normal border placeholder:text-gray-500 text-gray-900",
   {
     variants: {
       variant: {
-        default: "border-gray-300 rounded-md",
-        phone: "pl-[50px] border-gray-300 rounded-md",
-        error: "border-[#f44e38] text-red-700 rounded-md",
-        contact: 'border-gray-300 rounded-md',
-        message: 'text-sm',
-        checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm',
-        promoCode: 'border-gray-300 rounded-md text-sm',
-        newsletter: 'w-full max-w-[380px] rounded-[14px] h-[46px] border-gray-400',
-        talkToSales: 'w-full min-w-[284px] max-w-[415px] rounded-[14px] h-[46px] border-gray-400 hover:border-[#034B48] focus:border-[#034B48]',
-        errorState: 'w-full min-w-[284px] max-w-[415px] h-[46px] border-red-500 text-red-700 rounded-[14px] text-sm',
+        default: "border-gray-300 rounded-md bg-white",
+        hero: "bg-none",
+        phone: "pl-[50px] border-gray-300 rounded-md bg-white",
+        error: "border-[#f44e38] text-red-700 rounded-md bg-white",
+        contact: 'border-gray-300 rounded-md bg-white',
+        message: 'text-sm bg-white',
+        checkout: 'border-gray-300 rounded-md placeholder:text-[#adadaf] placeholder:text-sm bg-white',
+        promoCode: 'border-gray-300 rounded-md text-sm bg-white',
+        newsletter: 'w-full max-w-[380px] rounded-[14px] h-[46px] border-gray-400 bg-white',
+        talkToSales: 'w-full min-w-[284px] max-w-[415px] rounded-[14px] h-[46px] border-gray-400 hover:border-[#034B48] focus:border-[#034B48] bg-white',
+        errorState: 'w-full min-w-[284px] max-w-[415px] h-[46px] border-red-500 text-red-700 rounded-[14px] text-sm bg-white',
       },
     },
     defaultVariants: {
