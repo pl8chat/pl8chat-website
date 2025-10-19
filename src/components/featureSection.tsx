@@ -94,7 +94,7 @@ const FeatureSection: FC = () => {
         </div>
         <div className="self-stretch flex flex-col justify-start items-center gap-20">
           <div className="self-stretch flex flex-col justify-start items-start">
-            <div className="self-stretch inline-flex justify-center items-start gap-8">
+            <div className="self-stretch flex flex-col md:flex-row justify-center items-start gap-8">
               <div className="w-[420px] h-[550px] pl-4 pr-6 pt-28 rounded-3xl inline-flex flex-col justify-start items-start gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image1.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">

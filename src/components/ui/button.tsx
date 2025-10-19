@@ -18,7 +18,7 @@ const variants = {
     'w-[158px] h-[60px] px-[21px] py-[13px] bg-pl8Green rounded-md border border-[#083937] justify-center items-center inline-flex text-[#034b48] text-lg font-medium leading-normal'
   ),
   search: clsx(
-    'h-[42px] w-[80px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#E5E7EB] text-[15px] font-medium leading-[24px] bg-[#1F9687] hover:bg-[#00695C] border border-[#1F9687] hover:border-[#00695C]'
+    'h-[42px] w-[58px] md:w-[80px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#E5E7EB] text-xs md:text-[15px] font-medium leading-[24px] bg-[#1F9687] hover:bg-[#00695C] border border-[#1F9687] hover:border-[#00695C]'
   ),
   navBar: clsx(
     'h-[40px] w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#404040] text-[15px] font-medium leading-[24px] bg-white hover:bg-[#E5E7EB]'

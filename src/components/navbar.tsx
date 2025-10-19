@@ -87,7 +87,7 @@ export default function Navbar() {
               </div>
 
               {/* Left side Logo */}
-              <div className="w-[1440px] mx-auto inline-flex justify-between items-center gap-16">
+              <div className="hidden md:w-[1440px] mx-auto md:flex justify-between items-center gap-16">
                 <Link href="/" passHref className=''>
                   <Pl8chatWhite />
                 </Link>

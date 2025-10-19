@@ -38,13 +38,13 @@ export default function StateInput({ onSelect }: StateInputProps) {
   }
 
   return (
-    <div className="relative w-36">
+    <div className="relative md:w-36">
       <input
         value={query}
         onChange={handleChange}
-        className="w-[112px] text-[#E5E7EB] text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent placeholder:text-[#E5E7EB]"
+        className="w-[112px] text-[#E5E7EB] text-xs md:text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent placeholder:text-[#E5E7EB]"
         type="text"
-        placeholder="Type state"
+        placeholder="State"
         maxLength={20}
       />
 
