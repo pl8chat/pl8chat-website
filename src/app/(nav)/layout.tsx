@@ -13,7 +13,10 @@ const inter = localFont({
   weight: "100 200 300 400 500 600 700 800 900",
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "PL8CHAT - Connect through license plates",
   description: "Keep your car safe and help other drivers through license plate communication.",
   openGraph: {
