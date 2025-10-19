@@ -12,13 +12,15 @@ interface Navigation {
   products: NavigationItem[];
   company: NavigationItem[];
   legal: NavigationItem[];
+  downloads: NavigationItem[];
   social: NavigationItem[];
 }
 
 const navigation: Navigation = {
   products: [
-    { name: 'For individuals', href: '/' },
-    { name: 'PL8CHAT for business', href: '/business' },
+    { name: 'For individuals', href: '/individual' },
+    { name: 'For parking', href: '#' },
+    { name: 'For fleets', href: '#' },
   ],
   company: [
     { name: 'Contact us', href: '/contact' },
@@ -28,6 +30,10 @@ const navigation: Navigation = {
     { name: 'Terms of Services', href: '/terms' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'User Safety', href: '/safety' },
+  ],
+  downloads: [
+    { name: 'iOS', href: '#' },
+    { name: 'Android', href: '#' },
   ],
   social: [
     {
@@ -112,6 +118,10 @@ const businessNavigation: Navigation = {
     { name: 'Terms of Services', href: '/terms' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'User Safety', href: '/safety' },
+  ],
+  downloads: [
+    { name: 'iOS', href: '#' },
+    { name: 'Android', href: '#' },
   ],
   social: [
     {
@@ -202,16 +212,8 @@ export default function Footer() {
               <div>Car</div>
               <div>Connected®</div>
             </div>
-            <div className="flex space-x-6 md:order-2">
-              {navigation.social.map((item) => (
-                <Link key={item.name} href={item.href} className="text-gray-500">
-                  <span className="sr-only">{item.name}</span>
-                  {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
-                </Link>
-              ))}
-            </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
+          <div className="mt-6 md:mt-16 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-4 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
             <div>
               <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -248,49 +250,27 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+            <div>
+              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Get the app</h3>
+              <ul role="list" className="mt-4 space-y-4">
+                {(pathname.includes('/business') ? businessNavigation : navigation).downloads.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-sm leading-6 text-black">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          {/* <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 pb-10">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.products.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-black hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div> */}
+        </div>
+        <div className="flex space-x-6 md:order-2 pt-12 md:pt-0">
+          {navigation.social.map((item) => (
+            <Link key={item.name} href={item.href} className="text-gray-500">
+              <span className="sr-only">{item.name}</span>
+              {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
+            </Link>
+          ))}
         </div>
         <div className="md:mt-8 border-t border-white/10 md:pt-8 md:flex md:items-center md:justify-between">
           <div className="self-stretch inline-flex flex-col justify-start items-start gap-6 w-full">
