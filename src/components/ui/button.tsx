@@ -21,10 +21,10 @@ const variants = {
     'h-[42px] w-[58px] md:w-[80px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#E5E7EB] text-xs md:text-[15px] font-medium leading-[24px] bg-[#1F9687] hover:bg-[#00695C] border border-[#1F9687] hover:border-[#00695C]'
   ),
   navBar: clsx(
-    'h-[40px] w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#404040] text-[15px] font-medium leading-[24px] bg-white hover:bg-[#E5E7EB]'
+    'h-[40px] w-20 md:w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-[#404040] text-xs md:text-[15px] font-medium leading-[24px] bg-white hover:bg-[#E5E7EB]'
   ),
   navBarTransparent: clsx(
-    'h-[40px] w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-white text-[15px] font-medium leading-[24px] border border-[#ECECEF]'
+    'h-[40px] w-20 md:w-[112px] px-4 py-[13px] rounded-[25px] justify-center items-center inline-flex text-white text-xs md:text-[15px] font-medium leading-[24px] border border-[#ECECEF]'
   ),
   navBarProducts: clsx(
     'h-[42px] px-4 py-[13px] rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'

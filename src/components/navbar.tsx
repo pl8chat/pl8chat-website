@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import NavbarLogoSVG from '@/svgs/navbarLogo.svg'
 import NavbarMobileLogoSVG from '@/svgs/navbarMobileLogo.svg'
 import Pl8chatWhite from '@/svgs/Pl8chatWhite.svg'
+import Pl8ChatWhiteMobile from '@/svgs/Pl8chatWhiteMobile.svg'
 import HamburgerIconSVG from '../svgs/Hamburger.svg'
 import XIconSVG from '@/svgs/xIcon.svg'
 import { useModal } from '@/components/modalContext'
@@ -70,20 +71,17 @@ export default function Navbar() {
                 {/* Mobile menu button */}
                 <div className="flex items-center">
                   <Link href="/" passHref>
-                    <Pl8chatWhite />
+                    <Pl8ChatWhiteMobile />
                   </Link>
                 </div>
-                <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-none">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    // <XMarkIcon aria-hidden="true" className="block h-6 w-6" />
-                    <XIconSVG aria-hidden="true" />
-                  ) : (
-                    // <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
-                    <HamburgerIconSVG aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
+                 <div className="flex justify-start items-center gap-3.5">
+                  <Link href={'#'}>
+                    <Button variant="navBarTransparent">Sign in</Button>
+                  </Link>
+                  <Link href={'#'}>
+                    <Button variant="navBar">Sign up</Button>
+                  </Link>
+                </div>
               </div>
 
               {/* Left side Logo */}
