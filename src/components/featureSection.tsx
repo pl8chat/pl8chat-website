@@ -26,7 +26,7 @@ import AppStoreMobile from '@/svgs/AppleAppStoreMobile.svg'
 import GooglePlayStoreSVG from '@/svgs/googleplaystore.svg'
 import GooglePlayStoreWhite from '@/svgs/googleplaystoreWhite.svg'
 import GooglePlayStoreMobile from '@/svgs/googleplaystoreMobile.svg'
-import Pl8chatLogoWhite from '@/svgs/pl8chatLogoWhite.svg'
+import Pl8chatLogoWhite from '@/svgs/Pl8chatLogoWhite.svg'
 import FAQ from './faq'
 import Feature3 from './feature3'
 import { FC } from 'react'
@@ -62,40 +62,45 @@ const features: Feature[] = [
 const FeatureSection: FC = () => {
   return (
     <div className='flex flex-col justify-center w-full'>
-      <div className="p-14 bg-white flex flex-row justify-center items-center">
-        <div className="w-[776px] self-stretch inline-flex flex-col justify-center items-start gap-10">
-          <div className="flex flex-col justify-start items-start gap-5">
-            <div className="justify-start text-[#002823] text-6xl font-medium leading-[60px]">We bring the <br />license plate to life</div>
+      <div className="pt-10 px-4 md:p-[60px] bg-white flex flex-col-reverse md:flex-row justify-center items-center">
+        <div className="md:w-[776px] self-stretch inline-flex flex-col justify-center items-start gap-10 pb-10">
+          <div className="flex flex-col justify-start items-start gap-5 w-full">
+            <div className="w-full text-[#002823] text-4xl md:text-6xl font-medium leading-10 md:leading-[60px] pt-5 md:pt-0 text-center md:text-start">We bring the <br />license plate to life</div>
           </div>
-          <div className="self-stretch flex flex-col justify-start items-start gap-10">
-            <div className="self-stretch flex flex-col justify-start items-start gap-1">
-              <div className="w-[596px] h-32 justify-start text-[#002823] text-2xl font-medium leading-[34px]">The license plate isn’t a useless vehicle code anymore. It’s alive — and it’s how you keep your car safe, help out other drivers, and stay connected on and off the road. </div>
+          <div className="self-stretch flex flex-col justify-start items-start gap-[30px] md:gap-10">
+            <div className="self-stretch flex flex-col justify-start items-start gap-1 w-full">
+              <div className="w-[358px] md:w-[596px] mx-auto md:mx-0 md:h-32 justify-start text-[#002823] text-base md:text-2xl font-medium leading-6 md:leading-[34px] text-center md:text-start">The license plate isn’t a useless vehicle code anymore. It’s alive — and it’s how you keep your car safe, help out other drivers, and stay connected on and off the road. </div>
             </div>
-            <div className='flex flex-row gap-5'>
-              <AppStoreSVG />
-              <GooglePlayStoreSVG />
+            <div className='flex flex-row mx-auto md:mx-0 gap-5'>
+              <Link href={'#'}>
+                <AppStoreMobile className='md:hidden' />
+                <AppStoreSVG className='hidden md:flex' />
+              </Link>
+              <Link href={'#'}>
+                <GooglePlayStoreSVG className='hidden md:flex' />
+                <GooglePlayStoreMobile className='md:hidden' />
+              </Link>
             </div>
           </div>
         </div>
-        <div className='max-h-[600px]'>
+        <div className="relative h-[394px] w-full md:w-[544px] md:h-[600px] max-w-[400px] md:max-w-[544px] md:max-h-[600px]">
           <Image
             src="/assets/images/featureImage.png"
             alt="Feature Section Image"
-            width={544}
-            height={600}
-            className='rounded-[25px] max-h-[600px]'
+            fill
+            className="rounded-[25px] object-fill"
           />
         </div>
       </div>
-      <div className="self-stretch p-14 bg-emerald-50 inline-flex flex-col justify-start items-center gap-10">
-        <div className="flex flex-col justify-start items-center gap-8">
-          <div className="text-center justify-start text-[#002823] text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
-          <div className="text-center justify-start text-[#363636] text-2xl font-medium leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br />vehicles and businesses.</div>
+      <div className="self-stretch pt-10 pb-4 px-4 md:p-14 bg-emerald-50 inline-flex flex-col justify-start items-center gap-[30px] md:gap-10">
+        <div className="flex flex-col justify-start items-center gap-4 md:gap-8">
+          <div className="text-center justify-start text-[#002823] text-4xl md:text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
+          <div className="text-center justify-start text-[#363636] text-base md:text-2xl font-medium leading-6 md:leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br className='hidden md:flex' />vehicles and businesses.</div>
         </div>
         <div className="self-stretch flex flex-col justify-start items-center gap-20">
           <div className="self-stretch flex flex-col justify-start items-start">
-            <div className="self-stretch flex flex-col md:flex-row justify-center items-start gap-8">
-              <div className="w-[420px] h-[550px] pl-4 pr-6 pt-28 rounded-3xl inline-flex flex-col justify-start items-start gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image1.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
+            <div className="self-stretch flex flex-row flex-wrap md:flex-row justify-center items-start gap-[30px] md:gap-8">
+              <div className="md:w-[420px] w-full mx-auto md:mx-0 h-[550px] pl-4 pr-6 pt-28 rounded-3xl inline-flex flex-col justify-start items-start gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image1.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
                     <div className="justify-start text-white text-4xl font-medium leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
@@ -109,9 +114,9 @@ const FeatureSection: FC = () => {
                 <div className="self-stretch flex justify-center text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
               </div>
               {features.map((feature, index) => (
-                <div key={index} className="h-[550px] inline-flex flex-col justify-center items-start">
+                <div key={index} className="w-full h-[426px] md:h-[550px] flex flex-col justify-center items-start">
                   <div
-                    className="w-[420px] h-[550px] pl-4 pr-6 rounded-t-[25px] inline-flex flex-col justify-between items-start gap-[100px] bg-[lightgray] bg-cover bg-no-repeat bg-center"
+                    className="w-full h-[426px] md:h-[550px] pl-4 pr-6 rounded-t-[25px] flex flex-col justify-between items-start gap-[100px]bg-[lightgray] bg-cover bg-no-repeat bg-center"
                     style={{
                       backgroundImage: `linear-gradient(166deg, rgba(0,0,0,0.43) 17.12%, rgba(0,0,0,0.70) 54.46%, rgba(0,0,0,0.70) 60.31%, rgba(0,0,0,0.00) 73.11%, rgba(0,0,0,0.00) 76.69%), url('/assets/images/${feature.image}.png')`,
                     }}
@@ -120,13 +125,13 @@ const FeatureSection: FC = () => {
                       <Pl8chatLogoWhite />
                       <div className="text-center justify-start text-white text-lg font-medium leading-normal tracking-tight">for business</div>
                     </div>
-                    <div className="w-[420px] flex-1 flex flex-col justify-start items-start gap-4">
+                    <div className="md:w-[420px] flex-1 flex flex-col justify-start items-start gap-4">
                       <div className="self-stretch justify-start text-white text-4xl font-medium leading-10 tracking-tight whitespace-pre-line">{feature.title}</div>
-                      <div className="w-[378px] self-stretch justify-start text-white text-lg font-normal leading-[24px] tracking-[0.18]">{feature.description}</div>
+                      <div className="w-full md:w-[378px] self-stretch justify-start text-white text-lg font-normal leading-[24px] tracking-[0.18]">{feature.description}</div>
                       <div className="self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
                   </div>
-                  <div className="self-stretch h-20 pl-5 pr-4 py-3 bg-emerald-900 rounded-bl-2xl rounded-br-2xl inline-flex justify-center items-center overflow-hidden">
+                  <div className="md:w-auto self-stretch h-20 pl-5 pr-4 py-3 bg-emerald-900 rounded-bl-2xl rounded-br-2xl inline-flex justify-center items-center overflow-hidden">
                     <div className="flex-1 flex justify-start items-center gap-3">
                       <Link href={feature.href}>
                         <Button variant='signUp' >Sign up</Button>
