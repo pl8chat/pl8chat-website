@@ -30,7 +30,7 @@ const variants = {
     'h-[42px] px-4 py-[13px] rounded-md justify-center items-center inline-flex text-[#034b48] text-sm font-medium leading-normal'
   ),
   signUp: clsx(
-    'self-stretch h-[42px] px-[17px] py-[9px] bg-[#034b48] rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
+    'self-stretch w-[100px] h-[42px] px-[16px] py-[9px] bg-[#FFFFFF] rounded-[25px] shadow justify-center items-center inline-flex text-[#404040] text-sm font-medium leading-tight'
   ),
   checkout: clsx(
     'self-stretch h-[35px] px-[17px] py-[9px] bg-pl8Green rounded-md shadow justify-center items-center inline-flex text-white text-sm font-medium leading-tight'
