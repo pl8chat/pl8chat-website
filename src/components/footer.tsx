@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
+import ShapeLogoWhite from '@/svgs/ShapeLogoWhite.svg'
 
 interface NavigationItem {
   name: string;
@@ -197,7 +198,7 @@ export default function Footer() {
   const nav = pathname.includes('/business') ? businessNavigation : navigation;
 
   return (
-    <footer aria-labelledby="footer-heading" className="bg-[#F7F7F7]">
+    <footer aria-labelledby="footer-heading" className="bg-[#034B48]">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -205,9 +206,9 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className='flex flex-col gap-8'>
             <div className='relative'>
-              <FooterLogo />
+              <ShapeLogoWhite />
             </div>
-            <div className="font-normal text-lg text-[#1F2937]">
+            <div className="font-normal text-lg text-white">
               <div>Every</div>
               <div>Car</div>
               <div>Connected®</div>
@@ -215,11 +216,11 @@ export default function Footer() {
           </div>
           <div className="mt-6 md:mt-16 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-4 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
             <div>
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Products</h3>
+              <h3 className="text-base font-semibold leading-6 text-white -mt-1.5">Products</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {(pathname.includes('/business') ? businessNavigation : navigation).products.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black">
+                    <Link href={item.href} className="text-sm leading-6 text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -227,11 +228,11 @@ export default function Footer() {
               </ul>
             </div>
             <div className="">
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Company</h3>
+              <h3 className="text-base font-semibold leading-6 text-white -mt-1.5">Company</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {(pathname.includes('/business') ? businessNavigation : navigation).company.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black">
+                    <Link href={item.href} className="text-sm leading-6 text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -239,11 +240,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Legal</h3>
+              <h3 className="text-base font-semibold leading-6 text-white -mt-1.5">Legal</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {(pathname.includes('/business') ? businessNavigation : navigation).legal.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black">
+                    <Link href={item.href} className="text-sm leading-6 text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -251,11 +252,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-base font-semibold leading-6 text-[#1F2937] -mt-1.5">Get the app</h3>
+              <h3 className="text-base font-semibold leading-6 text-white -mt-1.5">Get the app</h3>
               <ul role="list" className="mt-4 space-y-4">
                 {(pathname.includes('/business') ? businessNavigation : navigation).downloads.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-sm leading-6 text-black">
+                    <Link href={item.href} className="text-sm leading-6 text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -266,18 +267,18 @@ export default function Footer() {
         </div>
         <div className="flex space-x-6 md:order-2 pt-12 md:pt-0">
           {navigation.social.map((item) => (
-            <Link key={item.name} href={item.href} className="text-gray-500">
+            <Link key={item.name} href={item.href} className="text-white">
               <span className="sr-only">{item.name}</span>
               {item.icon && item.icon({ className: "h-6 w-6", "aria-hidden": "true" })}
             </Link>
           ))}
         </div>
-        <div className="md:mt-8 border-t border-white/10 md:pt-8 md:flex md:items-center md:justify-between">
+        <div className="md:mt-8 md:pt-8 md:flex md:items-center md:justify-between">
           <div className="self-stretch inline-flex flex-col justify-start items-start gap-6 w-full">
             <div className="self-stretch flex flex-col justify-end items-start">
-              <div className="self-stretch h-px opacity-30 bg-gray-800" />
+              <div className="self-stretch h-px opacity-30 bg-white" />
               <div className="self-stretch h-14 pt-8 inline-flex justify-between items-start">
-                <div className="flex-1 justify-start text-gray-800 text-xs md:text-base font-normal leading-normal">© 2025 PL8CHAT, LLC. All rights reserved<br /></div>
+                <div className="flex-1 justify-start text-white text-xs md:text-base font-normal leading-normal">© 2025 PL8CHAT, LLC. All rights reserved<br /></div>
               </div>
             </div>
           </div>
