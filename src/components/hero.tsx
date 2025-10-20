@@ -41,7 +41,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 w-48 h-10 pt-2 pb-3 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex justify-center items-start gap-3">
-        <div className="justify-center text-gray-100 text-base font-semibold leading-normal">Get the free app</div>
+        <div className="justify-center text-gray-100 text-[15px] font-medium leading-normal">Get the free app</div>
       </div>
     </div>
   )
