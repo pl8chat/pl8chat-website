@@ -83,7 +83,7 @@ const FeatureSection: FC = () => {
               <div className="md:w-[420px] w-full mx-auto md:mx-0 h-[426px] md:h-[550px] pl-4 pr-6 pt-12 md:pt-28 rounded-3xl inline-flex flex-col justify-start items-start gap-0 md:gap-10 bg-[linear-gradient(166deg,rgba(0,0,0,0.43)_17.12%,rgba(0,0,0,0.70)_54.46%,rgba(0,0,0,0.70)_60.31%,rgba(0,0,0,0.00)_73.11%,rgba(0,0,0,0.00)_76.69%),url('/assets/images/featureSection2Image1.png')] bg-[lightgray] bg-cover bg-no-repeat bg-center">
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
-                    <div className="justify-start text-white text-[30px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
+                    <div className="justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
                     <div className="self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-tight">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const FeatureSection: FC = () => {
                       <div className="text-center justify-start text-white text-lg font-medium leading-normal tracking-tight">for business</div>
                     </div>
                     <div className="md:w-[420px] flex-1 flex flex-col justify-start items-start gap-4 pt-[65px] md:pt-[100px]">
-                      <div className="self-stretch justify-start text-white text-4xl font-medium leading-8 md:leading-10 tracking-tight whitespace-pre-line">{feature.title}</div>
+                      <div className="self-stretch justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-tight whitespace-pre-line">{feature.title}</div>
                       <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-[0.18]">{feature.description}</div>
                       <div className="hidden md:flex self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
