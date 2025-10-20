@@ -72,7 +72,7 @@ const FeatureSection: FC = () => {
           />
         </div>
       </div>
-      <div className="self-stretch pt-10 pb-4 px-4 md:p-14 bg-emerald-50 inline-flex flex-col justify-start items-center gap-[30px] md:gap-10">
+      <div className="self-stretch pt-10 pb-4 px-4 md:p-14 bg-[#E8F4F0] inline-flex flex-col justify-start items-center gap-[30px] md:gap-10">
         <div className="flex flex-col justify-start items-center gap-4 md:gap-8">
           <div className="text-center justify-start text-[#002823] text-4xl md:text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
           <div className="text-center justify-start text-[#363636] text-base md:text-2xl font-medium leading-6 md:leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br className='hidden md:flex' />vehicles and businesses.</div>
@@ -84,7 +84,7 @@ const FeatureSection: FC = () => {
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
                     <div className="justify-start text-white text-[30px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
-                    <div className="self-stretch justify-start text-white text-lg font-normal leading-[24px] tracking-tight">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
+                    <div className="self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-tight">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
                   </div>
                 </div>
                 <div className='flex flex-col justify-center items-center w-full gap-4'>
@@ -108,7 +108,7 @@ const FeatureSection: FC = () => {
                       <div className="text-center justify-start text-white text-lg font-medium leading-normal tracking-tight">for business</div>
                     </div>
                     <div className="md:w-[420px] flex-1 flex flex-col justify-start items-start gap-4 pt-[65px] md:pt-[100px]">
-                      <div className="self-stretch justify-start text-white text-4xl font-medium leading-10 tracking-tight whitespace-pre-line">{feature.title}</div>
+                      <div className="self-stretch justify-start text-white text-4xl font-medium leading-8 md:leading-10 tracking-tight whitespace-pre-line">{feature.title}</div>
                       <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-[0.18]">{feature.description}</div>
                       <div className="hidden md:flex self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
