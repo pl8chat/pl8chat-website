@@ -98,7 +98,7 @@ const FeatureSection: FC = () => {
               {features.map((feature, index) => (
                 <div key={index} className="w-full md:md:w-[420px] h-[426px] md:h-[550px] flex flex-col justify-center items-start">
                   <div
-                    className="w-full md:w-[420px] h-[426px] md:h-[550px] pl-4 pr-6 rounded-t-[25px] flex flex-col justify-between items-start gap-[100px]bg-[lightgray] bg-cover bg-no-repeat bg-center"
+                    className="w-full md:w-[420px] h-[345px] md:h-[550px] pl-4 pr-6 rounded-t-[25px] flex flex-col justify-between items-start gap-[100px]bg-[lightgray] bg-cover bg-no-repeat bg-center"
                     style={{
                       backgroundImage: `linear-gradient(166deg, rgba(0,0,0,0.43) 17.12%, rgba(0,0,0,0.70) 54.46%, rgba(0,0,0,0.70) 60.31%, rgba(0,0,0,0.00) 73.11%, rgba(0,0,0,0.00) 76.69%), url('/assets/images/${feature.image}.png')`,
                     }}
