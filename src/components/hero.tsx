@@ -46,7 +46,7 @@ export default function Hero() {
                 <div className="self-stretch inline-flex justify-start items-center gap-2 md:gap-4">
                   <BackArrowHero onClick={() => setIsSearched(false)} className='cursor-pointer hidden md:flex' />
                   <BackArrowHeroMobile onClick={() => setIsSearched(false)} className='cursor-pointer md:hidden' />
-                  <div className="justify-center text-white text-[17px] md:text-[22px] font-medium leading-[27px]">This vehicle’s not on PL8CHAT... yet</div>
+                  <div className="justify-center text-white text-[18px] md:text-[22px] font-medium leading-[27px]">This vehicle’s not on PL8CHAT... yet</div>
                 </div>
                 <div className="w-full md:w-[516px] h-48 p-2 bg-stone-600/80 rounded-3xl flex flex-col justify-start items-start gap-3 md:gap-6">
                   <div className="self-stretch flex flex-col justify-start items-center gap-3 md:gap-4">
@@ -56,7 +56,7 @@ export default function Hero() {
                         <div key={index} className="self-stretch inline-flex justify-start items-end gap-1">
                           <div className="flex justify-start items-center gap-1">
                             <CheckHero />
-                            <div className="justify-center text-white text-xs font-light leading-[22px]">{item.statement}</div>
+                            <div className="justify-center text-white text-sm font-light leading-[22px]">{item.statement}</div>
                           </div>
                         </div>
                       ))}
