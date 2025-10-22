@@ -54,7 +54,7 @@ export default function StateInput({ onSelect }: StateInputProps) {
             <li
               key={state}
               onClick={() => handleSelect(state)}
-              className="px-3 py-1 cursor-pointer hover:bg-[#C4C4C4] rounded-[6px] text-base"
+              className="px-3 py-[6px] cursor-pointer hover:bg-[#C4C4C4] rounded-[6px] text-base"
             >
               {state}
             </li>

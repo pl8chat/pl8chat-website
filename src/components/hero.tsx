@@ -92,7 +92,7 @@ export default function Hero() {
                     />
                   </div>
                   <StateInput onSelect={setSelectedState} />
-                  <Button variant="search" onClick={() => setIsSearched(true)}>
+                  <Button variant="search" onClick={() => setIsSearched(true)} className={`md:translate-x-[1px]`}>
                     Search
                   </Button>
                 </div>
