@@ -90,7 +90,7 @@ export default function FAQ({ }) {
               </span>
             </button>
             <div className={`${openIds.includes(faq.id) ? 'accordionOpen accordion' : 'accordion'}`}>
-              <div className="w-[290px] md:w-[990px] md:pr-[120px] text-[#002823] text-sm md:text-[22px] font-light leading-[24px] md:leading-[30px] tracking-[0.14px] md:tracking-[0.22px] accordionInner">
+              <div className="w-full  text-[#002823] text-sm md:text-[22px] font-light leading-[24px] md:leading-[30px] tracking-[0.14px] md:tracking-[0.22px] accordionInner">
                 {faq.answer}
               </div>
             </div>
