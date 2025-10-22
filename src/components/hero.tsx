@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <div className="relative self-stretch bg-[url('/assets/images/HeroBgMobile.jpg')] md:bg-[url('/assets/images/HeroBg.jpg')] bg-cover bg-[position:74%center] md:bg-center bg-no-repeat flex flex-col justify-center items-center gap-7 w-full h-screen">
       <div className="absolute inset-0 bg-black/55" />
-      <div className="relative z-10 w-full px-3 md:px-0 md:w-[768px] h-[656px] flex flex-col justify-center items-center gap-10">
+      <div className="relative z-10 w-full px-[14px] md:px-0 md:w-[768px] h-[656px] flex flex-col justify-center items-center gap-10">
         <div className="self-stretch flex flex-col justify-center items-center gap-6">
           {/* Conditionally render content based on isSearched */}
           {isSearched ? (
@@ -73,7 +73,6 @@ export default function Hero() {
             </>
           ) : (
             <div className='w-full'>
-              {/* This is the original code when isSearched is false */}
               <div className="self-stretch text-center text-white text-[40px] md:text-6xl font-medium leading-10 md:leading-[60px]">
                 <br />The license plate is a <br />username. Use it
               </div>

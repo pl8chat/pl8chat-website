@@ -43,7 +43,7 @@ const FeatureSection: FC = () => {
   return (
     <div className='flex flex-col justify-center w-full'>
       <div className="pt-10 px-4 md:p-[60px] bg-white flex flex-col-reverse md:flex-row justify-center items-center">
-        <div className="md:w-[776px] self-stretch inline-flex flex-col justify-center items-start gap-10 pb-10">
+        <div className="md:w-[776px] self-stretch inline-flex flex-col justify-center items-start gap-5 md:gap-10 pb-10">
           <div className="flex flex-col justify-start items-start gap-5 w-full">
             <div className="w-full text-[#002823] text-[40px] md:text-6xl font-medium leading-10 md:leading-[60px] pt-5 md:pt-0 text-center md:text-start">We bring the <br />license plate to life</div>
           </div>
@@ -74,7 +74,7 @@ const FeatureSection: FC = () => {
       </div>
       <div className="self-stretch pt-10 pb-4 px-4 md:p-14 bg-[#E8F4F0] inline-flex flex-col justify-start items-center gap-[30px] md:gap-10">
         <div className="flex flex-col justify-start items-center gap-5 md:gap-8">
-          <div className="text-center justify-start text-[#002823] text-4xl md:text-6xl font-medium leading-[48px]">One platform. Three ways to connect</div>
+          <div className="text-center justify-start text-[#002823] text-[40px] md:text-6xl font-medium leading-[40px] md:leading-[48px]">One platform. Three ways to connect</div>
           <div className="text-center justify-start text-[#363636] text-base md:text-2xl font-medium leading-6 md:leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br className='hidden md:flex' />vehicles and businesses.</div>
         </div>
         <div className="self-stretch flex flex-col justify-start items-center gap-20">
@@ -84,10 +84,10 @@ const FeatureSection: FC = () => {
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
                     <div className="justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
-                    <div className="self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-[0.18px]">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
+                    <div className="self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] tracking-[0.18px]">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
                   </div>
                 </div>
-                <div className='flex flex-col justify-center items-center w-full gap-4'>
+                <div className='flex flex-col justify-center items-center w-full gap-9'>
                   <div className='flex flex-row items-center justify-center gap-5 w-full'>
                     <AppleAppStoreWhite />
                     <GooglePlayStoreWhite />
@@ -109,7 +109,7 @@ const FeatureSection: FC = () => {
                     </div>
                     <div className="md:w-[420px] flex-1 flex flex-col justify-start items-start gap-4 pt-[65px] md:pt-[100px]">
                       <div className="self-stretch justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px] whitespace-pre-line">{feature.title}</div>
-                      <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[15px] md:text-lg font-normal leading-[24px] tracking-[0.18px]">{feature.description}</div>
+                      <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] tracking-[0.18px]">{feature.description}</div>
                       <div className="hidden md:flex self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ const FeatureSection: FC = () => {
                       <Link href={feature.href}>
                         <Button variant='signUp' >Sign up</Button>
                       </Link>
-                      <div className="w-64 justify-start text-gray-300 text-sm font-medium leading-tight tracking-tight">{feature.cost}</div>
+                      <div className="w-64 justify-start text-gray-300 text-sm font-medium leading-[20px] tracking-tight">{feature.cost}</div>
                     </div>
                     <div className="justify-start"></div>
                   </div>

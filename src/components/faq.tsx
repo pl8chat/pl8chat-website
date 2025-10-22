@@ -74,23 +74,23 @@ export default function FAQ({ }) {
   };
 
   return (
-    <div className="self-stretch px-[34px] md:px-[114px] py-10 md:py-20 bg-white inline-flex flex-col justify-start items-center gap-5 md:gap-20" id="faq">
-      <div className="self-stretch md:text-center justify-start text-[#002823] text-4xl md:text-[60px] font-medium leading-[34px] md:leading-[48px]">Frequently asked <br className='md:hidden' /> questions</div>
+    <div className="self-stretch px-[34px] md:px-[114px] py-10 md:py-20 bg-white inline-flex flex-col justify-start items-center gap-0 md:gap-20" id="faq">
+      <div className="self-stretch md:text-center justify-start text-[#002823] text-[40px] md:text-[60px] font-medium leading-[40px] md:leading-[48px]">Frequently asked <br className='md:hidden' /> questions</div>
       <div className="max-w-[966px] w-full md:mx-auto self-stretch flex flex-col justify-start items-start md:items-center">
         {(pathname === '/business' ? faqBusiness : faqs).map((faq, index, arr) => (
           <div
             key={faq.id}
-            className={`w-full pt-6 flex flex-col gap-4 ${index < arr.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-2'} border-b border-[#002823]` : ''
+            className={`w-full ${index == 0 ? 'pt-[20px]' : 'pt-[10px]'} pt-6 flex flex-col gap-2 md:gap-4 ${index < arr.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-0'} border-b border-[#002823]` : ''
               }`}
           >
             <button onClick={() => handleAccordion(faq.id)} className="flex w-full items-center justify-between text-left text-[#002823]">
-              <span className="text-[18px] md:text-[26px] font-medium leading-7 ">{faq.question}</span>
+              <span className="text-[22px] md:text-[26px] font-medium leading-7 ">{faq.question}</span>
               <span className="ml-4 flex h-7 items-center">
                 {openIds.includes(faq.id) ? <MinusIconSVG /> : <PlusIconSVG />}
               </span>
             </button>
             <div className={`${openIds.includes(faq.id) ? 'accordionOpen accordion' : 'accordion'}`}>
-              <div className="w-full  text-[#002823] text-sm md:text-[22px] font-light leading-[24px] md:leading-[30px] tracking-[0.14px] md:tracking-[0.22px] accordionInner">
+              <div className="w-full  text-[#002823] text-base md:text-[22px] font-light leading-[24px] md:leading-[30px] tracking-[0.14px] md:tracking-[0.22px] accordionInner">
                 {faq.answer}
               </div>
             </div>
