@@ -36,7 +36,7 @@ export default function Hero() {
   // If isSearched is true, render the second part; otherwise, render the initial one.
   return (
     <div className="relative self-stretch bg-[url('/assets/images/HeroBgMobile.jpg')] md:bg-[url('/assets/images/HeroBg.jpg')] bg-cover bg-[position:74%center] md:bg-center bg-no-repeat flex flex-col justify-center items-center gap-7 w-full h-screen">
-      <div className="absolute inset-0 bg-black/55" />
+      <div className={`absolute inset-0  ${isSearched ? 'bg-black/80' : 'bg-black/55'}`} />
       <div className="relative z-10 w-full px-[14px] md:px-0 md:w-[768px] h-[656px] flex flex-col justify-center items-center gap-10">
         <div className="self-stretch flex flex-col justify-center items-center gap-6">
           {/* Conditionally render content based on isSearched */}
@@ -48,7 +48,7 @@ export default function Hero() {
                   <BackArrowHeroMobile onClick={() => setIsSearched(false)} className='cursor-pointer md:hidden' />
                   <div className="justify-center text-white text-[18px] md:text-[22px] font-medium leading-[27px]">This vehicle’s not on PL8CHAT... yet</div>
                 </div>
-                <div className="w-full md:w-[516px] h-48 p-2 bg-stone-600/80 rounded-3xl flex flex-col justify-start items-start gap-3 md:gap-6">
+                <div className="w-full md:w-[516px] h-48 p-2 bg-stone-600/80 rounded-[28px] flex flex-col justify-start items-start gap-3 md:gap-6">
                   <div className="self-stretch flex flex-col justify-start items-center gap-3 md:gap-4">
                     <div className="self-stretch text-center justify-center text-white text-base font-medium leading-5">Did you know with the free PL8CHAT <br className='md:hidden' /> app you can:</div>
                     <div className="flex flex-col justify-start items-center">
@@ -103,8 +103,8 @@ export default function Hero() {
       </div>
 
       {/* Optionally, keep the "Get the free app" button visible in both states */}
-      <div className="relative z-10 w-48 h-10 pt-2 pb-3 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex justify-center items-start gap-3">
-        <div className="justify-center text-gray-100 text-[15px] font-medium leading-normal">
+      <div className={`relative z-10 w-48 h-10 pt-2 pb-3 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex justify-center items-start gap-3 ${isSearched ? 'hidden' : ''}`}>
+        <div className={`justify-center text-gray-100 text-[15px] font-medium leading-normal `}>
           Get the free app
         </div>
       </div>
