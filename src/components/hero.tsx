@@ -35,7 +35,7 @@ export default function Hero() {
 
   // If isSearched is true, render the second part; otherwise, render the initial one.
   return (
-    <div className="relative self-stretch bg-[url('/assets/images/HeroBgMobile.jpg')] md:bg-[url('/assets/images/HeroBg.jpg')] bg-cover bg-[position:84%center] md:bg-center bg-no-repeat flex flex-col justify-center items-center gap-7 w-full h-screen">
+    <div className="relative self-stretch bg-[url('/assets/images/HeroBgMobile.jpg')] md:bg-[url('/assets/images/HeroBg.jpg')] bg-cover bg-[position:74%center] md:bg-center bg-no-repeat flex flex-col justify-center items-center gap-7 w-full h-screen">
       <div className="absolute inset-0 bg-black/55" />
       <div className="relative z-10 w-full px-3 md:px-0 md:w-[768px] h-[656px] flex flex-col justify-center items-center gap-10">
         <div className="self-stretch flex flex-col justify-center items-center gap-6">
@@ -77,11 +77,11 @@ export default function Hero() {
               <div className="self-stretch text-center text-white text-[40px] md:text-6xl font-medium leading-10 md:leading-[60px]">
                 <br />The license plate is a <br />username. Use it
               </div>
-              <div className="self-stretch text-center text-white text-[16px] md:text-base font-medium leading-snug tracking-tight">
+              <div className="self-stretch text-center text-white text-[16px] md:text-base font-medium leading-snug tracking-tight py-[14px]">
                 There’s a million reason to connect with a car. <br />What’s yours?
               </div>
 
-              <form className="h-[58px] md:h-[54px] pl-4 pr-2 py-2 bg-stone-600/80 rounded-3xl inline-flex justify-start items-center gap-0 md:gap-2">
+              <form className="h-[58px] md:h-[54px] pl-4 pr-2 bg-stone-600/80 rounded-[28px] inline-flex justify-start items-center gap-0 md:gap-2">
                 <div className="flex-1 flex justify-start items-center md:gap-10">
                   <div className="flex flex-row items-center gap-2">
                     <Search />

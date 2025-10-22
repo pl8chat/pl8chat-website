@@ -45,7 +45,7 @@ const FeatureSection: FC = () => {
       <div className="pt-10 px-4 md:p-[60px] bg-white flex flex-col-reverse md:flex-row justify-center items-center">
         <div className="md:w-[776px] self-stretch inline-flex flex-col justify-center items-start gap-10 pb-10">
           <div className="flex flex-col justify-start items-start gap-5 w-full">
-            <div className="w-full text-[#002823] text-4xl md:text-6xl font-medium leading-10 md:leading-[60px] pt-5 md:pt-0 text-center md:text-start">We bring the <br />license plate to life</div>
+            <div className="w-full text-[#002823] text-[40px] md:text-6xl font-medium leading-10 md:leading-[60px] pt-5 md:pt-0 text-center md:text-start">We bring the <br />license plate to life</div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start gap-[30px] md:gap-10">
             <div className="self-stretch flex flex-col justify-start items-start gap-1 w-full">
