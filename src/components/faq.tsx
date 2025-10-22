@@ -80,7 +80,7 @@ export default function FAQ({ }) {
         {(pathname === '/business' ? faqBusiness : faqs).map((faq, index, arr) => (
           <div
             key={faq.id}
-            className={`w-full ${index == 0 ? 'pt-[20px]' : 'pt-[10px]'} pt-6 flex flex-col gap-2 md:gap-4 ${index < arr.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-0'} border-b border-[#002823]` : ''
+            className={`w-full ${index == 0 ? 'pt-[20px]' : 'pt-[10px]'} pt-6 flex flex-col gap-2 md:gap-4 ${index < arr.length - 1 ? `${openIds.includes(faq.id) ? 'pb-4' : 'pb-[2px]'} border-b border-[#002823]` : ''
               }`}
           >
             <button onClick={() => handleAccordion(faq.id)} className="flex w-full items-center justify-between text-left text-[#002823]">
