@@ -113,7 +113,7 @@ const FeatureSection: FC = () => {
                       <div className="hidden md:flex self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
                   </div>
-                  <div className="md:w-[420px] self-stretch h-20 pl-5 pr-4 py-3 bg-emerald-900 rounded-bl-2xl rounded-br-2xl inline-flex justify-center items-center overflow-hidden">
+                  <div className="md:w-[420px] self-stretch h-20 pl-5 pr-4 py-3 bg-[#034B48] rounded-bl-2xl rounded-br-2xl inline-flex justify-center items-center overflow-hidden">
                     <div className="flex-1 flex justify-start items-center gap-3">
                       <Link href={feature.href}>
                         <Button variant='signUp' >Sign up</Button>

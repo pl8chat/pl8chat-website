@@ -214,7 +214,7 @@ export default function Footer() {
               <div>Connected®</div>
             </div>
           </div>
-          <div className="mt-6 md:mt-16 grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-4 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
+          <div className="mt-9 md:mt-16 grid grid-cols-2 gap-x-10 gap-y-9 md:gap-y-10 sm:grid-cols-2 md:grid-cols-4 xl:col-span-2 xl:mt-0 md:pb-10 md:-translate-x-[6.5rem]">
             <div>
               <h3 className="text-base font-semibold leading-6 text-white -mt-1.5">Products</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -265,7 +265,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex space-x-6 md:order-2 pt-12 md:pt-0">
+        <div className="flex space-x-6 md:order-2 pt-9 md:pt-0">
           {navigation.social.map((item) => (
             <Link key={item.name} href={item.href} className="text-white">
               <span className="sr-only">{item.name}</span>
