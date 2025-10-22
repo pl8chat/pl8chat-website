@@ -73,7 +73,7 @@ const FeatureSection: FC = () => {
         </div>
       </div>
       <div className="self-stretch pt-10 pb-4 px-4 md:p-14 bg-[#E8F4F0] inline-flex flex-col justify-start items-center gap-[30px] md:gap-10">
-        <div className="flex flex-col justify-start items-center gap-5 md:gap-8">
+        <div className="flex flex-col justify-start items-center gap-5 md:gap-10">
           <div className="text-center justify-start text-[#002823] text-[40px] md:text-6xl font-medium leading-[40px] md:leading-[48px]">One platform. Three ways to connect</div>
           <div className="text-center justify-start text-[#363636] text-base md:text-2xl font-medium leading-6 md:leading-[34px]">PL8CHAT is a communication ecosystem connecting drivers, <br className='hidden md:flex' />vehicles and businesses.</div>
         </div>
