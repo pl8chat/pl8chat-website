@@ -42,7 +42,7 @@ export default function Hero() {
           {/* Conditionally render content based on isSearched */}
           {isSearched ? (
             <>
-              <div className="w-full md:w-[516px] inline-flex flex-col justify-start items-start gap-1 md:gap-4">
+              <div className="w-full md:w-[516px] inline-flex flex-col justify-start items-start gap-1 md:gap-[6px]">
                 <div className="self-stretch inline-flex justify-start items-center gap-2 md:gap-4">
                   <BackArrowHero onClick={() => setIsSearched(false)} className='cursor-pointer hidden md:flex' />
                   <BackArrowHeroMobile onClick={() => setIsSearched(false)} className='cursor-pointer md:hidden' />

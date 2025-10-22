@@ -84,7 +84,7 @@ const FeatureSection: FC = () => {
                 <div className="self-stretch h-60 flex flex-col justify-center items-start gap-10">
                   <div className="self-stretch flex-1 flex flex-col justify-center items-start gap-[18px]">
                     <div className="justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px]">A free, <br />new way <br />to connect</div>
-                    <div className="self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] tracking-[0.18px]">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
+                    <div className="self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] md:leading-[24px] tracking-[0.18px]">Keep your car safe, help other drivers and <br /> stay connected through license plates.</div>
                   </div>
                 </div>
                 <div className='flex flex-col justify-center items-center w-full gap-9'>
@@ -109,7 +109,7 @@ const FeatureSection: FC = () => {
                     </div>
                     <div className="md:w-[420px] flex-1 flex flex-col justify-start items-start gap-4 pt-[65px] md:pt-[100px]">
                       <div className="self-stretch justify-start text-white text-[34px] md:text-4xl font-medium leading-8 md:leading-10 tracking-[0.36px] whitespace-pre-line">{feature.title}</div>
-                      <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] tracking-[0.18px]">{feature.description}</div>
+                      <div className="w-full md:w-[378px] self-stretch justify-start text-white text-[16px] md:text-lg font-normal leading-[20px] md:leading-[24px] tracking-[0.18px]">{feature.description}</div>
                       <div className="hidden md:flex self-stretch justify-start text-white text-lg font-medium underline leading-normal tracking-tight">Learn more</div>
                     </div>
                   </div>
