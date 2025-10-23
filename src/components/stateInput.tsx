@@ -49,7 +49,7 @@ export default function StateInput({ onSelect }: StateInputProps) {
       />
 
       {filteredStates.length > 0 && (
-        <ul className="absolute w-full left-0 right-0 mt-1 bg-[#6C6C6C] border-none rounded-[6px] text-white text-xs z-10">
+        <ul className="absolute w-[120px] left-0 right-0 mt-1 bg-[#6C6C6C] border-none rounded-[6px] text-white text-xs z-10 text-nowrap">
           {filteredStates.map((state) => (
             <li
               key={state}
