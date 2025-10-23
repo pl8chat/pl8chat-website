@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { ModalProvider } from "../../components/modalContext";
 import TalkToSalesModal from '@/components/talkToSalesModal'
+import ComingSoon from "@/components/comingSoon";
 import "../globals.css";
 
 const inter = localFont({
@@ -33,13 +34,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <ModalProvider>
-          <Navbar />
+          {/* <Navbar />
           <div className="pt-[102px] md:pt-[114px] bg-white">
             {children}
             <Analytics />
             <TalkToSalesModal />
           </div>
-          <Footer />
+          <Footer /> */}
+          <div className="bg-white">
+            {children}
+            <Analytics />
+            <TalkToSalesModal />
+          </div>
         </ModalProvider>
       </body>
     </html>
