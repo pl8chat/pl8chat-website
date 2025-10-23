@@ -63,7 +63,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150`}>
+      <Disclosure as="nav" className={`absolute z-30 w-full transition-colors duration-150`}>
         {({ open }) => (
           <>
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-[60px] py-2 md:pt-4 md:py-0 h-[58px] md:h-[70px] flex items-center">

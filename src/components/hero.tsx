@@ -72,7 +72,7 @@ export default function Hero() {
               </div>
             </>
           ) : (
-            <div className='w-full'>
+            <div className='w-full flex flex-col justify-center items-center'>
               <div className="self-stretch text-center text-white text-[40px] md:text-6xl font-medium leading-10 md:leading-[60px]">
                 <br />The license plate is a <br />username. Use it
               </div>
@@ -80,8 +80,8 @@ export default function Hero() {
                 There’s a million reason to connect with a car. <br />What’s yours?
               </div>
 
-              <form className="h-[58px] md:h-[54px] pl-4 pr-2 bg-stone-600/80 rounded-[28px] inline-flex justify-start items-center gap-0 md:gap-2">
-                <div className="flex-1 flex justify-start items-center md:gap-10">
+              <form className="w-full md:w-auto h-[58px] md:h-[54px] bg-stone-600/80 rounded-[28px] inline-flex justify-start items-center md:gap-2">
+                <div className="flex justify-between items-center md:gap-10 w-full pr-2 pl-1">
                   <div className="flex flex-row items-center gap-2">
                     <Search />
                     <input
