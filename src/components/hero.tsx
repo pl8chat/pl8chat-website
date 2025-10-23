@@ -85,7 +85,7 @@ export default function Hero() {
                   <div className="flex flex-row items-center gap-2">
                     <Search />
                     <input
-                      className="w-[136px] md:w-[152px] text-white text-[14px] md:text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent uppercase placeholder:normal-case placeholder:text-[#E5E7EB] pl-0"
+                      className="w-[136px] md:w-[152px] text-white text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent uppercase placeholder:normal-case placeholder:text-[#E5E7EB] pl-0"
                       type="text"
                       placeholder="Type plate #"
                       maxLength={7}

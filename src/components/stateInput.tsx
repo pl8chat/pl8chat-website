@@ -42,7 +42,7 @@ export default function StateInput({ onSelect }: StateInputProps) {
       <input
         value={query}
         onChange={handleChange}
-        className="w-[112px] text-white text-[14px] pl-0 md:text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent placeholder:text-[#E5E7EB]"
+        className="w-[112px] text-white pl-0 text-base focus:ring-0 font-normal leading-relaxed border-none bg-transparent placeholder:text-[#E5E7EB]"
         type="text"
         placeholder="State"
         maxLength={20}
