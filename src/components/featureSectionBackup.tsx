@@ -52,7 +52,7 @@ interface FeatureMobile {
 
 const features: Feature[] = [
   {
-    name: 'Step 1. Create a free account',
+    name: 'Step 1. Add your vehicle',
     description:
       'Signing up is easy and free. And all members verify their identity and their vehicle’s license plate to keep our community safe and trusted.',
     href: '#',
@@ -60,7 +60,7 @@ const features: Feature[] = [
     iconSmall: CreateAccountSmallSVG,
   },
   {
-    name: 'Step 2. Search a license plate',
+    name: 'Step 2. Search a plate',
     description:
       'See a vehicle you want to reach? Just enter their license plate digits and state. If they’re a member, you can view their profile and contact them.',
     href: '#',
@@ -68,7 +68,7 @@ const features: Feature[] = [
     iconSmall: SearchIconSmallSVG,
   },
   {
-    name: 'Step 3. Start "PL8chatting"',
+    name: 'Step 3. Start connecting',
     description:
       'Now you can send quick alerts, start a chat convo or make an emergency call. It’s a fast, smart and safe way to keep drivers and vehicles connected.',
     href: '#',
@@ -152,11 +152,39 @@ const FeatureSectionBackup: FC = () => {
 
   return (
     <div className='flex flex-col justify-center w-full'>
-      <div className="self-stretch px-4 md:px-0 pt-10 md:pt-20 flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
-        <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
+      <div className="max-w-[1440px] py-10 md:p-[60px] bg-white flex flex-col md:flex-row justify-start items-center gap-5 md:gap-20 mx-auto">
+        <div className='relative w-[calc(100%-32px)] md:w-[544px] h-[394px] md:h-[528px] overflow-hidden'>
+          <Image
+            src="/assets/images/featureSection2Image1.png"
+            alt="Feature Section Image"
+            fill
+            className="rounded-[25px] object-cover object-[50%_50%]"
+          />
+        </div>
+        <div className="md:w-[776px] self-stretch md:pt-14 inline-flex flex-col justify-start items-start gap-5 md:gap-10">
+          <div className="flex flex-col justify-start items-start w-full gap-5 text-center md:text-start">
+            <div className="justify-start text-[#002823] text-[38px] md:text-6xl font-medium leading-10 md:leading-[60px] w-full">We’re uniting the <br />driving community</div>
+          </div>
+          <div className="self-stretch flex flex-col justify-start items-start gap-[30px] md:gap-10 px-4">
+            <div className="self-stretch flex flex-col justify-start items-start w-full text-center md:text-start gap-1">
+              <div className="md:w-[596px] justify-start text-[#002823] text-base md:text-2xl font-medium leading-6 md:leading-[34px]">PL8CHAT is a trusted network of drivers helping each other stay safe, connected, and accountable through license plate–based communication. </div>
+            </div>
+            <div className='flex gap-5 mx-auto md:mx-0'>
+              <Link href={'#'}>
+                <AppStoreSVG />
+              </Link>
+              <Link href={'#'}>
+                <GooglePlayStoreSVG />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="self-stretch pt-10 md:pt-[60px] flex flex-col justify-start items-center gap-10 md:gap-[60px] w-full bg-[#E8F4F0]">
+        <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-[60px]">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
             <div className="flex flex-col justify-start items-start">
-              <div className="text-start md:text-center px-[18px] text-[#002823] text-2xl md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Start connecting on <br className='md:hidden' /> PL8CHAT<span className='md:hidden text-[20px] font-medium leading-[34px] relative -top-[3px]'>®</span> <br className='hidden md:flex' /> in 3 <span className='hidden md:inline'>easy</span> steps:</div>
+              <div className="text-start md:text-center px-[18px] text-[#002823] text-[38px] md:text-[60px] font-medium leading-[40px] md:leading-[48px]">Get started in 3 <br className='md:hidden' /> easy steps</div>
             </div>
             <div className="text-start md:text-center justify-start text-[#002823] text-[30px] font-medium leading-10 hidden md:block -translate-x-4 md:translate-y-[1px]">®</div>
           </div>
@@ -186,11 +214,11 @@ const FeatureSectionBackup: FC = () => {
           </div>
         </div>
         {/* Desktop */}
-        <div className='hidden md:flex md:w-full px-[120px] py-20 bg-white justify-start items-center'>
-          <div className='flex flex-col md:flex-row'>
+        <div className='hidden md:flex md:w-full px-[120px] py-[60px] bg-white justify-start items-center'>
+          <div className='flex flex-col md:flex-row mx-auto'>
             <div className="self-stretch inline-flex flex-col justify-center items-start gap-10">
               <div className="flex flex-col justify-start items-start gap-5">
-                <div className="text-center md:text-start justify-start text-[#002823] text-[24px] md:text-[40px] font-medium leading-[34px] md:leading-[48px]">Search a license plate and <br />start connecting</div>
+                <div className="text-center md:text-start justify-start text-[#002823] text-[24px] md:text-[60px] font-medium leading-[34px] md:leading-[48px]">How it works</div>
               </div>
               <div className="self-stretch flex flex-col justify-start items-center gap-10">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
@@ -223,7 +251,7 @@ const FeatureSectionBackup: FC = () => {
                 </div>
               </div>
             </div>
-            <div className='rounded-3xl px-4 md:px-0'>
+            <div className='relative px-4 md:px-0 w-full md:w-[508px] h-[394px] md:h-[600px]'>
               <Image
                 src={
                   activeDesktopIndex !== null && features2[activeDesktopIndex]?.image
@@ -231,17 +259,16 @@ const FeatureSectionBackup: FC = () => {
                     : '/assets/images/featurePhoneImageDefault.png'
                 }
                 alt="Feature Section Image"
-                height={675}
-                width={508}
+                fill
                 className="rounded-[25px]"
               />
             </div>
           </div>
         </div>
         {/* Mobile */}
-        <div className="md:hidden self-stretch py-10 bg-white rounded-3xl inline-flex flex-col justify-start items-center gap-6">
-          <div className="w-80 text-center justify-start text-[#002823] text-2xl font-medium leading-[34px]">Search a license plate<br className='md:hidden' /> and<br className='hidden md:inline' /> start connecting</div>
-          <div className="relative w-full aspect-[326/394] rounded-3xl px-4 mx-auto">
+        <div className="md:hidden self-stretch py-10 bg-white inline-flex flex-col justify-start items-center gap-6">
+          <div className="w-80 text-center justify-start text-[#002823] text-[38px] font-medium leading-[40px]">Start connecting</div>
+          <div className="relative w-full aspect-[326/394] rounded-[25px] px-4 mx-auto">
             <Image
               src={mobileImage}
               alt="Feature Section Image"
