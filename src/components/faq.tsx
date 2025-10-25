@@ -74,7 +74,7 @@ export default function FAQ({ }) {
   };
 
   return (
-    <div className="self-stretch px-[34px] md:px-[114px] py-10 md:py-20 bg-white inline-flex flex-col justify-start items-center gap-0 md:gap-[60px]" id="faq">
+    <div id="faq" className={`self-stretch px-[34px] md:px-[114px] py-10 md:py-20 inline-flex flex-col justify-start items-center gap-0 md:gap-[60px] ${pathname === '/' ? 'bg-white' : 'bg-[#EAF3EF]'}`}>
       <div className="self-stretch md:text-center justify-start text-[#002823] text-[40px] md:text-[60px] font-medium leading-[40px] md:leading-[48px]">Frequently asked <br className='md:hidden' /> questions</div>
       <div className="max-w-[966px] w-full md:mx-auto self-stretch flex flex-col justify-start items-start md:items-center">
         {(pathname === '/business' ? faqBusiness : faqs).map((faq, index, arr) => (

@@ -152,7 +152,7 @@ const FeatureSectionBackup: FC = () => {
 
   return (
     <div className='flex flex-col justify-center w-full'>
-      <div className="self-stretch px-4 md:px-0 pt-10 md:pt-20 pb-5 flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
+      <div className="self-stretch px-4 md:px-0 pt-10 md:pt-20 flex flex-col justify-start items-center gap-10 md:gap-20 w-full bg-[#E8F4F0]">
         <div className="self-stretch flex flex-col justify-start md:items-center gap-[30px] md:gap-20">
           <div className="md:w-[813px] flex justify-start md:justify-center items-start">
             <div className="flex flex-col justify-start items-start">
@@ -186,7 +186,7 @@ const FeatureSectionBackup: FC = () => {
           </div>
         </div>
         {/* Desktop */}
-        <div className='hidden md:flex md:w-[1400px] px-[120px] py-20 bg-white rounded-3xl justify-start items-center'>
+        <div className='hidden md:flex md:w-full px-[120px] py-20 bg-white justify-start items-center'>
           <div className='flex flex-col md:flex-row'>
             <div className="self-stretch inline-flex flex-col justify-center items-start gap-10">
               <div className="flex flex-col justify-start items-start gap-5">

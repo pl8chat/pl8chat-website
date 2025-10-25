@@ -64,30 +64,6 @@ export default function NavbarProducts() {
       <Disclosure as="nav" className={`fixed z-30 w-full transition-colors duration-150 bg-white`}>
         {({ open }) => (
           <>
-            {pathname.includes('/business') ? (
-              // business site
-              <div className="h-[44px] w-full self-stretch px-20 inline-flex justify-center md:justify-end items-center gap-2 bg-[#034B48] md:-translate-x-0.5">
-                <div className="text-xs text-black font-medium leading-normal text-right">
-                  <span className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal leading-6">Already a PL8CHAT customer?{` `}
-                    <Link href={'https://account.pl8chat.com/login'} className="text-[#FFFFFF] text-[11px] md:text-[13px] font-normal underline leading-6">Log in</Link>
-                  </span>
-                </div>
-              </div>
-            ) : (
-              // consumer site
-              <div>
-                <div className="h-[44px] w-full self-stretch px-4 md:px-20 flex justify-center md:justify-end items-center bg-[#B8D5D0] md:bg-[#D7EDE9]">
-                  <div className="text-xs text-black font-medium leading-normal text-center flex flex-row justify-center items-center">
-                    <div className="text-black text-[11px] md:text-[13px] font-normal leading-normal whitespace-nowrap">
-                      Connect your parking with
-                      <Link href={'/business'}>
-                        <span className="text-black text-[11px] md:text-[13px] font-normal leading-normal"> <span className='underline'>PL8CHAT for Business</span></span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-[92px] py-2 h-[58px] md:h-[70px] flex items-center">
               <div className="md:hidden w-full flex justify-between items-center">
                 {/* Mobile menu button */}

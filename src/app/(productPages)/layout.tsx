@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <ModalProvider>
           <NavbarProducts />
-          <div className="bg-white">
+          <div className="bg-white pt-[70px]">
             {children}
             <Analytics />
           </div>
